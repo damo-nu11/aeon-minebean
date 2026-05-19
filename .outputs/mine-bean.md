@@ -1,21 +1,25 @@
 ## Summary
 
-Mining session complete — **5 deploys fired, 0 skipped** (second clean sweep ever, rounds 104378–104382).
+Ran the `mine-bean` skill: invoked `scripts/mine-batch.sh 5` for a 5-round session.
 
-**Transactions:**
-- `0x1a44afd4…ee3f23716` (round 104378)
-- `0xd41d2206…f2885ba` (round 104379)
-- `0xbddeda0b…f8368b95` (round 104380)
-- `0x728da595…9b771f16` (round 104381)
-- `0xf23e1e1c…19482513` (round 104382)
+**Result:** 4 deploys fired, 1 skipped (iteration 4 caught round 104549 already deployed with 0s left — loop correctly waited and rolled into round 104550).
 
-**State after session:**
-- Agent balance: 0.016548 ETH (~265 fires remaining)
-- Pending ETH: 0.00285 (below 0.01 claim threshold — no claim)
-- Pending BEAN: 0.04395 (below 1 BEAN claim threshold — no claim)
+**TXs (rounds 104547, 104548, 104549, 104550):**
+- `0x411e58f3a527784954fc0195c0583932e8971ff1fedd460ca6fd133890767934`
+- `0x04a3a25b4128b5ef635006810d6ae644e298a5688c2c83d0e1ab63eff9e72506`
+- `0x9631793de49a2851b9923743528b9bfa39a7e5978ffe00219cb357f702fe3d22`
+- `0x86f82534370313f5655f28a79e27dda9b692d20f97d99aef54a45653ded8f871`
 
-**Files updated:**
-- `memory/topics/minebean.md` — appended run log entry, updated status block
-- `memory/logs/2026-05-19.md` — appended run 18 detail
+Each fire: all 25 blocks at the contract minimum `2_500_000_000_000` wei (0.0000625 ETH/round; ~0.00025 ETH gross before gas).
 
-**Follow-up:** None required. Next cron tick will pick up the next batch.
+**Claims:** Both skipped.
+- `FINAL_PENDING_ETH_WEI=3_071_777_807_529_572` (~0.003072 ETH) < 0.01 ETH threshold.
+- `FINAL_PENDING_BEAN_WEI=46_084_343_919_994_232` (~0.0461 BEAN) < 1 BEAN threshold.
+
+**Agent balance:** `0.016291 ETH` on Base (~260 fires remaining at default cost).
+
+**Files modified:**
+- `memory/topics/minebean.md` — appended session entry per SKILL.md step 3.
+- `memory/logs/2026-05-19.md` — appended `mine-bean (run 19, multi-round session)` log.
+
+**Follow-up:** None. Continuing the steady 4/5 pattern; rewards accumulating but still well below claim thresholds. Next cron invocation will pick up the next batch.
