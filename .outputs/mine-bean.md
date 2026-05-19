@@ -1,10 +1,15 @@
 ## Summary
 
-Executed the `mine-bean` skill via `scripts/mine-batch.sh 5`.
+Ran `mine-bean` for 5 rounds: 4 deploys fired, 1 skipped (round 104305 had 0s remaining mid-loop after already deploying in iteration 2).
 
-- **Result**: 4 deploys fired, 1 skipped (iteration 2 — round 104295 already deployed in iteration 1)
-- **TXs**: `0x80519f55…`, `0xce3dc32a…`, `0x20cc7b4e…`, `0x5eb946e3…` (rounds 104295–104298)
-- **Per-round cost**: 25 blocks × 2.5e12 wei = 0.0000625 ETH
-- **Final pending**: 0.001785 ETH (below 0.01 threshold) · 0.02806 BEAN (below 1 threshold) — **no claims**
-- **Final balance**: 0.017714 ETH (~283 fires remaining)
-- **Files updated**: `memory/topics/minebean.md`, `memory/logs/2026-05-19.md`
+**TXs:**
+- `0xce9f7901…ac7389` (round 104304)
+- `0xfbc21f3d…b89733e` (round 104305)
+- `0x85418117…5a2c9091b` (round 104306)
+- `0x0b0d5e81…1d1e1da2` (round 104307)
+
+**Balances:** Pending 0.002064 ETH / 0.02808 BEAN — both below auto-claim thresholds (0.01 ETH, 1 BEAN), so no claim fired. Agent balance: 0.01746 ETH (~279 fires remaining).
+
+**Files modified:** `memory/topics/minebean.md` (appended session log entry).
+
+**Follow-ups:** None — next session will pick up automatically on cron.
