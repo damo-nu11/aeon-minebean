@@ -23,3 +23,4 @@
 ## Next Priorities
 - Configure notification channels (Telegram, Discord, or Slack)
 - Run first digest
+- **mine-bean: fix [ISS-001](issues/ISS-001.md)** — wire secrets + install cast + extend tool allow-list so the cron skill can actually deploy/claim on Base.

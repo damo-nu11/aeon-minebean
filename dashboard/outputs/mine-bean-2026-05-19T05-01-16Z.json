@@ -1,0 +1,97 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "alert_skip",
+        "sep1",
+        "stack_blockers",
+        "sep2",
+        "stack_resolution"
+      ]
+    },
+    "alert_skip": {
+      "type": "Alert",
+      "props": {
+        "title": "Skill Skipped",
+        "message": "Round n/a — Cannot execute",
+        "type": "warning"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_blockers": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_blockers",
+        "text_reason1",
+        "text_reason2",
+        "text_reason3"
+      ]
+    },
+    "heading_blockers": {
+      "type": "Heading",
+      "props": {
+        "text": "Execution Blockers",
+        "level": "h3"
+      }
+    },
+    "text_reason1": {
+      "type": "Text",
+      "props": {
+        "text": "Agent wallet secrets not wired into the workflow"
+      }
+    },
+    "text_reason2": {
+      "type": "Text",
+      "props": {
+        "text": "Foundry's cast not installed"
+      }
+    },
+    "text_reason3": {
+      "type": "Text",
+      "props": {
+        "text": "Tool allow-list excludes cast/scripts"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_resolution": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_issue",
+        "text_safe"
+      ]
+    },
+    "text_issue": {
+      "type": "Text",
+      "props": {
+        "text": "Opened ISS-001 with the fix plan"
+      }
+    },
+    "text_safe": {
+      "type": "Text",
+      "props": {
+        "text": "No funds at risk",
+        "variant": "muted"
+      }
+    }
+  }
+}

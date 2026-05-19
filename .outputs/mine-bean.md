@@ -1,0 +1,1 @@
+mine-bean: SKIPPED (round n/a). Skill cannot execute — agent wallet secrets not wired into the workflow, Foundry's cast not installed, and tool allow-list excludes cast/scripts. Opened ISS-001 with the fix plan. No funds at risk.
