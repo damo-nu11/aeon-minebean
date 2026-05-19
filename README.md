@@ -592,3 +592,4 @@ See `assets/autonomy.jpg`. Aeon sits at the "fully autonomous" end — it decide
 - Check [`docs/`](docs/) directory
 - Run `./onboard` for setup verification
 - Open an issue on GitHub
+
