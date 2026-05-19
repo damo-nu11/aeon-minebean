@@ -120,6 +120,12 @@ jobs:
         if: steps.work.outputs.mode != ''
         run: npm install -g @anthropic-ai/claude-code
 
+      - name: Install Foundry
+        if: steps.work.outputs.mode != ''
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+
       - name: Validate skill secrets
         if: steps.work.outputs.mode != ''
         env:
@@ -209,7 +215,10 @@ jobs:
           NEYNAR_API_KEY: ${{ secrets.NEYNAR_API_KEY }}
           NEYNAR_SIGNER_UUID: ${{ secrets.NEYNAR_SIGNER_UUID }}
           JSONRENDER_ENABLED: ${{ vars.JSONRENDER_ENABLED || 'true' }}
-          SKILL_VAR: ${{ inputs.var }}
+          AGENT_PRIVATE_KEY: ${{ secrets.AGENT_PRIVATE_KEY }}
+          AGENT_ADDRESS: ${{ secrets.AGENT_ADDRESS }}
+          BASE_RPC_URL: ${{ secrets.BASE_RPC_URL }}          
+          SKILL_VAR: ${{ inputs.var }} 
         run: |
           TODAY=$(date -u +%Y-%m-%d)
           SKILL_NAME="${{ steps.skill.outputs.name }}"
@@ -394,6 +403,7 @@ jobs:
           ALLOWED="$ALLOWED,Bash(mkdir:*),Bash(ls:*),Bash(cat:*),Bash(chmod:*)"
           ALLOWED="$ALLOWED,Bash(date:*),Bash(echo:*),Bash(node:*),Bash(npm:*),Bash(npx:*)"
           ALLOWED="$ALLOWED,Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(grep:*)"
+          ALLOWED="$ALLOWED,Bash(cast:*),Bash(bash:*),Bash(sed:*),Bash(awk:*),Bash(printf:*)"
 
           SKILL_NAME="${{ steps.skill.outputs.name }}"
           VAR="$SKILL_VAR"
