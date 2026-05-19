@@ -1,12 +1,20 @@
 ## Summary
 
-- Ran `scripts/mine-batch.sh 5`: **4 deploys fired, 1 skipped** (round-boundary roulette — iteration 2 caught round `104743` already deployed with 0s remaining; loop waited and rolled into round `104744`).
-- TXs (rounds 104743–104746):
-  - `0xd7d2795eed6d94f7af5d7923a2bc257f47992e3e95937c448c68111c18e970a4`
-  - `0x46b2531a2e5a8a164f22102a65ac67fe4e668c398ee59bded5161f3ee9a3d9c2`
-  - `0x3508a93803e728f98712c146f98fa52c85d8f6d6da6dbc0bffd742d136278622`
-  - `0x2b5fd81606e7f077ad8fd5831c7632aac9c55894d5de0cac1594ba1d622c44b2`
-- Final agent balance: **0.015774 ETH** (~252 fires remaining).
-- Pending: **0.003517 ETH** (< 0.01 threshold), **0.05396 BEAN** (< 1 threshold) → no auto-claims.
-- Files modified: `memory/topics/minebean.md` (session log line), `memory/logs/2026-05-19.md` (run 21 entry).
-- Follow-up: none — next cron tick picks up the next batch.
+Ran the `mine-bean` skill — one multi-round session of 5 iterations on the GridMining contract on Base.
+
+**Result: 4 deploys fired, 1 skipped (round-boundary roll at iteration 5).**
+
+- TXs (all 25 blocks at min `2.5e12` wei each, 0.0000625 ETH per round):
+  - `0xc95bc7b5…1ae0a47` (round 104888)
+  - `0x7b516339…fb30867` (round 104889)
+  - `0x5dae6249…504bba4f4` (round 104890)
+  - `0x10dff74a…6894829` (round 104891)
+- Final agent balance: **0.015515 ETH** (~248 fires remaining)
+- Pending rewards: **0.003742 ETH** (< 0.01 threshold), **0.05783 BEAN** (< 1 threshold) — no claims triggered
+- Note: previous workflow run was logged as failed (`ba07965 chore(cron): mine-bean failed`); this run succeeded cleanly with no reverts.
+
+Files modified:
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-19.md` — appended run 22 details
+
+No follow-up actions needed. Next session will pick up the next batch.
