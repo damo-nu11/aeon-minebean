@@ -1,13 +1,19 @@
+Session complete and logged. Exiting per skill instructions (step 4: do not retry).
+
 ## Summary
 
-Executed `mine-bean` skill (run 11): `scripts/mine-batch.sh 5` → **3 deploys, 2 skipped**.
+Ran `skills/mine-bean/scripts/mine-batch.sh 5` — 4 deploys fired, 1 skipped (iteration 2 hit `already_deployed=true` at 0s remaining; loop correctly rolled into round 104278).
 
-- **TXs (Base):**
-  - `0xabbc9d4609d9ae896b358408f02b1ad65c86519fb12de6156ed8bcdedfd15ee0` (round 104268)
-  - `0xdccceb04b38dafec623e1a4fb4732a76112d7f9936a72172d48018f780466be7` (round 104269)
-  - `0xa16b9ad6e876be934188c61e197a94b4ddf55561759e4600b5d42f938889da42` (round 104270)
-- **Pending:** 0.001222 ETH (below 0.01 threshold), 0.01675 BEAN (below 1 threshold) → no claims this session.
-- **Agent balance:** 0.01842 ETH (~294 fires remaining).
-- **Files updated:** `memory/topics/minebean.md`, `memory/logs/2026-05-19.md`.
+**Deploys (all 25 blocks @ minimum 2.5e12 wei each):**
+- Round 104277: `0x59f6e4c4…f246feb`
+- Round 104278: `0x2717cea5…4fc5e9a6`
+- Round 104279: `0xac7d5b65…560e8c484`
+- Round 104280: `0xd420bd74…d43b775aa0`
 
-Lower-than-usual hit rate (3/5 vs the usual 4/5) — iteration 1 fired with 60s left, putting the loop's pacing out of phase by two rounds. No follow-up needed; cron will re-fire on the next interval.
+**Claims:** pending ETH `0.00145` < `0.01` threshold; pending BEAN `0.02445` < `1` threshold — no claim txs.
+
+**Agent balance:** `0.01816 ETH` (~290 fires remaining at default cost).
+
+**Files modified:** `memory/topics/minebean.md`, `memory/logs/2026-05-19.md`.
+
+**Follow-ups:** none — pattern is the steady 4/5 success rate caused by round-boundary alignment. Auto-claim will trigger once pending ETH crosses 0.01 (currently ~10% of the way there).
