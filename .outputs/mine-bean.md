@@ -1,1 +1,1 @@
-mine-bean · round 104148 · deployed 25 blocks for 0.0000625 ETH (tx 0x4ccb5c00…0222e9). Pending: 0.000276 ETH, 0.00487 BEAN — both below claim thresholds. Note: first attempt at round 104147 reverted (only 10s left); retried clean in 104148.
+mine-bean: deployed round 104193 (25 blocks, 0.0000625 ETH). Tx 0x29266297. Pending 0.000331 ETH / 0.00488 BEAN — below claim thresholds.

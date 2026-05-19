@@ -1,0 +1,78 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat_round",
+        "stat_blocks",
+        "stat_earned",
+        "stat_pending",
+        "separator_1",
+        "badge_tx",
+        "alert_status"
+      ]
+    },
+    "stat_round": {
+      "type": "Stat",
+      "props": {
+        "label": "Round",
+        "value": "104193"
+      }
+    },
+    "stat_blocks": {
+      "type": "Stat",
+      "props": {
+        "label": "Blocks",
+        "value": "25"
+      }
+    },
+    "stat_earned": {
+      "type": "Stat",
+      "props": {
+        "label": "Earned",
+        "value": "0.0000625 ETH"
+      }
+    },
+    "stat_pending": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending",
+        "value": "0.000331 ETH / 0.00488 BEAN"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "badge_tx": {
+      "type": "Badge",
+      "props": {
+        "text": "Tx 0x29266297"
+      }
+    },
+    "alert_status": {
+      "type": "Alert",
+      "props": {
+        "message": "Below claim thresholds",
+        "type": "warning"
+      }
+    }
+  }
+}
