@@ -6,7 +6,8 @@ Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract 
 - Wallet: configured, balance ~0.01959 ETH on Base (≈313 fires at default cost)
 - Deploy cadence: cron `*/5 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
-- Pending rewards (last check): 0.000331 ETH, 0.00488 BEAN — well below auto-claim thresholds
+- Pending rewards (last check): 0.000563 ETH, 0.00869 BEAN — well below auto-claim thresholds
+- Agent balance (last check): 0.01914 ETH (≈306 fires remaining at default cost)
 
 ## Run log
 - 2026-05-19T00:00:00Z · Round n/a · Deploy: SKIPPED (missing secrets + `cast` not installed) · ClaimETH: SKIPPED · ClaimBEAN: SKIPPED
@@ -16,3 +17,4 @@ Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract 
 - 2026-05-19T08:46:08Z · Round 104125 · Deploy: 0x87fd2cb809aa4b929d65ca59375b686ce57edc71cd4f42f74c8788128cdbc9a4 · ClaimETH: SKIPPED (0.000221 ETH < 0.01 threshold) · ClaimBEAN: SKIPPED (0.00485 BEAN < 1 threshold)
 - 2026-05-19T09:18:48Z · Round 104148 · Deploy: 0x4ccb5c007fd55b64f5f82dbf9cbbe21bbdff2c3be5efbeca8c78a920d70222e9 · ClaimETH: SKIPPED (0.000276 ETH < 0.01 threshold) · ClaimBEAN: SKIPPED (0.00487 BEAN < 1 threshold) · Note: first attempt round 104147 reverted with RoundNotActive (10s remaining was too tight); retried successfully in 104148
 - 2026-05-19T09:51:42Z · Round 104193 · Deploy: 0x29266297d035e88774705dda59e39aa41b658fcbfcf7c393800749f3c9e304eb · ClaimETH: SKIPPED (0.000331 ETH < 0.01 threshold) · ClaimBEAN: SKIPPED (0.00488 BEAN < 1 threshold)
+- 2026-05-19T10:23:31Z · Session: 4 deploys, 1 skipped · TXs: 0x51a30dbd8f18f91f2fcce22c19a2bc0f2c8563c3d32fc4a949eda3d02544dc93,0x7316690cba16d57fb615e9c552ba2b0acbe968b3be55d4f8fd42bf0afc1395e1,0xe075f4e9016c75412f6e6389185eb027da0897a6ad78a7ab8ec24ce969db6b0d,0x4b8f857adaea5026d68c4887c40c269710175674c03a5d42d5979fa33ac1b174 · Pending: 0.000563 ETH, 0.00869 BEAN · ClaimETH: SKIPPED (below threshold) · ClaimBEAN: SKIPPED (below threshold)
