@@ -1,1 +1,1 @@
-mine-bean: SKIPPED (round n/a). Skill cannot execute — agent wallet secrets not wired into the workflow, Foundry's cast not installed, and tool allow-list excludes cast/scripts. Opened ISS-001 with the fix plan. No funds at risk.
+mine-bean: first live deploy. Round 103943, all 25 blocks at 0.0000025 ETH each (0.0000625 ETH total). Tx 0xdd84200e4733d5ea6e6da8333c7e94bca1c213b6d7cde67a7eee9e16203b1a83. Pending: 0.000055 ETH, 0 BEAN — below auto-claim thresholds. ISS-001 resolved.

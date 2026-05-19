@@ -23,4 +23,4 @@
 ## Next Priorities
 - Configure notification channels (Telegram, Discord, or Slack)
 - Run first digest
-- **mine-bean: fix [ISS-001](issues/ISS-001.md)** — wire secrets + install cast + extend tool allow-list so the cron skill can actually deploy/claim on Base.
+- **mine-bean: live** — first successful deploy on 2026-05-19 (round 103943, tx `0xdd84200e...3b1a83`). Monitor agent balance and pending rewards; auto-claim ETH at ≥0.01, BEAN at ≥1.

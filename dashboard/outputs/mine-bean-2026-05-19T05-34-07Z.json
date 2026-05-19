@@ -1,0 +1,175 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "status_badge",
+        "sep1",
+        "stats_section",
+        "sep2",
+        "tx_link",
+        "sep3",
+        "pending_section",
+        "sep4",
+        "alert_threshold",
+        "issue_badge"
+      ]
+    },
+    "status_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "first live deploy",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat_round",
+        "stat_blocks",
+        "stat_price",
+        "stat_total"
+      ]
+    },
+    "stat_round": {
+      "type": "Stat",
+      "props": {
+        "label": "Round",
+        "value": "103943"
+      },
+      "children": []
+    },
+    "stat_blocks": {
+      "type": "Stat",
+      "props": {
+        "label": "Blocks",
+        "value": "25"
+      },
+      "children": []
+    },
+    "stat_price": {
+      "type": "Stat",
+      "props": {
+        "label": "Price per block",
+        "value": "0.0000025 ETH"
+      },
+      "children": []
+    },
+    "stat_total": {
+      "type": "Stat",
+      "props": {
+        "label": "Total deployed",
+        "value": "0.0000625 ETH"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "tx_link": {
+      "type": "Link",
+      "props": {
+        "label": "Transaction",
+        "href": "https://etherscan.io/tx/0xdd84200e4733d5ea6e6da8333c7e94bca1c213b6d7cde67a7eee9e16203b1a83"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "pending_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pending_label",
+        "stat_eth",
+        "stat_bean"
+      ]
+    },
+    "pending_label": {
+      "type": "Text",
+      "props": {
+        "text": "Pending:",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "stat_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.000055"
+      },
+      "children": []
+    },
+    "stat_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "0"
+      },
+      "children": []
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "alert_threshold": {
+      "type": "Alert",
+      "props": {
+        "message": "Below auto-claim thresholds",
+        "type": "info"
+      },
+      "children": []
+    },
+    "issue_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "ISS-001 resolved",
+        "variant": "default"
+      },
+      "children": []
+    }
+  }
+}
