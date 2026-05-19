@@ -1,0 +1,119 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "heartbeat"
+      },
+      "children": [
+        "badge_watch",
+        "alert_stale",
+        "separator_1",
+        "content_stack"
+      ]
+    },
+    "badge_watch": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "alert_stale": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "message": "mine-bean cron-state: last_success is 73 minutes stale (exceeds 2× the 5-min interval)"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "content_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "context_heading",
+        "successful_runs_text",
+        "separator_2",
+        "analysis_heading",
+        "root_cause_text",
+        "details_text",
+        "separator_3",
+        "health_heading",
+        "fleet_health_text",
+        "action_text"
+      ]
+    },
+    "context_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Mitigating Context",
+        "level": "h3"
+      }
+    },
+    "successful_runs_text": {
+      "type": "Text",
+      "props": {
+        "text": "Today's log shows runs 3 & 4 deployed successfully after that timestamp",
+        "variant": "body"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "analysis_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Root Cause Analysis",
+        "level": "h3"
+      }
+    },
+    "root_cause_text": {
+      "type": "Text",
+      "props": {
+        "text": "The state-update step in the mine-bean workflow path didn't refresh last_success/last_dispatch for the later runs",
+        "variant": "body"
+      }
+    },
+    "details_text": {
+      "type": "Text",
+      "props": {
+        "text": "Totals incremented to 4, but timestamps are frozen at run 2",
+        "variant": "body"
+      }
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "health_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Overall Status",
+        "level": "h3"
+      }
+    },
+    "fleet_health_text": {
+      "type": "Text",
+      "props": {
+        "text": "Fleet itself appears healthy",
+        "variant": "body"
+      }
+    },
+    "action_text": {
+      "type": "Text",
+      "props": {
+        "text": "Action: docs/status.md updated",
+        "variant": "muted"
+      }
+    }
+  }
+}
