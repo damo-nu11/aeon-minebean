@@ -1,0 +1,100 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack"
+      ]
+    },
+    "stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "round_stat",
+        "deployment_stack",
+        "tx_text",
+        "pending_stack",
+        "threshold_alert"
+      ]
+    },
+    "round_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Round",
+        "value": "104125"
+      }
+    },
+    "deployment_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "blocks_stat",
+        "deployed_eth_stat"
+      ]
+    },
+    "blocks_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Blocks",
+        "value": "25"
+      }
+    },
+    "deployed_eth_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Deployed",
+        "value": "0.0000625 ETH"
+      }
+    },
+    "tx_text": {
+      "type": "Text",
+      "props": {
+        "text": "Tx 0x87fd2cb8…cdbc9a4",
+        "variant": "caption"
+      }
+    },
+    "pending_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "pending_eth_stat",
+        "pending_bean_stat"
+      ]
+    },
+    "pending_eth_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.000221"
+      }
+    },
+    "pending_bean_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending BEAN",
+        "value": "0.00485"
+      }
+    },
+    "threshold_alert": {
+      "type": "Alert",
+      "props": {
+        "type": "info",
+        "message": "Below claim thresholds"
+      }
+    }
+  }
+}
