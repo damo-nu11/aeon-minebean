@@ -1,1 +1,1 @@
-mine-bean: first live deploy. Round 103943, all 25 blocks at 0.0000025 ETH each (0.0000625 ETH total). Tx 0xdd84200e4733d5ea6e6da8333c7e94bca1c213b6d7cde67a7eee9e16203b1a83. Pending: 0.000055 ETH, 0 BEAN — below auto-claim thresholds. ISS-001 resolved.
+mine-bean · round 103986 · deployed 25 blocks (0.0000625 ETH) · tx 0x2a576147 · pending 0.00011 ETH / 0.00166 BEAN
