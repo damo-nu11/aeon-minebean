@@ -1,0 +1,134 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "content"
+      ]
+    },
+    "content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "round-heading",
+        "deployment-grid",
+        "separator1",
+        "pending-section",
+        "separator2",
+        "retry-note"
+      ]
+    },
+    "round-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Round 104148",
+        "level": "h3"
+      }
+    },
+    "deployment-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "blocks",
+        "cost",
+        "tx"
+      ]
+    },
+    "blocks": {
+      "type": "Stat",
+      "props": {
+        "label": "Blocks Deployed",
+        "value": "25"
+      }
+    },
+    "cost": {
+      "type": "Stat",
+      "props": {
+        "label": "Cost",
+        "value": "0.0000625 ETH"
+      }
+    },
+    "tx": {
+      "type": "Link",
+      "props": {
+        "label": "0x4ccb5c00…0222e9",
+        "href": "https://etherscan.io/tx/0x4ccb5c00...0222e9"
+      }
+    },
+    "separator1": {
+      "type": "Separator"
+    },
+    "pending-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pending-heading",
+        "pending-amounts",
+        "pending-status"
+      ]
+    },
+    "pending-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending",
+        "level": "h4"
+      }
+    },
+    "pending-amounts": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "pending-eth",
+        "pending-bean"
+      ]
+    },
+    "pending-eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.000276"
+      }
+    },
+    "pending-bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "0.00487"
+      }
+    },
+    "pending-status": {
+      "type": "Text",
+      "props": {
+        "text": "Both below claim thresholds",
+        "variant": "muted"
+      }
+    },
+    "separator2": {
+      "type": "Separator"
+    },
+    "retry-note": {
+      "type": "Alert",
+      "props": {
+        "type": "info",
+        "message": "First attempt at round 104147 reverted (only 10s left); retried clean in 104148"
+      }
+    }
+  }
+}
