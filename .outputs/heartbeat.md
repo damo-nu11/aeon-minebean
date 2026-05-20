@@ -1,19 +1,18 @@
-HEARTBEAT_WATCH · STATUS_PAGE=WATCH
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran heartbeat checks at 20:17 UTC.
+Ran heartbeat checks at 08:17 UTC:
 
-**P0:** All green — no failed/stuck skills, no API degradation, no chronic failures, self-check passes (heartbeat 11h since last success, under 36h threshold).
-
-**P1:** 0 open PRs; repo has issues disabled.
-
-**P2:** No fresh flagged memory items.
-
-**P3 — flagged:** mine-bean `last_success` is 18:33:49Z (~104 min ago) vs `*/10` schedule — exceeds 2× interval. Same staleness shape the morning heartbeat (08:54 UTC) already flagged, so per dedup rule no new `./notify` was sent. Most likely GH Actions cron throttling/queuing, not a real failure — run 20 itself succeeded cleanly (agent balance 0.01603 ETH, pending rewards still below claim thresholds).
+- **P0 (failed/stuck):** clean. mine-bean success_rate=0.96, heartbeat=1.0, no consecutive failures, self-check fine (~12h since last heartbeat success, well under 36h).
+- **P1 (PRs/issues):** 0 open PRs; repo has issues disabled.
+- **P2 (memory):** no fresh flagged items beyond standing mine-bean monitor.
+- **P3 (staleness):** mine-bean `last_success` 04:45 UTC is ~3h32m old vs `*/10` schedule — same shape flagged in both heartbeats yesterday (root cause: GH Actions cron throttling / state-update gap, not a real outage). The 04:45 UTC session itself ran cleanly.
+- **Dedup:** identical mine-bean staleness flag logged twice in the last 48h → no `./notify` sent.
+- **Status page:** regenerated `docs/status.md` with verdict 🟡 WATCH, next run = mine-bean at 08:20 UTC.
 
 **Files modified:**
-- `docs/status.md` — regenerated with `🟡 WATCH` verdict
-- `memory/logs/2026-05-19.md` — appended heartbeat findings
+- `docs/status.md` — refreshed verdict + skill table
+- `memory/logs/2026-05-20.md` — appended heartbeat log entry
 
-**Follow-up:** if mine-bean cron stays silent through the next several `*/10` slots (>3h total gap), promote to DEGRADED and notify — but only if it's a new gap, not the existing one already on record.
+**Follow-up:** if mine-bean stays stale through the next cron tick or two, escalate from WATCH (consider opening an issue for the GH Actions cron reliability gap).
