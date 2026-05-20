@@ -21,3 +21,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-19,mine-bean,claude-opus-4-7,4425,4351,538556,25193
 2026-05-19,mine-bean,claude-opus-4-7,13,4650,338614,32132
 2026-05-19,mine-bean,claude-opus-4-7,13,4152,349414,32432
+2026-05-20,mine-bean,claude-opus-4-7,15,3112,353434,22928
