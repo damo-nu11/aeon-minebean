@@ -1,14 +1,15 @@
+Session complete. Not using tasks here — the skill is a linear single-shot flow.
+
 ## Summary
 
-Ran `skills/mine-bean/SKILL.md` for 5 rounds.
+Executed `mine-bean` skill for 5 rounds.
 
-- **Deploys:** 4 fired, 1 skipped (iteration 5 hit round 105715 with 0s remaining after iteration 4 had already deployed it).
-- **TX hashes:** `0x8f7d07d6…edc246d2`, `0x811fb6f4…465a16c7`, `0x767425d1…11c8b9c5`, `0x514bfb33…5afea4d0`.
-- **Pending rewards:** 0.004916 ETH (below 0.01 threshold), 0.07796 BEAN (below 1 BEAN threshold) — **no claims triggered**.
-- **Agent balance:** 0.014161 ETH on Base (~226 fires runway).
-
-**Files modified:**
-- `memory/topics/minebean.md` — appended session log line.
-- `memory/logs/2026-05-20.md` — appended session #3 entry.
-
-**Follow-up:** none. Pending rewards continue accruing; next session will check thresholds again.
+- **Deploys fired:** 4 (1 skipped — round 105895 had 0s remaining when iteration 3 polled)
+- **TXs:**
+  - `0xba3f793764abbc9a7e84638443588bfbbc0fe027ec32b2b2d8eb693059d16c9c`
+  - `0x3dba64d807a61036f3448d13dc096b4180a52020436e2f1ba343bb6ffa044569`
+  - `0x42d16981fcdc133887571c22f07e35a13eb7b8541f206279645e54c3c28582fd`
+  - `0x43093694f2d5e54973a2e3188c9aca0350ab4980b19e6d3c7ee5ca173f2d0df6`
+- **Pending:** 0.005139 ETH, 0.07942 BEAN — both below claim thresholds, claims skipped
+- **Agent balance:** 0.01390 ETH
+- **Logged:** appended session line to `memory/topics/minebean.md`
