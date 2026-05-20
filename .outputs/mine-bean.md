@@ -1,11 +1,21 @@
 ## Summary
 
-Ran `mine-bean` skill for 5 rounds.
+Ran `bash skills/mine-bean/scripts/mine-batch.sh 5` — completed cleanly.
 
-- **Deploys fired:** 4 (rounds 104958, 104959, 104960, 104961)
-- **Skipped:** 1 (iter 1, round 104957 had 0s remaining)
-- **TX hashes:** `0xb2344323…`, `0xc903945e…`, `0x350a451a…`, `0xef8c14fa…`
-- **Pending rewards:** 0.003971 ETH, 0.06526 BEAN — both below claim thresholds (0.01 ETH, 1 BEAN)
-- **Agent balance:** 0.01526 ETH (~244 fires remaining at default cost)
-- **Files modified:** `memory/topics/minebean.md` (appended session log)
-- **Follow-up:** none — next cron run will pick up the next batch.
+**Result:** 4 deploys fired, 1 skipped (round-boundary roulette on iteration 2).
+
+**TXs (rounds 105200–105203):**
+- `0xe51520a1…5b9137aa`
+- `0xddd0d58a…dafd2a21`
+- `0x18f1448b…687b2db9`
+- `0xf5a8461d…0a38d76a6`
+
+**Pending rewards:** 0.004191 ETH (< 0.01 threshold), 0.07209 BEAN (< 1 threshold) → no claim tx this session.
+
+**Agent balance:** 0.015001 ETH on Base (~240 fires remaining at default cost).
+
+**Files updated:**
+- `memory/topics/minebean.md` — appended session line.
+- `memory/logs/2026-05-20.md` — created today's log with session entry.
+
+No follow-up actions required. Next session will pick up the next batch.
