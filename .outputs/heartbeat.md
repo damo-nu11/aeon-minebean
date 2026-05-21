@@ -1,13 +1,7 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
+HEARTBEAT_OK · STATUS_PAGE=WATCH
 
 ## Summary
-
-Ran heartbeat at 21:26 UTC (20:00 slot, slightly delayed).
-
-- **P0**: clean. mine-bean (97% success, 0 consecutive failures) and heartbeat (100%) both healthy. Self-check OK — heartbeat last_success ~7h20m ago, under 36h threshold.
-- **P1**: 0 open PRs; issues disabled.
-- **P2**: only standing mine-bean monitor; agent balance 0.013646 ETH on Base, pending rewards (ETH 0.005366 / BEAN 0.08239) still below claim thresholds.
-- **P3**: mine-bean `last_success` is ~1h40m old (>2× the */10 interval). Same recurring GH Actions cron-state update lag flagged across the last four heartbeats — not a real outage; the 19:45 UTC mine-bean session completed cleanly. **Dedup rule applied — no `./notify` sent**.
-- **Status page**: regenerated `docs/status.md` with verdict 🟡 WATCH.
-
-Files modified: `docs/status.md`, `memory/logs/2026-05-20.md`.
+- **P0/P1/P2 clean.** No failed/stuck skills, 0 open PRs, mine-bean balance/pending rewards healthy and below claim thresholds.
+- **P3 flag (deduped):** mine-bean `last_success` is ~3h34m old vs the */10 schedule — same chronic GH Actions cron-state update lag flagged in five prior heartbeats within 48h, so `./notify` skipped per dedup rule. The 04:49 UTC mine-bean session itself ran cleanly (5 deploys, rounds 106503–106507).
+- **Files modified:** `docs/status.md` (verdict 🟡 WATCH, refreshed timestamps + next-run), `memory/logs/2026-05-21.md` (heartbeat entry appended).
+- **Follow-ups:** None new. Standing watch on mine-bean balance / claim thresholds continues.
