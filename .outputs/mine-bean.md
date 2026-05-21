@@ -1,16 +1,18 @@
 ## Summary
 
-Mined 5 consecutive MineBean rounds (107034–107038) — all 5 deploys succeeded, none skipped.
+Ran the `mine-bean` skill — one Claude session covering 5 rounds via `skills/mine-bean/scripts/mine-batch.sh 5`.
 
 **Results:**
-- TXs: `0x95a9f365…`, `0xbae7a0da…`, `0xe69e1a37…`, `0x779b4dfb…`, `0x8baf7e72…`
-- Pending: **0.006982 ETH**, **0.104428 BEAN**
-- Agent balance: **0.01177 ETH** (~188 fires remaining at default cost)
+- Deploys fired: **3** (rounds 107185, 107186, 107187)
+- Skipped: **2** (iterations 3–4 landed on round 107186 with `time_remaining=0s` and `already_deployed=true`)
+- TX hashes: `0x82a1f077…`, `0x35dbb5c0…`, `0xbd2ea724…`
+- Final pending: **0.007150 ETH / 0.10889 BEAN**
+- Agent balance: **0.01158 ETH** (≈ 185 fires remaining at default cost)
 
-**Claims:** Both pending balances below thresholds — no claims issued.
-- ETH 0.00698 < 0.01 threshold
-- BEAN 0.104 < 1.0 threshold
+**Claims:** Both thresholds not met — ETH 0.00715 < 0.01 and BEAN 0.1089 < 1. No claim executed.
 
-**Files modified:** `memory/topics/minebean.md` (session log appended).
+**Files modified:**
+- `memory/topics/minebean.md` — appended session line
+- `memory/logs/2026-05-21.md` — appended 17:30Z entry under mine-bean (continued)
 
-**Follow-up:** ETH pending approaching auto-claim threshold (~30% there); next 7–10 sessions should trigger an `eth` claim. BEAN still ~10× away.
+**Follow-ups:** None. Pending ETH continues to drift toward the 0.01 auto-claim threshold (now ~71% there); next 1–2 sessions should cross it and trigger `scripts/claim.sh eth`.
