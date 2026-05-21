@@ -1,21 +1,9 @@
 ## Summary
 
-Executed the `mine-bean` skill: 5 consecutive rounds (106503–106507), all 5 deploys fired successfully, 0 skipped.
+Executed the `mine-bean` skill for one session (5 rounds):
 
-**Transactions:**
-- `0x19a8f543…aa795`
-- `0x4a1c8697…0144f`
-- `0x0bd7213a…2402d`
-- `0x171b2f64…5c7df`
-- `0xfe868bed…e5442`
-
-**Final state:**
-- Pending ETH: 0.006260 (< 0.01 threshold → claim skipped)
-- Pending BEAN: 0.09524 (< 1 threshold → claim skipped)
-- Agent balance: 0.01261 ETH
-
-**Files modified:**
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-21.md` — appended log entry
-
-No follow-up actions; pending rewards still accumulating below auto-claim thresholds.
+- **mine-batch.sh**: 3 deploys fired, 2 skipped (round-boundary timing)
+  - TXs: `0xdac4f1f8…`, `0xc55690e9…`, `0x87d73de2…`
+- **Pending rewards**: 0.006424 ETH, 0.09828 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), no claims issued
+- **Agent balance**: 0.01242 ETH (≈198 fires remaining at default cost)
+- **Logged**: appended session line to `memory/topics/minebean.md`
