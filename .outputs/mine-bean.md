@@ -1,17 +1,16 @@
 ## Summary
 
-Executed the `mine-bean` skill for 5 consecutive rounds (106885–106889).
+Mined 5 consecutive MineBean rounds (107034–107038) — all 5 deploys succeeded, none skipped.
 
 **Results:**
-- Deploys fired: 5 / 5 (0 skipped)
-- TX hashes: `0x18b08076…`, `0x4ec2d250…`, `0xe8824109…`, `0x5c8bcfbe…`, `0x2a3df738…`
-- Pending: 0.006699 ETH / 0.10097 BEAN
-- Agent balance: 0.01209 ETH (Base)
+- TXs: `0x95a9f365…`, `0xbae7a0da…`, `0xe69e1a37…`, `0x779b4dfb…`, `0x8baf7e72…`
+- Pending: **0.006982 ETH**, **0.104428 BEAN**
+- Agent balance: **0.01177 ETH** (~188 fires remaining at default cost)
 
-**Claims:** Both thresholds not met (ETH 0.00670 < 0.01, BEAN 0.1010 < 1) — auto-claim skipped.
+**Claims:** Both pending balances below thresholds — no claims issued.
+- ETH 0.00698 < 0.01 threshold
+- BEAN 0.104 < 1.0 threshold
 
-**Files modified:**
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-21.md` — appended session log
+**Files modified:** `memory/topics/minebean.md` (session log appended).
 
-**Follow-ups:** None. Next session will pick up the next batch on cron. Balance still healthy (≈190 fires remaining at default cost).
+**Follow-up:** ETH pending approaching auto-claim threshold (~30% there); next 7–10 sessions should trigger an `eth` claim. BEAN still ~10× away.
