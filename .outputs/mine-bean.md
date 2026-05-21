@@ -1,20 +1,21 @@
 ## Summary
 
-Ran mine-bean session for 5 rounds.
+Executed the `mine-bean` skill: 5 consecutive rounds (106503–106507), all 5 deploys fired successfully, 0 skipped.
 
-**Result**: 3 deploys fired, 2 skipped (round-boundary 0s remaining).
+**Transactions:**
+- `0x19a8f543…aa795`
+- `0x4a1c8697…0144f`
+- `0x0bd7213a…2402d`
+- `0x171b2f64…5c7df`
+- `0xfe868bed…e5442`
 
-**TXs**:
-- `0xda8a00ce5826cf4bc8ce38aef8d3b177d0d8b90f0eabcad8d67ff1316beb2375`
-- `0xb1218c566f0630923eedf1b535453f6d7c5dffbf976913789921125f83fd1278`
-- `0x0f2870a9725008185cb3f18ef81422c990976c1f8d7deb18db4d31ec3cd8b458`
+**Final state:**
+- Pending ETH: 0.006260 (< 0.01 threshold → claim skipped)
+- Pending BEAN: 0.09524 (< 1 threshold → claim skipped)
+- Agent balance: 0.01261 ETH
 
-**Wallet**: balance 0.01287 ETH (~206 fires remaining at default cost) · pending 0.006037 ETH / 0.08984 BEAN.
+**Files modified:**
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-21.md` — appended log entry
 
-**Claims**: both skipped — ETH (0.00604) and BEAN (0.0898) under thresholds (0.01 / 1).
-
-**Files**:
-- `memory/topics/minebean.md` — appended session log
-- `memory/logs/2026-05-21.md` — new daily log
-
-No follow-up actions needed; next cron tick handles the next batch.
+No follow-up actions; pending rewards still accumulating below auto-claim thresholds.
