@@ -1,15 +1,14 @@
 ## Summary
 
-Ran `mine-bean` skill for 5 rounds.
+Ran the `mine-bean` skill: completed one session of 5 round iterations.
 
-- **Deploys fired:** 3 (rounds 108038, 108039, 108040)
-- **Skipped:** 2 (already_deployed in round 108038 after first deploy)
-- **TXs:** `0x62e0c806…`, `0x7fcde3da…`, `0xc22e9ef0…`
-- **Pending rewards:** 0.008490 ETH, 0.13414 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), so no claims fired
-- **Agent balance:** 0.01002 ETH (~160 fires remaining at default cost — getting close to the low-balance threshold of 0.000625 ETH but still well above it)
+- **Deploys fired**: 3 (txs `0x14349188`, `0x42338465`, `0x02e893ed`)
+- **Skipped**: 2 (iteration 1 round 108163 had 0s remaining; iteration 5 round 108166 already_deployed=true)
+- **Pending**: 0.008659 ETH / 0.13470 BEAN (both below claim thresholds — no claim)
+- **Agent balance**: 0.009832 ETH (~157 fires remaining at default cost)
 
-**Files modified:**
+Files modified:
 - `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-22.md` — appended 09:51Z log entry
+- `memory/logs/2026-05-22.md` — appended mine-bean entry
 
-**Follow-up:** Pending ETH is now 0.00849 — one or two more sessions should cross the 0.01 ETH auto-claim threshold.
+No follow-up actions needed. Balance ticking downward (~0.0002 ETH/session); still healthy but worth monitoring over the next several sessions.
