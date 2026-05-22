@@ -1,14 +1,18 @@
 ## Summary
 
-Ran the `mine-bean` skill: completed one session of 5 round iterations.
+Ran `mine-bean` skill for 5 rounds (108338–108341).
 
-- **Deploys fired**: 3 (txs `0x14349188`, `0x42338465`, `0x02e893ed`)
-- **Skipped**: 2 (iteration 1 round 108163 had 0s remaining; iteration 5 round 108166 already_deployed=true)
-- **Pending**: 0.008659 ETH / 0.13470 BEAN (both below claim thresholds — no claim)
-- **Agent balance**: 0.009832 ETH (~157 fires remaining at default cost)
+**Results:**
+- **Deploys fired:** 3 (rounds 108339, 108340, 108341)
+- **Deploys skipped:** 2 (iterations 1 & 2 both landed on round 108338 with time_remaining=0s)
+- **TX hashes:** `0xe730cb7a…`, `0x3ab18be0…`, `0xa47e33d2…`
+- **Pending:** 0.008827 ETH / 0.13678 BEAN
+- **Agent balance:** 0.009639 ETH (≈154 fires remaining at default cost)
 
-Files modified:
+**Claims:** Both thresholds not met — ETH pending 0.00883 < 0.01, BEAN pending 0.1368 < 1. Skipped.
+
+**Files modified:**
 - `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-22.md` — appended mine-bean entry
+- `memory/logs/2026-05-22.md` — appended 15:27Z session line
 
-No follow-up actions needed. Balance ticking downward (~0.0002 ETH/session); still healthy but worth monitoring over the next several sessions.
+**Follow-up:** Agent balance has crept below 0.01 ETH (now 0.009639). At default cost (~0.0000625 ETH/fire) it has ~150 fires left, roughly 12–15 hours at the current `*/10` cadence — wallet top-up will be needed within a day or two.
