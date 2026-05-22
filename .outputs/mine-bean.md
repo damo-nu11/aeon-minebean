@@ -1,17 +1,17 @@
-Session done.
-
 ## Summary
 
-Ran mine-bean skill for 5 rounds. Result: **2 deploys, 3 skipped**.
+Executed `mine-bean` skill for 5-round session.
 
-- **Deploys** (rounds 108631, 108632):
-  - `0x0ef30c9090324032a3315dc88a8ca95e881cbad518939f138982e0664973ce94`
-  - `0xb03a36630a53419e0f5008f4e292f1a24d23f2d6f198a4b45868fc3b55453d6d`
-- **Skips**: iterations 1–2 (round 108630, 0s remaining), iteration 5 (round 108632, already deployed)
-- **Pending**: 0.009270 ETH / 0.14508 BEAN
-- **Balance**: 0.009121 ETH
-- **Claims**: both below threshold (ETH 0.00927 < 0.01, BEAN 0.145 < 1) — skipped
+**Results:**
+- Round range: 108690–108693
+- Deploys fired: 4 / 5 (iteration 3 skipped — already_deployed on round 108691 with 0s remaining)
+- TXs: `0xd011471f`, `0x9fee4486`, `0xedf20bfc`, `0xc7357bc3`
+- Pending: **0.009494 ETH** / **0.14933 BEAN**
+- Agent balance: 0.008864 ETH
+- Claims: both skipped (ETH 0.00949 < 0.01 threshold; BEAN 0.149 < 1 threshold)
 
-**Files modified**: `memory/topics/minebean.md`, `memory/logs/2026-05-22.md`.
+**Files modified:**
+- `memory/topics/minebean.md` — appended session log line
+- `memory/logs/2026-05-22.md` — appended detailed session entry
 
-**Follow-up**: agent balance now at 0.009121 ETH — dipped just below the 0.01 ETH starting threshold from `strategy.md`. Still has headroom for many more rounds, but worth flagging for the next monitoring pass.
+**Follow-up:** ETH pending is 0.00949 — within ~5% of the 0.01 auto-claim threshold. Likely to trigger an ETH claim within the next 1–2 sessions. Agent balance (0.00886 ETH) is still healthy for continued deploys (~3500 deploys runway at 2.5e-9 ETH each, ignoring gas).
