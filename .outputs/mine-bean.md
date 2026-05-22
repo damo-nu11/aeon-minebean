@@ -1,18 +1,15 @@
 ## Summary
 
-Ran the `mine-bean` skill for 5 rounds.
+Ran `mine-batch.sh 5` for the mine-bean session.
 
-**Session results:**
-- Rounds requested: 5 · Deploys fired: 3 · Skipped: 2 (iterations 1–2 caught round 108445 at `time_remaining=0s`)
-- Rounds covered: 108446, 108447, 108448
-- TX hashes: `0x37cb48c7…`, `0x62fb98d9…`, `0xb1378c4a…`
-- Pending: 0.008993 ETH / 0.14080 BEAN
-- Agent balance: 0.009446 ETH
+- **Deploys fired:** 3 (TXs `0x62b090cd`, `0x7366e535`, `0x25f3b2bf`) across rounds 108544–108546
+- **Skipped:** 1 (iteration 2 — already_deployed on 108544 with 0s remaining)
+- **Reverted:** 1 (iteration 5 on round 108547 — `RoundNotActive` despite 60s remaining; stale status/broadcast race)
+- **Final pending:** 0.009159 ETH / 0.14287 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), so **no claims executed**
+- **Agent balance:** 0.009250 ETH (~148 fires remaining at default cost)
 
-**Claim decision:** Both thresholds not met (ETH 0.00899 < 0.01, BEAN 0.1408 < 1) — no claim fired.
+Files updated:
+- `memory/topics/minebean.md` — appended run-log entry
+- `memory/logs/2026-05-22.md` — appended 19:16Z session entry
 
-**Files modified:**
-- `memory/topics/minebean.md` — appended session line
-- `memory/logs/2026-05-22.md` — appended 17:30Z session entry
-
-**Follow-up:** Pending ETH at 0.008993 is closing in on the 0.01 threshold — likely 1–2 more sessions trigger an auto-claim. Agent balance 0.009446 ETH is still healthy (≈400+ rounds of runway at current burn).
+No follow-ups needed; next scheduled session will pick up automatically.
