@@ -2,16 +2,12 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran the heartbeat skill for the 20:00 UTC slot (executed 21:12 UTC).
+Ran the heartbeat skill at the 08:00 UTC slot (executed 09:47 UTC).
 
-**Findings:**
-- P0: clean — no failed/stuck skills. mine-bean 97% success, heartbeat 100%, both with 0 consecutive failures. Heartbeat self-check OK (~6h41m since last success, under 36h threshold).
-- P1: 0 open PRs; issues disabled on repo.
-- P2: only the standing mine-bean balance monitor; rewards still below claim thresholds.
-- P3: mine-bean `last_success` 19:28 UTC is ~1h44m old vs */10 schedule. Recurring GH Actions cron-state update lag, already flagged 7 times in 48h → deduped, no notification sent.
+- **P0:** clean — mine-bean (success_rate 0.98, 0 consecutive failures) and heartbeat (1.0, 0 failures) both healthy. Self-check passed (heartbeat last_success ~12h35m ago, under 36h threshold).
+- **P1:** 0 open PRs.
+- **P2:** mine-bean balance 0.01022 ETH, pending 0.00832 ETH / 0.1302 BEAN — both below claim thresholds.
+- **P3:** mine-bean `last_success` is 3h42m old vs */10 schedule — recurring cron-state update lag (scheduler quirk, not a real outage). Deduped against 8 prior heartbeats in 48h → no `./notify` fired.
+- **Status page:** regenerated `docs/status.md` with verdict 🟡 WATCH; next run mine-bean at 09:50 UTC.
 
-**Files modified:**
-- `docs/status.md` — regenerated with 🟡 WATCH verdict
-- `memory/logs/2026-05-21.md` — appended 21:12 UTC heartbeat entry
-
-**Follow-up:** The recurring mine-bean cron-state staleness pattern continues to fire. Worth investigating the GH Actions state-update step gap as root cause in a future session, but it is not currently surfacing a real fleet outage.
+Files modified: `docs/status.md`, `memory/logs/2026-05-22.md`.
