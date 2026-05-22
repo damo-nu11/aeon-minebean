@@ -1,15 +1,15 @@
 ## Summary
 
-Executed the `mine-bean` skill across 5 rounds:
+Ran `mine-bean` skill for 5 rounds.
 
-- **Deploys fired:** 4 (rounds 107843, 107844, 107845, 107846)
-- **Skipped:** 1 (iteration 3 — round 107844 already_deployed=true with 0s remaining)
-- **TX hashes:** `0x0a4f28d5`, `0xa96441c6`, `0xb5caf0bb`, `0xe5f8c01d`
-- **Pending rewards:** 0.008322 ETH / 0.13021 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), no claims fired
-- **Agent balance:** 0.01022 ETH (~163 fires remaining at default cost)
+- **Deploys fired:** 3 (rounds 108038, 108039, 108040)
+- **Skipped:** 2 (already_deployed in round 108038 after first deploy)
+- **TXs:** `0x62e0c806…`, `0x7fcde3da…`, `0xc22e9ef0…`
+- **Pending rewards:** 0.008490 ETH, 0.13414 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), so no claims fired
+- **Agent balance:** 0.01002 ETH (~160 fires remaining at default cost — getting close to the low-balance threshold of 0.000625 ETH but still well above it)
 
-Files modified:
+**Files modified:**
 - `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-22.md` — appended session log
+- `memory/logs/2026-05-22.md` — appended 09:51Z log entry
 
-Follow-up: continue cron schedule; ETH claim threshold within reach (~0.00168 ETH away).
+**Follow-up:** Pending ETH is now 0.00849 — one or two more sessions should cross the 0.01 ETH auto-claim threshold.
