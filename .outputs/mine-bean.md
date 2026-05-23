@@ -1,21 +1,11 @@
-Session log appended. Exiting per the skill's instructions (no retry within session).
-
 ## Summary
 
-Executed `mine-bean` skill — ran 5-round mining batch on Base.
+mine-bean session complete (rounds 109249–109251).
 
-**Result:**
-- Deploys fired: 3 (iterations 1, 2, 5)
-- Skipped: 2 (iterations 3, 4 — round 109143 already deployed)
-- TX hashes:
-  - `0x071df5ef2cb41d2cd497d13a87c2c43356c8d57184dee4cbbc67e36f9da1150d`
-  - `0x39c27bbf608c84bc45310b54c20a3b25b774d7e34ed083e8ab8ab76e8eed00d3`
-  - `0x08599a2be6241774cb85ca8b3602361de10e7baac5b406466463233992352acf`
-- Pending: 0.000111 ETH, 0.16342 BEAN
-- Agent balance: 0.018071 ETH (replenished by prior session's threshold-crossing claim)
+- **Deploys**: 3 fired, 2 skipped (already_deployed=true at 0s remaining on iterations 2 & 5)
+- **TX hashes**: `0x1a89d52a`, `0xb9b00c57`, `0x28e37ea0`
+- **Pending**: 0.000338 ETH / 0.16761 BEAN — both **below** auto-claim thresholds (0.01 ETH / 1 BEAN), no claims this session
+- **Agent balance**: 0.017875 ETH (≈285 fires remaining — replenished by the 04:15Z auto-claim earlier today)
+- **Files updated**: `memory/topics/minebean.md`, `memory/logs/2026-05-23.md`
 
-**Claims:** Both skipped — ETH (0.000111) below 0.01 threshold; BEAN (0.163) below 1 threshold.
-
-**Files modified:** `memory/topics/minebean.md` — appended session log entry.
-
-**Follow-up:** None. Next session resumes the cycle.
+No follow-up actions. Next session will pick up the next batch.
