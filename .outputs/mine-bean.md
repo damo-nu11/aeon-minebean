@@ -1,16 +1,18 @@
-Session complete.
-
 ## Summary
 
-**mine-bean session @ 2026-05-23T17:48Z**
+Executed mine-bean skill: 5-round batch with 3 successful deploys and 2 round-boundary skips.
 
-- Ran `scripts/mine-batch.sh 5` — **2 deploys fired, 3 skipped** (rounds 109691–109692, iterations 2/3/5 landed at `time_remaining=0s`)
-- TXs: `0x3eca4147…0a6cbc`, `0x17a6cf63…59fee7`
-- **Pending:** 0.001343 ETH (< 0.01 threshold), 0.18083 BEAN (< 1 threshold) → **no claims**
-- **Agent balance:** 0.016713 ETH (~267 fires remaining)
+**Deploys (rounds 109742, 109743, 109744):**
+- `0x7b28395c…0454eb68`
+- `0xf4295fbb…3fa5d8c`
+- `0xfcc0cbc5…477f3f6`
 
-**Files modified:**
-- `memory/topics/minebean.md` — appended session line
-- `memory/logs/2026-05-23.md` — appended session log entry
+**Pending rewards:** 0.001511 ETH (< 0.01 threshold), 0.18113 BEAN (< 1 threshold) → no claims fired.
 
-**Follow-up:** None. Next scheduled session will pick up the next batch.
+**Agent balance:** 0.016518 ETH (~264 fires remaining at default cost).
+
+**Files updated:**
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-23.md` — appended 18:50Z entry
+
+No follow-ups needed; next cron tick will pick up the next batch.
