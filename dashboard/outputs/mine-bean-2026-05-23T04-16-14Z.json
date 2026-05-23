@@ -1,0 +1,131 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "deploy-section",
+        "sep1",
+        "threshold-section",
+        "sep2",
+        "balance-section"
+      ]
+    },
+    "deploy-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "deploy-badges",
+        "rounds-text"
+      ]
+    },
+    "deploy-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-deploys",
+        "badge-skipped"
+      ]
+    },
+    "badge-deploys": {
+      "type": "Badge",
+      "props": {
+        "text": "3 deploys"
+      }
+    },
+    "badge-skipped": {
+      "type": "Badge",
+      "props": {
+        "text": "2 skipped",
+        "variant": "secondary"
+      }
+    },
+    "rounds-text": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds 109011–109013",
+        "variant": "caption"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "threshold-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "threshold-text",
+        "claim-text"
+      ]
+    },
+    "threshold-text": {
+      "type": "Text",
+      "props": {
+        "text": "Pending ETH crossed 0.01 threshold"
+      }
+    },
+    "claim-text": {
+      "type": "Text",
+      "props": {
+        "text": "Claimed in 0x8e6aed28…"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "balance-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "bean-stat",
+        "eth-stat"
+      ]
+    },
+    "bean-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN (still below 1)",
+        "value": "0.158"
+      }
+    },
+    "eth-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance pre-claim",
+        "value": "0.00821 ETH"
+      }
+    }
+  }
+}
