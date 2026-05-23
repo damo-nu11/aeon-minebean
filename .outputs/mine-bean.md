@@ -1,11 +1,7 @@
 ## Summary
 
-mine-bean session complete (rounds 109249–109251).
-
-- **Deploys**: 3 fired, 2 skipped (already_deployed=true at 0s remaining on iterations 2 & 5)
-- **TX hashes**: `0x1a89d52a`, `0xb9b00c57`, `0x28e37ea0`
-- **Pending**: 0.000338 ETH / 0.16761 BEAN — both **below** auto-claim thresholds (0.01 ETH / 1 BEAN), no claims this session
-- **Agent balance**: 0.017875 ETH (≈285 fires remaining — replenished by the 04:15Z auto-claim earlier today)
-- **Files updated**: `memory/topics/minebean.md`, `memory/logs/2026-05-23.md`
-
-No follow-up actions. Next session will pick up the next batch.
+- Ran `skills/mine-bean/scripts/mine-batch.sh 5`: **2 deploys, 3 skipped** across rounds 109335–109336. TXs: `0xb2041b99…`, `0x2fa0436a…`.
+- Final state: pending **0.000449 ETH** / **0.16988 BEAN**, agent balance **0.017746 ETH** (~284 fires remaining).
+- Both auto-claim thresholds skipped (0.000449 < 0.01 ETH; 0.16988 < 1 BEAN).
+- Logged session to `memory/topics/minebean.md:68` and `memory/logs/2026-05-23.md:15`.
+- No follow-ups.
