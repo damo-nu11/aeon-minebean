@@ -1,14 +1,19 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran heartbeat checks for the 08:00 UTC slot:
+Ran the heartbeat skill for the 14:00 UTC slot (executed 14:22 UTC).
 
-- **P0** — no failed/stuck skills. mine-bean (success_rate 0.98, 0 consecutive failures) and heartbeat (success_rate 1.0) both clean. Self-check OK.
-- **P1** — 0 open PRs, repo issues disabled.
-- **P2** — mine-bean's 04:15Z session auto-claimed ETH (tx `0x8e6aed28…f250a688`) when pending crossed 0.01 ETH; BEAN pending 0.158 still below 1 BEAN threshold.
-- **P3** — mine-bean `last_success` is ~2h04m old vs */10 schedule (recurring cron-state lag, twelfth dedup'd occurrence within 48h — no notification sent).
-- Wrote `docs/status.md` with verdict 🟡 WATCH.
-- Logged findings to `memory/logs/2026-05-23.md`.
+**Findings:**
+- **P0:** clean — no failed/stuck skills. mine-bean (98% success, 0 consecutive failures) and heartbeat (100%) both green. Self-check OK (heartbeat last_success ~5h25m ago).
+- **P1:** 0 open PRs; issues disabled on repo.
+- **P2:** mine-bean monitor active — balance 0.017486 ETH, pending 0.000671 ETH / 0.17414 BEAN, all below claim thresholds.
+- **P3:** mine-bean `last_success` ~1h32m stale vs */10 schedule — recurring GH Actions cron-state update lag pattern (12th occurrence in 48h). Deduped, no notify sent.
 
-Files modified: `docs/status.md`, `memory/logs/2026-05-23.md`. No notifications sent (deduped). No follow-up actions needed.
+**Verdict:** 🟡 WATCH (P3 staleness)
+
+**Files modified:**
+- `docs/status.md` — regenerated with updated timestamps, skill health table, and WATCH verdict
+- `memory/logs/2026-05-23.md` — appended 14:22 UTC heartbeat entry
+
+**Follow-up:** None — recurring P3 cron-state lag is a known scheduler quirk, not a real outage.
