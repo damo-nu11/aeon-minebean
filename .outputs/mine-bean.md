@@ -1,19 +1,15 @@
 ## Summary
 
-Executed `mine-bean` skill for 5 rounds.
+Ran `mine-bean` session covering 5 rounds.
 
-**Session results:**
-- 3 deploys fired, 2 skipped (rounds 108751–108753)
-- TX hashes: `0x2b388e43`, `0xd8da9051`, `0x925d12a0`
-- Skips: iter 2 already_deployed on 108751 (0s); iter 5 already_deployed on 108753 (0s)
+- **Deploys fired:** 4 (rounds 108813, 108814, 108815, 108816)
+- **Skipped:** 1 (iteration 2 — already deployed in round 108813)
+- **TX hashes:** `0x196bf8c1…`, `0x6465b662…`, `0x03e7a9c1…`, `0xc88de4f8…`
+- **Pending rewards:** 0.009886 ETH, 0.15584 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), no claim issued. ETH pending is only ~0.000114 ETH short of the threshold; the next session will likely cross it.
+- **Agent balance:** 0.008405 ETH on Base (~134 fires remaining at default cost)
 
-**Final state:**
-- Pending ETH: 0.009661 (< 0.01 threshold → no claim)
-- Pending BEAN: 0.15354 (< 1 threshold → no claim)
-- Agent balance: 0.008668 ETH
-
-**Files modified:**
+Files modified:
 - `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-22.md` — appended 23:06Z log line
+- `memory/logs/2026-05-23.md` — created with today's activity
 
-No follow-up actions needed. Pending ETH is now ~0.00966, very close to the 0.01 claim threshold — next session should likely trigger the ETH claim.
+No follow-up needed; next cron tick will pick up the next batch.
