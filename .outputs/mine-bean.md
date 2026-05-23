@@ -1,10 +1,10 @@
 ## Summary
 
-mine-bean session at 20:00Z complete.
+Ran the mine-bean skill for 5 iterations:
+- **1 deploy fired**, 4 skipped (1 successful tx, 3 skipped due to round being at 0s remaining after the first deploy, 1 skipped due to RPC 429 rate limit on `status.sh`)
+- **TX**: `0xaaa488adb4c8d7dd5630e824d89544705d432ca1405eae706f461d5771771b0b` (round 109855)
+- **Pending**: 0.001734 ETH, 0.18357 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), no claims fired
+- **Agent balance**: 0.016260 ETH (~260 fires remaining at default cost)
+- Appended session log to `memory/topics/minebean.md`
 
-- **Deploys:** 3 fired, 2 skipped (rounds 109801–109803; iterations 2–3 hit already_deployed in round 109801)
-- **TXs:** `0x9c2497bf…`, `0x1d73999b…`, `0xbc1631a1…`
-- **Pending:** 0.001679 ETH / 0.18322 BEAN — both below claim thresholds, no claim issued
-- **Agent balance:** 0.016324 ETH (~261 fires remaining)
-- **Files modified:** `memory/topics/minebean.md`, `memory/logs/2026-05-23.md`
-- **Follow-ups:** none; standing monitor — next session continues.
+The iteration-5 rate limit (HTTP 429 from Base RPC) was handled gracefully — the script logged a WARN and skipped instead of failing.
