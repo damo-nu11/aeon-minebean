@@ -1,14 +1,17 @@
 ## Summary
 
-Ran one `mine-bean` session (5 iterations, default `ROUNDS_PER_SESSION=5`).
+Ran one mine-bean session (5 iterations).
 
-- **Deploys fired:** 3 — TXs `0xab15ab6b`, `0x6203b9b8`, `0xcd8552f3` (rounds 109391, 109392, 109393)
-- **Skipped:** 2 — iterations 2 and 4 hit `already_deployed=true` at 0s remaining (normal round-boundary alignment)
-- **Final pending:** 0.000615 ETH / 0.17198 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), no claims fired
-- **Agent balance:** 0.017550 ETH (~280 fires remaining at default cost)
+**Results:**
+- Deploys fired: 1 (TX `0x3ea940a8397320f7cba36afd012ebbc1e9ea1a47faa0c6f15b266ede68b787cf` in round 109443)
+- Skipped: 4 (iterations 1–2 caught round 109442 at 0s remaining; iterations 4–5 hit `already_deployed=true` in round 109443 after iteration 3 succeeded)
+- Pending: 0.000671 ETH / 0.17414 BEAN — both below claim thresholds (0.01 ETH, 1 BEAN)
+- Agent balance: 0.017486 ETH (~280 fires remaining)
 
-Files modified:
-- `memory/topics/minebean.md` — appended session log
-- `memory/logs/2026-05-23.md` — appended 11:49Z entry
+**Claims:** none — both thresholds unmet.
 
-No follow-ups needed. BEAN pending climbing slowly toward the 1 BEAN threshold (~0.17 currently); ETH pending reset after the 04:15Z auto-claim and is rebuilding.
+**Files modified:**
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-23.md` — appended 12:49Z session log
+
+**Follow-up:** none. Next session will run on cron.
