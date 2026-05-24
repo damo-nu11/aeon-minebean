@@ -1,13 +1,13 @@
 ## Summary
 
-Ran `mine-bean` for 5 rounds.
+Executed `mine-bean` skill — 5-round session on Base.
 
-- **Deploys fired:** 2 (rounds 110820, 110821)
-- **Deploys skipped:** 3 (round-end timing + already-deployed)
-- **TX hashes:**
-  - `0x4dd15a18263718864ce6cb378605cfb960fd069e3c1e161ba8b3c78744da6d7a`
-  - `0x3b574dc97bb3d768bb057f9930ae91b622b58fb3c8b10d7e904ad1e6a8e63b20`
-- **Pending rewards:** 0.003249 ETH, 0.22555 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), no claim run.
-- **Agent balance:** 0.014504 ETH (~232 fires remaining at default cost).
+- **Deploys fired:** 2 (rounds 110881, 110882)
+- **Skipped:** 3 (iterations 1, 3, 5 landed on round boundary with 0s remaining)
+- **TXs:** `0xf8abf975fa7092100655018ca2bf73de2a0f93720f528cd0c57f22669df137c9`, `0x132a8bd6d836e41dfc3058a6344a3b15dbe1133361b08b1dfe1941037caf9571`
+- **Pending rewards:** 0.003361 ETH, 0.22784 BEAN (both below claim thresholds — no claims fired)
+- **Agent balance:** 0.014373 ETH (≈230 fires remaining at default cost)
 
-Files modified: `memory/topics/minebean.md`, `memory/logs/2026-05-24.md`.
+Files modified:
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-24.md` — appended 17:32Z log entry
