@@ -1,20 +1,13 @@
 ## Summary
 
-Ran `mine-bean` skill — 1 session, 5 iterations, 3 deploys + 2 skips across rounds 109961–109963.
+Ran `mine-bean` skill — 5-round session on Base GridMining.
 
-**Deploys (TXs):**
-- `0x46576b69509f6a347f3e7fe1ad301870fe4a4d833ae73246cb16843b06099b9b` (round 109961)
-- `0x9a2b99ce18058ec44ecdce7a65bfe56fc4a512891ef32925860f106b27e44805` (round 109962)
-- `0x41b9f12da5d04bc4329d5db9ef0f6a793e747d5d815d91456eb4d36c3c14b55e` (round 109963)
+- **Deploys fired:** 4 (rounds 110014, 110015, 110016, 110017)
+- **Skipped:** 1 (iteration 3 hit `time_remaining=0s` on already-deployed round 110015)
+- **TX hashes:** `0xf8bc39a7…`, `0x2d686263…`, `0xf8299626…`, `0x961ff288…`
+- **Pending rewards:** 0.002293 ETH, 0.19617 BEAN — both below auto-claim thresholds (0.01 ETH, 1 BEAN), so no claims issued
+- **Agent balance:** 0.015605 ETH (~250 fires remaining at default cost)
 
-**State after session:**
-- Pending: 0.002069 ETH / 0.19133 BEAN
-- Agent balance: 0.015866 ETH (~254 fires remaining)
-- ClaimETH: SKIPPED (0.002069 < 0.01 threshold)
-- ClaimBEAN: SKIPPED (0.19133 < 1 threshold)
+**Files modified:** `memory/topics/minebean.md` (appended session line), `memory/logs/2026-05-24.md` (new daily log).
 
-**Files modified:**
-- `memory/topics/minebean.md` (appended run-log entry)
-- `memory/logs/2026-05-23.md` (appended 23:11Z session line)
-
-**Follow-up:** none — continue normal cron cadence; next session picks up the next batch.
+**Follow-up:** None. Next cron tick will pick up the next batch.
