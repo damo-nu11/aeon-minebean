@@ -1,20 +1,16 @@
-Both memory files updated. Mining session complete.
-
 ## Summary
 
-Executed mine-bean skill for 5 rounds.
+Ran the `mine-bean` skill for a 5-round session.
 
-**Results:**
-- **DEPLOYS_FIRED**: 2 (rounds 111106 & 111108)
-- **DEPLOYS_SKIPPED**: 3 (round 111106 already_deployed × 2, RPC 429 rate-limit on iter 4)
-- **TXs**: `0xc4304da2059855d3f04c3c9f0a9847a6161dbc8312298f24dacf872cce9ac346`, `0x02c86d9c125b90a82d6a115be3ea7a0b7beda215e05720b0d97c1d0e3719cc4d`
-- **Pending**: 0.003865 ETH, 0.23514 BEAN
-- **Agent balance**: 0.013726 ETH
+**Result:** 3 deploys fired, 2 skipped (round-boundary 0s-remaining cases on iters 2 and 5).
 
-**Claims:** Skipped — pending ETH (0.003865) below threshold 0.01, pending BEAN (0.23514) below threshold 1.
+- **TXs:** `0xa117bbf0…`, `0xcbf7b8de…`, `0xf7223d3f…` (rounds 111163, 111164, 111165)
+- **Pending:** 0.004088 ETH, 0.23941 BEAN — both below thresholds (0.01 ETH / 1 BEAN)
+- **Claims:** skipped (ETH and BEAN)
+- **Agent balance:** 0.013530 ETH on Base (~216 fires remaining at default cost)
 
 **Files modified:**
-- `memory/topics/minebean.md` — appended 22:02Z session line
-- `memory/logs/2026-05-24.md` — appended 22:02Z session entry (also added missing 21:12Z entry from prior session reflected in topic file)
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-24.md` — appended `23:10Z` line
 
-**Follow-up:** None. Next scheduled session will pick up the next batch.
+No follow-ups needed; next cron tick handles the next batch.
