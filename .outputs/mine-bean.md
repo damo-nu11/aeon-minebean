@@ -1,11 +1,14 @@
 ## Summary
 
-Ran the mine-bean skill: 5 iterations across rounds 110705–110707, **3 deploys fired**, **2 skipped** (iters 2–3 were already-deployed on round 110705).
+Executed `mine-bean` skill for a 5-round session.
 
-- **TX hashes**: `0x54c6e19e...`, `0x4c36fdbb...`, `0x45ae0361...`
-- **Final pending**: 0.002969 ETH, 0.22013 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), no claims fired
-- **Agent balance**: 0.014762 ETH (~236 fires remaining at default cost; down from 0.014956 ETH)
+- **Deploys:** 2 fired, 3 skipped
+- **TXs:** `0xdaab37fd...` (round 110769), `0x316abdfd...` (round 110770)
+- **Pending:** 0.003137 ETH, 0.22304 BEAN — both below thresholds (0.01 ETH / 1 BEAN), no claims fired
+- **Agent balance:** 0.014633 ETH (~234 fires remaining at default cost)
 
-**Files modified**: `memory/topics/minebean.md`, `memory/logs/2026-05-24.md`.
+**Files modified:**
+- `memory/topics/minebean.md` — appended session log entry
+- `memory/logs/2026-05-24.md` — appended daily entry
 
-**Follow-up**: none — balance still healthy, pending below thresholds. Next cron will pick up the next batch.
+**Follow-up:** None. The 3 skips were normal round-boundary/already-deployed conditions (one fire per round per address is the contract limit, so when a 5-iter loop spans only 2 active rounds, ~3 skips is expected).
