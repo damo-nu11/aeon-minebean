@@ -1,13 +1,17 @@
 ## Summary
 
-Executed `mine-bean` skill for 5 rounds.
+Ran `mine-bean` skill — 5-round batch on Base.
 
-- **Deploys fired:** 2 (rounds 110942, 110943)
-- **Skipped:** 3 (round-boundary skips / already deployed)
-- **TXs:**
-  - `0xc6b4e3af3d55519170e63c036103230b0605b6a5f3674615e6eecbde5a24819a`
-  - `0xb5f03b0de71672c958e75f94a69e0e0da28a4397a96ddba604210e2e36164b30`
-- **Pending rewards:** 0.003473 ETH, 0.22815 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), no claims fired
-- **Agent balance:** 0.014244 ETH on Base
-- **Files modified:** `memory/topics/minebean.md` (appended session log)
-- **Follow-up:** none — next cron tick will pick up the next batch.
+**Session: 2026-05-24T19:58Z**
+- **DEPLOYS_FIRED:** 3 (rounds 111002, 111003, 111004)
+- **DEPLOYS_SKIPPED:** 2 (iters 2-3: `already_deployed` / 0s remaining in round 111002)
+- **TXs:** `0xb69b095c…`, `0x2d96de3d…`, `0x44b051d2…`
+- **Pending:** 0.003641 ETH, 0.23054 BEAN
+- **Balance:** 0.014051 ETH
+- **Claims:** both SKIPPED (pending ETH < 0.01, BEAN < 1)
+
+**Files modified:**
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-24.md` — appended daily log entry
+
+**Follow-ups:** None. Balance still healthy (~0.014 ETH); pending rewards growing steadily but well below claim thresholds. Next session picks up the next batch.
