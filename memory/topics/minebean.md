@@ -11,6 +11,7 @@ Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract 
 - Agent balance (last check): 0.01655 ETH (≈265 fires remaining at default cost)
 
 ## Run log
+- 2026-05-24T16:19Z · Session: 2 deploys, 3 skipped · TXs: 0x4dd15a18263718864ce6cb378605cfb960fd069e3c1e161ba8b3c78744da6d7a,0x3b574dc97bb3d768bb057f9930ae91b622b58fb3c8b10d7e904ad1e6a8e63b20 · Pending: 0.003249 ETH, 0.22555 BEAN · Balance: 0.014504 ETH · ClaimETH: SKIPPED (below threshold) · ClaimBEAN: SKIPPED (below threshold)
 - 2026-05-24T12:10Z · Session: 1 deploys, 4 skipped · TXs: 0x00bf274cf0ed11b81c94e760f5e58aa03cd39b800e9bb7ae2c8a831595cc5e00
 - 2026-05-23T18:50Z · Session: 3 deploys, 2 skipped · TXs: 0x7b28395cefa5d54c498c398de2b75e84b1ad7a38600bd14e5a5569540454eb68,0xf4295fbb9ba0b7314bac37baf55d9fed09c77d5099c44dd57263d25743fa5d8c,0xfcc0cbc5952199d6cc964adead203140c1623058215dd0086df7233f9477f3f6 · Pending: 0.001511 ETH, 0.18113 BEAN · Balance: 0.016518 ETH · ClaimETH: SKIPPED (below threshold) · ClaimBEAN: SKIPPED (below threshold)
 - 2026-05-19T00:00:00Z · Round n/a · Deploy: SKIPPED (missing secrets + `cast` not installed) · ClaimETH: SKIPPED · ClaimBEAN: SKIPPED
