@@ -1,14 +1,18 @@
 ## Summary
 
-Ran the `mine-bean` skill for 5 rounds.
+Executed `mine-bean` skill for 5 rounds.
 
-- **Deploys fired:** 1 (round 110556, tx `0x73b298284170b8c6ac80cd21a95437b49d07ab516b8e2fe634fd06c8b2534828`)
-- **Skipped:** 4 (iters 2–3 detected `already_deployed=true` for round 110556 since iter 1's `status.sh` reported `time_remaining=56s` but the deploy landed at the round boundary; iter 4 hit a Base RPC 429; iter 5 landed at `time_remaining=0s`)
-- **Pending:** 0.002798 ETH, 0.21101 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), so no claims fired
-- **Balance:** 0.015020 ETH (≈240 fires remaining at default cost)
+**Result:**
+- `DEPLOYS_FIRED=1`, `DEPLOYS_SKIPPED=4`
+- TX: `0x00bf274cf0ed11b81c94e760f5e58aa03cd39b800e9bb7ae2c8a831595cc5e00` (round 110612)
+- `FINAL_PENDING_ETH_WEI=2856030012760653` (0.002856 ETH) — below 0.01 threshold, claim skipped
+- `FINAL_PENDING_BEAN_WEI=213621821383782330` (0.21362 BEAN) — below 1 BEAN threshold, claim skipped
+- `FINAL_AGENT_BALANCE_WEI=14955519169170676` (0.014956 ETH)
 
-Files modified:
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-24.md` — appended 11:03Z entry
+**Skip reasons across iterations:** iter 2 already-deployed in same round; iter 3 hit a status RPC 429 (rate limit); iters 4-5 landed on round boundary with 0s remaining.
 
-Follow-up: lower yield this session is expected when the first deploy lands right at the round-end boundary (subsequent rounds tick over before the loop re-reads state). No action needed — next */5 cron will pick up the next batch.
+**Files modified:**
+- `memory/logs/2026-05-24.md` — appended 12:10Z session line
+- `memory/topics/minebean.md` — appended run log entry
+
+**Follow-up:** None. Balance still healthy (~239 fires remaining at default cost); pending rewards continue to accrue toward auto-claim thresholds.
