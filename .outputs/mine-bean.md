@@ -1,19 +1,13 @@
 ## Summary
 
-Executed mine-bean skill for 5 rounds.
+Ran the `mine-bean` skill for a 5-round session.
 
-**Results:**
-- Deploys fired: 3 (rounds 110391, 110392, 110393)
-- Skipped: 2 (iter 2 & 3 — already deployed in round 110391 with 0s remaining)
-- TX hashes:
-  - `0x35ed7182c6c2f317b49faea6245c4a1684a594087f536f22774228931db83a06`
-  - `0x92df60397b267e949763953f266bc834f3458e6a184494881f75ce04b6c60f0f`
-  - `0xd3daf41ca9768dc91221c6fa66eb6dfc7322d4ad7f2bef4db3efc5e6fdd31656`
-- Pending: 0.002518 ETH, 0.20351 BEAN (both below claim thresholds — no claims fired)
-- Agent balance: 0.015281 ETH
-
-**Files modified:**
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-24.md` — appended daily log entry
-
-**Follow-ups:** None. Balance still healthy (~245 fires at default cost). Pending rewards continue accruing toward auto-claim thresholds.
+- **Deploys fired:** 3 (rounds 110483, 110484, 110485)
+- **Skipped:** 2 (round 110484 already deployed / 0s remaining on iterations 3–4)
+- **TX hashes:**
+  - `0x4b8e0fc05e549abb62a1ea90d0b2ecde090d567846600936b14660fefa935bbb`
+  - `0xabc4f5a73943ce9e59360af983f81c406da263e648b1efe13e19adc854651dc1`
+  - `0x07dd5101907d9faf02d8a889859517769267290bac894c2096a67abb7631f672`
+- **Pending:** 0.002686 ETH, 0.21047 BEAN — both below auto-claim thresholds (0.01 ETH / 1 BEAN), skipped
+- **Agent balance:** 0.015084 ETH (≈241 fires remaining at default cost)
+- **Files updated:** `memory/topics/minebean.md`, `memory/logs/2026-05-24.md`
