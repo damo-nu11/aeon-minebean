@@ -1,15 +1,16 @@
 ## Summary
 
-Ran the `mine-bean` skill for 5 iterations. Outcome: **0 deploys, 5 skipped**.
+Ran `mine-bean` skill for 5-round session.
 
-- iter 1: round 111995, 2s remaining — too tight to broadcast
-- iter 2–3: round 111995, 0s remaining (round-end gap)
-- iter 4: `status.sh` failed with RPC 429 (over rate limit)
-- iter 5: round 111996, 0s remaining (round-end gap)
+**Results:**
+- **Deploys:** 4 fired, 1 skipped (round 112082 iter 2 — already deployed, 0s remaining)
+- **Rounds:** 112082–112085
+- **TXs:** `0xa1a2c8d2…`, `0xe24f2fb3…`, `0xc5050e6d…`, `0x5a63eea5…`
+- **Pending rewards:** 0.004869 ETH, 0.25768 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), no claims fired
+- **Agent balance:** 0.012623 ETH (~202 fires remaining at default cost)
 
-`FINAL_PENDING_*` came back `unknown` (no successful end-of-batch status read), so both auto-claim checks were skipped safely. No transactions were sent; agent balance unchanged at 0.012883 ETH (cached).
+**Files modified:**
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-25.md` — appended 17:18Z log line
 
-Files modified:
-- `memory/topics/minebean.md` — appended 2026-05-25T15:30Z entry
-
-No follow-up needed. The cron will pick up the next batch; the cadence-skipping is expected behavior when iterations align with round boundaries (~5 min round length × 5 iterations spaced ~60s apart).
+**Follow-up:** None. Next session will pick up where this left off.
