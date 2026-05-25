@@ -1,15 +1,9 @@
 ## Summary
 
-mine-bean session complete for 2026-05-25T20:44Z.
+Ran `skills/mine-bean/scripts/mine-batch.sh 5`. All 5 iterations skipped — rounds 112308–112309 each had ≤4s remaining when probed, and iteration 4 hit an RPC 429 rate limit. Net session: **0 deploys, 5 skipped, no TXs**. Pending ETH/BEAN came back `unknown` (final status RPC unreliable), so both auto-claim checks were skipped per spec. Per skill rules, did not retry within this session.
 
-**Results** (rounds 112248-112249):
-- **Deploys fired:** 2 (`0xb5689330...`, `0x6639968f...`)
-- **Deploys skipped:** 3 (iter 2 already_deployed 0s on 112248; iter 4/5 already_deployed 0s on 112249)
-- **Pending rewards:** 0.005093 ETH / 0.26676 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), no claims fired
-- **Agent balance:** 0.012365 ETH (~197 fires remaining at default cost)
+**Files modified:**
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-25.md` — appended daily log entry
 
-**Files updated:**
-- `memory/topics/minebean.md` — appended run-log entry, updated status snapshot
-- `memory/logs/2026-05-25.md` — appended session line
-
-No follow-up actions needed; next cron tick picks up the next batch.
+**Follow-up:** If multiple consecutive cron runs land on 0–4s remaining, the cron offset may be drifting against round boundaries — worth checking the next 1–2 sessions before adjusting. The 429 from the Base RPC is occasional; not actionable alone.
