@@ -1,9 +1,10 @@
 ## Summary
 
-Ran `skills/mine-bean/scripts/mine-batch.sh 5`. All 5 iterations skipped — rounds 112308–112309 each had ≤4s remaining when probed, and iteration 4 hit an RPC 429 rate limit. Net session: **0 deploys, 5 skipped, no TXs**. Pending ETH/BEAN came back `unknown` (final status RPC unreliable), so both auto-claim checks were skipped per spec. Per skill rules, did not retry within this session.
+Ran `scripts/mine-batch.sh 5`:
+- **3 deploys fired**, 2 skipped (rounds 112364–112366; iter 2 hit `already_deployed 0s` on 112364, iter 5 same on 112366)
+- TXs: `0x3dd09567...`, `0x601671dd...`, `0xd5048671...`
+- Agent balance: **0.012173 ETH** (~194 fires remaining)
+- `FINAL_PENDING_ETH_WEI` / `FINAL_PENDING_BEAN_WEI` returned `unknown` (post-deploy status read failed) — claims skipped per spec since thresholds can't be evaluated; last known pending (20:44Z) was 0.005093 ETH / 0.26676 BEAN, both well below 0.01 / 1 thresholds, so no claims missed
+- Logged session line to `memory/topics/minebean.md` and daily log `memory/logs/2026-05-25.md`
 
-**Files modified:**
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-25.md` — appended daily log entry
-
-**Follow-up:** If multiple consecutive cron runs land on 0–4s remaining, the cron offset may be drifting against round boundaries — worth checking the next 1–2 sessions before adjusting. The 429 from the Base RPC is occasional; not actionable alone.
+No retries; exiting as instructed.
