@@ -1,17 +1,14 @@
 ## Summary
 
-Executed mine-bean skill: 5-round batch on Base.
+Ran `mine-bean` skill: 5-round batch covering rounds 111453–111455.
 
-**Results:**
-- DEPLOYS_FIRED: 3 (rounds 111218, 111219, 111220)
-- DEPLOYS_SKIPPED: 2 (iter 2 and 5 landed on `time_remaining=0s` after current-round deploy)
-- TX hashes: `0xfb9ebb36...`, `0x6687a1d0...`, `0xcaaf6b3c...`
-- Pending ETH: 0.004256 (below 0.01 threshold → no claim)
-- Pending BEAN: 0.24169 (below 1 BEAN threshold → no claim)
-- Agent balance: 0.013337 ETH (~213 fires remaining)
+- **Deploys fired:** 2 (`0x0f6b6fde...`, `0xba6f909f...`)
+- **Skipped:** 3 (2 end-of-round wait gaps, 1 already-deployed)
+- **Pending rewards:** 0.004368 ETH, 0.24563 BEAN — both below claim thresholds, no claims issued
+- **Agent balance:** 0.013205 ETH
 
 **Files modified:**
-- `memory/topics/minebean.md` — appended new run-log entry, updated status block
-- `memory/logs/2026-05-25.md` — created with today's session entry
+- `memory/topics/minebean.md` — appended session line
+- `memory/logs/2026-05-25.md` — appended log entry
 
-**Follow-up:** None. Next cron invocation will pick up the next batch.
+**Follow-up:** None. Next session will continue mining; auto-claim will trigger once ETH ≥ 0.01 or BEAN ≥ 1.
