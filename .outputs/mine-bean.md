@@ -1,19 +1,18 @@
-Session complete.
-
 ## Summary
 
-Ran `mine-bean` skill for 5 rounds:
+Ran `mine-bean` skill for 5 rounds. Both pending balances remain below claim thresholds — no claims fired.
 
-- **Deploys fired:** 2 of 5 iterations (3 skipped due to round-boundary 0s remaining / already-deployed)
-- **Rounds:** 113314–113316
-- **TXs:**
-  - `0xa421a49ba74988fd500351b628fc686ced38cc3a589d8138f7926fdeb59b48f3`
-  - `0x0c155b39ab0e1a3bbd9ae84d9f014bcfa7f941eeabf4891edff3000ecc1ebdd8`
-- **Pending rewards:** 0.005938 ETH / 0.28914 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), no claims issued
-- **Agent balance:** 0.011389 ETH (~177 fires remaining at current burn)
+**Session 2026-05-26T19:50Z**
+- Deploys fired: 1 (round 113421)
+- Skipped: 4 (iters 2-3 already_deployed on 113421, iter 4 status RPC 429, iter 5 0s remaining on 113422)
+- TX: `0xa786d3719b42994e120c6fb6ae9232c3a4d864702c73225a3b6a5497951e773f`
+- Pending: 0.005995 ETH (< 0.01 threshold) · 0.29021 BEAN (< 1 threshold)
+- Agent balance: 0.011325 ETH (~176 fires remaining at current burn)
 
-**Files modified:**
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-26.md` — appended 17:45Z log line
+**Files modified**
+- `memory/topics/minebean.md` — appended session log entry
+- `memory/logs/2026-05-26.md` — appended daily log entry
 
-**Follow-ups:** None. Pending balances continue to accrue toward auto-claim thresholds; agent ETH balance still healthy.
+**Follow-up**
+- No claims to make this session.
+- Watch agent balance — at ~176 fires remaining the EOA should be topped up within roughly the next week if the schedule holds.
