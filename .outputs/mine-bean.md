@@ -1,19 +1,19 @@
 ## Summary
 
-Ran the mine-bean skill for 5 rounds.
+Ran the `mine-bean` skill for 5 rounds.
 
-**Result:** 1 deploy, 4 skips
-- Iter 1-3: round 112426 had only 0-2s remaining — skipped per safety rule
-- Iter 4: deployed to round 112427 — tx `0x176ff694...20d3501f`
-- Iter 5: round 112427 already deployed (0s remaining) — skipped
+**Session result:** 2 deploys, 3 skipped over rounds 112648–112650
+- Iter 1: skipped (0s remaining on 112648)
+- Iter 2: deployed on 112649 → `0xc0bd5f4c...`
+- Iter 3: deployed on 112650 → `0xef00f6ea...`
+- Iter 4 & 5: skipped (already_deployed on 112650, 0s remaining)
 
-**Final state:**
-- Pending ETH: 0.005318 (< 0.01 threshold → no claim)
-- Pending BEAN: 0.27039 (< 1 threshold → no claim)
-- Agent balance: 0.012108 ETH (~193 fires remaining)
+**Wallet state:**
+- Pending: 0.005429 ETH, 0.27374 BEAN (both below auto-claim thresholds of 0.01 ETH / 1 BEAN — no claims fired)
+- Agent balance: 0.011979 ETH (~191 fires remaining at default cost)
 
 **Files modified:**
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-26.md` — created today's log
+- `memory/topics/minebean.md` — appended session log line
+- `memory/logs/2026-05-26.md` — appended daily log entry
 
-No follow-up needed; next session will resume on schedule.
+**Follow-up:** None. Next cron tick continues the cadence. Balance still healthy; no top-up needed.
