@@ -1,10 +1,14 @@
 ## Summary
 
-Ran `mine-bean` session at 2026-05-27T03:52Z.
+Ran `mine-bean` skill for 5-iteration session.
 
-- **Deploys**: 1 fired, 4 skipped (3× already-deployed at 0s remaining in round 113827; iter 5 hit RPC 429 rate limit)
-- **TX**: `0x8eb8451cfdb0260a55956fd1458d4fe99e2a651d1a7d8e48523da2af22c53046`
-- **Pending rewards**: 0.006385 ETH, 0.29992 BEAN — both below claim thresholds (0.01 ETH, 1 BEAN), no claims executed
-- **Agent balance**: 0.010867 ETH (~174 fires remaining)
+- **2 deploys fired**, 3 skipped (round-boundary already_deployed)
+- TXs: `0xf1c72e3d…` (round 114033), `0xf42079…` (round 114034)
+- Pending: **0.006496 ETH**, **0.30303 BEAN** — both below claim thresholds (0.01 ETH / 1 BEAN), no claims sent
+- Agent balance: **0.010735 ETH** (~172 fires remaining at default cost)
 
-Files modified: `memory/topics/minebean.md`, `memory/logs/2026-05-27.md`. No follow-up actions needed; next cron tick will pick up the next batch.
+Files modified:
+- `memory/topics/minebean.md` — appended session log
+- `memory/logs/2026-05-27.md` — appended session entry
+
+No follow-ups needed. Balance still healthy; auto-claim will trigger when pending ETH crosses 0.01 (currently ~65% of threshold).
