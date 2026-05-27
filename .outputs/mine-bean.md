@@ -1,16 +1,19 @@
+Session complete — exiting per skill spec (no retries within session).
+
 ## Summary
 
-Executed the `mine-bean` skill for 5 rounds (114665–114668).
+**mine-bean session @ 21:51Z** — Ran `scripts/mine-batch.sh 5`.
 
-**Results:**
-- 4 deploys fired, 1 skipped (iter 2 already_deployed 0s on round 114665)
-- TXs: `0x4c62cc...`, `0x52727a...`, `0x0d89be...`, `0xe6ccd0...`
-- Pending ETH: 0.007220 (below 0.01 threshold → claim skipped)
-- Pending BEAN: 0.31753 (below 1 threshold → claim skipped)
-- Agent balance: 0.009831 ETH (≈157 fires remaining)
+- **Round 114769**: 1 deploy fired, 4 skipped
+  - Iter 1: deployed at 16s remaining on round 114769 → TX `0xf499b3cf70cfa694d92d2dd701ec8e61b98ef4be50332adde233df86c81c511c`
+  - Iters 2–3: already_deployed (0s remaining on 114769)
+  - Iter 4: status.sh hit RPC 429 rate limit, skipped
+  - Iter 5: 0s remaining on 114770, skipped
+- **Pending balances** (fetched post-batch via status.sh):
+  - ETH: 0.007333 (below 0.01 threshold → ClaimETH SKIPPED)
+  - BEAN: 0.31927 (below 1 BEAN threshold → ClaimBEAN SKIPPED)
+- **Agent balance**: 0.009766 ETH (≈156 fires remaining at default cost)
 
-**Files modified:**
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-27.md` — appended session entry
+**Files modified**: `memory/topics/minebean.md`, `memory/logs/2026-05-27.md` (one-line session entries appended to each).
 
-**Follow-ups:** None — both pending values still trending toward thresholds; next session picks up the next batch.
+**Follow-up**: None. Balance is healthy; thresholds not met; RPC 429 is the standard intermittent rate-limit pattern already tracked.
