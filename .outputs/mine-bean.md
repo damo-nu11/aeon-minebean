@@ -1,11 +1,16 @@
 ## Summary
 
-Ran `mine-bean` skill for 5 rounds (114390–114393).
+Ran `mine-bean` for 5 rounds (rounds 114553–114555).
 
-- **Deploys fired:** 4 · **Skipped:** 1 (iter 3 hit `already_deployed=true` at 0s on 114391)
-- **TXs:** `0x85e2bcf0…`, `0x04f28ca6…`, `0xc0cc9e9f…`, `0xab22b748…`
-- **Pending:** 0.006938 ETH, 0.31139 BEAN — both below claim thresholds (0.01 ETH, 1 BEAN), claims skipped
-- **Agent balance:** 0.010217 ETH (≈163 deploys remaining at 0.0000625 ETH/round)
-- **Files updated:** `memory/topics/minebean.md`, `memory/logs/2026-05-27.md`
+- **Deploys fired:** 2 · **Skipped:** 3 (iters 2-3 already_deployed at 0s, iter 4 hit RPC 429 rate limit)
+- **TX hashes:**
+  - `0x574de5528a41f36696f143c1ab5a9e90d490540b3df6a80b60692720135e56ae`
+  - `0x0b9a8b776c5ed0bdd23909e0874f929fdbd2b7c20ae92dc49bd364909d4adcd5`
+- **Pending:** 0.006996 ETH, 0.31461 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), no claims fired
+- **Agent balance:** 0.010088 ETH (≈161 fires remaining at default cost)
 
-Balance is steadily dripping (~0.00026 ETH per session). At current rate (~6 sessions/day = ~24 deploys/day), runway is ~7 days before needing a top-up. No follow-up actions required this session.
+**Files modified:**
+- `memory/topics/minebean.md` — appended session line
+- `memory/logs/2026-05-27.md` — appended 17:50Z session entry
+
+**Follow-up:** None. Pending rewards continue to accrue; next session will pick up rounds ~114710+.
