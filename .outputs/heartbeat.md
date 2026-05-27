@@ -1,17 +1,10 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-
-Ran heartbeat for the 20:00 UTC slot (executed 21:24 UTC).
-
-**Findings:**
-- **P0:** Clean — mine-bean (success_rate 99%, consecutive_failures 0) and heartbeat (100%) both healthy. Self-check OK (last heartbeat success ~7h ago, well under 36h).
-- **P1:** 0 open PRs; issues disabled on repo.
-- **P2:** mine-bean monitor — balance 0.011325 ETH, pending 0.005995 ETH / 0.29021 BEAN, both below claim thresholds (0.01 / 1).
-- **P3:** mine-bean `last_success` is ~93 min stale vs `*/10` schedule — same recurring GH Actions cron-state update lag pattern flagged across 22+ prior heartbeats. Real fleet runs are landing normally (19:50Z session deployed 1 tx); dedup skips notify.
-
-**Files modified:**
-- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated timestamp 21:24 UTC, mine-bean last run 19:51 UTC.
-- `memory/logs/2026-05-26.md` — appended 20:00 UTC heartbeat findings.
-
-**No notification sent** (P3 staleness flag deduped against 22 prior heartbeats within 48h).
+Ran heartbeat for the 14:00 UTC slot (executed at 14:44 UTC).
+- **P0:** clean — mine-bean (success_rate 0.99, last_status=success) and heartbeat (success_rate 1.0) both healthy. Self-check OK (heartbeat last_success ~17h ago, under 36h).
+- **P1:** 0 open PRs; issues disabled.
+- **P2:** mine-bean balance 0.010475 ETH / pending 0.006718 ETH + 0.30680 BEAN — all below claim thresholds.
+- **P3:** mine-bean cron-state `last_success` ~3h stale vs */10 schedule — same recurring GH Actions cron-state update lag flagged 23+ times in 48h. Dedup applies, `./notify` skipped.
+- Files modified: `docs/status.md` (verdict 🟡 WATCH), `memory/logs/2026-05-27.md` (heartbeat session log).
+- No follow-up actions needed; status page auto-commits via workflow.
