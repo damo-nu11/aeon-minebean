@@ -1,16 +1,16 @@
 ## Summary
 
-Ran `mine-bean` for 5 rounds (rounds 114553–114555).
+Executed the `mine-bean` skill for 5 rounds (114665–114668).
 
-- **Deploys fired:** 2 · **Skipped:** 3 (iters 2-3 already_deployed at 0s, iter 4 hit RPC 429 rate limit)
-- **TX hashes:**
-  - `0x574de5528a41f36696f143c1ab5a9e90d490540b3df6a80b60692720135e56ae`
-  - `0x0b9a8b776c5ed0bdd23909e0874f929fdbd2b7c20ae92dc49bd364909d4adcd5`
-- **Pending:** 0.006996 ETH, 0.31461 BEAN — both below claim thresholds (0.01 ETH / 1 BEAN), no claims fired
-- **Agent balance:** 0.010088 ETH (≈161 fires remaining at default cost)
+**Results:**
+- 4 deploys fired, 1 skipped (iter 2 already_deployed 0s on round 114665)
+- TXs: `0x4c62cc...`, `0x52727a...`, `0x0d89be...`, `0xe6ccd0...`
+- Pending ETH: 0.007220 (below 0.01 threshold → claim skipped)
+- Pending BEAN: 0.31753 (below 1 threshold → claim skipped)
+- Agent balance: 0.009831 ETH (≈157 fires remaining)
 
 **Files modified:**
-- `memory/topics/minebean.md` — appended session line
-- `memory/logs/2026-05-27.md` — appended 17:50Z session entry
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-27.md` — appended session entry
 
-**Follow-up:** None. Pending rewards continue to accrue; next session will pick up rounds ~114710+.
+**Follow-ups:** None — both pending values still trending toward thresholds; next session picks up the next batch.
