@@ -1,18 +1,17 @@
 ## Summary
 
-Executed the `mine-bean` skill: ran `mine-batch.sh 5` across rounds 115137-115140 on Base.
+Executed the `mine-bean` skill for 5 rounds:
 
-- **Deploys fired:** 4 / 5 (1 skipped at iter 4 — already_deployed in round 115139)
+- **Deploys fired:** 2 (rounds 115343, 115344)
+- **Skipped:** 3 (iter 1/2 landed at 0-2s on round 115342; iter 5 already_deployed on 115344)
 - **TX hashes:**
-  - `0x2f44f48ba1b9abac6c9bbc84bd347024b25ab07fd3ed719383906ce92f50b2b9`
-  - `0x3e5f4625c39126f73a1c24ca17c97591225c90b7264f9ccbe2c9183a32a7ce87`
-  - `0x49c7b221fc6fdf856a6c1a29d86ba022327f3729f60b46a5c29f978f7f2757d1`
-  - `0xca239b07a1ed05bde03eecd797277cded9970f50c7c5f9ac05c8e22196bd5e14`
-- **Pending rewards:** 0.007774 ETH (< 0.01 threshold), 0.33246 BEAN (< 1 threshold) — both claims skipped
-- **Agent balance:** 0.009248 ETH (~148 fires remaining)
+  - `0xb01559fb47a8e7eff437f1e3c49dfce8c5833f1804568b3aca29224001119421`
+  - `0x45ea4788bd2cbd91f61a33d29cc1d7325adc05a64e40844af7e6249c16ba3451`
+- **Pending rewards:** 0.007886 ETH (< 0.01 threshold), 0.33587 BEAN (< 1 threshold) → claims skipped
+- **Agent balance:** 0.009119 ETH (~146 fires remaining)
 
-Files modified:
-- `memory/topics/minebean.md` — appended session entry
-- `memory/logs/2026-05-28.md` — appended `mine-bean session @ 04:49Z`
+**Files modified:**
+- `memory/topics/minebean.md` — added run-log entry, updated status
+- `memory/logs/2026-05-28.md` — appended session log
 
-No follow-ups needed; next session will pick up the next batch.
+**Follow-up:** Wallet balance is dropping below 0.01 ETH; a top-up will be warranted within ~146 fires. Pending rewards continue to approach the claim thresholds.
