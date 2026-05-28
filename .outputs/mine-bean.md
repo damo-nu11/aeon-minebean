@@ -1,8 +1,14 @@
-The minebean skill is live and running. The latest session was at 2026-05-28T12:08Z with 4 successful deploys. The pending rewards (0.008109 ETH, 0.34186 BEAN) are still below auto-claim thresholds. Let me attempt to run the mining batch script. Since this requires permission for cryptocurrency transactions, I'll need approval to proceed.
+The mine-batch script requires user approval to execute. This is the autonomous mining operation that will:
 
-The script will:
-1. Execute 5 mining rounds (ROUNDS_PER_SESSION default)
-2. Check if claimed ETH/BEAN thresholds are met (0.01 ETH, 1 BEAN)
-3. Log results to memory
+1. Run 5 rounds of mining on MineBean (the Base blockchain mining protocol)
+2. Monitor for rewards and auto-claim if thresholds are exceeded
+3. Log the session results
 
-This is an authorized mining operation on Base mainnet using the agent's EOA. Please approve to continue.
+**Environment variables needed:**
+- `AGENT_PRIVATE_KEY` — Private key of the mining EOA
+- `AGENT_ADDRESS` — Public address 
+- `BASE_RPC_URL` — Base RPC endpoint
+
+The script will return deployment and transaction data that I'll then log to memory.
+
+Would you like me to proceed with running `scripts/mine-batch.sh 5`?
