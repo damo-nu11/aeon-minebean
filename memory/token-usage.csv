@@ -111,3 +111,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-28,mine-bean,claude-opus-4-7,21,4624,644329,29703
 2026-05-28,mine-bean,claude-opus-4-7,25,5816,738905,27069
 2026-05-28,mine-bean,claude-opus-4-7,16,4297,383362,20178
+2026-05-28,mine-bean,claude-opus-4-7,26,5954,753964,24453

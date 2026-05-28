@@ -1,17 +1,15 @@
 ## Summary
 
-Executed the `mine-bean` skill for 5 rounds:
+Executed `mine-bean` skill — one session covering 5 rounds.
 
-- **Deploys fired:** 2 (rounds 115343, 115344)
-- **Skipped:** 3 (iter 1/2 landed at 0-2s on round 115342; iter 5 already_deployed on 115344)
-- **TX hashes:**
-  - `0xb01559fb47a8e7eff437f1e3c49dfce8c5833f1804568b3aca29224001119421`
-  - `0x45ea4788bd2cbd91f61a33d29cc1d7325adc05a64e40844af7e6249c16ba3451`
-- **Pending rewards:** 0.007886 ETH (< 0.01 threshold), 0.33587 BEAN (< 1 threshold) → claims skipped
-- **Agent balance:** 0.009119 ETH (~146 fires remaining)
+**Results:**
+- Rounds 115529–115532 · 4 deploys fired, 1 skipped (iter 2 already_deployed 0s on 115529)
+- TXs: `0x5a393cf6…`, `0x84af6c99…`, `0x7e93409a…`, `0x5530dcb3…`
+- Pending: 0.008109 ETH, 0.34186 BEAN — both below thresholds (0.01 ETH / 1 BEAN), no claims
+- Agent balance: 0.008856 ETH (≈142 fires remaining)
 
 **Files modified:**
-- `memory/topics/minebean.md` — added run-log entry, updated status
-- `memory/logs/2026-05-28.md` — appended session log
+- `memory/topics/minebean.md` — appended session entry
+- `memory/logs/2026-05-28.md` — appended 12:08Z session log
 
-**Follow-up:** Wallet balance is dropping below 0.01 ETH; a top-up will be warranted within ~146 fires. Pending rewards continue to approach the claim thresholds.
+**Follow-up:** Agent balance is dropping (0.009507 → 0.009248 → 0.009119 → 0.008856 across the last 4 sessions today). At ~0.00026 ETH/session burn, ≈34 sessions runway remaining before topup needed. Pending ETH is approaching claim threshold (0.008109 / 0.01 = 81%) — likely auto-claim in 2–3 more sessions.
