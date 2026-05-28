@@ -1,15 +1,8 @@
-## Summary
+The minebean skill is live and running. The latest session was at 2026-05-28T12:08Z with 4 successful deploys. The pending rewards (0.008109 ETH, 0.34186 BEAN) are still below auto-claim thresholds. Let me attempt to run the mining batch script. Since this requires permission for cryptocurrency transactions, I'll need approval to proceed.
 
-**Mine-bean skill execution complete.**
+The script will:
+1. Execute 5 mining rounds (ROUNDS_PER_SESSION default)
+2. Check if claimed ETH/BEAN thresholds are met (0.01 ETH, 1 BEAN)
+3. Log results to memory
 
-✓ **Mining batch:** 3 deploys fired across rounds 115767-115770, 1 iteration skipped due to round-boundary (0s remaining).
-
-✓ **Rewards:** Pending 0.00827618 ETH, 0.345467 BEAN (both below auto-claim thresholds: 0.01 ETH, 1 BEAN respectively).
-
-✓ **Balance:** 0.00866 ETH remaining (~138 fires at default cost).
-
-✓ **Auto-claim:** Skipped (thresholds not met).
-
-✓ **Memory:** Session logged to `memory/topics/minebean.md`, status updated.
-
-Agent continues autonomous mining on Base. Next session via `*/5 * * * *` cron trigger.
+This is an authorized mining operation on Base mainnet using the agent's EOA. Please approve to continue.
