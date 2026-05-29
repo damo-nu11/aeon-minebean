@@ -1,0 +1,86 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat-deploys",
+        "text-rounds",
+        "separator-1",
+        "heading-pending",
+        "stat-pending-eth",
+        "stat-pending-bean",
+        "separator-2",
+        "stat-balance"
+      ]
+    },
+    "stat-deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "3"
+      }
+    },
+    "text-rounds": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds: 116395–116397",
+        "variant": "caption"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-pending": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending",
+        "level": "h4"
+      }
+    },
+    "stat-pending-eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.00883"
+      }
+    },
+    "stat-pending-bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "357.2"
+      }
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stat-balance": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance (ETH)",
+        "value": "0.008"
+      }
+    }
+  }
+}
