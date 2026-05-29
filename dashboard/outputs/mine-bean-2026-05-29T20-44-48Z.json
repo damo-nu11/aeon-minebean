@@ -1,0 +1,125 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "main_stack"
+      ]
+    },
+    "main_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "status_row",
+        "metrics_group",
+        "pending_group"
+      ]
+    },
+    "status_row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_success"
+      ]
+    },
+    "badge_success": {
+      "type": "Badge",
+      "props": {
+        "text": "success",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "metrics_group": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat_deploys",
+        "text_skipped",
+        "text_rounds"
+      ]
+    },
+    "stat_deploys": {
+      "type": "Stat",
+      "props": {
+        "value": "4",
+        "label": "deploys in 5 rounds"
+      },
+      "children": []
+    },
+    "text_skipped": {
+      "type": "Text",
+      "props": {
+        "text": "1 skipped at round boundary"
+      },
+      "children": []
+    },
+    "text_rounds": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds 117225–117228"
+      },
+      "children": []
+    },
+    "pending_group": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_pending",
+        "pending_stats_row"
+      ]
+    },
+    "heading_pending": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "pending_stats_row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_eth",
+        "stat_bean"
+      ]
+    },
+    "stat_eth": {
+      "type": "Stat",
+      "props": {
+        "value": "0.00911",
+        "label": "ETH"
+      },
+      "children": []
+    },
+    "stat_bean": {
+      "type": "Stat",
+      "props": {
+        "value": "0.372",
+        "label": "BEAN"
+      },
+      "children": []
+    }
+  }
+}
