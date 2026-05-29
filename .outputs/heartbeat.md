@@ -1,17 +1,12 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Heartbeat ran for the 08:00 UTC slot on 2026-05-29 (executed at 08:34 UTC).
+- **P0 (failed/stuck/degraded):** none. mine-bean (success_rate=0.99, consecutive_failures=0) and heartbeat (success_rate=1.0) both clean. Self-check OK (heartbeat last_success 6h49m ago).
+- **P1:** 0 open PRs; no urgent issues.
+- **P2:** MEMORY.md "Next Priorities" — standing mine-bean monitor only; pending ETH/BEAN well below claim thresholds in the latest logged session.
+- **P3:** mine-bean `last_success` 2026-05-29T11:54:13Z is ~3h30m stale vs the */10 schedule — recurring GH Actions cron-state update lag (28+ prior heartbeats), not a real outage. Dedup → skipped `./notify`.
+- **Status page:** regenerated `docs/status.md` with verdict 🟡 WATCH (next run: mine-bean at 15:30 UTC).
+- **Log:** appended 14:00 UTC heartbeat entry to `memory/logs/2026-05-29.md`.
 
-**Findings:**
-- **P0:** Clean. mine-bean (success_rate=0.99, consecutive_failures=0) and heartbeat (success_rate=1.0) both healthy. Self-check OK (heartbeat last_success ~11h ago).
-- **P1:** No open PRs; issues disabled on repo.
-- **P2:** No flagged memory items needing action; mine-bean monitor steady.
-- **P3:** mine-bean `last_success` is ~3h38m old vs the */10 schedule — same recurring GH Actions cron-state update lag flagged across 27+ prior heartbeats. Root cause is the scheduler/state-update gap, not a real outage. **Dedup applies → skipped `./notify`.**
-
-**Files modified:**
-- `docs/status.md` — regenerated with verdict 🟡 WATCH, next run mine-bean at 08:40 UTC.
-- `memory/logs/2026-05-29.md` — created with heartbeat findings.
-
-**Follow-up:** None — auto-commit will land both files on `main`.
+Files modified: `docs/status.md`, `memory/logs/2026-05-29.md`.
