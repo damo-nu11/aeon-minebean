@@ -1,0 +1,112 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "MineBean"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_session",
+        "stat_deploys",
+        "stat_skipped",
+        "sep_1",
+        "heading_pending",
+        "stat_pending_eth",
+        "stat_pending_bean",
+        "text_threshold",
+        "sep_2",
+        "stat_balance"
+      ]
+    },
+    "heading_session": {
+      "type": "Heading",
+      "props": {
+        "text": "Mining Session Complete",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stat_deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "2"
+      },
+      "children": []
+    },
+    "stat_skipped": {
+      "type": "Stat",
+      "props": {
+        "label": "Skipped",
+        "value": "3"
+      },
+      "children": []
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_pending": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stat_pending_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.00889"
+      },
+      "children": []
+    },
+    "stat_pending_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending BEAN",
+        "value": "0.368"
+      },
+      "children": []
+    },
+    "text_threshold": {
+      "type": "Text",
+      "props": {
+        "text": "Both pending amounts are below auto-claim thresholds",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stat_balance": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance",
+        "value": "0.00787 ETH"
+      },
+      "children": []
+    }
+  }
+}
