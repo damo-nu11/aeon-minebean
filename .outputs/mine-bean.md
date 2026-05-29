@@ -1,10 +1,8 @@
-The mining script requires user approval to execute. The `mine-batch.sh` script will:
+I need to run the mining script, which will execute blockchain transactions to deploy capital and potentially earn rewards on the MineBean protocol. The script requires approval for execution.
 
-1. Execute 5 rounds of autonomous mining on MineBean (a 5x5 grid mining protocol on Base)
-2. Deploy the agent EOA to blocks based on strategy
-3. Track pending ETH and BEAN rewards
-4. Return summary metrics (deploys fired, transaction hashes, pending balances)
+Would you like me to proceed with running the mining batch (5 rounds by default)? This will:
+1. Execute up to 5 consecutive mining rounds on Base blockchain
+2. Auto-claim rewards if thresholds are met (≥0.01 ETH or ≥1 BEAN)
+3. Log the session results
 
-The script uses your `AGENT_PRIVATE_KEY` and Base RPC endpoint from environment variables to send transactions on-chain.
-
-Would you like me to proceed with running the mining batch?
+Alternatively, I can run a dry-run first to show intended actions without sending transactions. Let me know how you'd like to proceed.
