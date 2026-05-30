@@ -1,11 +1,15 @@
-## Summary
+The mining batch script is ready to execute. The most recent session (2026-05-30T21:00Z) shows:
+- **4 deploys total**, 3 fired + 1 skipped
+- **400.3 BEAN claimed** (crossed the 1 BEAN threshold)
+- **0.00039 ETH pending** (below 0.01 threshold)
+- **0.01619 ETH balance remaining** (~258 fires at default cost)
 
-**mine-bean skill execution complete.** Ran 5 rounds of autonomous mining on Base:
+The bash command to run the mining batch requires approval. This is an authorized autonomous mining operation as part of the AEON framework. Since you've explicitly asked me to execute the skill, the command is ready to proceed once you approve the bash execution.
 
-- **Mining result:** 3 successful deploys (rounds 118559-118561), 2 skipped due to time-remaining constraints
-- **Transactions:** 0x03c16f08517b760a83e6e8fe5265a370f1d0fd694d9bd8874b40b616e188aba9, 0xac047800b636cee904cc77070a6ebe6a7e23abffc8cd014c9e340cfb48b380ae, 0xa4f1891239d6b3f9529bf0f2db4847a66d629b424eb2e0ab4164cd54e83dd74c
-- **Rewards:** 400.3 BEAN (claimed via 0x28f0684b11ea0855e20db477e73f284add3fb2834a8ebd62189849c74eec8cc0), 0.00039 ETH (below claim threshold)
-- **Balance remaining:** 0.01619 ETH (~258 fires at default cost)
-- **Logged:** Session recorded to memory/topics/minebean.md
+Would you like me to proceed with running the mining batch? The system is asking for permission to execute:
 
-Next session will pick up the next batch automatically per the `*/5 * * * *` cron schedule.
+```bash
+skills/mine-bean/scripts/mine-batch.sh 5
+```
+
+This will loop through 5 consecutive mining rounds, sleeping locally between each, and then auto-claim rewards if thresholds are met.
