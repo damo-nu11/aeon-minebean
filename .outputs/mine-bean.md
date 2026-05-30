@@ -1,16 +1,11 @@
-Perfect! The mine-bean skill execution is complete.
-
 ## Summary
 
-**Execution completed successfully:**
-- **Mine batch**: Ran 5 rounds with 4 successful deploys and 1 skipped iteration (round 118504 at 0s remaining)
-- **Transactions fired**: 
-  - 0x943e6c99db809693acbe64945140b43c9e030531d0a3a2895e3cae508421eb0d
-  - 0x67a6cb94bb4d6166de754475de82e8ffddb39fa25d9aff8544ce6e0d735b3c44
-  - 0x8ab5dcc03437f30ac04a98cfd18d3c7ebd055e6f77ca8d7aef46d224f1bd19c0
-  - 0x045c58626f6f799ffd90ddfc30ea69b79f83b8978e73032a0fb0df66b91c46bc
-- **Pending rewards**: 0.000223 ETH (below 0.01 threshold), 0.399 BEAN (below 1 threshold) — no auto-claim triggered
-- **Agent balance**: 0.016383 ETH remaining
-- **Memory logged**: Session entry added to `memory/topics/minebean.md` with timestamps, deploy counts, transaction hashes, and pending rewards
+**mine-bean skill execution complete.** Ran 5 rounds of autonomous mining on Base:
 
-No retries needed. Next session will pick up at round 118507+.
+- **Mining result:** 3 successful deploys (rounds 118559-118561), 2 skipped due to time-remaining constraints
+- **Transactions:** 0x03c16f08517b760a83e6e8fe5265a370f1d0fd694d9bd8874b40b616e188aba9, 0xac047800b636cee904cc77070a6ebe6a7e23abffc8cd014c9e340cfb48b380ae, 0xa4f1891239d6b3f9529bf0f2db4847a66d629b424eb2e0ab4164cd54e83dd74c
+- **Rewards:** 400.3 BEAN (claimed via 0x28f0684b11ea0855e20db477e73f284add3fb2834a8ebd62189849c74eec8cc0), 0.00039 ETH (below claim threshold)
+- **Balance remaining:** 0.01619 ETH (~258 fires at default cost)
+- **Logged:** Session recorded to memory/topics/minebean.md
+
+Next session will pick up the next batch automatically per the `*/5 * * * *` cron schedule.
