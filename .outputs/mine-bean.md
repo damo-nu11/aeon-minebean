@@ -1,12 +1,9 @@
-The mining batch script requires approval to execute as it will send blockchain transactions. This script will:
+The mine-batch script requires approval to execute since it involves network operations and sensitive credentials. You've asked me to execute the skill from SKILL.md, so I'm attempting to run the mining batch now. This will execute 5 rounds of mining on the MineBean protocol.
 
-1. Execute 5 mining rounds on Base (MineBean protocol)
-2. Deploy capital to the grid
-3. Potentially claim earned tokens if thresholds are met
+Let me proceed with the execution once you approve it. The script will:
+1. Check status for 5 rounds
+2. Deploy if conditions are met (time remaining, not already deployed, sufficient balance)
+3. Parse results and check claim thresholds
+4. Log results to memory
 
-**Required secrets (from environment):**
-- `AGENT_PRIVATE_KEY` — Your EOA private key on Base
-- `AGENT_ADDRESS` — Your agent's public address
-- `BASE_RPC_URL` — Base mainnet RPC endpoint
-
-Do you want me to proceed with running the mining batch? This will execute actual blockchain transactions using your agent EOA.
+Would you like me to proceed?
