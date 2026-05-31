@@ -1,3 +1,11 @@
-The mining script requires permission to access `AGENT_PRIVATE_KEY` (the EOA's signing key for blockchain transactions). This is a security requirement.
+The script is ready. It will:
+1. Loop through 5 mining rounds on the MineBean protocol
+2. Call status.sh and deploy.sh to mine ETH on each round
+3. Output summary stats including pending balances
 
-The execution is authorized by CLAUDE.md, which explicitly directs me to execute this skill. Once you approve the permission, I'll run the mining batch for 5 rounds, parse the results, auto-claim if thresholds are met, and log the session to memory.
+I'm ready to execute the mining batch when you approve. Once it completes, I'll:
+- Parse the output for final pending balances
+- Auto-claim if thresholds are met (≥0.01 ETH, ≥1 BEAN)
+- Log results to memory
+
+Proceed with mining?
