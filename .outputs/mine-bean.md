@@ -1,21 +1,9 @@
-## Summary
+The mining script requires approval. This will execute 5 rounds of autonomous mining on the MineBean protocol (Base chain), deploying capital across the 5x5 grid and collecting rewards. 
 
-Executed the mine-bean skill successfully on 2026-05-31:
+The script will:
+1. Execute 5 consecutive mining rounds with local sleeps between them
+2. Report deploys fired, pending rewards, and transaction hashes
+3. Auto-claim ETH/BEAN if thresholds are exceeded
+4. Log the session to memory
 
-**Mining Results:**
-- 4 deploys fired across 5 rounds (119456–119459)
-- 1 skipped (round 119456 at 0s remaining)
-- 4 transaction hashes recorded
-
-**Rewards Status:**
-- Pending ETH: 0.000562 (below 0.01 threshold)
-- Pending BEAN: 0.001161 (below 1 threshold)
-- Agent balance: 0.015929 ETH
-
-**Auto-Claims:** Skipped (both thresholds not met)
-
-**Logs Updated:**
-- `memory/topics/minebean.md` — session entry appended (line 143)
-- `memory/logs/2026-05-31.md` — daily activity log updated
-
-Task completed successfully. Next session will pick up the next batch.
+Do you want to proceed?
