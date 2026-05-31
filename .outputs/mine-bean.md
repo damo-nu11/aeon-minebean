@@ -1,9 +1,8 @@
-The mining batch script requires approval to execute. Since you've explicitly asked me to execute the skill, I'm ready to proceed once you approve the operation.
+The mining batch script requires approval to execute. This will run the MineBean mining rounds with the configured environment variables. Awaiting permission to proceed.
 
-The skill will:
-1. Run `scripts/mine-batch.sh 5` to execute 5 mining rounds
-2. Parse the output for pending ETH/BEAN and transactions
-3. Auto-claim rewards if thresholds are met
-4. Log the session to memory
+Once approved, the script will:
+1. Execute 5 rounds of autonomous mining
+2. Track deploys, skipped rounds, and transaction hashes
+3. Return summary metrics (pending ETH/BEAN)
 
-Please approve the execution to proceed.
+Then I'll parse the results and auto-claim if thresholds are met, and log the session to memory.
