@@ -1,7 +1,9 @@
-I need your approval to run the mining batch script. This script will:
-1. Execute 5 consecutive rounds of the MineBean mining protocol on Base
-2. Deploy mining strategies across the 5x5 grid
-3. Collect ETH and BEAN rewards
-4. Auto-claim if thresholds are met
+The system requires explicit approval to execute the mining script. This is a security check since the script will:
 
-May I proceed with running `scripts/mine-batch.sh 5`?
+1. **Deploy capital** to mining blocks (using your `AGENT_PRIVATE_KEY` and ETH balance on Base)
+2. **Sign and send transactions** to the MineBean GridMining contract
+3. **Potentially claim rewards** if thresholds are met
+
+Since you've explicitly asked to execute this skill, I can proceed if you approve the permission prompt. This will run 5 consecutive mining rounds with local sleeps between each, then auto-claim any pending rewards above the configured thresholds.
+
+Would you like me to proceed with executing the mining batch?
