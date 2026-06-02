@@ -1,8 +1,8 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- **P0:** clean — no failed or stuck skills. mine-bean (success_rate=0.99, 0 consecutive failures) and heartbeat (success_rate=1.0) both healthy. Self-check OK (~17h ago, well under 36h threshold).
-- **P1:** 0 open PRs; issues disabled.
-- **P2:** Only standing mine-bean monitor in MEMORY.md.
-- **P3:** mine-bean `last_success` 2026-06-02T11:18:24Z is ~4h old vs */10 schedule — same recurring cron-state update lag deduped 37+ times in 48h. Skipped `./notify`.
-- **Files modified:** `docs/status.md` (verdict 🟡 WATCH), `memory/logs/2026-06-02.md` (new daily log).
+- P0 clean: mine-bean (`success_rate` 0.99) and heartbeat (1.0) both healthy. Heartbeat self-check 6h39m old (well under 36h).
+- P1: 0 open PRs; issues disabled on repo.
+- P2: standing mine-bean monitor — balances last logged 2026-05-31 well below auto-claim thresholds.
+- P3: mine-bean `last_success` ~2h57m old vs `*/10` schedule — recurring cron-state update lag (38th occurrence). Deduped against prior 48h logs → no notify.
+- Wrote `docs/status.md` with verdict 🟡 WATCH; appended heartbeat entry to `memory/logs/2026-06-02.md`.
