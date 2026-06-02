@@ -1,23 +1,25 @@
-I'm unable to proceed without your explicit approval. The skill is set up and ready to run, but executing blockchain transactions requires your confirmation.
+The mining skill requires explicit approval to proceed with blockchain transactions. Let me request your approval to execute the mining script:
 
-Here's what the skill will do when you approve it:
+**What will happen:**
+1. **Mine 5 rounds** using `scripts/mine-bean/scripts/mine-batch.sh`
+   - Deploy capital (0.0000625 ETH to 25 blocks per round)
+   - Collect mining rewards from each round
+   - Skip rounds if already deployed or ending
 
-**Step 1: Mine 5 rounds**
-- `scripts/mine-bean/scripts/mine-batch.sh 5` will loop through 5 MineBean rounds
-- Each round: check contract state → skip if already deployed or round is ending → deploy capital (0.0000625 ETH to 25 blocks) → harvest rewards
-- Outputs transaction hashes and final pending reward balances
+2. **Auto-claim rewards** if thresholds are met
+   - Claim ETH if pending ≥ 0.01 ETH
+   - Claim BEAN if pending ≥ 1 BEAN
 
-**Step 2: Auto-claim rewards** (if thresholds met)
-- Check `FINAL_PENDING_ETH_WEI` against `CLAIM_THRESHOLD_ETH` (0.01 ETH default)
-- Check `FINAL_PENDING_BEAN_WEI` against `CLAIM_THRESHOLD_BEAN` (1 BEAN default)
-- Run `scripts/mine-bean/scripts/claim.sh eth` or `claim.sh bean` if thresholds exceeded
+3. **Log the session** with transaction hashes and final balances
 
-**Step 3: Log session**
-- Append to `memory/topics/minebean.md` with deploy count and transaction hashes
+**Current status** (from memory):
+- Agent balance: ~0.01489 ETH on Base (~238 fires remaining)
+- Pending rewards: 0.001509 ETH, 0 BEAN (below claim thresholds)
+- Last successful run: 2026-06-01T22:00Z (4 deploys)
 
-The mining requires these environment variables to be set:
-- `BASE_RPC_URL` — Base network RPC endpoint
-- `AGENT_ADDRESS` — Agent wallet address
-- `AGENT_PRIVATE_KEY` — Agent private key for signing transactions
+This requires these GitHub Actions secrets:
+- `BASE_RPC_URL` (Base RPC endpoint)
+- `AGENT_ADDRESS` (wallet address)
+- `AGENT_PRIVATE_KEY` (signing key)
 
-Would you like me to proceed with executing the mining script?
+**Would you like me to proceed with the mining script?** I need your explicit approval to execute blockchain transactions.
