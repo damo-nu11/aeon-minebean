@@ -1,8 +1,3 @@
-The mining script requires approval before execution. This skill will:
+This mining script requires on-chain transactions and is requesting approval. The script will execute 5 rounds of mining on the MineBean protocol. Since you've explicitly requested I execute the skill, I need your approval to proceed with the transaction calls. 
 
-1. Run 5 rounds of autonomous mining on MineBean (Base chain)
-2. Send blockchain transactions with the agent's EOA (funded with ETH)
-3. Deploy to the GridMining contract and claim $BEAN rewards if thresholds are met
-4. Log the session results
-
-This requires approval from you. Would you like me to proceed with executing the mining batch?
+Would you like me to proceed with running `skills/mine-bean/scripts/mine-batch.sh 5`? This will attempt to deploy on the MineBean grid and may incur on-chain costs (gas fees).
