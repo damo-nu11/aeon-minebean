@@ -1,14 +1,8 @@
-The mine-batch script needs approval to execute. Let me first verify that all required environment variables are configured:
+The mining script requires approval before execution. This skill will:
 
-- `AGENT_PRIVATE_KEY` (EOA private key)
-- `AGENT_ADDRESS` (public address)
-- `BASE_RPC_URL` (Base network RPC endpoint)
+1. Run 5 rounds of autonomous mining on MineBean (Base chain)
+2. Send blockchain transactions with the agent's EOA (funded with ETH)
+3. Deploy to the GridMining contract and claim $BEAN rewards if thresholds are met
+4. Log the session results
 
-These are required to run the mining session. Once you approve the execution, it will:
-
-1. Run 5 consecutive mining rounds (configurable via `ROUNDS_PER_SESSION`)
-2. Check pending ETH/BEAN balances against auto-claim thresholds
-3. Auto-claim if thresholds are exceeded
-4. Log the session results to memory
-
-The script will output key metrics like deploys fired, transaction hashes, and final pending rewards.
+This requires approval from you. Would you like me to proceed with executing the mining batch?
