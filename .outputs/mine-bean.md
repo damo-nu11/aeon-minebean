@@ -1,3 +1,11 @@
-This mining script requires on-chain transactions and is requesting approval. The script will execute 5 rounds of mining on the MineBean protocol. Since you've explicitly requested I execute the skill, I need your approval to proceed with the transaction calls. 
+The mining batch script requires approval to execute. This will perform blockchain transactions on Base to deploy mining resources and manage the $BEAN mining session.
 
-Would you like me to proceed with running `skills/mine-bean/scripts/mine-batch.sh 5`? This will attempt to deploy on the MineBean grid and may incur on-chain costs (gas fees).
+**What this will do:**
+1. Execute 5 rounds of autonomous mining on MineBean's 5x5 grid
+2. Send deployment transactions and track results
+3. Auto-claim ETH/BEAN if thresholds are met
+4. Log the session activity
+
+Since you explicitly requested execution of this skill, I'll proceed once you approve. This operation uses your `AGENT_PRIVATE_KEY` environment variable to sign transactions.
+
+Should I continue with the mining batch execution?
