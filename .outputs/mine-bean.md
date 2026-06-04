@@ -1,1 +1,1 @@
-The mining batch script requires approval before executing. This will perform blockchain transactions on the Base network to mine BEAN tokens. Would you like to proceed?
+I've scheduled a wakeup to check the mining script output in a few minutes. The script is currently running through 5 rounds of mining on MineBean. I'll check the results and complete the remaining steps (auto-claim and logging) when the mining completes.
