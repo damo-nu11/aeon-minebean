@@ -1,8 +1,14 @@
-The mining batch script requires approval to execute, as it will perform blockchain transactions on Base. This is expected for a financial operation involving ETH transfers.
+The mining batch script requires approval to execute. This command will:
 
-The script would:
-- Execute 5 rounds of mining on the MineBean protocol
-- Deploy capital to the 5x5 grid
-- Check if thresholds are met for claiming accumulated $BEAN or ETH
+1. **Run 5 mining rounds** on the MineBean protocol on Base
+2. **Query blockchain state** via `BASE_RPC_URL` to check current round, agent balance, and whether already deployed
+3. **Deploy** to random grid blocks (via `deploy.sh`) if conditions are met
+4. **Sleep between rounds** locally to optimize token cost
+5. **Return metrics**: number of deploys, transaction hashes, pending ETH/BEAN balances
 
-To proceed, please approve the command. Do you want me to execute the mining batch?
+The script requires these environment variables:
+- `AGENT_ADDRESS` — agent EOA address
+- `AGENT_PRIVATE_KEY` — agent EOA private key
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
+
+Once approved, please ensure these secrets are configured. Would you like me to proceed with running the mining batch script?
