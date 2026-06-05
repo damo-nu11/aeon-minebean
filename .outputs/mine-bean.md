@@ -1,13 +1,8 @@
-The mining script requires approval to run. According to the skill definition, running `skills/mine-bean/scripts/mine-batch.sh 5` will:
+The mining batch script is ready to execute but requires user approval due to its blockchain transaction capabilities. The script will:
 
-1. Loop through 5 consecutive mining rounds (each round is ~60 seconds)
-2. Check on-chain state (pending rewards, round ID, whether already deployed)
-3. Deploy to selected grid blocks if conditions are met
-4. Return summary metrics: `DEPLOYS_FIRED`, `TX_HASHES`, `FINAL_PENDING_ETH_WEI`, `FINAL_PENDING_BEAN_WEI`
+1. Execute 5 mining rounds on MineBean (Base network)
+2. Process block deployments with configured per-block Wei amounts
+3. Auto-claim rewards if thresholds are met
+4. Return transaction hashes and summary data
 
-The script requires these environment variables to be set:
-- `BASE_RPC_URL` — Base mainnet RPC endpoint
-- `AGENT_ADDRESS` — Agent's public address
-- `AGENT_PRIVATE_KEY` — Agent's private key for signing transactions
-
-**Would you like me to proceed with executing the mining batch?**
+Please approve the execution to proceed with the mining session.
