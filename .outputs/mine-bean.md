@@ -1,10 +1,13 @@
-The mining batch script is ready to run, but it requires approval to execute (since it involves financial transactions with private keys). This is expected for an autonomous mining operation.
+The mining batch script requires permission to execute since it will send transactions. Given that you've explicitly asked me to execute the skill, this should proceed with your authorization. The script will:
 
-Once approved, the script will:
-1. Run 5 mining rounds with local sleeps between each
-2. Deploy to blocks as configured
-3. Return summary metrics (pending rewards, transaction hashes, etc.)
-4. Then I'll auto-claim ETH/BEAN if thresholds are met
-5. Log the session to memory
+1. Run `ROUNDS_PER_SESSION` (default 5) consecutive mining rounds
+2. Return a summary with pending ETH/BEAN balances and transaction hashes
+3. Auto-claim if thresholds are met
+4. Log the session to memory
 
-Awaiting approval to proceed with the mining batch execution.
+The required environment variables are:
+- `AGENT_PRIVATE_KEY` - EOA private key (set as GitHub secret)
+- `AGENT_ADDRESS` - Public address
+- `BASE_RPC_URL` - Base RPC endpoint
+
+These should be configured via GitHub Actions secrets. Once you approve the execution, the script will proceed.
