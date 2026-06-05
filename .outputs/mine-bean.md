@@ -1,8 +1,10 @@
-The mining batch script is ready to execute but requires user approval due to its blockchain transaction capabilities. The script will:
+The mining batch script is ready to run, but it requires approval to execute (since it involves financial transactions with private keys). This is expected for an autonomous mining operation.
 
-1. Execute 5 mining rounds on MineBean (Base network)
-2. Process block deployments with configured per-block Wei amounts
-3. Auto-claim rewards if thresholds are met
-4. Return transaction hashes and summary data
+Once approved, the script will:
+1. Run 5 mining rounds with local sleeps between each
+2. Deploy to blocks as configured
+3. Return summary metrics (pending rewards, transaction hashes, etc.)
+4. Then I'll auto-claim ETH/BEAN if thresholds are met
+5. Log the session to memory
 
-Please approve the execution to proceed with the mining session.
+Awaiting approval to proceed with the mining batch execution.
