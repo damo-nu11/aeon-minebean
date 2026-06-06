@@ -1,20 +1,22 @@
-Perfect! I've successfully executed the mine-bean skill. Here's what happened:
+## Summary
 
-## Execution Summary
+✅ **mine-bean skill executed successfully**
 
-**Mining Batch Results:**
-- **Rounds Requested:** 5
-- **Deploys Fired:** 1
-- **Deploys Skipped:** 4
-- **Deploy TX:** `0x12760535953e04ff78a2020fdf1c44f92b4d5c3a24eeb72fab0280d695b6869c`
+**Session Results:**
+- Ran 5 rounds on GridMining (rounds 126806-126807)
+- **1 deploy fired** at round 126806 with 18s remaining
+- **4 skips**: Iteration 3 hit RPC rate limit (429), remaining iterations skipped at 0s boundary
+- **Deploy TX:** `0x343eb98e62a289b56a02094347a18536793ceaaa85f318de90dc96fa00516e5d`
 
-**Pending Rewards (post-deploy):**
-- ETH: 0.002916 (below 0.01 threshold) → auto-claim skipped ✓
-- BEAN: 1.540 (above 1 threshold) → auto-claim executed ✓
+**Pending Rewards & Auto-Claim:**
+- ETH: 0.002973 (below 0.01 threshold) → **SKIPPED**
+- BEAN: 0 (below 1 threshold) → **SKIPPED**
 
-**Auto-Claim:**
-- BEAN claim TX: `0x6a33ed534bf64b6a32e8344102a2cfc4cded1c9d3f43c2506b51d7125e2d9a9b`
+**Agent State:**
+- Balance: 0.013194 ETH (~211 fires at default cost remaining)
 
-**Session Logged:** New entry added to `memory/topics/minebean.md` documenting the session details, pending rewards, and claims.
+**Logging:**
+- Session logged to `memory/topics/minebean.md`
+- Activity entry appended to `memory/logs/2026-06-06.md`
 
-The skill completed successfully. The next session will pick up on the next batch as scheduled by the cron trigger.
+Next automated session will trigger on schedule (*/10 cron).
