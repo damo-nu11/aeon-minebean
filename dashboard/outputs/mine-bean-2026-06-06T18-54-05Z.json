@@ -1,0 +1,132 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "⛏️ mine-bean"
+      },
+      "children": [
+        "main-stack"
+      ]
+    },
+    "main-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "session-text",
+        "status-badge",
+        "sep1",
+        "metrics-section"
+      ]
+    },
+    "session-text": {
+      "type": "Text",
+      "props": {
+        "text": "Session 2026-06-06T18:53Z",
+        "variant": "muted"
+      }
+    },
+    "status-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "complete"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "metrics-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "deploys-skipped",
+        "pending-items",
+        "balance-item"
+      ]
+    },
+    "deploys-skipped": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "deploys-stat",
+        "skipped-stat"
+      ]
+    },
+    "deploys-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "0"
+      }
+    },
+    "skipped-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Skipped",
+        "value": "5"
+      }
+    },
+    "pending-items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pending-label",
+        "pending-values"
+      ]
+    },
+    "pending-label": {
+      "type": "Text",
+      "props": {
+        "text": "Pending:",
+        "variant": "muted"
+      }
+    },
+    "pending-values": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "pending-eth-stat",
+        "pending-bean-stat"
+      ]
+    },
+    "pending-eth-stat": {
+      "type": "Stat",
+      "props": {
+        "value": "0.00319 ETH"
+      }
+    },
+    "pending-bean-stat": {
+      "type": "Stat",
+      "props": {
+        "value": "2.00640 BEAN"
+      }
+    },
+    "balance-item": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance",
+        "value": "0.01294 ETH"
+      }
+    }
+  }
+}
