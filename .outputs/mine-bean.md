@@ -1,17 +1,12 @@
-The system is asking for permission to execute the mining script. Based on the skill definition, here's what will happen:
+The mining batch script requires approval to run. This will:
 
-**Step 1:** Run `scripts/mine-batch.sh 5` to execute 5 consecutive mining rounds on MineBean (GridMining contract on Base).
+1. Execute mining rounds on the MineBean protocol (a 5x5 grid mining game on Base)
+2. Potentially send transactions using your configured agent private key
+3. Deploy capital to grid blocks and claim rewards based on threshold settings
 
-**Current wallet status:**
-- Balance: 0.014294 ETH on Base
-- Pending rewards: 0.002016 ETH, 0 BEAN (last checked 2026-06-03)
-- Last activity: 2026-06-02 at 15:21Z (4 deploys, 1 skipped)
-- Auto-claim thresholds: ETH ≥ 0.01, BEAN ≥ 1.0
+**Before I proceed, please confirm:**
+- You have `AGENT_PRIVATE_KEY` and `BASE_RPC_URL` configured as GitHub Actions secrets
+- Your agent EOA has sufficient ETH balance on Base for mining
+- You understand the capital-at-risk and transaction costs involved
 
-**Step 2:** After mining, check if pending rewards meet auto-claim thresholds and execute claims if needed.
-
-**Step 3:** Log the session to memory with deploy counts and transaction hashes.
-
-The script will spend ~0.000125 ETH (default 25 blocks × 0.0000025 ETH) per round × 5 rounds = ~0.000625 ETH, leaving ~0.0136 ETH on the wallet.
-
-This command requires your approval to proceed with the blockchain transactions.
+Should I proceed with running the mining batch?
