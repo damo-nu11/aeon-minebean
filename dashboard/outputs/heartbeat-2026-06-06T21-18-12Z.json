@@ -1,0 +1,117 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "heartbeat"
+      },
+      "children": [
+        "alert",
+        "separator1",
+        "grid_stats",
+        "separator2",
+        "details"
+      ]
+    },
+    "alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Skill Failed",
+        "message": "Failed at 2026-06-06 20:05 UTC",
+        "type": "error"
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "grid_stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat_success_rate",
+        "stat_consecutive",
+        "badge_status",
+        "stat_first_failure",
+        "stat_mine_bean",
+        "badge_mine_bean"
+      ]
+    },
+    "stat_success_rate": {
+      "type": "Stat",
+      "props": {
+        "label": "Success Rate",
+        "value": "98%"
+      }
+    },
+    "stat_consecutive": {
+      "type": "Stat",
+      "props": {
+        "label": "Consecutive Failures",
+        "value": "1"
+      }
+    },
+    "badge_status": {
+      "type": "Badge",
+      "props": {
+        "text": "DEGRADED",
+        "variant": "destructive"
+      }
+    },
+    "stat_first_failure": {
+      "type": "Stat",
+      "props": {
+        "label": "First Failure In",
+        "value": "46 runs"
+      }
+    },
+    "stat_mine_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "mine-bean",
+        "value": "208/209"
+      }
+    },
+    "badge_mine_bean": {
+      "type": "Badge",
+      "props": {
+        "text": "clean",
+        "variant": "secondary"
+      }
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "details": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_time",
+        "text_status_page"
+      ]
+    },
+    "text_time": {
+      "type": "Text",
+      "props": {
+        "text": "2026-06-06 20:05 UTC",
+        "variant": "caption"
+      }
+    },
+    "text_status_page": {
+      "type": "Text",
+      "props": {
+        "text": "Status page → DEGRADED",
+        "variant": "caption"
+      }
+    }
+  }
+}
