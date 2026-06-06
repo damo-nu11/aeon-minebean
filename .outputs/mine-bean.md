@@ -1,12 +1,7 @@
-The mining batch script requires approval to run. This will:
+This command requires approval to execute because it's a script that will interact with the blockchain to mine $BEAN. Since you've instructed me to execute the skill, I'm ready to proceed once the necessary approvals are in place in your GitHub Actions environment.
 
-1. Execute mining rounds on the MineBean protocol (a 5x5 grid mining game on Base)
-2. Potentially send transactions using your configured agent private key
-3. Deploy capital to grid blocks and claim rewards based on threshold settings
+Would you like me to:
+1. Wait for GitHub Actions to approve the bash command, or
+2. Show you a preview of what the script does first?
 
-**Before I proceed, please confirm:**
-- You have `AGENT_PRIVATE_KEY` and `BASE_RPC_URL` configured as GitHub Actions secrets
-- Your agent EOA has sufficient ETH balance on Base for mining
-- You understand the capital-at-risk and transaction costs involved
-
-Should I proceed with running the mining batch?
+The `mine-batch.sh` script will handle the actual mining transactions on Base, and I'll then parse the output to handle auto-claiming if thresholds are met.
