@@ -1,1 +1,1 @@
-I've scheduled a wakeup to check on the mining batch in 5 minutes. The script is running in the background mining $BEAN tokens across the configured rounds.
+The mining script requires approval since it will use your private key to execute blockchain transactions. This is expected for the mine-bean skill. Please approve the command above to proceed with 5 rounds of autonomous mining on the MineBean protocol on Base.
