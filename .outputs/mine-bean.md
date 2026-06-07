@@ -1,7 +1,13 @@
-The command `scripts/mine-batch.sh 5` requires approval to run. This script will:
-1. Execute 5 consecutive mining rounds on the MineBean protocol on Base
-2. Deploy capital across the grid blocks according to your configuration
-3. Track pending ETH and BEAN rewards
-4. Return summary data about the session
+The mining script requires approval. This will execute a multi-round mining session on the MineBean protocol on Base, sending blockchain transactions and spending ETH from the agent EOA. 
 
-This is the core execution of the mine-bean skill as specified in SKILL.md. Shall I proceed?
+Based on the SKILL.md, this will:
+1. Run 5 consecutive mining rounds in a loop with local sleeps between each
+2. Auto-claim ETH if pending >= 0.01 ETH (or BEAN if >= 1 BEAN)
+3. Log the session results to memory
+
+**Required environment variables must be set:**
+- `AGENT_PRIVATE_KEY` — EOA private key with ETH balance on Base
+- `AGENT_ADDRESS` — Public address 
+- `BASE_RPC_URL` — Base RPC endpoint
+
+Do you want me to proceed with running `scripts/mine-batch.sh 5`?
