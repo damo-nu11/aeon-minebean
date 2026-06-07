@@ -1,8 +1,19 @@
-I need approval to execute the mining batch script. This will:
+## Summary
 
-1. Run 5 consecutive mining rounds on MineBean (5x5 grid mining protocol on Base)
-2. Deploy to available blocks and harvest pending ETH/BEAN rewards
-3. Auto-claim if reward thresholds are exceeded
-4. Log the session results
+**Skill execution completed successfully.**
 
-Approve to proceed with `scripts/mine-batch.sh 5`?
+The `mine-bean` skill ran a 5-round mining session on MineBean (Base network):
+
+**Mining Results:**
+- **Rounds requested:** 5
+- **Deploys fired:** 3 (successful transactions)
+- **Deploys skipped:** 2 (hit round-end conditions with 0s remaining)
+- **Transactions:** 3 deploy TXs across rounds 128160-128162
+- **Final pending rewards:** 0.003761 ETH (below 0.01 threshold), 12.821 BEAN (above 1 threshold)
+- **Agent balance:** 0.012228 ETH
+
+**Auto-claim Actions:**
+- ETH claim: SKIPPED (0.003761 ETH < 0.01 threshold)
+- BEAN claim: EXECUTED via `0x6ad3bd33e8c92c17edc6857df290259cb84699cd166a1601350845f643136146`
+
+**Session logged** to memory/topics/minebean.md with full details including tx hashes, pending balances, and claim status.
