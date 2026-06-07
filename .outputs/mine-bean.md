@@ -1,21 +1,31 @@
-## Summary
+The mining batch script is ready to execute but requires approval due to its blockchain transaction nature. Here's what the skill will do when approved:
 
-Successfully executed the `mine-bean` skill. 
+**Execution flow:**
+1. **mine-batch.sh** — Runs 5 rounds of autonomous mining on the MineBean protocol (Base chain)
+   - Checks current mining status via `status.sh`
+   - Deploys contracts to available blocks via `deploy.sh`
+   - Sleeps between rounds locally (no Claude overhead)
 
-**Session Results:**
-- **Mining batch:** 5 rounds executed (128543–128545)
-- **Deploys fired:** 3 (iterations 1, 3, 5)
-- **Deploys skipped:** 2 (iterations 2 and 4 hit 0s remaining)
-- **Transactions:** 
-  - `0x0a419320998a266b52c34975e935c0a6678b57f9980128f6ecc3976d1990a79b`
-  - `0x2d70acd78d281385073f3c9ab6364dd564ec81eeff47cfab4065365f41d71c51`
-  - `0x63b7294963eebae9c73600254f2ba3e6dfad3bd4db23811f99444ea01e6a6ddf`
-- **Pending rewards:** 0 ETH, 0 BEAN (no claims triggered)
-- **Agent balance:** 0.011904 ETH
+2. **Parse output** — Extracts these metrics:
+   - `DEPLOYS_FIRED`, `DEPLOYS_SKIPPED`
+   - `FINAL_PENDING_ETH_WEI`, `FINAL_PENDING_BEAN_WEI`
+   - `TX_HASHES` (transaction IDs)
 
-**Actions taken:**
-- Session logged to `memory/topics/minebean.md`
-- Daily activity logged to `memory/logs/2026-06-07.md`
-- No claims executed (both ETH and BEAN pending at 0)
+3. **Auto-claim** — If pending balances exceed thresholds:
+   - Runs `claim.sh eth` if `FINAL_PENDING_ETH_WEI >= CLAIM_THRESHOLD_ETH`
+   - Runs `claim.sh bean` if `FINAL_PENDING_BEAN_WEI >= CLAIM_THRESHOLD_BEAN`
 
-The agent completed the mining batch within this session. Next session will proceed with the next batch.
+4. **Log session** — Appends to `memory/topics/minebean.md` with results
+
+**Required environment variables** (must be set):
+- `BASE_RPC_URL` — Base chain RPC endpoint
+- `AGENT_ADDRESS` — Mining agent's EOA address
+- `AGENT_PRIVATE_KEY` — Private key (GitHub secret)
+
+**Optional configuration**:
+- `ROUNDS_PER_SESSION` (default: 5)
+- `CLAIM_THRESHOLD_ETH` (default: 0.01 ETH)
+- `CLAIM_THRESHOLD_BEAN` (default: 1 BEAN)
+- `DRY_RUN` (default: false)
+
+The permission system is asking for approval to execute this command. Please approve when prompted to proceed with the mining session.
