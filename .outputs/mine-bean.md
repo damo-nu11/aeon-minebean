@@ -1,18 +1,17 @@
-## Summary
+The mining script is ready to run, but requires approval. Let me explain what it will do:
 
-Executed the `mine-bean` skill successfully. The mining batch completed 5 rounds across rounds 128255-128256 with the following results:
+**mine-batch.sh** will:
+1. Loop for 5 rounds (default), each round ~60 seconds
+2. Call the MineBean smart contract on Base to:
+   - Check the current mining round status
+   - Verify the agent hasn't already deployed this round
+   - If conditions are met, deploy to all 25 mining blocks (default) with 0.0000025 ETH per block (~0.0000625 ETH total per round)
+3. Track pending ETH and BEAN rewards
+4. Auto-claim if thresholds are met
 
-**Results:**
-- **Deploys fired:** 1
-- **Deploys skipped:** 4
-- **TX hash:** 0x74f23d452020e8feb1f8fa9dd1c16d1e16b9c26d32df790520661d290d30b2d0
-- **Pending rewards:** 0.003873 ETH, 0 BEAN
-- **Agent balance:** 0.012163 ETH
-- **Auto-claim:** Skipped (both ETH and BEAN below thresholds)
+The script requires these environment variables (GitHub Actions secrets):
+- `BASE_RPC_URL` — RPC endpoint for Base network
+- `AGENT_ADDRESS` — The agent's wallet address
+- `AGENT_PRIVATE_KEY` — Private key for signing transactions
 
-**Notes:**
-- Iteration 4 encountered an RPC rate limit (429 error), which was handled safely
-- Several iterations landed with 0 seconds remaining in the round, causing them to skip
-- Session log appended to `memory/topics/minebean.md`
-
-The skill will be invoked again by the cron schedule (every 5 minutes per `aeon.yml`) for the next batch.
+Do you want me to proceed with running the mining batch? This will execute real blockchain transactions on Base that cost ETH gas fees and deploy capital to the mining contract.
