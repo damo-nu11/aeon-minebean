@@ -2,15 +2,13 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Heartbeat run at 09:49 UTC. Fleet healthy — no notification sent.
+Ran heartbeat checks at 2026-06-07 15:01 UTC.
 
-- **P0**: Clean. mine-bean (213/214, success_rate 1.0, consecutive_failures 0) and heartbeat (46/47, success_rate 0.98, consecutive_failures 0) both green. Self-check OK (last heartbeat success ~12.5h ago).
-- **P1**: 0 PRs; issues disabled.
-- **P2**: Mine-bean pending 0.0036 ETH / 0.0108 BEAN — both below claim thresholds.
-- **P3**: Recurring mine-bean cron-state-update-lag pattern (~3h14m stale vs */10 schedule). Deduped — flagged 45+ times prior.
+- **P0 (failed/stuck):** clean. mine-bean 216/217 (100%), heartbeat 47/48 (98%), both `last_status=success`, zero consecutive failures. Self-check OK (heartbeat last_success ~5h ago, well under 36h threshold).
+- **P1 (PRs/issues):** 0 open PRs; repo issues disabled.
+- **P2 (memory flags):** only the standing mine-bean monitor; pending balances below claim thresholds — no action.
+- **P3 (schedule lag):** mine-bean `last_success` ~1h49m stale vs the */10 schedule. This is the recurring GH Actions cron-state-update-lag pattern seen across 46+ prior heartbeats — dedup applies, no notify.
+- **Status page:** regenerated `docs/status.md` with verdict 🟡 WATCH (mine-bean cron staleness), next scheduled run = mine-bean 15:10 UTC. Token pulse section omitted (no `articles/token-report-*.md` present).
+- **Log:** appended findings to `memory/logs/2026-06-07.md`.
 
-**Files modified:**
-- `docs/status.md` — regenerated, verdict 🟡 WATCH, next run mine-bean at 09:50 UTC
-- `memory/logs/2026-06-07.md` — appended heartbeat entry
-
-**No follow-up actions needed.**
+Files modified: `docs/status.md`, `memory/logs/2026-06-07.md`. No notification sent (dedup).
