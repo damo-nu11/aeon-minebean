@@ -1,17 +1,14 @@
-The mining script is ready to run, but requires approval. Let me explain what it will do:
+The mining batch requires approval to execute. This is expected because the script will:
 
-**mine-batch.sh** will:
-1. Loop for 5 rounds (default), each round ~60 seconds
-2. Call the MineBean smart contract on Base to:
-   - Check the current mining round status
-   - Verify the agent hasn't already deployed this round
-   - If conditions are met, deploy to all 25 mining blocks (default) with 0.0000025 ETH per block (~0.0000625 ETH total per round)
-3. Track pending ETH and BEAN rewards
-4. Auto-claim if thresholds are met
+1. **Query the MineBean GridMining contract** on Base for the current round status
+2. **Execute up to 5 mining deployments** (if conditions are met) by submitting transactions signed with `AGENT_PRIVATE_KEY`
+3. **Claim rewards** if pending ETH/BEAN exceeds thresholds
 
-The script requires these environment variables (GitHub Actions secrets):
-- `BASE_RPC_URL` — RPC endpoint for Base network
-- `AGENT_ADDRESS` — The agent's wallet address
-- `AGENT_PRIVATE_KEY` — Private key for signing transactions
+Based on your memory, the agent has:
+- **Balance**: 0.014294 ETH on Base (~228 rounds at default cost)
+- **Pending rewards**: 0.003873 ETH, 0 BEAN (below claim thresholds)
+- **Last session**: 2026-06-07T11:40Z (1 deploy, 4 skipped)
 
-Do you want me to proceed with running the mining batch? This will execute real blockchain transactions on Base that cost ETH gas fees and deploy capital to the mining contract.
+The script is located at `skills/mine-bean/scripts/mine-batch.sh` and will loop through 5 rounds with local sleeps between them.
+
+**Would you like me to proceed with executing the mining batch?** This will require approving the bash command to interact with the Base blockchain.
