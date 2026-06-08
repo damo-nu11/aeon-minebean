@@ -1,8 +1,23 @@
-The mining batch script requires approval to execute since it sends real blockchain transactions. I've initiated the command to run the 5-round mining session. Once you approve it, the script will:
+The mining batch script requires approval to execute. This is expected as it will interact with blockchain services. The command is ready to run pending your approval:
 
-1. Execute 5 consecutive mining rounds on the MineBean protocol
-2. Return summary metrics (deploys, pending rewards, transaction hashes)
-3. Auto-claim ETH/BEAN if thresholds are exceeded
-4. Log the session to memory
+```bash
+cd skills/mine-bean && ./scripts/mine-batch.sh 5
+```
 
-Awaiting your approval to proceed.
+This will:
+1. Execute 5 consecutive mining rounds with local sleeps between them
+2. Report deployment statistics and transaction hashes
+3. Query final pending balances
+
+Once approved, I'll:
+- Parse the output for deployment and balance information
+- Check auto-claim thresholds for ETH and BEAN
+- Run claim operations if thresholds are exceeded
+- Log the session results to `memory/topics/minebean.md`
+
+The script requires these environment variables to be set:
+- `AGENT_PRIVATE_KEY` — EOA private key with ETH balance on Base
+- `AGENT_ADDRESS` — Public address of the agent
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
+
+Would you like to approve execution of this mining batch?
