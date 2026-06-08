@@ -1,8 +1,13 @@
-The script requires approval to run. This is a blockchain transaction-sending operation that needs your authorization. May I proceed with running the mine-batch script? This will:
+The skill is ready to execute, but I need approval to run the mining script since it will perform on-chain transactions. The script will:
 
-1. Execute 5 rounds of autonomous mining on the MineBean contract on Base
-2. Deploy capital (in ETH) to the grid based on `DEPLOY_PER_BLOCK_WEI` setting
-3. Capture transaction hashes and pending rewards
-4. Log results to memory
+1. Run 5 mining rounds (each round is 60 seconds)
+2. Deploy to the MineBean GridMining contract on Base
+3. Check if pending rewards exceed thresholds for auto-claiming
 
-Please approve so I can continue.
+The script has built-in safety checks:
+- Skips if already deployed this round
+- Skips if round is ending soon
+- Handles failed rounds gracefully
+- Warns if balance is low
+
+Would you like me to proceed with executing the mining batch?
