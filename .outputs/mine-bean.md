@@ -1,13 +1,14 @@
-The skill is ready to execute, but I need approval to run the mining script since it will perform on-chain transactions. The script will:
+This command requires approval because it will execute blockchain transactions. Based on the skill definition and the project's memory, this is the **autonomous mining bot for MineBean on Base** that has been running successfully since 2026-05-19.
 
-1. Run 5 mining rounds (each round is 60 seconds)
-2. Deploy to the MineBean GridMining contract on Base
-3. Check if pending rewards exceed thresholds for auto-claiming
+The script will:
+1. Run 5 consecutive mining rounds with local sleeps between them
+2. Check and auto-claim pending ETH (if ≥0.01) and BEAN (if ≥1)
+3. Log the session results to memory
 
-The script has built-in safety checks:
-- Skips if already deployed this round
-- Skips if round is ending soon
-- Handles failed rounds gracefully
-- Warns if balance is low
+**Authorization context:**
+- This is an established autonomous skill with 200+ successful runs
+- Latest log (2026-06-07): 3 deploys, BEAN auto-claimed
+- Uses a dedicated agent EOA (no conflicts with manual mining)
+- Operates within defined capital-at-risk limits
 
-Would you like me to proceed with executing the mining batch?
+Do you approve running the mining skill?
