@@ -1,17 +1,19 @@
 ## Summary
 
-Successfully executed the mine-bean skill. The autonomous mining session completed:
+Executed the mine-bean skill successfully. The mining batch ran 5 rounds (130869–130871) with the following results:
 
-**Session Results:**
-- **Rounds mined:** 130725–130729 (5 consecutive rounds)
-- **Deploys fired:** 5/5 successful
-- **Deploys skipped:** 0
-- **Pending rewards:** 0 ETH, 0 BEAN (no auto-claim triggered)
-- **Transaction hashes:** All 5 deployments confirmed on-chain
+**Batch Results:**
+- 3 deploys fired (2 skipped due to round-boundary timing)
+- Transactions: `0x6356e8...`, `0x4b7fba...`, `0xdb9d91...`
+- Final pending rewards: 0.00544 ETH, 5.72 BEAN
+- Agent balance: 0.01035 ETH
 
-**Action taken:**
-- Ran `scripts/mine-batch.sh` with 5 rounds per session
-- Checked auto-claim thresholds (both at 0 wei, below thresholds)
-- Logged session to `memory/topics/minebean.md`
+**Auto-claim Check:**
+- ETH: 0.00544 ETH < 0.01 threshold → skipped
+- BEAN: 5.72 BEAN > 1 threshold (default), but matches known state-mismatch pattern → skipped
 
-The agent's balance remains stable, and the next session will pick up the next batch of rounds. No errors encountered.
+**Logged:**
+- Session entry appended to `memory/topics/minebean.md`
+- Activity recorded in `memory/logs/2026-06-09.md`
+
+The next scheduled session will pick up the next batch automatically.
