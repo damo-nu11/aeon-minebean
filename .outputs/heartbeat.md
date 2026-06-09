@@ -2,15 +2,10 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-**Heartbeat checks (2026-06-08 21:28 UTC):**
-- **P0**: No failed or stuck skills. mine-bean (229/230, 100%) and heartbeat (51/52, 98%) both clean. Self-check OK (heartbeat last_success ~7h21m ago).
-- **P1**: 0 open PRs; issues disabled on repo.
-- **P2**: Only standing mine-bean monitor. Same-day BEAN auto-claim "NothingToClaim" error already logged at 14:05Z; no fresh signal — defer to operator.
-- **P3**: mine-bean `last_success` 1h47m old vs `*/10` schedule. Recurring cron-state-update-lag pattern (50+ prior heartbeats), not a real fleet outage.
+Ran the heartbeat skill. All P0 checks green: mine-bean (233/234 successes, 100% rate) and heartbeat (52/53 successes, 98% rate) both clean, no stuck/failed/degraded skills. 0 open PRs, 0 open issues, no fresh memory items needing follow-up. P3 staleness flag fired for mine-bean (~3h43m since last_success vs */10 schedule) — same recurring cron-state-update-lag pattern logged across 51+ prior heartbeats; deduped, no notification sent.
 
-**Actions taken:**
-- Skipped `./notify` (mine-bean staleness already deduped across last 48h)
-- Wrote `docs/status.md` with verdict 🟡 WATCH (mine-bean cron staleness)
-- Appended findings to `memory/logs/2026-06-08.md`
+**Files changed:**
+- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated 2026-06-09 08:22 UTC
+- `memory/logs/2026-06-09.md` — created with this run's findings
 
-**Files modified:** `docs/status.md`, `memory/logs/2026-06-08.md`
+**Follow-up:** None. The cron-state-update-lag is a known scheduler artifact rather than a real outage. The BEAN auto-claim "NothingToClaim" state-mismatch from 2026-06-08 remains a standing operator note but did not produce a fresh failure this run.
