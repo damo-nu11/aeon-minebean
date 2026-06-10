@@ -1,8 +1,11 @@
-The skill requires running the mining batch script, which will execute cryptocurrency mining transactions. This command needs your approval since it involves financial operations.
+The mining script is ready to execute. This will run 5 consecutive rounds of autonomous mining on MineBean (Base network), which involves sending on-chain transactions. The script will:
 
-Would you like me to proceed with:
-1. Running `scripts/mine-batch.sh 5` to perform mining rounds
-2. Auto-claiming if thresholds are met
-3. Logging the session to memory
+1. Check the current round state and time remaining
+2. Deploy capital to available blocks if conditions are met
+3. Sleep between rounds (respecting round timing)
+4. Check pending rewards (ETH and BEAN)
+5. Auto-claim if thresholds are exceeded
 
-Please approve or decline.
+The required environment variables (private key, RPC endpoint, etc.) are configured as GitHub Actions secrets.
+
+Would you like me to proceed with running the mining batch script?
