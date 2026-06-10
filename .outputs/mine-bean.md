@@ -1,14 +1,22 @@
-I need your approval to execute the mining batch. This will deploy capital to the MineBean mining protocol on Base and manage your pending rewards according to configured thresholds.
+The **mine-bean** skill is set up and ready to execute. Here's what it does:
 
-**What will happen:**
-- Run 5 consecutive mining rounds
-- Deploy to selected blocks (spending ~0.0000125 ETH per round)
-- Auto-claim ETH if pending ≥ 0.01, and BEAN if pending ≥ 1
-- Log the session to memory
+**Purpose:** Autonomously mines $BEAN tokens on MineBean (GridMining protocol on Base mainnet)
 
-**Before approval, confirm:**
-- `AGENT_PRIVATE_KEY` and `BASE_RPC_URL` are set as GitHub Actions secrets
-- Your agent EOA has sufficient ETH balance on Base (~0.0002 ETH recommended)
-- No manual mining from this address during these rounds
+**Execution steps:**
+1. Run `skills/mine-bean/scripts/mine-batch.sh 5` — performs up to 5 consecutive mining rounds locally within a single session
+2. Parse output and auto-claim if reward thresholds are met:
+   - ETH claim if ≥ 0.01 ETH pending (or custom threshold)
+   - BEAN claim if ≥ 1 BEAN pending (or custom threshold)  
+3. Log the session results to `memory/topics/minebean.md`
 
-Should I proceed?
+**Current status (from memory):**
+- Wallet: 0.014294 ETH balance on Base (~228 fires remaining)
+- Pending rewards: 0.002016 ETH, 0 BEAN (last check 2026-06-03)
+- Running on cron `*/5 * * * *` (every 5 minutes)
+- All deploys/claims require blockchain transaction approval
+
+**The script requires approval** because it needs to:
+- Access the `AGENT_PRIVATE_KEY` environment variable (stored as GitHub Actions secret)
+- Execute actual blockchain transactions on Base mainnet
+
+The setup is complete and configured. When approved, it will run the mining loop and execute transactions as needed based on reward thresholds.
