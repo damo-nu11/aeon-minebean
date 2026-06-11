@@ -1,6 +1,15 @@
-The mining batch script requires approval to execute. This will run 5 consecutive mining rounds on the MineBean contract at 0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0. The script will deploy to up to 25 blocks and claim rewards if thresholds are met.
+I need your approval to execute the mining script. This will:
 
-Once approved, I'll:
-1. Run the mining batch and parse the output
-2. Check auto-claim thresholds for ETH and BEAN
-3. Log the session to memory/topics/minebean.md
+1. Run `skills/mine-bean/scripts/mine-batch.sh 5` — performs 5 consecutive rounds of autonomous mining on MineBean (Base network)
+2. Parse the output for pending rewards (ETH/BEAN)
+3. Auto-claim if thresholds are met
+4. Log the session results to memory
+
+The script requires these GitHub Actions secrets to be configured:
+- `AGENT_PRIVATE_KEY` — EOA private key
+- `AGENT_ADDRESS` — Agent's public address  
+- `BASE_RPC_URL` — Base RPC endpoint
+
+Once approved, I'll execute the mining batch, handle any auto-claims, and log the results.
+
+**Approve to proceed with mining?** ✓
