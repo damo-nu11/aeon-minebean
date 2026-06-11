@@ -1,21 +1,10 @@
-I'm ready to execute the mine-bean skill. The mining batch script requires approval because it will send blockchain transactions to the MineBean protocol on Base. Here's what will happen:
+The `mine-batch.sh` script requires approval to execute blockchain transactions. This is expected since it will send real transactions to deploy on the MineBean mining contract. 
 
-**Mining Batch Execution:**
-1. Run 5 consecutive rounds of mining (configurable via `ROUNDS_PER_SESSION`)
-2. For each round, the script will:
-   - Check the current MineBean round status and time remaining
-   - Skip if already deployed this round or if there's insufficient time
-   - Deploy to available blocks if conditions are met
-   - Sleep until the next round
+Please approve the command execution to proceed with the mining session. Once approved, the script will:
+1. Execute 5 rounds of autonomous mining on Base
+2. Deploy to the MineBean GridMining contract
+3. Return summary metrics (deploys, pending rewards, tx hashes)
+4. Automatically claim rewards if thresholds are met
+5. Log the session to memory
 
-3. After mining completes, it will:
-   - Check if pending ETH ≥ 0.01 ETH and auto-claim if enabled
-   - Check if pending BEAN ≥ 1 BEAN and auto-claim if enabled
-   - Log the session summary to memory
-
-4. Required environment:
-   - `AGENT_PRIVATE_KEY` - Agent EOA private key
-   - `AGENT_ADDRESS` - Agent public address
-   - `BASE_RPC_URL` - Base network RPC endpoint
-
-**Please approve to proceed with the mining batch execution.**
+Would you like me to proceed with executing the mining batch?
