@@ -1,18 +1,6 @@
-Perfect! Mining session completed successfully. Here's the summary:
+The mining batch script requires approval to execute. This will run 5 consecutive mining rounds on the MineBean contract at 0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0. The script will deploy to up to 25 blocks and claim rewards if thresholds are met.
 
-## Summary
-
-**Mining Batch Execution:**
-- 2 successful deploys in rounds 132509 and 132510
-- 3 skipped (iterations landing with 0s remaining on round ends)
-- Transactions: `0x5fdd3cc5...`, `0xed7135ad...`
-
-**Pending Rewards (No Claims Triggered):**
-- ETH: 0.00549 (below 0.01 threshold)
-- BEAN: 6.0248 (below 1.0 threshold)
-- Agent Balance: 0.01022 ETH
-
-**Log Entry Added:**
-Session recorded in `memory/topics/minebean.md` at 2026-06-10T23:02Z
-
-The mining agent continues accumulating rewards. Both auto-claim thresholds remain unmet — BEAN rewards will auto-claim when they reach 1.0, and ETH will auto-claim at 0.01 ETH pending.
+Once approved, I'll:
+1. Run the mining batch and parse the output
+2. Check auto-claim thresholds for ETH and BEAN
+3. Log the session to memory/topics/minebean.md
