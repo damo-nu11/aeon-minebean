@@ -1,9 +1,8 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- **P0:** No failed or stuck skills. mine-bean and heartbeat both clean (success_rate 99% / 98%, 0 consecutive failures). Heartbeat self-check OK (~7h since last success, well under 36h).
-- **P1:** 0 open PRs; repo issues disabled.
-- **P2:** No flagged memory items beyond standing mine-bean monitor.
-- **P3:** mine-bean last_success is ~3h32m old vs `*/10` schedule — same recurring GH-Actions cron-state-update-lag pattern as in 58+ prior heartbeats. Dedup rule applies → no `./notify`.
-- **Files modified:** `docs/status.md` (regenerated with verdict 🟡 WATCH); `memory/logs/2026-06-12.md` (appended 15:34 UTC heartbeat entry).
-- **Follow-up:** None — recurring P3 lag is a known scheduler-side delay, not a real outage.
+- P0 clean: mine-bean (success_rate 0.99, 259/261, last success 17:52 UTC) and heartbeat (0.98, 60/61, last success 15:36 UTC) both green, no consecutive failures.
+- P1: 0 open PRs, 0 open issues.
+- P2: no flagged memory items.
+- P3: mine-bean cron-state-update lag (~2h11m vs */10 schedule) — same recurring GH Actions scheduler/state-update gap pattern, 59+ prior dedup hits → skipped `./notify`.
+- Wrote `docs/status.md` with verdict 🟡 WATCH; appended findings to `memory/logs/2026-06-12.md`.
