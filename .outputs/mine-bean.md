@@ -1,1 +1,9 @@
-I've started the mining batch script as a background task. The script will run through 5 rounds with sleeps between them (about 3 minutes total). I've scheduled a wakeup to check the results and proceed with the auto-claim steps.
+The mining script requires approval before executing blockchain transactions. This is expected for the mine-bean skill, which performs real transactions on Base mainnet.
+
+The script will:
+1. Run 5 mining rounds with local sleeps between them
+2. Call deployment contracts to claim grid positions
+3. Collect pending ETH and BEAN rewards
+4. Return a summary with transaction hashes
+
+**Awaiting approval to proceed with the blockchain mining batch.**
