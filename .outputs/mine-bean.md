@@ -1,9 +1,1 @@
-The mining script requires approval before executing blockchain transactions. This is expected for the mine-bean skill, which performs real transactions on Base mainnet.
-
-The script will:
-1. Run 5 mining rounds with local sleeps between them
-2. Call deployment contracts to claim grid positions
-3. Collect pending ETH and BEAN rewards
-4. Return a summary with transaction hashes
-
-**Awaiting approval to proceed with the blockchain mining batch.**
+The mining batch script requires approval to execute. This will run the mine-bean autonomous mining operation on Base network. Please approve to proceed with the skill execution.
