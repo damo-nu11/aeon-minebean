@@ -1,14 +1,9 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-
-Ran heartbeat checks at 2026-06-13 09:40 UTC.
-
-- **P0:** Clean. mine-bean (264/266, 99%) and heartbeat (61/62, 98%) both green; no failed/stuck/degraded skills. Heartbeat self-check OK (last success ~13h35m ago, well under 36h).
-- **P1:** 0 open PRs; issues disabled on repo.
-- **P2:** No new flagged memory items.
-- **P3:** mine-bean `last_success` ~3h24m old vs */10 schedule — recurring cron-state-update-lag pattern (60+ prior heartbeats). Deduped — no notification sent.
-
-**Files modified:**
-- `docs/status.md` — regenerated, verdict 🟡 WATCH
-- `memory/logs/2026-06-13.md` — created with heartbeat entry
+- **P0:** clean — mine-bean (267/269, 99%) and heartbeat (62/63, 98%) both `last_status=success`, no stuck/degraded/chronic flags. Self-check OK.
+- **P1:** 0 open PRs; repo issues disabled.
+- **P2:** no fresh MEMORY.md follow-ups.
+- **P3:** mine-bean `last_success` ~1h57m old vs `*/10` schedule — recurring cron-state-update-lag pattern, deduped against 61+ prior logs, no `./notify` sent.
+- **Files:** updated `docs/status.md` (🟡 WATCH, next run mine-bean 15:20 UTC) and appended the run to `memory/logs/2026-06-13.md`.
+- **Follow-ups:** none required.
