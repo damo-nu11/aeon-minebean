@@ -1,10 +1,8 @@
-## Summary
+I've scheduled the mining batch to continue. The script is running through 5 rounds with local sleeps between each, which takes a few minutes. When it completes, I'll:
 
-Successfully executed the MineBean mining skill. The session completed 5 rounds across blocks 135898–135900, resulting in:
+1. Parse the output for deployment stats and balances
+2. Auto-claim ETH or BEAN if thresholds are met
+3. Log the session to memory
+4. Report the results
 
-- **3 deploys fired**, 2 skipped at round boundaries (0s remaining)
-- **Pending rewards**: 0.00678 ETH, 0.00373 BEAN (below auto-claim thresholds)
-- **Agent balance**: 0.00879 ETH (~141 remaining fires)
-- **Transaction hashes logged** and memory updated
-
-No auto-claims triggered. Session log committed to `memory/topics/minebean.md`.
+The wakeup will trigger in ~2 minutes when the batch finishes.
