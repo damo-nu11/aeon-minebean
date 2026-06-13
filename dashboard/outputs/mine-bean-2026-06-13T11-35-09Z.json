@@ -1,0 +1,125 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "MineBean",
+        "description": "Session 2026-06-13"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "session-row",
+        "sep-1",
+        "metrics-grid",
+        "sep-2",
+        "status-section"
+      ]
+    },
+    "session-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "deploy-stat",
+        "round-badge"
+      ]
+    },
+    "deploy-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys fired",
+        "value": "1"
+      }
+    },
+    "round-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "Round 135630",
+        "variant": "secondary"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "metrics-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "bean-claimed",
+        "pending-rewards",
+        "balance"
+      ]
+    },
+    "bean-claimed": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN claimed",
+        "value": "2.296"
+      }
+    },
+    "pending-rewards": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending rewards",
+        "value": "0.006442 ETH"
+      }
+    },
+    "balance": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance",
+        "value": "0.009182 ETH"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "status-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "threshold-alert",
+        "tx-text"
+      ]
+    },
+    "threshold-alert": {
+      "type": "Alert",
+      "props": {
+        "message": "Pending rewards below threshold",
+        "type": "info"
+      }
+    },
+    "tx-text": {
+      "type": "Text",
+      "props": {
+        "text": "TX: 0xd36856a5...",
+        "variant": "caption"
+      }
+    }
+  }
+}
