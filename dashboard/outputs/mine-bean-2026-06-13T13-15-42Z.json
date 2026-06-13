@@ -1,0 +1,103 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "MineBean Mining Session"
+      },
+      "children": [
+        "heading_1",
+        "stack_1"
+      ]
+    },
+    "heading_1": {
+      "type": "Heading",
+      "props": {
+        "text": "Mining session completed",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "stack_1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_deploys",
+        "separator_1",
+        "stack_pending",
+        "separator_2",
+        "stat_balance"
+      ]
+    },
+    "text_deploys": {
+      "type": "Text",
+      "props": {
+        "text": "3 deploys across rounds 135714-135716"
+      },
+      "children": []
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stack_pending": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_pending_label",
+        "stat_eth_pending",
+        "stat_bean_pending"
+      ]
+    },
+    "text_pending_label": {
+      "type": "Text",
+      "props": {
+        "text": "Pending",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "stat_eth_pending": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.006556"
+      },
+      "children": []
+    },
+    "stat_bean_pending": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "2.4303"
+      },
+      "children": []
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stat_balance": {
+      "type": "Stat",
+      "props": {
+        "label": "Agent balance (ETH)",
+        "value": "0.008990"
+      },
+      "children": []
+    }
+  }
+}
