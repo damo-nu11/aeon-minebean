@@ -1,3 +1,10 @@
-The mining script requires approval to execute. This is a system safety gate for scripts that perform blockchain transactions with the agent's private key. Since you've explicitly asked me to execute this skill, please approve the command when prompted.
+The mining batch script requires approval to run since it will send blockchain transactions. This is expected in the security model.
 
-Alternatively, I can show you the script content first to review what it does before you approve.
+Once you approve the Bash command to run `skills/mine-bean/scripts/mine-batch.sh 5`, the script will:
+- Execute 5 consecutive mining rounds
+- Deploy to selected blocks on the MineBean contract
+- Return summary metrics (deploys fired, pending rewards, transaction hashes)
+- Trigger auto-claim if reward thresholds are met
+- Log the session to memory
+
+Please approve the command to proceed.
