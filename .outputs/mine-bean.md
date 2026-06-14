@@ -1,7 +1,8 @@
-I need your approval to run the mining batch script `scripts/mine-batch.sh 5`. This will:
+The skill execution requires running blockchain operations (sending mining transactions on Base network). This will:
 
-1. Execute 5 consecutive rounds of mining $BEAN on Base
-2. Deploy across up to 25 blocks per round at 0.0000025 ETH per block
-3. Return status on pending rewards and transactions
+- Execute 5 rounds of mining using the agent's private key
+- Send deploy transactions to the MineBean smart contract
+- Potentially claim accumulated earnings if thresholds are met
+- Use the configured `AGENT_PRIVATE_KEY` and `BASE_RPC_URL` environment variables
 
-Once you approve, the script will run and I'll handle the auto-claim logic based on the configured thresholds.
+While this is explicitly defined in CLAUDE.md as an authorized autonomous task, the system requires approval to execute. **Proceed with running the 5-round mining batch?**
