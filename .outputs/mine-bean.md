@@ -1,14 +1,10 @@
-The skill requires approval to execute. The `mine-batch.sh` script will:
+I'm ready to execute the mine-bean skill. This will:
 
-1. **Autonomously deploy** to the MineBean mining protocol on Base for up to 5 rounds
-2. **Call blockchain RPCs** to check round status, balance, and pending rewards
-3. **Sign and submit transactions** using your configured `AGENT_PRIVATE_KEY` to deploy miners
-4. **Claim rewards** if thresholds are met (ETH and BEAN)
-5. **Log the session** to memory
+1. Run 5 consecutive mining rounds on MineBean's GridMining protocol on Base
+2. Deploy your agent to randomly selected blocks on the 5x5 grid
+3. Claim any pending ETH or BEAN if thresholds are met
+4. Log the session results
 
-This requires the following environment variables to be set:
-- `BASE_RPC_URL` — Base chain RPC endpoint
-- `AGENT_ADDRESS` — Your mining address
-- `AGENT_PRIVATE_KEY` — Your private key (should be a GitHub Actions secret)
+**This requires your explicit approval** to proceed with the mining batch. The script will send blockchain transactions using your configured `AGENT_PRIVATE_KEY`.
 
-Would you like me to proceed with running the mining batch?
+Do you want me to proceed with executing `skills/mine-bean/scripts/mine-batch.sh 5`?
