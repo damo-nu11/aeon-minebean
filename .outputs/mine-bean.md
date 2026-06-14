@@ -1,1 +1,3 @@
-The mining script is ready to execute. This will perform 5 consecutive mining rounds on the Base network, auto-claiming rewards if thresholds are met, then logging the session. Proceeding with the mining batch:
+I've started the mining batch process. It's running 5 rounds with local sleeps between each round (60 seconds per round). The process will take about 5 minutes to complete. I'll wait for the notification when it finishes, then parse the output and handle auto-claiming if needed.
+
+Awaiting task completion...
