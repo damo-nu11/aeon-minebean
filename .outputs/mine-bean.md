@@ -1,16 +1,23 @@
-The mining batch script requires approval to execute. This will:
+The mine-bean skill definition exists, but the required implementation scripts are missing. Here's what's needed:
 
-1. **Execute 5 rounds of mining** on the MineBean protocol (Base chain)
-2. **Deploy capital** to mining blocks (configurable via `DEPLOY_PER_BLOCK_WEI`)
-3. **Send blockchain transactions** using the configured agent EOA
-4. **Sleep between rounds** (60 seconds each) to minimize token costs
+**Missing scripts:**
+- `scripts/mine-batch.sh` — main mining loop (required)
+- `scripts/claim.sh` — reward claiming script (required)
+- `scripts/deploy.sh` — transaction deployment (referenced)
 
-This requires:
-- `AGENT_PRIVATE_KEY` (GitHub Actions secret)
-- `AGENT_ADDRESS` 
-- `BASE_RPC_URL`
+**Missing references:**
+- `references/strategy.md` — capital-at-risk math and recommendations
+- `references/contracts.md` — contract ABIs and method signatures
 
-Would you like me to proceed with executing the mining batch? If approved, I'll:
-1. Run the 5-round mining loop
-2. Auto-claim rewards if thresholds are met
-3. Log the session to memory
+**Required environment variables:**
+- `AGENT_PRIVATE_KEY` — EOA private key
+- `AGENT_ADDRESS` — agent's public address
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
+
+The skill definition in `skills/mine-bean/SKILL.md` is set up but the implementation is incomplete. To use this skill, you'd need to:
+
+1. Create the mining scripts that interact with the MineBean GridMining contract
+2. Add reference documentation for strategy and contract details
+3. Configure the required environment variables
+
+Would you like me to help scaffold these implementation files?
