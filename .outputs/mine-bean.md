@@ -1,23 +1,20 @@
-The mine-bean skill definition exists, but the required implementation scripts are missing. Here's what's needed:
+The mining script requires approval to proceed. This is expected since the skill involves:
 
-**Missing scripts:**
-- `scripts/mine-batch.sh` — main mining loop (required)
-- `scripts/claim.sh` — reward claiming script (required)
-- `scripts/deploy.sh` — transaction deployment (referenced)
+1. **Blockchain transactions** on the Base network
+2. **Private key usage** for signing transactions
+3. **ETH expenditure** for gas and mining stakes
 
-**Missing references:**
-- `references/strategy.md` — capital-at-risk math and recommendations
-- `references/contracts.md` — contract ABIs and method signatures
+The skill is designed to execute the following flow:
+- Run 5 consecutive mining rounds (configurable via `ROUNDS_PER_SESSION`)
+- Auto-claim pending ETH/BEAN rewards if they exceed thresholds
+- Log the session activity to memory
 
-**Required environment variables:**
-- `AGENT_PRIVATE_KEY` — EOA private key
-- `AGENT_ADDRESS` — agent's public address
-- `BASE_RPC_URL` — Base mainnet RPC endpoint
+**Status:** Awaiting approval to execute `skills/mine-bean/scripts/mine-batch.sh` to proceed with the mining batch.
 
-The skill definition in `skills/mine-bean/SKILL.md` is set up but the implementation is incomplete. To use this skill, you'd need to:
+Once you approve, the script will:
+- Deploy capital to all available grid cells over the 5 rounds
+- Monitor pending rewards
+- Auto-claim if thresholds are met (0.01 ETH or 1 BEAN by default)
+- Log results to `memory/topics/minebean.md`
 
-1. Create the mining scripts that interact with the MineBean GridMining contract
-2. Add reference documentation for strategy and contract details
-3. Configure the required environment variables
-
-Would you like me to help scaffold these implementation files?
+Would you like me to proceed with this execution?
