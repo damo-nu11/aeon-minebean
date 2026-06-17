@@ -1,0 +1,82 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "MineBean Mining Session"
+      },
+      "children": [
+        "heading",
+        "content_stack"
+      ]
+    },
+    "heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Mining session complete",
+        "level": "h3"
+      }
+    },
+    "content_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "deploys_stat",
+        "pending_stat",
+        "separator",
+        "threshold_section"
+      ]
+    },
+    "deploys_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "2"
+      }
+    },
+    "pending_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH Pending",
+        "value": "0.008"
+      }
+    },
+    "separator": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "threshold_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "threshold_label",
+        "progress_bar"
+      ]
+    },
+    "threshold_label": {
+      "type": "Text",
+      "props": {
+        "text": "Ready to auto-claim at 0.01 ETH threshold",
+        "variant": "lead"
+      }
+    },
+    "progress_bar": {
+      "type": "Progress",
+      "props": {
+        "value": 0.008,
+        "max": 0.01,
+        "label": "0.008 / 0.01 ETH"
+      }
+    }
+  }
+}
