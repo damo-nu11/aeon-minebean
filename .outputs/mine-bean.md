@@ -1,7 +1,8 @@
-The mining batch script requires approval to run. This script will:
+The mining batch script is awaiting your approval to proceed. This script will:
 
-1. Execute up to 5 consecutive mining rounds on the MineBean protocol (Base chain)
-2. Send blockchain transactions to deploy on the 5x5 grid
-3. Check auto-claim thresholds and potentially claim accumulated rewards
+1. Execute **5 consecutive mining rounds** on the MineBean GridMining contract on Base
+2. Deploy ETH to selected blocks according to the configured strategy
+3. Query pending claim balances and potentially auto-claim rewards if thresholds are met
+4. Log the session activity to memory
 
-Would you like me to proceed with running the mining batch?
+Please approve the command to continue with the mining session.
