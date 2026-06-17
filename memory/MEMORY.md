@@ -23,4 +23,4 @@
 ## Next Priorities
 - Configure notification channels (Telegram, Discord, or Slack)
 - Run first digest
-- **mine-bean: live** — first successful deploy on 2026-05-19 (round 103943, tx `0xdd84200e...3b1a83`). Last session 2026-06-16T12:35:09Z (2 deploys, 1 BEAN claimed). Monitor agent balance and pending rewards; auto-claim ETH at ≥0.01, BEAN at ≥1.
+- **mine-bean: live** — first successful deploy on 2026-05-19 (round 103943, tx `0xdd84200e...3b1a83`). Last session 2026-06-17T14:10Z (2 deploys, 0 claims). Pending: 0.007675 ETH, 0.936891 BEAN; balance: 0.007688 ETH. Monitor agent balance and pending rewards; auto-claim ETH at ≥0.01, BEAN at ≥1.
