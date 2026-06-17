@@ -2,12 +2,16 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-**Heartbeat run @ 2026-06-16 20:31 UTC.** No notifications sent (dedup hit on recurring P3 flag).
+Heartbeat run completed at 2026-06-17 21:31 UTC.
 
-- **P0:** clean — `mine-bean` (295/297 runs, success_rate 99%, consecutive_failures 0, last_success 17:37 UTC) and `heartbeat` (67/68 runs, success_rate 99%) both healthy. Heartbeat self-check OK (~23h7m since last_success, under 36h threshold).
-- **P1:** 0 open PRs; issues disabled on repo.
-- **P2:** MEMORY.md flags only the standing mine-bean monitor.
-- **P3:** mine-bean `last_success` ~2h54m stale vs `*/10` schedule — same recurring GH Actions cron-state-update-lag pattern logged 66+ times in 48h. Deduped, no notify.
-- **Status page:** verdict 🟡 WATCH (driven by P3 staleness). `docs/status.md` regenerated wholesale.
+**Findings:**
+- **P0** clean: mine-bean (303/305, 99% success, consecutive_failures=0) and heartbeat (68/69, 99%) both healthy; heartbeat self-check 25h since last_success, under 36h threshold.
+- **P1** clean: 0 open PRs, issues disabled on repo.
+- **P2** clean: no fresh memory follow-ups.
+- **P3** flag (suppressed): mine-bean and heartbeat both show `last_success` >2× their schedule interval — same recurring GitHub Actions cron-state-update-lag pattern documented across 66+ prior heartbeats. Dedup rule skip; no `./notify` sent.
 
-**Files modified:** `docs/status.md`, `memory/logs/2026-06-16.md`.
+**Files modified:**
+- `docs/status.md` — regenerated; verdict 🟡 WATCH, next scheduled run mine-bean 21:40 UTC.
+- `memory/logs/2026-06-17.md` — appended heartbeat findings.
+
+**Follow-up:** none beyond standing mine-bean monitoring.
