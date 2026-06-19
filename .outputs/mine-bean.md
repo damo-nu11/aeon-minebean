@@ -1,7 +1,1 @@
-The mining batch script is waiting for your approval. This will:
-1. Execute 5 rounds of autonomous mining on the MineBean protocol (Base network)
-2. Deploy to up to 25 grid blocks per round
-3. Parse results and auto-claim rewards if thresholds are met
-4. Log the session to memory
-
-Please approve the `scripts/mine-batch.sh` command to proceed.
+The mining batch script requires approval to execute. I'm ready to proceed once you authorize the command to run `scripts/mine-batch.sh 5`, which will execute 5 consecutive rounds of autonomous mining on the MineBean protocol and report back on deploys, pending rewards, and transaction hashes.
