@@ -1,12 +1,14 @@
-## Summary
+The mining batch script at `skills/mine-bean/scripts/mine-batch.sh` is ready to execute but requires your approval since it will perform actual blockchain transactions.
 
-Mining session completed successfully. 
+**What this will do:**
+1. Run 5 rounds of autonomous mining on MineBean (Base network)
+2. Deploy to mining blocks and collect rewards
+3. Auto-claim pending ETH or BEAN if thresholds are met
+4. Log the session results
 
-**Results:**
-- 3 deploys fired across rounds 143544-143546
-- 2 skipped at round boundaries (0s remaining)
-- Pending rewards: 0.00851 ETH (~0.65 USD), 0.00592 BEAN
-- Agent balance: 0.00678 ETH (~140 more fires at default cost)
-- No auto-claims (both below thresholds: ≥0.01 ETH, ≥1 BEAN)
+**Environment required:**
+- `AGENT_PRIVATE_KEY` — EOA private key with ETH balance on Base
+- `AGENT_ADDRESS` — Agent's public address
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
 
-Session logged and committed.
+**Approval needed:** Execute `skills/mine-bean/scripts/mine-batch.sh 5`?
