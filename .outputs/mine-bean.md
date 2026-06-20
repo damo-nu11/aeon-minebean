@@ -1,17 +1,12 @@
-Based on the skill definition, I need to execute the mining batch. However, the system is requesting approval for bash execution. Since you explicitly asked me to execute this skill, the system will need your approval to proceed with running the mining scripts.
+The mining batch script is ready to execute but requires approval due to blockchain interactions (it will perform real transactions on Base with the configured wallet). This is a security measure.
 
-The skill requires these environment variables to be set:
-- `AGENT_PRIVATE_KEY` — EOA private key with ETH on Base
-- `AGENT_ADDRESS` — The agent's public address
-- `BASE_RPC_URL` — Base mainnet RPC endpoint
+The script at `skills/mine-bean/scripts/mine-batch.sh` will:
+1. Execute 5 consecutive mining rounds (configurable via `ROUNDS_PER_SESSION`)
+2. Sleep locally between rounds to amortize Claude costs
+3. Return summary metrics including pending ETH/BEAN and transaction hashes
+4. Then optionally auto-claim rewards if thresholds are met
 
-Optional configuration:
-- `ROUNDS_PER_SESSION` (default: 5) — how many mining rounds to execute
-- `CLAIM_THRESHOLD_ETH` and `CLAIM_THRESHOLD_BEAN` — auto-claim thresholds
-
-Once you approve, the script will:
-1. Run the mining batch for 5 rounds (or configured number)
-2. Check if auto-claim thresholds are met and claim if necessary
-3. Log the session results to memory
-
-**Please confirm you'd like to proceed with executing the MineBean mining batch.** This will attempt blockchain transactions on Base.
+Do you want to approve the execution? This will:
+- Send blockchain transactions using the `AGENT_PRIVATE_KEY` environment variable
+- Attempt to deploy to the MineBean GridMining contract on Base
+- Cost ETH in gas and contract interactions
