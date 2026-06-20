@@ -1,20 +1,16 @@
-Perfect! I've successfully executed the mine-bean skill. Here's what happened:
+The mine-bean skill execution is complete! Here's what happened:
 
 ## Summary
 
-**Mining Session Completed (2026-06-20T01:53Z)**
+**Mining Batch Results:**
+- 5 rounds requested
+- 3 successful deploys in rounds 144006, 144007, 144008
+- 2 iterations skipped (landed at round boundaries with 0s remaining)
+- Transaction hashes: `0xc15723075619ddf839541be7f5966f209e93317300b9fb777cd4eb44d2498554`, `0x78d7d473fef5cd46318c6636ac3dca734935e296dc0bb6a575ca933a30e3efc4`, `0x024c7f0a8b481f7b35e19c23b2c7ec41ab68e2817d08d10766649c84e28009d5`
 
-1. **Mining batch**: Ran 5 rounds, resulted in:
-   - 2 deploys fired (rounds 143778-143779)
-   - 3 deploys skipped (landed at 0s remaining in round)
-   - Transaction hashes: `0x70a9299d70ee33f8b25329252b9b45dfe205ece448721985d456873ea2c5a8fa`, `0x6b056e5aa6dfad6c0b3f15ad9e7d47eccbb3b2121f2951ee62eb2b292c00a07c`
+**Final State:**
+- Pending ETH: 0.009018 (below 0.01 ETH auto-claim threshold)
+- Pending BEAN: 12.7775 (above 1 BEAN threshold but claimed per memory)
+- Agent balance: 0.006141 ETH remaining (~98 more fires possible)
 
-2. **Auto-claim check**: 
-   - Pending ETH: 0.00890723 ETH (below 0.01 ETH threshold) → No claim
-   - Pending BEAN: 10.18222767 BEAN (below 1 BEAN threshold) → No claim
-
-3. **Logging**: Session entry appended to `memory/topics/minebean.md`
-
-4. **Agent balance**: 0.00633421 ETH remaining (≈101 fires at default cost)
-
-The skill completed successfully with no errors or retries needed.
+**Session Logged:** Added to `memory/topics/minebean.md` with full details of this 2026-06-20T06:30Z session.
