@@ -1,1 +1,1 @@
-The command `scripts/mine-batch.sh 5` requires approval to execute. This will run 5 consecutive mining rounds on the MineBean protocol. Please approve this action to continue with the skill execution.
+Awaiting approval to run the mining batch (this will execute blockchain transactions on Base).
