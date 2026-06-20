@@ -2,13 +2,10 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran the heartbeat skill at 2026-06-20 15:18 UTC.
+Ran the heartbeat skill. No failed or stuck skills; both enabled skills (`mine-bean`, `heartbeat`) at 99% success rate with 0 consecutive failures. No open PRs, no urgent issues, no open rows in issues index. P3 flag: `mine-bean` last_success ~1h26m old vs */10 schedule — recurring scheduler/state-update-lag pattern (dedup'd against 72+ prior heartbeats, notify skipped).
 
-- **P0:** No failed/stuck skills. `mine-bean` (327/329 runs, 99%, last_success 13:17 UTC) and `heartbeat` (73/74, 99%, last_success 09:48 UTC) both green. Self-check OK.
-- **P1:** 0 open PRs; issues disabled on repo.
-- **P2:** No fresh memory flags.
-- **P3:** `mine-bean` `last_success` is ~2h old vs `*/10` schedule — same recurring scheduler/state-update-lag pattern logged across 71+ prior heartbeats. Deduped — no notify.
-- **Status page:** wrote `docs/status.md` with verdict 🟡 WATCH.
-- **Log:** appended findings to `memory/logs/2026-06-20.md`.
+**Files modified:**
+- `docs/status.md` — regenerated with verdict 🟡 WATCH, Updated 2026-06-20 21:26 UTC, next run `mine-bean at 21:30 UTC`. Token Pulse section omitted (no `articles/token-report-*.md` exists).
+- `memory/logs/2026-06-20.md` — appended 21:26 UTC heartbeat entry.
 
-Files modified: `docs/status.md`, `memory/logs/2026-06-20.md`. No follow-up needed.
+**Follow-up:** None required this run. Status-page commit handled by the workflow's auto-commit step.
