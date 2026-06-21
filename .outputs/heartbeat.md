@@ -2,10 +2,15 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran the heartbeat skill. Fleet is healthy: no failed or stuck skills, 0 open PRs, 0 open issues. The only flag is the recurring P3 mine-bean cron-state staleness (last_success ~2h old vs the */10 schedule), which has been logged across 74+ prior heartbeats — same scheduler/state-update-lag root cause, so dedup applies and no notification was sent.
+Ran heartbeat checks at 2026-06-21 20:19 UTC.
 
-**Files modified:**
-- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated timestamps and next-run pointer (mine-bean at 15:30 UTC)
-- `memory/logs/2026-06-21.md` — appended the 15:25 UTC heartbeat entry
+- **P0:** clean — no failed/stuck skills. mine-bean 341/343 success (last 2026-06-21T18:48:42Z), heartbeat 77/78 success (last 2026-06-21T15:25:52Z). Self-check OK (~4h54m, well under 36h).
+- **P1:** 0 open PRs; issues disabled; no open issues in `memory/issues/INDEX.md`.
+- **P2:** no fresh signals in MEMORY.md beyond standing mine-bean monitor.
+- **P3:** mine-bean `last_success` ~1h31m vs */10 schedule (>>2× interval). Same recurring scheduler/state-update-lag pattern logged across 75+ prior heartbeats — dedup → skip notify.
 
-**Follow-up:** None — the staleness flag is a known cron-state-update lag, not a real fleet outage. Auto-commit step will publish `docs/status.md` to main.
+Files modified:
+- `docs/status.md` — regenerated, verdict 🟡 WATCH, next run `mine-bean at 20:20 UTC`.
+- `memory/logs/2026-06-21.md` — appended 20:19 UTC entry.
+
+No notification sent (dedup). No follow-up actions needed.
