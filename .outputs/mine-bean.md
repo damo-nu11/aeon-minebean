@@ -1,23 +1,17 @@
-Perfect! The mine-bean skill has been successfully executed. Here's what was accomplished:
+Perfect! The mining session has completed successfully. Here's the summary:
 
 ## Summary
 
-**Mining Batch Results:**
-- **Rounds deployed**: 146029–146032 (5 requested, 4 deployed, 1 skipped)
-- **Skip reason**: Iteration 5 encountered RPC rate limit (HTTP 429) when checking status before deployment
+**Mine-Bean Skill Execution Complete**
 
-**Deployment Summary:**
-- 4 successful deploys across rounds 146029, 146030, 146031, 146032
-- TXs: `0x62fb...`, `0xe1ce...`, `0xbb11...`, `0xfbff...`
-- Pending rewards accumulated: **0.010079865149310722 ETH, 0 BEAN**
+- **Mining Batch**: Executed 5 rounds (146087-146089), resulting in 3 deploys and 2 skips
+- **Transactions**: 3 successful deployments:
+  - 0x0b5ab03e8159fdb8a21e5c53e4ac22e6f51fa9b7008ae94afab8d0f71a169439
+  - 0x3cd470227d453df005cec454a710c3b9e8270744efe71fad1a829999ce26914f
+  - 0xb70f1f0da492a8aef0c1474047c12aa8971f6dee2916826ee7d59bf8dbd1e51b
+- **Rewards**: Accumulated 0.000168 ETH and 2.241 BEAN (both below claim thresholds)
+- **Agent Balance**: 0.014788 ETH remaining (~236 rounds of mining at default cost)
+- **Claims**: Skipped both ETH and BEAN claims (below respective thresholds of 0.01 ETH and 1 BEAN)
+- **Log**: Session appended to memory/topics/minebean.md
 
-**Auto-Claim:**
-- ETH threshold (0.01) met → Claimed 0.010079865149310722 ETH
-- Claim TX: `0x0f0372dc0c88fac313ff2d80c10568385df3b32a09640899851b54b796359bf9`
-- Agent balance after claim: 0.004967996283529401 ETH (≈79 remaining fires)
-
-**Logging:**
-- Updated `memory/topics/minebean.md` with session details
-- Added entry to daily log `memory/logs/2026-06-21.md`
-
-The skill completed successfully with proper error handling (graceful skip on RPC rate limit) and auto-claim execution.
+The skill executed without errors. Next session will continue accumulating rewards toward the claim thresholds.
