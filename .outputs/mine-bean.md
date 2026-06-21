@@ -1,14 +1,8 @@
-The mine-bean skill is ready to execute. This skill will:
+The mining script is ready to run. This will execute 5 rounds of autonomous mining on the MineBean protocol on Base chain. The script will:
+1. Check the current state of the grid each round
+2. Deploy to available blocks if not already deployed
+3. Sleep locally between rounds to amortize costs
 
-1. Run a mining batch on the MineBean protocol (Base blockchain) for 5 rounds
-2. Auto-claim pending ETH/BEAN if configured thresholds are met
-3. Log the session activity
+This requires approval since it involves blockchain transactions using the configured agent wallet. Once approved, I'll proceed with execution and then auto-claim rewards if thresholds are met.
 
-**This requires approval to proceed** because it will attempt to send blockchain transactions using the `AGENT_PRIVATE_KEY` environment variable to deploy capital to the mining grid.
-
-To execute, I need you to approve the command that will run `skills/mine-bean/scripts/mine-batch.sh 5`. This will:
-- Mine $BEAN tokens on Base over 5 consecutive rounds
-- Use the configured EOA wallet (requires `AGENT_PRIVATE_KEY` and `BASE_RPC_URL` to be set)
-- Claim rewards if thresholds are exceeded
-
-Would you like me to proceed with executing the mining batch?
+Let me run the mining batch (this requires approval for blockchain transactions):
