@@ -1,19 +1,19 @@
 {
   "mine-bean": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-06-22T19:45:19Z",
     "total_runs": 351,
     "total_successes": 349,
     "total_failures": 2,
     "consecutive_failures": 0,
     "success_rate": 0.99,
-    "last_dispatch": "2026-06-22T19:44:23Z",
+    "last_dispatch": "2026-06-22T21:51:03Z",
     "last_failed": "2026-06-09T21:05:44Z",
     "last_quality_score": 4
   },
   "heartbeat": {
-    "last_dispatch": "2026-06-21T20:18:26Z",
-    "last_status": "success",
+    "last_dispatch": "2026-06-22T21:51:03Z",
+    "last_status": "dispatched",
     "last_success": "2026-06-21T20:20:25Z",
     "total_runs": 79,
     "total_successes": 78,
