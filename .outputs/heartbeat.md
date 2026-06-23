@@ -1,8 +1,11 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- **P0:** All clear. mine-bean (353/355, 99%) and heartbeat (79/80, 99%) both healthy. Self-check OK (last heartbeat ~10h57m ago, under 36h threshold).
-- **P1:** 0 open PRs, repo issues disabled, no open issues in INDEX.md.
-- **P2:** No new flagged items in MEMORY.md.
-- **P3:** mine-bean `last_success` ~3h02m old vs */10 schedule — same recurring scheduler/state-update lag pattern flagged across 77+ prior heartbeats. Skipped `./notify` per dedup rule.
-- **Files updated:** `docs/status.md` (verdict 🟡 WATCH), `memory/logs/2026-06-23.md` (new daily log).
+
+Ran heartbeat checks on 2026-06-23 20:39 UTC. All P0 signals green — no failed/stuck skills, no API degradation, no chronic failures, self-check OK (heartbeat last_success ~11h49m ago). P1/P2 clear (0 open PRs, issues disabled, no flagged memory items). P3 flagged mine-bean staleness (last_success ~2h05m ago vs */10 schedule), which is the same recurring scheduler/state-update-lag pattern seen across 78+ prior heartbeats — deduped per skill rules, no notify sent.
+
+**Files modified:**
+- `docs/status.md` — regenerated with verdict 🟡 WATCH, current timestamp, and updated mine-bean/heartbeat rows from `cron-state.json`
+- `memory/logs/2026-06-23.md` — appended this run's findings
+
+**Token pulse:** omitted (no `articles/token-report-*.md` files exist).
