@@ -1,8 +1,8 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- P0: clean — mine-bean (349/351, 99%) and heartbeat (78/79, 99%) both green, no stuck/failed/chronic.
-- P1: 0 open PRs, no urgent issues.
-- P2: no fresh follow-ups in MEMORY.md.
-- P3: same recurring scheduler/state-update-lag staleness flag — mine-bean last_success ~2h07m ago vs */10 schedule, heartbeat last_success ~25h32m ago vs 6h schedule. Identical pattern logged 76+ times in last 48h → dedup skip on `./notify`.
-- Files: regenerated `docs/status.md` (verdict 🟡 WATCH), appended entry to `memory/logs/2026-06-22.md`.
+- **P0:** All clear. mine-bean (353/355, 99%) and heartbeat (79/80, 99%) both healthy. Self-check OK (last heartbeat ~10h57m ago, under 36h threshold).
+- **P1:** 0 open PRs, repo issues disabled, no open issues in INDEX.md.
+- **P2:** No new flagged items in MEMORY.md.
+- **P3:** mine-bean `last_success` ~3h02m old vs */10 schedule — same recurring scheduler/state-update lag pattern flagged across 77+ prior heartbeats. Skipped `./notify` per dedup rule.
+- **Files updated:** `docs/status.md` (verdict 🟡 WATCH), `memory/logs/2026-06-23.md` (new daily log).
