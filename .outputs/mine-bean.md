@@ -1,23 +1,8 @@
-The mining script is ready to execute but requires approval to proceed, as it will send blockchain transactions to the MineBean contract on Base.
+The MineBean mining skill requires approval to execute the blockchain transactions. The script is ready to run at `./skills/mine-bean/scripts/mine-batch.sh` with the following sequence:
 
-**What will happen when approved:**
+1. **Run 5 mining rounds** via `mine-batch.sh`
+2. **Parse output** for: `FINAL_PENDING_ETH_WEI`, `FINAL_PENDING_BEAN_WEI`, `DEPLOYS_FIRED`, `DEPLOYS_SKIPPED`, and `TX_HASHES`
+3. **Auto-claim** if thresholds are met (checked against `CLAIM_THRESHOLD_ETH` and `CLAIM_THRESHOLD_BEAN`)
+4. **Log session** to `memory/topics/minebean.md` with timestamp and statistics
 
-1. **Mine 5 rounds** — Execute `skills/mine-bean/scripts/mine-batch.sh` which loops through up to 5 mining rounds, deploying capital to available blocks while respecting round timing and deployment limits.
-
-2. **Return summary stats** including:
-   - `DEPLOYS_FIRED` — successful deployments
-   - `FINAL_PENDING_ETH_WEI` / `FINAL_PENDING_BEAN_WEI` — claimable balances
-   - `TX_HASHES` — transaction hashes from the round
-
-3. **Auto-claim rewards** if thresholds met:
-   - Claim ETH if pending ≥ 0.01 ETH (default)
-   - Claim BEAN if pending ≥ 1 BEAN (default)
-
-4. **Log to memory** — Append session summary to `memory/topics/minebean.md`
-
-**Current wallet status** (from latest log):
-- Balance: 0.004967996283529401 ETH (~79 rounds remaining)
-- Last session: 2026-06-21 with 4 deploys and 1 skipped
-- Pending: 0 ETH, 0 BEAN (just claimed)
-
-Would you like me to proceed with executing the mining session?
+This will execute blockchain transactions using the `AGENT_PRIVATE_KEY` on Base mainnet. **Please approve to proceed with execution.**
