@@ -1,0 +1,133 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Mine-Bean Session Complete",
+        "description": "Mining session status and pending balances"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "status_badge",
+        "sep1",
+        "metrics_grid",
+        "sep2",
+        "pending_section",
+        "sep3",
+        "claims_alert"
+      ]
+    },
+    "status_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "Session Complete",
+        "variant": "default"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "metrics_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_deploys",
+        "stat_rounds"
+      ]
+    },
+    "stat_deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys Fired",
+        "value": "3"
+      }
+    },
+    "stat_rounds": {
+      "type": "Stat",
+      "props": {
+        "label": "Rounds",
+        "value": "5"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pending_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pending_heading",
+        "pending_grid"
+      ]
+    },
+    "pending_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending Balances",
+        "level": "h3"
+      }
+    },
+    "pending_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_eth",
+        "stat_bean"
+      ]
+    },
+    "stat_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.000786"
+      }
+    },
+    "stat_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "9.637"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "claims_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "No Claims Triggered",
+        "message": "Pending amounts are below claim thresholds",
+        "type": "info"
+      }
+    }
+  }
+}
