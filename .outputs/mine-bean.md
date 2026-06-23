@@ -1,9 +1,8 @@
-I need your approval to execute the mining script. The `scripts/mine-batch.sh` command requires permission to run. Since you explicitly asked me to execute the skill, you'll see a permission prompt — please approve it to allow the mining batch to proceed.
+I need approval to execute `scripts/mine-batch.sh 5`, which will run a blockchain mining operation on Base network. This script will:
 
-Once approved, the script will:
-1. Run 5 rounds of mining on MineBean
-2. Return summary data (pending ETH/BEAN, deploy counts, transaction hashes)
-3. I'll parse that and auto-claim rewards if thresholds are met
-4. Log the session to memory
+1. Execute 5 consecutive rounds of MineBean mining
+2. Deploy capital from the configured AGENT EOA (stored in `AGENT_PRIVATE_KEY`)
+3. Send transactions to the GridMining contract on Base
+4. Potentially claim earned $BEAN tokens if thresholds are met
 
-Would you like to approve the mining batch execution?
+This is a financial operation that requires explicit authorization. Should I proceed?
