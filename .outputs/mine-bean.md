@@ -1,8 +1,8 @@
-The mining batch script is ready to execute, but requires your approval to run since it will use your private key to deploy transactions on Base blockchain. 
+The mining batch script requires approval to run (it will send blockchain transactions). The system should prompt you for permission. Once approved, the script will:
 
-The script will:
-1. Execute 5 rounds of autonomous mining on the MineBean GridMining contract
-2. Deploy capital to blocks and claim yields
-3. Return a summary of deploys, transactions, and pending balances
+1. Execute 5 rounds of mining on the MineBean protocol
+2. Return summary stats (deploys, pending ETH/BEAN, transaction hashes)
+3. Trigger auto-claims if thresholds are met
+4. Log the session to memory
 
-**Approve the execution?** Reply with confirmation and I'll proceed with running the mining session and logging the results.
+Please approve the execution when prompted.
