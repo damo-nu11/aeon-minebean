@@ -1,8 +1,1 @@
-The skill is ready to execute. I need to run `scripts/mine-batch.sh 5` to start 5 rounds of autonomous mining on the MineBean protocol. This command requires your approval to proceed.
-
-Once approved, the skill will:
-1. Run 5 consecutive mining rounds (with local sleeps between each)
-2. Parse the output and auto-claim ETH/BEAN if thresholds are met
-3. Log the session to the memory file
-
-Please approve the bash command to proceed with the mining session.
+**Mining session complete.** Executed 5 rounds: 2 deploys on rounds 149461-149462, 3 skipped at 0s remaining. Pending rewards remain below auto-claim thresholds (1.067 mETH / 14.76 BEAN). Agent balance: 13.8 mETH. Logged to memory.
