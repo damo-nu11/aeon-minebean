@@ -1,9 +1,14 @@
-This skill runs a multi-round mining loop on the MineBean protocol (Base network) that will execute up to 5 mining rounds, spending ETH to deploy mining positions and potentially earning $BEAN tokens.
+The mining script execution requires user approval due to its security-sensitive nature (it uses private keys to sign blockchain transactions). 
+
+According to the SKILL.md, the script needs these environment variables to run:
+- `AGENT_PRIVATE_KEY` — EOA private key with ETH balance on Base
+- `AGENT_ADDRESS` — Public address of the agent  
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
 
 The script will:
-1. Loop through 5 rounds, checking round state and deploying mining actions
-2. Make blockchain transactions using the configured private key
-3. Collect pending earnings
-4. Auto-claim if thresholds are met
+1. Mine for 5 rounds (configurable via `ROUNDS_PER_SESSION`)
+2. Sleep between rounds locally to keep cost down
+3. Return summary metrics including deploy counts and transaction hashes
+4. Optionally auto-claim rewards if thresholds are met
 
-**This will spend real ETH and make blockchain transactions.** I need your approval to proceed. Should I run `scripts/mine-bean/scripts/mine-batch.sh 5`?
+**Would you like me to proceed with executing the mining script?** Please approve the command to continue.
