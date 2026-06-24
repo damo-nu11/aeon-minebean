@@ -1,13 +1,8 @@
-The mining script is ready to execute. I need your approval to run:
+The skill is ready to execute. I need to run `scripts/mine-batch.sh 5` to start 5 rounds of autonomous mining on the MineBean protocol. This command requires your approval to proceed.
 
-```bash
-scripts/mine-batch.sh 5
-```
+Once approved, the skill will:
+1. Run 5 consecutive mining rounds (with local sleeps between each)
+2. Parse the output and auto-claim ETH/BEAN if thresholds are met
+3. Log the session to the memory file
 
-This will execute 5 consecutive rounds of mining on MineBean with local sleeps between rounds. Once you approve, it will:
-1. Send deployment transactions to the mining grid
-2. Parse the summary output (deploys, skipped rounds, pending rewards, transaction hashes)
-3. Auto-claim any pending ETH/BEAN if thresholds are met
-4. Log the session to memory
-
-Please approve the execution to proceed.
+Please approve the bash command to proceed with the mining session.
