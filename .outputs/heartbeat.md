@@ -1,6 +1,10 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- **Findings:** No P0 issues (mine-bean & heartbeat both healthy at 99% success). No P1 (0 PRs, issues disabled, no open INDEX rows). No P2. Lone P3 recurrence: mine-bean's `last_success` is ~2h old vs `*/10` schedule — same scheduler/state-lag pattern flagged 80+ times prior; skipped notify per dedup.
-- **Files modified:** `docs/status.md` (regenerated, verdict 🟡 WATCH); `memory/logs/2026-06-24.md` (appended 20:00 UTC heartbeat entry).
-- **Follow-ups:** None — recurring mine-bean state-lag is a known/unchanged condition.
+- **P0:** clean — mine-bean and heartbeat both `last_status=success`, success rate 99%, 0 consecutive failures. Heartbeat self-check OK (last_success ~11h58m ago).
+- **P1:** 0 open PRs, no open issues.
+- **P2:** no fresh memory flags.
+- **P3:** mine-bean `last_success` is ~3h25m old vs its */10 schedule (>>2× interval) — same recurring state-update-lag pattern seen across 81+ prior heartbeats. Dedup → no notify sent.
+- **Token pulse:** no `articles/token-report-*.md` files → section omitted.
+- **Files written:** `docs/status.md` (verdict 🟡 WATCH), `memory/logs/2026-06-25.md` (heartbeat entry).
+- **No follow-up actions.**
