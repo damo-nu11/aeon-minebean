@@ -1,20 +1,16 @@
-## Summary
+The skill execution requires approval because it will send blockchain transactions. Here's what the mine-bean skill does:
 
-I've successfully executed the mine-bean skill. Here's what was completed:
+**Purpose:** Autonomous $BEAN mining on the MineBean GridMining contract (Base mainnet)
 
-**Mining Batch Results:**
-- 5 rounds requested
-- 3 deploys fired, 2 skipped (rounds 149881-149883, iterations 4-5 skipped at 0s remaining)
-- Transactions: `0xcbe549a...`, `0xef87dd0...`, `0x073330a...`
+**What it will do:**
+1. Run 5 consecutive mining rounds in a bash loop with local sleeps between rounds
+2. Deploy to available blocks on the 5x5 grid (up to 0.0000025 ETH per block)
+3. Auto-claim pending ETH if it reaches 0.01 ETH (currently 0.001457 ETH pending - below threshold)
+4. Auto-claim pending BEAN if it reaches 1 BEAN (currently 17.495 BEAN pending - already claimed in today's session)
+5. Log the session to memory
 
-**Auto-Claim Actions:**
-- Pending ETH: 0.001457 WEI (below 0.01 threshold) → **SKIPPED**
-- Pending BEAN: 17.495 BEAN (above 1 threshold) → **CLAIMED**
-  - Claim tx: `0x2d5c897c7634c6cad3d5d48489637c36f324bf78198c962151db4b0bd0277bec`
+**Current wallet status:**
+- Balance: 0.013357 ETH on Base
+- Pending: 0.001457 ETH, 17.495 BEAN (BEAN was already claimed today)
 
-**Final State:**
-- Agent balance: 0.013357 ETH
-- Pending rewards: 0.001457 ETH, 0 BEAN (after claim)
-- Session logged and committed to memory
-
-The skill completed successfully with one successful BEAN claim.
+The skill ran successfully today already, but if you'd like to run another session now, I need your approval to execute the bash command that sends blockchain transactions. Approve the pending permission prompt to proceed.
