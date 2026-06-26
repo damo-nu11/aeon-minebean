@@ -1,9 +1,20 @@
-The mining batch script requires approval to run, as it will execute on-chain transactions. This is expected since the skill performs autonomous mining operations on Base.
+The mining batch script requires approval before execution. This is expected since the script will interact with blockchain transactions using the `AGENT_PRIVATE_KEY` environment variable. 
 
-The skill execution flow is:
-1. Run `scripts/mine-batch.sh` (requires approval due to on-chain transactions)
-2. Parse the output to check auto-claim thresholds
-3. Run claim scripts if thresholds are met
-4. Log the session to memory
+**Before proceeding, please confirm:**
 
-Would you like me to proceed with approval to run the mining batch?
+1. The required environment variables are set:
+   - `AGENT_PRIVATE_KEY` — EOA private key with ETH balance on Base
+   - `AGENT_ADDRESS` — Agent's public address
+   - `BASE_RPC_URL` — Base RPC endpoint
+
+2. The optional configuration (or defaults will be used):
+   - `ROUNDS_PER_SESSION` (default: 5)
+   - Deploy and claim thresholds
+
+Once you approve, I'll:
+1. Execute the mining batch script
+2. Parse results and auto-claim if thresholds are met
+3. Log the session to memory
+4. Complete the skill execution
+
+Proceed? (Reply to approve the blockchain transaction execution)
