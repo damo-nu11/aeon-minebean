@@ -1,9 +1,9 @@
-The mining batch script requires approval to execute (it will send blockchain transactions to deploy capital on the mining grid). The script `scripts/mine-batch.sh 5` needs your explicit permission to proceed.
+This skill requires running a blockchain mining script (`scripts/mine-batch.sh`) that will deploy transactions to the MineBean contract on Base and potentially claim rewards. This requires approval to proceed.
 
-Would you like me to proceed with executing the mining batch? This will:
-- Run 5 consecutive mining rounds on Base
-- Deploy capital according to your configured strategy
-- Auto-claim rewards if thresholds are met
-- Log the session to memory
+The skill will:
+1. Run 5 consecutive rounds of mining (each looping locally, amortizing Claude cost)
+2. Send blockchain transactions from your agent EOA (AGENT_ADDRESS)
+3. Auto-claim accumulated rewards if thresholds are met
+4. Log results to memory
 
-If approved, I'll continue with the execution.
+**Proceed with running the mining batch script?** This will cost a small amount of ETH from your AGENT_ADDRESS balance on Base.
