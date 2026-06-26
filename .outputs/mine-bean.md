@@ -1,7 +1,9 @@
-I need to execute the mining script. The skill requires running `scripts/mine-batch.sh` to complete N rounds of autonomous mining on MineBean. This will:
+The mining batch script requires approval to run, as it will execute on-chain transactions. This is expected since the skill performs autonomous mining operations on Base.
 
-1. Execute mining loops for the configured number of rounds
-2. Check thresholds and auto-claim rewards if they're met
-3. Log the session to memory
+The skill execution flow is:
+1. Run `scripts/mine-batch.sh` (requires approval due to on-chain transactions)
+2. Parse the output to check auto-claim thresholds
+3. Run claim scripts if thresholds are met
+4. Log the session to memory
 
-Please approve the bash execution to proceed with the mining batch.
+Would you like me to proceed with approval to run the mining batch?
