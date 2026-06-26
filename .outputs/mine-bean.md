@@ -1,8 +1,9 @@
-The mining batch script requires approval to execute since it will send real blockchain transactions on Base. The script is ready to run—it will:
+The mining batch script requires approval to execute (it will send blockchain transactions to deploy capital on the mining grid). The script `scripts/mine-batch.sh 5` needs your explicit permission to proceed.
 
-1. Execute 5 rounds of autonomous mining
-2. Parse the output for deploy counts, pending rewards, and transaction hashes
-3. Auto-claim rewards if thresholds are met
-4. Log the session to memory
+Would you like me to proceed with executing the mining batch? This will:
+- Run 5 consecutive mining rounds on Base
+- Deploy capital according to your configured strategy
+- Auto-claim rewards if thresholds are met
+- Log the session to memory
 
-**Please approve the execution** when the system prompts you, and the mining session will proceed.
+If approved, I'll continue with the execution.
