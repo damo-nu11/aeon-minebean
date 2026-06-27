@@ -1,10 +1,20 @@
+Skill is essentially a one-shot scan; no task tracking needed. Heartbeat complete.
+
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- Ran heartbeat checks at 09:39 UTC (08:00 slot firing late).
-- **P0:** clean — mine-bean 394/396 ✅, heartbeat 89/90 ✅, self-check ~13h18m (under 36h).
-- **P1:** 0 open PRs, no urgent issues.
-- **P2:** no fresh memory signals.
-- **P3:** mine-bean last_success ~2h08m stale vs */10 — same recurring scheduler/state-lag pattern (87+ prior heartbeats); dedup → no notify.
-- Wrote `docs/status.md` (🟡 WATCH) and appended log entry to `memory/logs/2026-06-27.md`.
-- Follow-up: none — pattern is unchanged from prior runs.
+
+Executed `skills/heartbeat/SKILL.md` for the 14:00 UTC slot (firing at 14:19).
+
+**Findings:**
+- **P0:** No failed/stuck skills. mine-bean (397/399, 99%, last success 2026-06-27 12:48 UTC) and heartbeat (90/91, 99%) both healthy. Self-check OK (last success ~4h40m ago).
+- **P1:** 0 open PRs; 0 open issues in `memory/issues/INDEX.md`.
+- **P2:** No fresh signals in MEMORY.md.
+- **P3:** mine-bean `last_success` is ~1h30m old vs `*/10` schedule (>>2× interval) — same recurring scheduler/state-update-lag pattern logged 88+ times. Deduped, no notification sent.
+- **Token pulse:** No `articles/token-report-*.md` files — section omitted.
+
+**Files modified:**
+- `docs/status.md` — regenerated with verdict 🟡 WATCH
+- `memory/logs/2026-06-27.md` — appended 14:19 heartbeat entry
+
+**Follow-up:** None. The mine-bean P3 staleness pattern remains the standing known issue; root cause unchanged.
