@@ -1,10 +1,9 @@
-The script requires approval to proceed with the mining transactions. This will deploy ETH to mining blocks and potentially claim rewards on Base mainnet.
+The mining script is requesting approval to execute. This is expected since it will interact with the blockchain. Once you approve the bash execution of `skills/mine-bean/scripts/mine-batch.sh 5`, it will proceed with the mining rounds.
 
-Based on the SKILL.md and git history (the last successful run was `d30ccf6 chore(cron): mine-bean success`), this is a recurring autonomous task that's already been running.
+The script will:
+1. Run up to 5 consecutive mining rounds on MineBean (Base network)
+2. Deploy capital to grid blocks
+3. Return summary statistics (pending ETH/BEAN, deploy counts, transaction hashes)
+4. Then I'll check auto-claim thresholds and log results to the memory file
 
-**Do you approve running the mining batch now?** This will:
-1. Execute up to 5 mining rounds (deploying small amounts of ETH per block)
-2. Auto-claim rewards if thresholds are met
-3. Log the session results
-
-If approved, I'll proceed with the full execution including the claim and logging steps.
+Please approve the command when ready.
