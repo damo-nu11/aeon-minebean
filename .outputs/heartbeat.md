@@ -1,12 +1,10 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-
-Ran the heartbeat skill at 2026-06-26 20:20 UTC.
-
-- **P0:** clean — mine-bean (last_success 18:27Z, 388/390 runs, 99%) and heartbeat (last_success 14:43Z, 88/89 runs, 99%) both healthy; self-check OK (~5h37m < 36h).
-- **P1:** 0 open PRs, no open issues.
-- **P2:** no fresh memory flags.
-- **P3:** mine-bean last_success ~1h53m old vs */10 schedule — recurring scheduler/state-update-lag pattern (86+ prior heartbeats); deduped, no notify.
-- **Token pulse:** no `articles/token-report-*.md` files — section omitted.
-- Updated `docs/status.md` → 🟡 WATCH; appended log entry to `memory/logs/2026-06-26.md`.
+- Ran heartbeat checks at 09:39 UTC (08:00 slot firing late).
+- **P0:** clean — mine-bean 394/396 ✅, heartbeat 89/90 ✅, self-check ~13h18m (under 36h).
+- **P1:** 0 open PRs, no urgent issues.
+- **P2:** no fresh memory signals.
+- **P3:** mine-bean last_success ~2h08m stale vs */10 — same recurring scheduler/state-lag pattern (87+ prior heartbeats); dedup → no notify.
+- Wrote `docs/status.md` (🟡 WATCH) and appended log entry to `memory/logs/2026-06-27.md`.
+- Follow-up: none — pattern is unchanged from prior runs.
