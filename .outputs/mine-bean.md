@@ -1,9 +1,9 @@
-The mining script is requesting approval to execute. This is expected since it will interact with the blockchain. Once you approve the bash execution of `skills/mine-bean/scripts/mine-batch.sh 5`, it will proceed with the mining rounds.
+The mining batch script requires approval to run. This is expected since it will interact with the MineBean protocol on Base blockchain to perform mining operations and potentially execute transactions.
 
-The script will:
-1. Run up to 5 consecutive mining rounds on MineBean (Base network)
-2. Deploy capital to grid blocks
-3. Return summary statistics (pending ETH/BEAN, deploy counts, transaction hashes)
-4. Then I'll check auto-claim thresholds and log results to the memory file
+Would you like me to proceed with running the mining batch script? This will:
+1. Execute `ROUNDS_PER_SESSION` (default 5) consecutive mining rounds
+2. Deploy contracts to the grid based on your configured strategy
+3. Auto-claim pending rewards if thresholds are met
+4. Log the session results
 
-Please approve the command when ready.
+Please approve to continue.
