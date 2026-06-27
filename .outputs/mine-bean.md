@@ -1,9 +1,8 @@
-The mining batch script requires approval to run. This is expected since it will interact with the MineBean protocol on Base blockchain to perform mining operations and potentially execute transactions.
+The mining batch script requires approval to execute. This will run up to 5 consecutive rounds of autonomous mining on MineBean (a 5×5 grid mining protocol on Base), with automatic claiming if thresholds are met.
 
-Would you like me to proceed with running the mining batch script? This will:
-1. Execute `ROUNDS_PER_SESSION` (default 5) consecutive mining rounds
-2. Deploy contracts to the grid based on your configured strategy
-3. Auto-claim pending rewards if thresholds are met
-4. Log the session results
+Proceeding requires:
+- Valid `AGENT_PRIVATE_KEY` (EOA with ETH balance on Base)
+- Valid `BASE_RPC_URL` 
+- Various environment variables for mining parameters (defaults available)
 
-Please approve to continue.
+Should I proceed with executing the mining batch?
