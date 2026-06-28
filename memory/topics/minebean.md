@@ -3,13 +3,13 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance 0.013098730939544734 ETH on Base (≈209 fires at default cost)
+- Wallet: configured, balance 0.013362729820356536 ETH on Base (≈213 fires at default cost)
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 3-5 deploys per Claude invocation (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): ~0 ETH, ~0 BEAN (just claimed both)
-- Last activity: 2026-06-25 (session: 4 deploys, 1 skipped; claimed 0.001681869457435383 ETH + 1.317946856256704 BEAN)
-- Agent balance (last check): 0.013098730939544734 ETH (≈209 fires remaining at default cost)
+- Pending rewards (last check): ~0 ETH, ~0 BEAN (just claimed BEAN)
+- Last activity: 2026-06-28 (session: 4 deploys, 1 skipped; claimed 1.486695014228555 BEAN)
+- Agent balance (last check): 0.013362729820356536 ETH (≈213 fires remaining at default cost)
 
 ## Run log
 - 2026-06-25 · Session: 4 deploys, 1 skipped (rounds 150852-150855; iter 2 already_deployed 0s remaining on 150852) · TXs: 0x12f05a7318f46c37b0fd8e9342808e86aad5ded24bbc99eba1a1eebcb759e32f,0x49e6c6931e9edc0a00b9af7b9643f5efa2c93a8133c6b8e691af86a8584f170f,0x945f7af3ec31f39ab85f49b1c627c78724b353145b17cc2ed562e664137de1b1,0xfea62dce7b54d2e2ca9c7a0e3ce29fb23537bf59bb5644a2659e52c7732d461d · Pending (before claim): 0.001681869457435383 ETH, 1.317946856256704 BEAN · Balance: 0.013098730939544734 ETH · ClaimETH: 0xe30409bef86a2a588790f6c48e0075936f775de0554676ee2f58941dcce3de25 (claimed) · ClaimBEAN: 0x3fea3f727f1ef915ea9da0be70311db0a1f7694ea63d15c4ecad855d463b5846 (claimed)
@@ -197,4 +197,5 @@ Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract 
 - 2026-06-25 · Session: 3 deploys, 2 skipped (rounds 149881-149883; iters 4-5 already_deployed 0s remaining on 149883) · TXs: 0xcbe549a50f5fc593d6cbdd23a397f0dfe0043f83d01e28f241370ff486c3e3f5,0xef87dd082be763f4725a8e25ee16ef5a55ad1667151e36c68fcb29a6076bca2e,0x07330addc0d44176538b2d18d8804b598d58b2ee706e96f5811a9d8551cc1e4d · Pending: 0.001457 ETH, 17.495379 BEAN · Balance: 0.013357 ETH · ClaimETH: SKIPPED (0.001457 < 0.01 threshold) · ClaimBEAN: 0x2d5c897c7634c6cad3d5d48489637c36f324bf78198c962151db4b0bd0277bec (17.495 BEAN claimed)
 - 2026-06-25 (17:00 UTC) · Session: 0 deploys, 5 skipped · TXs: (none) · Pending: unknown · Balance: unknown · ClaimETH: SKIPPED (status unknown) · ClaimBEAN: SKIPPED (status unknown) · Note: RPC backend unavailable — all 5 iterations failed with HTTP 503 "no backend is currently healthy to serve traffic"
 - 2026-06-26T00:00Z · Session: 3 deploys, 2 skipped (rounds 151271-151273; iter 3 already_deployed 0s remaining on 151272, iter 5 already_deployed 0s remaining on 151273) · TXs: 0x8c9d5e86389d2e2d304d82764fa76cfe112a0f15205296abe179f177fa35c8ef,0x8553feedee1ad8ffcd492a2a58e24c9fdc4edec154a3cde9fca06d4d256cbdf1,0x2608449d1a0178c11671916a4a4201d0e4a59878720729e2d21432498785b1b0 · Pending: 0.000167629130096045 ETH, 1.323088952445078 BEAN · Balance: 0.014587252690683305 ETH · ClaimETH: SKIPPED (below threshold) · ClaimBEAN: 0xdbee6ac052843288e84d8b57246197e64f8ff3a30bb769faebc204025875d675 (claimed)
+- 2026-06-28T00:00Z · Session: 4 deploys, 1 skipped (rounds 154428-154431; iter 3 at 0s remaining on 154429) · TXs: 0x3810b5186dda8ed0439ae3c903e0516d10832d37126a4993153307e74cb1ea13,0xc8f50ae813d8e960a59f7459290b5f5e336da546e738c26c47ae1aded7ffe3d7,0x3fd0e0fffd64ef6817e509b08e86c600079d46c3bdf1cc08db870d2ade21c8b1,0x649afed9f075f676b47aba572a5d1655240804075f105a973a6e587606bebf62 · Pending (before claim): 0.001181612119179181 ETH, 1.486695014228555 BEAN · Balance: 0.013362729820356536 ETH · ClaimETH: SKIPPED (below threshold) · ClaimBEAN: 0x80810cf63e7637ece588d29da39b1bfad05b35dfdbbd89df2d853b594d2431b3 (claimed)
 - 2026-06-27 · Session: 3 deploys, 2 skipped (rounds 153284-153286; iter 2 already_deployed 0s remaining on 153284, iter 5 already_deployed 0s remaining on 153286) · TXs: 0xa9b062854a7f65ccfe94b9a5489bea329c7ad51d7549f43963e90d777623df60,0x925cf243807c3bc1839aa436570fae097b48a3498f01985fc71e988807352742,0x0d849ef675552c16a3fe1ecc6612674b742f076e41c0280263676f4264b1e6c7 · Pending (before claim): 0.001011980406946932 ETH, 4.135612046107902 BEAN · Balance: 0.01362 ETH · ClaimETH: SKIPPED (0.001012 < 0.01 threshold) · ClaimBEAN: 0xd9ec891e79952fe5e1c66d057b73c002ab979c0e138e89a0bc22939339bfe11f (claimed 4.135612 BEAN)
