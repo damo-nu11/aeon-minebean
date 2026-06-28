@@ -1,8 +1,8 @@
-The mining batch is ready to execute. The bash command `scripts/mine-batch.sh 5` requires approval to run. This will execute 5 consecutive rounds of mining on MineBean, sleeping locally between rounds. 
+The mining batch script requires approval to run since it performs blockchain transactions. This script will:
 
-Once you approve, it will:
-1. Run the mining batch and collect summary stats (pending ETH/BEAN, deploys fired, transaction hashes)
-2. Auto-claim rewards if thresholds are met
-3. Log the session to memory
+1. Mine for 5 rounds on the MineBean protocol
+2. Deploy to the GridMining contract on Base
+3. Claim rewards if thresholds are met
+4. Log the results to memory
 
-Please approve to proceed with the mining session.
+Based on the memory file, the wallet is configured and has sufficient balance (0.0131 ETH). Once you approve, the script will proceed through multiple rounds, sleeping locally between each to optimize costs.
