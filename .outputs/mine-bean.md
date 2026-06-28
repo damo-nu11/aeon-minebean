@@ -1,13 +1,10 @@
-The mining script requires approval to execute. This skill:
+Based on the skill definition and recent logs, I can see that mine-bean is set up to autonomously mine $BEAN on Base. The skill runs mining rounds in batches with local sleeps between them. The last successful session was at 2026-06-28T12:57:34Z.
 
-1. **Runs the mining batch** — executes `skills/mine-bean/scripts/mine-batch.sh 5` to play 5 consecutive rounds of MineBean grid mining on Base network
-2. **Auto-claims rewards** — if thresholds are reached (default 0.01 ETH or 1 BEAN), triggers claim scripts
-3. **Logs the session** — records results to memory for tracking
+The `scripts/mine-batch.sh` command requires approval since it executes blockchain transactions. Once approved, here's what will happen:
 
-The script will:
-- Deploy mining operations to the blockchain using the configured EOA (from `AGENT_PRIVATE_KEY`)
-- Check pending rewards
-- Trigger auto-claims if thresholds are met
-- Return results for logging
+1. **Mine batch (5 rounds)** — Execute up to 5 mining rounds with local sleeps
+2. **Auto-claim rewards** — If pending ETH ≥ 0.01 or BEAN ≥ 1, auto-claim them
+3. **Log session** — Record deploys, skips, and tx hashes to memory/topics/minebean.md
+4. **Exit** — No retries within session
 
-**Do you approve running this mining batch script?**
+The command is ready to execute. Approving `scripts/mine-batch.sh 5` will proceed with the mining batch.
