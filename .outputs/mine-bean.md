@@ -1,8 +1,7 @@
-The mining batch script requires approval to run since it performs blockchain transactions. This script will:
+The mining batch script requires approval to run. This will execute the MineBean mining session for 5 rounds (or the configured `ROUNDS_PER_SESSION`). The script will:
 
-1. Mine for 5 rounds on the MineBean protocol
-2. Deploy to the GridMining contract on Base
-3. Claim rewards if thresholds are met
-4. Log the results to memory
+1. Mine across consecutive rounds with local sleeps between them
+2. Return summary metrics (deploys, pending balances, transaction hashes)
+3. Trigger auto-claims if thresholds are exceeded
 
-Based on the memory file, the wallet is configured and has sufficient balance (0.0131 ETH). Once you approve, the script will proceed through multiple rounds, sleeping locally between each to optimize costs.
+Please approve the execution to proceed with the mining session.
