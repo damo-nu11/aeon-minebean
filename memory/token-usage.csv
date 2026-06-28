@@ -405,3 +405,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-06-28,mine-bean,claude-haiku-4-5-20251001,44,1318,159418,12090
 2026-06-28,heartbeat,claude-opus-4-7,13,4922,428858,35112
 2026-06-28,mine-bean,claude-haiku-4-5-20251001,30,797,99916,10603
+2026-06-28,mine-bean,claude-haiku-4-5-20251001,86,2510,362447,35105
