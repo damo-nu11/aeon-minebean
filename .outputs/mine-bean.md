@@ -1,12 +1,8 @@
-The mining script requires approval to execute. This will run 5 rounds of autonomous mining on the MineBean protocol (Base network), which involves:
+The mining batch is ready to execute. The bash command `scripts/mine-batch.sh 5` requires approval to run. This will execute 5 consecutive rounds of mining on MineBean, sleeping locally between rounds. 
 
-1. Deploying capital to blocks in the 5x5 grid
-2. Processing mining results
-3. Auto-claiming $BEAN/ETH if thresholds are reached
+Once you approve, it will:
+1. Run the mining batch and collect summary stats (pending ETH/BEAN, deploys fired, transaction hashes)
+2. Auto-claim rewards if thresholds are met
+3. Log the session to memory
 
-This requires:
-- `AGENT_PRIVATE_KEY` - EOA private key with ETH on Base
-- `AGENT_ADDRESS` - Public address
-- `BASE_RPC_URL` - Base RPC endpoint
-
-Please approve the script execution to proceed.
+Please approve to proceed with the mining session.
