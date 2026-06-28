@@ -1,14 +1,12 @@
-I need to execute the mining script, which requires your approval since it will:
+The mining script requires approval to execute. This will run 5 rounds of autonomous mining on the MineBean protocol (Base network), which involves:
 
-1. **Mine for 5 consecutive rounds** (~5 minutes total, 60 seconds per round)
-2. **Deploy ETH to blocks** on the MineBean GridMining contract (0x96... on Base)
-3. **Send blockchain transactions** using your configured `AGENT_PRIVATE_KEY`
-4. **Auto-claim rewards** if thresholds are met
+1. Deploying capital to blocks in the 5x5 grid
+2. Processing mining results
+3. Auto-claiming $BEAN/ETH if thresholds are reached
 
-The script will:
-- Check each round's status and time remaining
-- Deploy to 25 blocks at 0.0000025 ETH per block per round (0.0000625 ETH total per fire)
-- Skip rounds if already deployed or too close to round end
-- Return summary stats (DEPLOYS_FIRED, TX_HASHES, pending rewards)
+This requires:
+- `AGENT_PRIVATE_KEY` - EOA private key with ETH on Base
+- `AGENT_ADDRESS` - Public address
+- `BASE_RPC_URL` - Base RPC endpoint
 
-**May I proceed with executing the mining batch script?** Once approved, the execution will be non-interactive and automated.
+Please approve the script execution to proceed.
