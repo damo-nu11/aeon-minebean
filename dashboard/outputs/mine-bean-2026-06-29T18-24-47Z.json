@@ -1,0 +1,168 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "⛏️ Mine-Bean Session Complete"
+      },
+      "children": [
+        "main_stack"
+      ]
+    },
+    "main_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "deploy_info",
+        "sep1",
+        "tx_section",
+        "sep2",
+        "pending_section",
+        "sep3",
+        "balance_section"
+      ]
+    },
+    "deploy_info": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "deploy_line",
+        "rounds_text"
+      ]
+    },
+    "deploy_line": {
+      "type": "Text",
+      "props": {
+        "text": "2 deploys · 3 skipped"
+      },
+      "children": []
+    },
+    "rounds_text": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds 155463–155465",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "tx_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tx_label",
+        "tx1",
+        "tx2"
+      ]
+    },
+    "tx_label": {
+      "type": "Text",
+      "props": {
+        "text": "Transactions",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "tx1": {
+      "type": "Link",
+      "props": {
+        "label": "0xfc481a3045215cb5a7b4c781c9cb7f6ac9de8a22d3049c6b810f1cfae785b752",
+        "href": "https://etherscan.io/tx/0xfc481a3045215cb5a7b4c781c9cb7f6ac9de8a22d3049c6b810f1cfae785b752"
+      },
+      "children": []
+    },
+    "tx2": {
+      "type": "Link",
+      "props": {
+        "label": "0xf64e45a4b0256b735f2e00a4a4e2ef120bf6813c09bdeac13dad34487748d079",
+        "href": "https://etherscan.io/tx/0xf64e45a4b0256b735f2e00a4a4e2ef120bf6813c09bdeac13dad34487748d079"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "pending_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "pending_eth",
+        "pending_bean"
+      ]
+    },
+    "pending_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.001516"
+      },
+      "children": []
+    },
+    "pending_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending BEAN",
+        "value": "0"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "balance_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "balance_stat",
+        "fires_stat"
+      ]
+    },
+    "balance_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance",
+        "value": "0.013038 ETH"
+      },
+      "children": []
+    },
+    "fires_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Fires Remaining",
+        "value": "209"
+      },
+      "children": []
+    }
+  }
+}
