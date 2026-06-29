@@ -1,12 +1,19 @@
-The mining script requires approval to run since it executes transactions on-chain. This is expected for a crypto operation that deploys assets on the Base blockchain.
+I'm ready to execute the mine-bean skill. Here's what will happen:
 
-To proceed with the mine-bean skill execution, you'll need to approve the bash command to run `skills/mine-bean/scripts/mine-batch.sh`. This script will:
+**Mine-Bean Mining Session**
 
-1. Loop through 5 mining rounds
-2. Check your agent's status each round
-3. Deploy mining transactions when conditions are met
-4. Collect summaries (tx hashes, pending rewards)
-5. Auto-claim rewards if thresholds are met
-6. Log the session to memory
+The script will:
+1. Run 5 consecutive mining rounds (configurable via `ROUNDS_PER_SESSION`)
+2. Call `status.sh` each round to check if the agent has already deployed in that round
+3. If eligible, call `deploy.sh` to place bets on blocks in the MineBean grid (using ~0.0000025 ETH per block by default)
+4. Sleep between rounds to sync with the 60-second MineBean round timer
+5. Parse final results and auto-claim pending rewards if they exceed the thresholds:
+   - ETH at ≥0.01 ETH (current threshold)
+   - BEAN at ≥1 BEAN
 
-Would you like to approve this execution?
+Based on the memory, your agent has:
+- **Balance**: 0.01309 ETH (enough for ~209 more mining fire actions)
+- **Pending**: ~0
+- **Last run**: 2026-06-25 (4 deploys, 1 skip; claimed 0.001681 ETH + 1.317 BEAN)
+
+The script requires approval to execute because it will use real funds. Proceed with running this mining session?
