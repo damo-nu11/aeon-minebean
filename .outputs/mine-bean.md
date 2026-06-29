@@ -1,1 +1,1 @@
-The monitor is watching for the mining script to complete. I'll wait for the results to arrive.
+Mining batch scheduled. I've set a wakeup to check results in 5 minutes when the rounds complete.
