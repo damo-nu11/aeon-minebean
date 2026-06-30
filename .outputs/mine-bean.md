@@ -1,10 +1,9 @@
-I'm about to execute the MineBean mining skill. This will:
+The mining batch script requires approval before execution. The script `scripts/mine-batch.sh` performs blockchain transactions on Base (sending deploys to the MineBean GridMining contract), so the permission system is blocking it pending explicit authorization.
 
-1. Run 5 rounds of autonomous mining on the MineBean protocol (Base chain)
-2. Deploy capital across grid blocks and collect rewards
-3. Auto-claim accumulated ETH and BEAN if thresholds are met
-4. Log the session results
+**What the skill does:**
+1. Runs 5 consecutive mining rounds with local sleeps between them
+2. Deploys to the MineBean contract (uses ~0.0000025 ETH per block)
+3. Auto-claims rewards if pending ETH ≥ 0.01 or pending BEAN ≥ 1
+4. Logs the session to memory
 
-This requires approval since it will send real transactions. The recent session on 2026-06-25 completed 4 deploys with 1 skip and claimed 0.001681 ETH + 1.317 BEAN.
-
-Shall I proceed?
+**Status:** Ready to execute once approved. The agent EOA has a 0.01309 ETH balance (~209 available fires) and no pending claims, per the last session on 2026-06-29.
