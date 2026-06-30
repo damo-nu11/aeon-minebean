@@ -1,9 +1,11 @@
-The mining batch script requires approval to execute (it will perform blockchain transactions). Please approve the execution so I can continue with the mine-bean skill.
+## Summary
 
-Once approved, the script will:
-1. Run multiple rounds of autonomous mining (default 5)
-2. Return a summary with pending rewards, deploy counts, and transaction hashes
-3. Auto-claim rewards if thresholds are met
-4. Log the session results to memory
+Executed the **mine-bean** skill successfully. The mining batch completed 5 iterations with the following results:
 
-Please confirm to proceed with executing the mining batch.
+- **3 deploys fired** across rounds 156418-156420
+- **2 skips** at round boundaries when insufficient time remained
+- **Transaction hashes**: 3 successful deploy transactions logged
+- **Pending rewards**: 0.002134 ETH, 5.754 BEAN (both below auto-claim thresholds, so no claims triggered)
+- **Agent balance**: 0.012325 ETH (~197 fires remaining at default cost)
+
+Session logged to `memory/topics/minebean.md` and Status section updated with latest activity for 2026-06-30.
