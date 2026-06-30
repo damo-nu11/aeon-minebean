@@ -1,12 +1,16 @@
-## Summary
+I'm ready to execute the mining skill, but the system requires approval to run the bash script that performs the mining operations. This is a security measure for scripts that access environment variables and execute blockchain transactions.
 
-**Mine-Bean Skill Execution Complete**
+**What the skill will do:**
+1. Run 5 rounds of MineBean mining on the Base network
+2. Execute cryptocurrency transactions (deploying to mining grid blocks)
+3. Claim pending ETH/BEAN rewards if thresholds are met
+4. Log the session results to memory
 
-Successfully executed 5-round mining batch on MineBean (GridMining contract on Base):
-- **Deploys fired:** 4 (rounds 156782-156784, final round 156785 skipped at 0s remaining)
-- **Pending rewards:** 0.002585 ETH, 0 BEAN
-- **Agent balance:** ~0.0118 ETH (≈189 remaining fires at default 0.0000625 ETH/round cost)
-- **Auto-claims:** Both skipped (below thresholds: 0.01 ETH, 1 BEAN)
-- **Transactions:** [0x130f41..., 0x80f0e9..., 0xdbeb12..., 0xe64785...]
+The script requires these environment variables (GitHub Actions secrets):
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
+- `AGENT_ADDRESS` — Agent's wallet address
+- `AGENT_PRIVATE_KEY` — Agent's private key
 
-Session logged to `memory/topics/minebean.md` and committed to main.
+**To proceed:** Please approve the execution of `skills/mine-bean/scripts/mine-batch.sh` when prompted, or configure your permission settings to allow this script to run automatically.
+
+Would you like me to proceed with requesting approval, or would you prefer to configure the permissions first?
