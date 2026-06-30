@@ -1,8 +1,6 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- P0: clean — mine-bean (424/426, 100%, 0 consecutive failures) and heartbeat (95/96, 99%, 0) both green; self-check OK (24h18m since last success, under 36h).
-- P1/P2: 0 open PRs, no flagged memory items, no open issues.
-- P3: mine-bean last_success 1h56m old vs */10 schedule — same recurring scheduler/state-update-lag flagged 93+ prior heartbeats; deduped, no notify.
-- Token pulse: no `articles/token-report-*.md` present — section omitted.
-- Files: appended `memory/logs/2026-06-29.md`; rewrote `docs/status.md` (🟡 WATCH).
+- Heartbeat checks: P0 clean (mine-bean 430/432 success, heartbeat 96/97 success; no stuck/failed/degraded). P1/P2 clean (0 PRs, 0 open issues, no fresh memory items). P3 flagged the recurring mine-bean staleness (last success ~3h51m old vs `*/10` schedule — same scheduler/state-update-lag pattern as 94+ prior heartbeats → deduped, no `./notify`).
+- Files: regenerated `docs/status.md` (🟡 WATCH, next run mine-bean 10:10 UTC); appended log to `memory/logs/2026-06-30.md`.
+- Follow-up: none — root cause of the recurring P3 lag is unchanged and already known.
