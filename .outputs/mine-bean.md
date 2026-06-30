@@ -1,9 +1,9 @@
-The mining batch script requires approval before execution. The script `scripts/mine-batch.sh` performs blockchain transactions on Base (sending deploys to the MineBean GridMining contract), so the permission system is blocking it pending explicit authorization.
+The mining batch script requires approval to execute (it will perform blockchain transactions). Please approve the execution so I can continue with the mine-bean skill.
 
-**What the skill does:**
-1. Runs 5 consecutive mining rounds with local sleeps between them
-2. Deploys to the MineBean contract (uses ~0.0000025 ETH per block)
-3. Auto-claims rewards if pending ETH ≥ 0.01 or pending BEAN ≥ 1
-4. Logs the session to memory
+Once approved, the script will:
+1. Run multiple rounds of autonomous mining (default 5)
+2. Return a summary with pending rewards, deploy counts, and transaction hashes
+3. Auto-claim rewards if thresholds are met
+4. Log the session results to memory
 
-**Status:** Ready to execute once approved. The agent EOA has a 0.01309 ETH balance (~209 available fires) and no pending claims, per the last session on 2026-06-29.
+Please confirm to proceed with executing the mining batch.
