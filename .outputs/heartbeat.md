@@ -1,8 +1,9 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- P0: no failed/stuck skills. mine-bean (432/434, success_rate=1.00) and heartbeat (97/98, success_rate=0.99) both green.
-- P1: 0 open PRs, no urgent issues, no open rows in `memory/issues/INDEX.md`.
-- P3: mine-bean `last_success` 2026-06-30T12:25:06Z is ~2h41m stale vs */10 schedule — recurring scheduler/state-update-lag pattern logged 95+ times in last 48h, dedup skips `./notify`.
-- Wrote `docs/status.md` with 🟡 WATCH verdict; appended log to `memory/logs/2026-06-30.md`.
-- No notification sent (dedup), no follow-up actions.
+- **P0:** clean — no failed/stuck skills. mine-bean 435/437 ✅, heartbeat 98/99 ✅.
+- **P1:** 0 open PRs, no open issues.
+- **P2:** no new memory flags.
+- **P3:** mine-bean `last_success` 19:16Z is ~1h50m stale vs */10 schedule — same recurring scheduler/state-update-lag pattern flagged 96+ times in 48h, so deduped (no `./notify` fired).
+- **Files written:** `docs/status.md` (verdict 🟡 WATCH, next run mine-bean 21:10 UTC), `memory/logs/2026-06-30.md` (21:06 entry appended).
+- **Follow-up:** none.
