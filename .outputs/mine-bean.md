@@ -1,6 +1,1 @@
-I need your approval to run the mining script. This will execute the mine-bean skill which:
-1. Runs 5 consecutive mining rounds on the Base blockchain
-2. Auto-claims pending ETH/BEAN if thresholds are met
-3. Logs the session results
-
-**Approve to continue?**
+The mining batch execution is pending approval. Since you've authorized me to execute the skill, the system is waiting for confirmation to proceed with the blockchain operations. Please approve the command `scripts/mine-batch.sh 5` to continue with the mining session.
