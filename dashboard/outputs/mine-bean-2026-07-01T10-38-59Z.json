@@ -1,0 +1,61 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean",
+        "description": "Session completed"
+      },
+      "children": [
+        "stack_stats"
+      ]
+    },
+    "stack_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat_deploys",
+        "stat_skipped",
+        "stat_eth",
+        "stat_bean"
+      ]
+    },
+    "stat_deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "3"
+      },
+      "children": []
+    },
+    "stat_skipped": {
+      "type": "Stat",
+      "props": {
+        "label": "Skipped",
+        "value": "2"
+      },
+      "children": []
+    },
+    "stat_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.002691"
+      },
+      "children": []
+    },
+    "stat_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending BEAN",
+        "value": "4.470"
+      },
+      "children": []
+    }
+  }
+}

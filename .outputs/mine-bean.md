@@ -1,1 +1,1 @@
-The mining batch execution is pending approval. Since you've authorized me to execute the skill, the system is waiting for confirmation to proceed with the blockchain operations. Please approve the command `scripts/mine-batch.sh 5` to continue with the mining session.
+mine-bean: Session completed · 3 deploys, 2 skipped · Pending: 0.002691 ETH, 4.470 BEAN
