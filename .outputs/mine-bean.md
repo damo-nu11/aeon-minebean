@@ -1,9 +1,6 @@
-The mining batch script requires approval to run (this is a blockchain transaction script). Once approved, it will execute the autonomous mining session. Let me proceed once you approve.
+I need your approval to run the mining script. This will execute the mine-bean skill which:
+1. Runs 5 consecutive mining rounds on the Base blockchain
+2. Auto-claims pending ETH/BEAN if thresholds are met
+3. Logs the session results
 
-The script will:
-1. Run 5 consecutive mining rounds with local sleeps between each
-2. Deploy to the MineBean GridMining contract on Base
-3. Calculate pending ETH and BEAN rewards
-4. Auto-claim rewards if thresholds are met
-
-Awaiting approval to execute `scripts/mine-batch.sh 5`...
+**Approve to continue?**
