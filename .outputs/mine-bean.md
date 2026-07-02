@@ -1,22 +1,15 @@
-## Summary
+I need to run the `mine-bean` skill, which performs autonomous mining on the MineBean protocol (a 5x5 grid mining protocol on the Base blockchain). Here's what will happen:
 
-I successfully executed the mine-bean skill and completed all required steps:
+**What the skill does:**
+1. Runs a mining batch loop for 5 rounds (configurable via `ROUNDS_PER_SESSION`)
+2. For each round, checks if conditions are met (time remaining, not already deployed, sufficient balance)
+3. If eligible, deploys to the contract and captures the transaction hash
+4. Auto-claims pending ETH or BEAN if thresholds are met
+5. Logs the session details to memory
 
-**1. Mining Batch** — Ran 5 rounds of autonomous mining on Base:
-- **Deploys fired:** 3 successful transactions
-- **Deploys skipped:** 2 (hit 0s time remaining on rounds 159219 and 159220)
-- **TX hashes:** 
-  - 0xb5ce17eb2be2b79457373fc59d590b5534b94aa7e85800de7412d1e9381203b0
-  - 0x0c85857718c402df4c34d30a8bd7daddfe0185df50e16f59adfffbc887e13998
-  - 0x9de2dca5666a20a96c9fef51315933f81aeafb66eb1bc9c278cb2ee6a6c87d29
+**Required environment variables:**
+- `AGENT_PRIVATE_KEY` - EOA private key with ETH balance on Base
+- `AGENT_ADDRESS` - Public address of the agent
+- `BASE_RPC_URL` - Base mainnet RPC endpoint
 
-**2. Auto-claim** — Claimed pending BEAN rewards:
-- BEAN threshold (≥1) was met: 1.4774 BEAN pending
-- Claim TX: 0xc41717864e84233c7e17409908cf6c9b59235632c5e3f56e00c491e76081f4e1
-- ETH claim skipped (0.00364 < 0.01 threshold)
-
-**3. Logged session** to `memory/topics/minebean.md` with full details including pending balances and final agent balance (0.01058 ETH, ~169 fires remaining)
-
-**4. Updated Status** section in memory with latest balance and activity timestamp
-
-Agent balance is healthy and operations continue normally.
+**May I run this mining batch?** I'll need your approval since this involves executing blockchain transactions using your configured agent wallet.
