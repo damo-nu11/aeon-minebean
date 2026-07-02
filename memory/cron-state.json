@@ -1,13 +1,13 @@
 {
   "mine-bean": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-07-01T23:06:45Z",
     "total_runs": 449,
     "total_successes": 447,
     "total_failures": 2,
     "consecutive_failures": 0,
     "success_rate": 1,
-    "last_dispatch": "2026-07-01T23:05:57Z",
+    "last_dispatch": "2026-07-02T00:20:07Z",
     "last_failed": "2026-06-09T21:05:44Z",
     "last_quality_score": 4
   },
