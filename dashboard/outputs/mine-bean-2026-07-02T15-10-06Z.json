@@ -1,0 +1,87 @@
+{
+  "root": "card-minebean",
+  "state": {},
+  "elements": {
+    "card-minebean": {
+      "type": "Card",
+      "props": {
+        "title": "MineBean"
+      },
+      "children": [
+        "badge-success",
+        "stack-main"
+      ]
+    },
+    "badge-success": {
+      "type": "Badge",
+      "props": {
+        "text": "Success",
+        "variant": "default"
+      }
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text-deploys",
+        "stat-bean",
+        "link-tx",
+        "separator-1",
+        "stat-balance",
+        "text-fires",
+        "stat-pending"
+      ]
+    },
+    "text-deploys": {
+      "type": "Text",
+      "props": {
+        "text": "2 deploys on rounds 159118–159119",
+        "variant": "body"
+      }
+    },
+    "stat-bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN Auto-Claimed",
+        "value": "1.648"
+      }
+    },
+    "link-tx": {
+      "type": "Link",
+      "props": {
+        "label": "View transaction",
+        "href": "https://etherscan.io/tx/0xccffe2420ed363d08a37d1c962ff35bb8084baec6c0f7e6a8b62b26137c95154"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stat-balance": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH Balance",
+        "value": "0.010775"
+      }
+    },
+    "text-fires": {
+      "type": "Text",
+      "props": {
+        "text": "~172 fires remaining",
+        "variant": "caption"
+      }
+    },
+    "stat-pending": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.003475"
+      }
+    }
+  }
+}

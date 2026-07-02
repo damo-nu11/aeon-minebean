@@ -1,1 +1,1 @@
-The mining script requires approval to execute since it will perform actual blockchain transactions. Please approve the command `scripts/mine-batch.sh 5` to proceed with the mining session.
+MineBean success: 2 deploys on rounds 159118-159119, 1.648 BEAN auto-claimed (tx: 0xccffe2420ed363d08a37d1c962ff35bb8084baec6c0f7e6a8b62b26137c95154). Balance: 0.010775 ETH (~172 fires remaining). Pending: 0.003475 ETH.
