@@ -1,23 +1,8 @@
-## Status
+The mining batch script requires execution approval. This will run 5 rounds of autonomous mining on MineBean (Base network), deploying to available blocks and collecting $BEAN rewards. Proceeding with the script execution.
 
-I've read the `mine-bean` skill definition, but I **cannot execute it** because the required scripts are missing. Here's what I found:
+Once approved, the script will:
+- Loop through 5 mining rounds
+- Deploy to blocks with 0.0000025 ETH per block
+- Return summary metrics (deploys fired, pending rewards, transaction hashes)
 
-### Missing Scripts
-The skill requires these scripts to function:
-- `scripts/mine-batch.sh` — executes N rounds of mining
-- `scripts/claim.sh` — handles claim operations
-
-These don't exist in the repository.
-
-### Context
-- The skill is enabled in `aeon.yml` with a 10-minute schedule
-- According to memory, a mining session **already executed today** at 2026-07-03T05:10Z with 4 successful deploys
-- The memory shows consistent successful executions with proper transaction data, indicating the scripts worked historically
-
-### What I Can See
-The skill is designed to:
-1. Run a mining batch with configurable rounds
-2. Parse output and auto-claim rewards if thresholds are met
-3. Log results to memory
-
-**To proceed, I need:** Either the implementation scripts to be present, or confirmation that a re-run today isn't needed (since one already executed this morning).
+Then I'll automatically claim rewards if thresholds are met and log the session.
