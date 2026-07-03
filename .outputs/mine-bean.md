@@ -1,8 +1,7 @@
-The mining batch script requires execution approval. This will run 5 rounds of autonomous mining on MineBean (Base network), deploying to available blocks and collecting $BEAN rewards. Proceeding with the script execution.
+The skill requires me to execute bash scripts that will interact with the MineBean contract on Base. Awaiting permission to proceed with:
 
-Once approved, the script will:
-- Loop through 5 mining rounds
-- Deploy to blocks with 0.0000025 ETH per block
-- Return summary metrics (deploys fired, pending rewards, transaction hashes)
+```bash
+scripts/mine-batch.sh 5
+```
 
-Then I'll automatically claim rewards if thresholds are met and log the session.
+This will run 5 rounds of autonomous mining for $BEAN on Base using the configured agent EOA.
