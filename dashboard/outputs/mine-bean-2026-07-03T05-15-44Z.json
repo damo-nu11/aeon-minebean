@@ -1,0 +1,138 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Mine-Bean Session"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_session",
+        "stack_deploys",
+        "sep_1",
+        "heading_rewards",
+        "stack_rewards",
+        "link_tx",
+        "sep_2",
+        "heading_next"
+      ]
+    },
+    "heading_session": {
+      "type": "Heading",
+      "props": {
+        "text": "Session Complete",
+        "level": "h2"
+      }
+    },
+    "stack_deploys": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_deploys",
+        "stat_skips",
+        "text_rounds"
+      ]
+    },
+    "stat_deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "4"
+      }
+    },
+    "stat_skips": {
+      "type": "Stat",
+      "props": {
+        "label": "Skips",
+        "value": "1"
+      }
+    },
+    "text_rounds": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds 159860–159863",
+        "variant": "body"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_rewards": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending Rewards Claimed",
+        "level": "h2"
+      }
+    },
+    "stack_rewards": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_bean",
+        "stat_eth",
+        "stat_fires"
+      ]
+    },
+    "stat_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "3.138"
+      }
+    },
+    "stat_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH Balance",
+        "value": "0.01012"
+      }
+    },
+    "stat_fires": {
+      "type": "Stat",
+      "props": {
+        "label": "Estimated Fires",
+        "value": "162"
+      }
+    },
+    "link_tx": {
+      "type": "Link",
+      "props": {
+        "label": "tx 0xcbe04983...",
+        "href": "https://etherscan.io/search?q=0xcbe04983"
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_next": {
+      "type": "Heading",
+      "props": {
+        "text": "Next Session: Round 159864+",
+        "level": "h3"
+      }
+    }
+  }
+}
