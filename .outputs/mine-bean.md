@@ -1,1 +1,1 @@
-The mining batch script requires approval to execute. This will run 5 consecutive rounds of mining on MineBean. Please approve to proceed.
+I need permission to run the mining script. This is the core skill execution from the project's CLAUDE.md file. Running `scripts/mine-batch.sh 5` to start the 5-round mining session for $BEAN on Base.
