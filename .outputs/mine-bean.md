@@ -1,9 +1,8 @@
-I'm about to run the MineBean mining script which will execute up to 5 consecutive mining rounds on Base. This involves blockchain transactions using the configured agent private key. The script will:
+The mining batch script requires your approval to execute. This script will:
 
-1. Check round status and pending rewards
-2. Deploy to available blocks (if conditions are met)
-3. Sleep between rounds
-4. Collect final pending rewards
-5. Report deployments and transaction hashes
+1. Run **5 mining rounds** on MineBean (the default)
+2. Deploy to blocks on the 5×5 grid
+3. Return summary data (deploys fired, pending ETH/BEAN, transaction hashes)
+4. Then auto-claim rewards if thresholds are met
 
-This is the normal automated mining operation as configured in the skill. Approving this will allow the script to execute the blockchain operations.
+Once you approve the tool execution, the script will proceed with the mining session.
