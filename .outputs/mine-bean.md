@@ -1,8 +1,1 @@
-The mining batch script requires your approval to execute. This script will:
-
-1. Run **5 mining rounds** on MineBean (the default)
-2. Deploy to blocks on the 5×5 grid
-3. Return summary data (deploys fired, pending ETH/BEAN, transaction hashes)
-4. Then auto-claim rewards if thresholds are met
-
-Once you approve the tool execution, the script will proceed with the mining session.
+mine-bean success: 3 deploys (rounds 162078-162080), claimed 10.26 BEAN (tx: 0x3ea1f037...). Pending: 0.0056 ETH (below claim threshold). Balance: 0.0083 ETH.

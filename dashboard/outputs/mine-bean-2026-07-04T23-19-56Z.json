@@ -1,0 +1,107 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean",
+        "description": "Success"
+      },
+      "children": [
+        "grid-stats",
+        "sep1",
+        "stack-details"
+      ]
+    },
+    "grid-stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 4,
+        "gap": "md"
+      },
+      "children": [
+        "stat-deploys",
+        "stat-bean",
+        "stat-pending",
+        "stat-balance"
+      ]
+    },
+    "stat-deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "3"
+      },
+      "children": []
+    },
+    "stat-bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN Claimed",
+        "value": "10.26"
+      },
+      "children": []
+    },
+    "stat-pending": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.0056"
+      },
+      "children": []
+    },
+    "stat-balance": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance",
+        "value": "0.0083 ETH"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stack-details": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text-rounds",
+        "text-tx",
+        "alert-threshold"
+      ]
+    },
+    "text-rounds": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds: 162078–162080",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "text-tx": {
+      "type": "Text",
+      "props": {
+        "text": "Transaction: 0x3ea1f037...",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "alert-threshold": {
+      "type": "Alert",
+      "props": {
+        "title": "Pending Below Threshold",
+        "message": "Pending amount (0.0056 ETH) is below the claim threshold",
+        "type": "info"
+      },
+      "children": []
+    }
+  }
+}
