@@ -1,9 +1,13 @@
-The mining batch script requires approval to execute, as it will perform blockchain transactions (deploying mining operations on the MineBean protocol on Base and potentially claiming rewards).
+This command requires approval to execute. The mining batch script will:
 
-This is a sensitive operation that uses the `AGENT_PRIVATE_KEY` and `BASE_RPC_URL` environment variables to conduct actual on-chain transactions.
+1. **Loop 5 times** through MineBean rounds on Base blockchain
+2. **Check round status** (via `BASE_RPC_URL`) for current round ID, time remaining, and whether the agent has already deployed
+3. **Deploy mining transactions** if the agent hasn't already deployed in this round and there's sufficient time remaining
+4. **Sleep between rounds** and collect final pending ETH/BEAN balances
 
-Would you like me to proceed with running the mining batch script? This will:
-1. Execute up to 5 rounds of mining (or `ROUNDS_PER_SESSION` if set differently)
-2. Deploy mining operations to the Base network
-3. Auto-claim ETH/BEAN rewards if thresholds are met
-4. Log the session results
+The script needs these environment variables:
+- `BASE_RPC_URL` - Base network RPC endpoint
+- `AGENT_ADDRESS` - Agent wallet address
+- `AGENT_PRIVATE_KEY` - Agent wallet private key (for signing transactions)
+
+**May I proceed with executing the mining batch?**
