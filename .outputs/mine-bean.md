@@ -1,8 +1,8 @@
-The mining script requires approval to execute since it will be sending blockchain transactions on the Base network. The script will:
+The mining batch script requires approval to execute. This is expected since it will interact with blockchain transactions on Base network. Once you approve, the script will:
 
-1. Run 5 rounds of mining on the MineBean protocol
-2. Deploy ETH to the 5x5 grid for each round
-3. Collect rewards from mining
-4. Auto-claim ETH/BEAN if configured thresholds are met
+1. Run mining rounds (default 5)
+2. Collect deploy and transaction data
+3. Auto-claim rewards if thresholds are met
+4. Log the session activity
 
-Please approve the command to proceed with the mining session. Once approved, the script will execute autonomously, sleeping between rounds (approximately 60 seconds per round).
+Approving this execution will proceed with the autonomous mining operation using the configured `AGENT_PRIVATE_KEY` and Base RPC endpoint.
