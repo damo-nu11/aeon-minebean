@@ -1,9 +1,9 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- **P0**: clean. mine-bean 510/513 (99%), heartbeat 113/114 (99%), both `last_status=success`, zero consecutive failures. Self-check OK (heartbeat last ran 12h10m ago, under 36h threshold; this is the 08:00 slot running ~43m late).
-- **P1**: 0 open PRs, 0 open issues.
-- **P2**: no fresh MEMORY.md signals.
-- **P3**: mine-bean `last_success` ~3h33m stale vs `*/10` schedule — recurring scheduler/state-update-lag pattern, already dedup-suppressed across 100+ prior heartbeats. `./notify` skipped.
-- **Files modified**: `docs/status.md` (verdict 🟡 WATCH, updated 2026-07-07 08:43 UTC), `memory/logs/2026-07-07.md` (new).
-- **Follow-up**: none — the workflow will auto-commit `docs/status.md`.
+- **P0:** Clean. mine-bean (515/518, 99%) and heartbeat (114/115, 99%) both green, no stuck/failed skills, no chronic failures.
+- **P1:** No open PRs; no urgent issues.
+- **P2:** No fresh MEMORY.md signals.
+- **P3:** mine-bean last_success ~1h57m old vs its */10 schedule — same recurring scheduler/state-update-lag pattern as 100+ prior heartbeats; dedup'd, no notify.
+- **Files:** Regenerated `docs/status.md` (🟡 WATCH, next run: mine-bean 20:30 UTC); appended 20:24 UTC entry to `memory/logs/2026-07-07.md`.
+- **Follow-up:** None — recurring P3 pattern remains unresolved but non-actionable at the skill level.
