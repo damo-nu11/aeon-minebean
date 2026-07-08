@@ -1,0 +1,176 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_status",
+        "separator_1",
+        "stack_metrics",
+        "separator_2",
+        "text_claims"
+      ]
+    },
+    "badge_status": {
+      "type": "Badge",
+      "props": {
+        "text": "success",
+        "variant": "default"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack_metrics": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "stack_deploys",
+        "stack_pending",
+        "stack_balance"
+      ]
+    },
+    "stack_deploys": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_deploys",
+        "text_deploys"
+      ]
+    },
+    "heading_deploys": {
+      "type": "Heading",
+      "props": {
+        "text": "Deploys",
+        "level": "h4"
+      }
+    },
+    "text_deploys": {
+      "type": "Text",
+      "props": {
+        "text": "2 deploys in rounds 166233-166234"
+      }
+    },
+    "stack_pending": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_pending",
+        "stack_pending_values"
+      ]
+    },
+    "heading_pending": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending",
+        "level": "h4"
+      }
+    },
+    "stack_pending_values": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_pending_eth",
+        "stat_pending_bean"
+      ]
+    },
+    "stat_pending_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.000224"
+      }
+    },
+    "stat_pending_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "0.0024"
+      }
+    },
+    "stack_balance": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_balance",
+        "stack_balance_values"
+      ]
+    },
+    "heading_balance": {
+      "type": "Heading",
+      "props": {
+        "text": "Balance",
+        "level": "h4"
+      }
+    },
+    "stack_balance_values": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_balance_eth",
+        "stat_balance_fires"
+      ]
+    },
+    "stat_balance_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.01348"
+      }
+    },
+    "stat_balance_fires": {
+      "type": "Stat",
+      "props": {
+        "label": "Est. Fires",
+        "value": "~215"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text_claims": {
+      "type": "Text",
+      "props": {
+        "text": "No claims (below thresholds)"
+      }
+    }
+  }
+}
