@@ -2,13 +2,16 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran heartbeat 14:00 slot (executing at 15:21 UTC, ~1h21m late).
+Ran heartbeat check at 21:19 UTC (20:00 slot, ~1h19m late).
 
-- **P0**: clean — mine-bean 524/527 (99%, 0 consecutive failures), heartbeat 116/117 (99%). Self-check OK.
-- **P1**: 0 open PRs, GH issues disabled on this repo, no open rows in `memory/issues/INDEX.md`.
-- **P2**: nothing new flagged in `MEMORY.md`.
-- **P3**: mine-bean `last_success` 2026-07-08T12:54:48Z is ~2h26m old vs the `*/10` schedule — same recurring scheduler/state-update-lag pattern flagged across 100+ prior heartbeats. Notification skipped per dedup rule.
-- **Status page**: regenerated `docs/status.md` with verdict 🟡 WATCH (workflow auto-commits).
-- **Log**: appended 15:21 UTC entry to `memory/logs/2026-07-08.md`.
+**Findings:**
+- **P0:** Clean — mine-bean and heartbeat both `success`, 99% success rate, 0 consecutive failures. Self-check OK.
+- **P1:** 0 open PRs, no open issues in INDEX.md.
+- **P2:** No fresh signals in MEMORY.md.
+- **P3:** mine-bean `last_success` is ~1h20m old vs the */10 schedule (>2× interval). Recurring scheduler/state-update-lag pattern — same as 100+ prior heartbeats.
+- **Token pulse:** no `articles/token-report-*.md` files → section omitted.
+- **Dedup:** identical P3 flag already logged repeatedly within 48h → skipped `./notify`.
 
-No notification sent; nothing new needing attention.
+**Files modified:**
+- `docs/status.md` — regenerated with verdict 🟡 WATCH
+- `memory/logs/2026-07-08.md` — appended 21:19 UTC heartbeat entry
