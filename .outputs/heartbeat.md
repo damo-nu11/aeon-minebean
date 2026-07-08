@@ -2,10 +2,13 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran heartbeat checks — all green on P0 (no failed/stuck skills; mine-bean 521/524 success, heartbeat 115/116 success, both `consecutive_failures=0`). P1 clean (0 open PRs, no open issues). P3 flagged the recurring mine-bean staleness (last_success ~2h40m old vs `*/10` schedule) — same pattern logged 100+ times in the last 48h, so notification skipped per dedup rule.
+Ran heartbeat 14:00 slot (executing at 15:21 UTC, ~1h21m late).
 
-Files modified:
-- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated timestamps and next-run marker (mine-bean at 09:10 UTC).
-- `memory/logs/2026-07-08.md` — appended heartbeat (09:02 UTC) entry.
+- **P0**: clean — mine-bean 524/527 (99%, 0 consecutive failures), heartbeat 116/117 (99%). Self-check OK.
+- **P1**: 0 open PRs, GH issues disabled on this repo, no open rows in `memory/issues/INDEX.md`.
+- **P2**: nothing new flagged in `MEMORY.md`.
+- **P3**: mine-bean `last_success` 2026-07-08T12:54:48Z is ~2h26m old vs the `*/10` schedule — same recurring scheduler/state-update-lag pattern flagged across 100+ prior heartbeats. Notification skipped per dedup rule.
+- **Status page**: regenerated `docs/status.md` with verdict 🟡 WATCH (workflow auto-commits).
+- **Log**: appended 15:21 UTC entry to `memory/logs/2026-07-08.md`.
 
-No follow-up actions needed — the P3 staleness pattern is a known scheduler/state-update-lag artifact with unchanged root cause.
+No notification sent; nothing new needing attention.
