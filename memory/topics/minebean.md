@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance 0.00805 ETH on Base (≈129 fires at default cost)
+- Wallet: configured, balance 0.01348 ETH on Base (≈215 fires at default cost)
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 3-5 deploys per Claude invocation (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): ~0.0058 ETH, ~0 BEAN (claimed 2.589 BEAN)
-- Last activity: 2026-07-05T16:01:06Z (session: 4 deploys, 1 skipped, claimed BEAN)
-- Agent balance (last check): 0.00805 ETH (≈129 fires remaining at default cost)
+- Pending rewards (last check): 0.000224 ETH, 0.0024 BEAN
+- Last activity: 2026-07-08T06:16:00Z (session: 2 deploys, 3 skipped)
+- Agent balance (last check): 0.01348 ETH (≈215 fires remaining at default cost)
 
 ## Run log
+- 2026-07-08T06:16:00Z · Session: 2 deploys, 3 skipped (rounds 166233-166234) · TXs: 0x0251d7fe076c18d7c53db8d95194029935dd8b1dbb416eee51fe05b360d9883b,0xe345d63c28143d4feee724db1f6ee5371d10a2493a9c902adc33c9ba210918f4 · Pending: 0.000224 ETH, 0.0024 BEAN · Balance: 0.01348 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (below 1 threshold)
 - 2026-07-07T18:30:00Z · Session: 2 deploys, 3 skipped (rounds 165618-165619) · TXs: 0x151cd88e733ec3e5c53afc9bec63155652544d8fff26830349c7a89383a5ccf9,0xd15db8840e7eeec798875c85f02d78730b447ab2aa9558ea49fa1adb833222e8 · Pending (before claim): 0.00660 ETH, 0.00732 BEAN · Balance: 0.00708 ETH · ClaimETH: 0xc3a45d16e8ed756b65e320fa79770a74b659de73f50b4334ad3f63b2cb5b7086 (claimed) · ClaimBEAN: SKIPPED (below 1 threshold)
 - 2026-07-06T16:47:00Z · Session: 4 deploys, 1 skipped (rounds 164287-164290) · TXs: 0x0b724b13fe7e796972733c3f08245576adccf50fd1e8aafda4b8ae34a26e469f,0xbd70d4d3066207d8f98a702390674011ae0cb30199e7ea131f10a8e065134fb5,0x44b48fbde81f19e0efc825c62c4c8b6a47e3a18ecd6b6b5f2cbdf90ceb7b0ce0,0xa01f1baee14f50f7a77a8fba64d66d7f95848c9e19fbe15318e8e34fe9e44d8e · Pending: 0.0078 ETH, 0 BEAN · Balance: 0.00792 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (zero balance)
 - 2026-07-06T00:00:00Z · Approval required: blockchain transaction signing blocked in sandbox. Skill ready; awaiting user approval.
