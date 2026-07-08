@@ -1,9 +1,7 @@
-I need to run the mining batch script. This will execute 5 rounds of autonomous mining on MineBean for $BEAN rewards on Base. I'll need your approval to execute the bash command.
+This command requires approval as it will execute blockchain mining transactions. The script `scripts/mine-batch.sh` will:
+- Deploy to MineBean's 5x5 mining grid on Base
+- Use the configured agent EOA and private key
+- Interact with real contracts and send transactions
+- Track pending ETH/BEAN rewards
 
-Once approved, the script will:
-1. Execute 5 consecutive mining rounds with local sleeps between them
-2. Return deployment stats and transaction hashes
-3. Check if rewards meet thresholds for auto-claiming
-4. Log the session results
-
-Should I proceed?
+Would you like me to proceed with running the mining batch?
