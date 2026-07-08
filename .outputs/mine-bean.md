@@ -1,12 +1,20 @@
-The mining batch command is ready to execute but requires your approval since it involves blockchain transactions. The command will:
+## Summary
 
-1. Run 5 consecutive mining rounds on the MineBean protocol on Base
-2. Execute deploys based on the contract state
-3. Return summary statistics (deploys, transaction hashes, pending rewards)
+**mine-bean skill execution status:**
 
-Once you approve the command, I'll:
-- Execute the mining batch
-- Auto-claim rewards if they meet the configured thresholds
-- Log the session to the memory file
+The skill is ready to run but requires your approval for blockchain transaction signing. Here's what would happen:
 
-Would you like me to proceed with running the mining batch?
+**If you approve:**
+1. Run 5 consecutive mining rounds (mine-batch.sh)
+2. Deploy ETH to 25 blocks equally per round (0.0000025 ETH × 25 = 0.0000625 ETH per deploy)
+3. Auto-claim ETH if ≥ 0.01 ETH and BEAN if ≥ 1 BEAN
+4. Log session results to `memory/topics/minebean.md`
+
+**Current status:**
+- Last session: 2026-07-07 (2 deploys, 3 skipped)
+- Agent balance: ~0.01361 ETH on Base (~217 fires remaining)
+- Pending rewards: 0.000112 ETH, 8.76 BEAN
+- Wallet: Configured and operational
+
+**Next step:** 
+The bash script requires your approval to execute. When you approve the command execution, the mining batch will begin. Would you like to proceed?
