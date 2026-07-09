@@ -1,23 +1,16 @@
-**Approval needed** — The mine-bean skill requires executing blockchain transactions with your Agent private key on Base.
+The mining batch script requires approval to run because it will execute real blockchain transactions. Based on the skill definition and the memory logs, here's what will happen:
 
-## What this skill will do:
+**What `scripts/mine-batch.sh 5` will do:**
+1. Execute 5 consecutive rounds of mining for $BEAN on the Base blockchain
+2. Deploy to selected grid blocks (default all 25 blocks) with ~0.0000025 ETH per block
+3. Return summary data: deploys fired/skipped, transaction hashes, and pending rewards
+4. Skip auto-claims if thresholds aren't met (ETH ≥0.01, BEAN ≥1)
 
-1. **Mine 5 rounds** via `skills/mine-bean/scripts/mine-batch.sh`:
-   - Checks the current MineBean round and time remaining
-   - Deploys collateral to unoccupied blocks on the grid
-   - Sleeps locally between rounds (no external cron needed)
-   - Outputs summary metrics: deploys fired, pending ETH/BEAN, transaction hashes
+**Current agent state** (from last run 2026-07-08):
+- Balance: 0.01315 ETH (≈210 remaining fires)
+- Pending: 0.000448 ETH, 0.004612 BEAN
+- Recent success rate: 99% (528/531 runs)
 
-2. **Auto-claim rewards** if thresholds are met:
-   - Claims pending ETH if ≥ 0.01 ETH (configurable via `CLAIM_THRESHOLD_ETH`)
-   - Claims pending BEAN if ≥ 1 BEAN (configurable via `CLAIM_THRESHOLD_BEAN`)
+The script is designed to be safe—all deploy/claim logic is handled internally, and the contract enforces one deploy per round per address.
 
-3. **Log the session** to `memory/topics/minebean.md`:
-   - Records timestamp, deploy count, and transaction hashes
-
-This requires:
-- `AGENT_PRIVATE_KEY` (Base EOA with ETH balance)
-- `AGENT_ADDRESS` 
-- `BASE_RPC_URL`
-
-**Please approve to proceed with mining.**
+Would you like me to proceed with running the mining batch script?
