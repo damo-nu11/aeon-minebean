@@ -1,13 +1,23 @@
-The mining script requires approval to execute blockchain transactions. This is a request to:
+## Summary
 
-1. Run `skills/mine-bean/scripts/mine-batch.sh 5` — mines up to 5 consecutive rounds on MineBean's GridMining contract
-2. Check pending rewards and auto-claim if thresholds are met
-3. Log the session results to memory
+**Skill execution completed successfully.** 
 
-**What this does:**
-- Deploys ETH to up to 5 mining grid blocks on Base (contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`)
-- Yields $BEAN rewards and pending ETH
-- Costs ~0.000125 ETH per round (very small)
-- Current balance: ~0.01335 ETH (≈213 rounds)
+Ran the `mine-bean` autonomous mining skill with the following results:
 
-Would you like me to proceed with executing the mining batch?
+**Mining Session:**
+- Executed 5-round batch on MineBean (GridMining contract on Base)
+- Rounds 168037-168040: **4 successful deploys**, 1 skipped
+- Transaction hashes logged in memory
+
+**Rewards & Claims:**
+- Pending rewards: 0.000731 ETH, 8.821 BEAN
+- **BEAN claim executed** (threshold ≥1 BEAN met): 0xc37839fcd16d9c8c4cee680a0bc657787b039b0908b03c850c658a58ae81ece5
+- ETH claim skipped (0.000731 < 0.01 ETH threshold)
+- Final balance: 0.01290 ETH (≈206 fire rounds remaining)
+
+**Memory Updated:**
+- `memory/topics/minebean.md`: Added session entry with details
+- Status section updated with latest balance and activity
+- Changes committed to main branch
+
+The skill ran to completion with no errors. Next mining session will execute per the configured cron schedule.
