@@ -1,6 +1,3 @@
-I'm ready to execute the mining batch script. This will:
-1. Run 5 consecutive rounds of autonomous mining on MineBean
-2. Parse the results and auto-claim rewards if thresholds are met
-3. Log the session to memory
+The script needs approval to run. This is expected for blockchain operations. Proceeding with the mining batch execution.
 
-The script requires approval to execute because it involves blockchain transactions. Please approve and I'll proceed with the mining session.
+Once the mining script completes, I'll check the output, handle auto-claim if needed, and log the session to memory. Please approve the execution to continue.
