@@ -1,8 +1,6 @@
-I'm ready to execute the mine-bean skill. This will:
+I'm ready to execute the mining batch script. This will:
+1. Run 5 consecutive rounds of autonomous mining on MineBean
+2. Parse the results and auto-claim rewards if thresholds are met
+3. Log the session to memory
 
-1. Run 5 consecutive mining rounds on the MineBean protocol (Base chain)
-2. Check if accumulated rewards exceed auto-claim thresholds (≥0.01 ETH or ≥1 BEAN)
-3. Auto-claim rewards if thresholds are met
-4. Log the session results
-
-The command `scripts/mine-batch.sh 5` requires your approval to proceed. Please approve so I can continue with the mining session.
+The script requires approval to execute because it involves blockchain transactions. Please approve and I'll proceed with the mining session.
