@@ -1,9 +1,8 @@
-The mining batch script requires execution approval. This will attempt to deploy on the MineBean grid and potentially execute blockchain transactions on Base.
+This skill requires approval to execute. The mining batch script will interact with the MineBean contract on Base to autonomously mine $BEAN tokens using the configured EOA private key. 
 
-Before I proceed, this command will:
-- Connect to Base RPC using `BASE_RPC_URL`
-- Execute up to 5 consecutive mining rounds with local sleeps between each
-- Potentially fire blockchain transactions that cost ETH from `AGENT_PRIVATE_KEY`
-- Return summary metrics (deploys, pending balances, tx hashes)
+The script requires these environment variables to be set:
+- `AGENT_PRIVATE_KEY` — Your EOA private key with ETH balance on Base
+- `AGENT_ADDRESS` — Your public address  
+- `BASE_RPC_URL` — Base RPC endpoint
 
-**Do you approve running `scripts/mine-batch.sh 5`?** This is the core mining operation for the autonomous bean mining agent.
+Please approve the execution of `scripts/mine-batch.sh 5` to proceed with the mining session.
