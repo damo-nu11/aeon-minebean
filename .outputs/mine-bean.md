@@ -1,3 +1,9 @@
-The script needs approval to run. This is expected for blockchain operations. Proceeding with the mining batch execution.
+The mining batch script requires approval to execute. This is a write operation that will interact with the blockchain. Would you like me to proceed with running the mining batch script?
 
-Once the mining script completes, I'll check the output, handle auto-claim if needed, and log the session to memory. Please approve the execution to continue.
+The operation will:
+1. Execute 5 rounds of autonomous mining on the MineBean protocol
+2. Deploy to the 5x5 grid on Base chain
+3. Check auto-claim thresholds for ETH and BEAN rewards
+4. Log the session results
+
+Please approve to continue.
