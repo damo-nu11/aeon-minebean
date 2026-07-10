@@ -1,0 +1,132 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_session",
+        "separator_1",
+        "stack_deploys",
+        "separator_2",
+        "stack_bean",
+        "separator_3",
+        "stack_balance"
+      ]
+    },
+    "text_session": {
+      "type": "Text",
+      "props": {
+        "text": "Session 2026-07-10",
+        "variant": "lead"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_deploys": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_deploys_label",
+        "text_deploys_detail"
+      ]
+    },
+    "text_deploys_label": {
+      "type": "Text",
+      "props": {
+        "text": "Deploy Activity",
+        "variant": "body"
+      }
+    },
+    "text_deploys_detail": {
+      "type": "Text",
+      "props": {
+        "text": "3 deploys, 2 skipped (rounds 168673-168675)"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_bean": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_bean_label",
+        "stat_bean",
+        "text_tx"
+      ]
+    },
+    "text_bean_label": {
+      "type": "Text",
+      "props": {
+        "text": "BEAN Claimed",
+        "variant": "body"
+      }
+    },
+    "stat_bean": {
+      "type": "Stat",
+      "props": {
+        "value": "10.706",
+        "label": "BEAN"
+      }
+    },
+    "text_tx": {
+      "type": "Text",
+      "props": {
+        "text": "TX: 0x150f859b...",
+        "variant": "caption"
+      }
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_balance": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_eth",
+        "text_fires"
+      ]
+    },
+    "stat_eth": {
+      "type": "Stat",
+      "props": {
+        "value": "0.01231",
+        "label": "ETH"
+      }
+    },
+    "text_fires": {
+      "type": "Text",
+      "props": {
+        "text": "197 fires",
+        "variant": "caption"
+      }
+    }
+  }
+}
