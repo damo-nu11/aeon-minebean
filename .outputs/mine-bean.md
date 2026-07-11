@@ -1,8 +1,14 @@
-The mining script requires approval before it can execute blockchain transactions. This will:
+The mining batch script requires approval to run—it will interact with the MineBean protocol on Base to execute deploys and potentially claim rewards. 
 
-1. Run `scripts/mine-batch.sh` to execute 5 consecutive mining rounds on the MineBean protocol (Base network)
-2. Each round includes deploying capital to a 5×5 grid and potentially claiming $BEAN rewards
-3. Auto-claim pending rewards if thresholds are met
-4. Log the session results to memory
+This script will:
+1. Execute up to 5 consecutive mining rounds
+2. Check thresholds for auto-claiming pending ETH (≥0.01) and BEAN (≥1)
+3. Return transaction hashes and summary metrics
 
-The script uses your configured `AGENT_PRIVATE_KEY` and `AGENT_ADDRESS` to sign and send transactions. Do you want to proceed?
+**Environment expected:**
+- `AGENT_PRIVATE_KEY` — EOA private key (GitHub secret)
+- `BASE_RPC_URL` — Base mainnet RPC
+- Current balance: ~0.01251 ETH (≈200 fires)
+- Pending rewards: 0.001012 ETH + 6.084 BEAN
+
+Should I proceed with the mining batch?
