@@ -1,1 +1,1 @@
-I need your approval to run the mining script. This command will execute the MineBean mining operations on the Base blockchain, which involves signing and sending blockchain transactions. Please approve the execution of `skills/mine-bean/scripts/mine-batch.sh 5` so I can proceed with the skill.
+Waiting for the mining batch to complete. The script is running 5 rounds with sleeps between them. I've set a monitor to check the output after 120 seconds.
