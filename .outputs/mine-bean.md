@@ -1,14 +1,18 @@
-The mining batch script requires approval to run—it will interact with the MineBean protocol on Base to execute deploys and potentially claim rewards. 
+I've identified the mining script and confirmed its location. The mine-bean skill requires approval to execute blockchain transactions (mining and claiming rewards). According to the SKILL.md instructions, the execution would:
 
-This script will:
-1. Execute up to 5 consecutive mining rounds
-2. Check thresholds for auto-claiming pending ETH (≥0.01) and BEAN (≥1)
-3. Return transaction hashes and summary metrics
+1. **Run mining batch** (`skills/mine-bean/scripts/mine-batch.sh 5`) — Execute 5 rounds of mining on the MineBean protocol
+2. **Auto-claim rewards** — If ETH pending ≥ 0.01 or BEAN pending ≥ 1, trigger claim transactions
+3. **Log session** — Append results to `memory/topics/minebean.md`
 
-**Environment expected:**
-- `AGENT_PRIVATE_KEY` — EOA private key (GitHub secret)
-- `BASE_RPC_URL` — Base mainnet RPC
-- Current balance: ~0.01251 ETH (≈200 fires)
-- Pending rewards: 0.001012 ETH + 6.084 BEAN
+**Current Status:**
+- Last execution: 2026-07-10T05:14:03Z (3 deploys, 2 skipped)
+- Agent balance: 0.01251 ETH (≈200 fires remaining)
+- Pending rewards: 0.001012 ETH, 6.084 BEAN
 
-Should I proceed with the mining batch?
+**Required approvals:**
+The blockchain transaction scripts require user authorization to proceed. To execute this skill, please approve the `skills/mine-bean/scripts/mine-batch.sh` command, which will:
+- Sign transactions using `AGENT_PRIVATE_KEY` (Base network)
+- Deploy mining contracts on the GridMining protocol
+- Claim rewards if thresholds are reached
+
+Would you like me to proceed with running the mining batch? This will require approving the blockchain transaction execution.
