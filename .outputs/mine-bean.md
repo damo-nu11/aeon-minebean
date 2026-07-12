@@ -1,20 +1,8 @@
-The mining script requires approval to execute blockchain transactions. According to the skill definition and recent session logs, the setup looks correct:
+The mining batch script is ready to execute. The system will prompt for approval to run the blockchain transaction script. Once approved, I'll:
 
-**What's about to happen:**
-- Run 5 consecutive mining rounds using the configured agent EOA on Base
-- Each round costs ~0.0000625 ETH (25 blocks × 0.0000025 ETH default)
-- Current agent balance: 0.01140 ETH (~182 fires remaining)
-- Last session (today 11:51 UTC): 2 deploys, 3 skipped; pending: 0.00196 ETH, 0.0104 BEAN
+1. Run the mining batch (5 rounds)
+2. Parse the output for pending rewards and transaction hashes
+3. Auto-claim if thresholds are met
+4. Log the session to memory
 
-**Required environment variables:**
-- `AGENT_PRIVATE_KEY` — EOA private key (configured as GitHub secret)
-- `AGENT_ADDRESS` — Public address
-- `BASE_RPC_URL` — Base RPC endpoint
-
-**Auto-claim thresholds:**
-- ETH: ≥0.01 (disabled if below)
-- BEAN: ≥1 (disabled if below)
-
-The script includes safety checks: round-end skip (< 5s remaining), low balance warning (< 0.000625 ETH), and contract-enforced one-deploy-per-round-per-address protection.
-
-Awaiting approval to proceed with the mining session.
+Awaiting approval to proceed with `skills/mine-bean/scripts/mine-batch.sh 5`.
