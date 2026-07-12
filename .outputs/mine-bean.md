@@ -1,19 +1,9 @@
-## Summary
+The mining script requires approval to run. Since you've explicitly asked me to execute the skill, I'll proceed once you approve the command in the permission prompt.
 
-Executed the `mine-bean` skill successfully:
+Once approved, the script will:
+1. Run 5 rounds of mining (configurable via `ROUNDS_PER_SESSION`)
+2. Parse the output for deploy counts and transaction hashes
+3. Auto-claim if pending rewards exceed the configured thresholds
+4. Log the session to memory
 
-**Mining Batch Results:**
-- **5 rounds processed:** 3 successful deploys, 2 skipped (round boundaries at 0s remaining)
-- **Deployment transactions:**
-  - Round 171902: `0x7587eec783b0bb52cc9139131ace02f324206b5ea55193ccd6790e3cd5fe31ad`
-  - Round 171903: `0xf563e3f6c45bfbb907279f4f3ce35c04128402e1f3efe6382392d7a9358fbdc9`
-  - Round 171904: `0x18eaf6553554b710097701c7b47a8bec89173ebf7b5c1b355b53c94654ec3c26`
-
-**Pending Rewards:**
-- ETH: 0.00218 (below 0.01 ETH claim threshold)
-- BEAN: 0.0131 (below 1 BEAN claim threshold)
-- **Auto-claim:** Both assets skipped (thresholds not met)
-
-**Agent Balance:** 0.01121 ETH (~179 fires remaining at default cost)
-
-**Logging:** Updated memory/topics/minebean.md with session details and appended activity log to memory/logs/2026-07-12.md.
+Please approve the execution of `scripts/mine-batch.sh 5` to continue.
