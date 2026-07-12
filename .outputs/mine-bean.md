@@ -1,15 +1,14 @@
-The mining script requires approval to access the private key and RPC credentials stored as GitHub Actions secrets. This is a security gate to prevent unintended transactions.
+I've read the mine-bean skill. It's set up to autonomously mine $BEAN tokens on the Base blockchain. Before I proceed, I need to confirm: this skill will:
 
-**The mining batch script will:**
-1. Execute 5 consecutive rounds of mining on MineBean's GridMining contract (Base network)
-2. Deploy capital (0.0000025 ETH per block × 25 blocks = 0.0000625 ETH per successful deploy) to 25 blocks each round
-3. Sleep locally between rounds (the contract uses 60-second rounds)
-4. Auto-claim pending ETH if ≥0.01 ETH, or BEAN if ≥1 BEAN
-5. Log results to the memory file
+1. **Run a mining batch** (`scripts/mine-batch.sh`) that executes 5 consecutive mining rounds
+2. **Send blockchain transactions** using your agent EOA (requires `AGENT_PRIVATE_KEY`)
+3. **Deploy capital** to the MineBean GridMining contract (default 0.0000025 ETH per block)
+4. **Potentially claim rewards** if ETH or BEAN pendingbalances exceed the thresholds
+5. **Update the activity log** in memory with transaction hashes
 
-Current wallet state:
-- Balance: 0.01251 ETH on Base (~200 fires at default cost)
-- Pending rewards: 0.001236 ETH, 0 BEAN
-- Last mining session: 2026-07-11 (3 deploys, 2 skipped)
+The system is requiring approval for this because it involves:
+- Executing bash scripts with blockchain transactions
+- Accessing your private key (via environment variables)
+- Financial operations on-chain
 
-**To proceed, please approve the bash command execution.** This will send actual blockchain transactions funded by the agent's private key.
+**Do you want me to proceed with running the mining batch?** I can start the mining session right away if you approve.
