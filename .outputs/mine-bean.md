@@ -1,14 +1,23 @@
-I've read the mine-bean skill. It's set up to autonomously mine $BEAN tokens on the Base blockchain. Before I proceed, I need to confirm: this skill will:
+## Summary
 
-1. **Run a mining batch** (`scripts/mine-batch.sh`) that executes 5 consecutive mining rounds
-2. **Send blockchain transactions** using your agent EOA (requires `AGENT_PRIVATE_KEY`)
-3. **Deploy capital** to the MineBean GridMining contract (default 0.0000025 ETH per block)
-4. **Potentially claim rewards** if ETH or BEAN pendingbalances exceed the thresholds
-5. **Update the activity log** in memory with transaction hashes
+The **mine-bean skill** executed successfully on 2026-07-12:
 
-The system is requiring approval for this because it involves:
-- Executing bash scripts with blockchain transactions
-- Accessing your private key (via environment variables)
-- Financial operations on-chain
+**Mining Results:**
+- **Rounds:** 5 requested, 3 deployed successfully, 2 skipped (due to round-boundary timing)
+- **Deployment transactions:**
+  - 0x914a7369aed813b2d469c4cd138912f2c5f5512f2fdb8bec580d35bae8f0da57
+  - 0x4133db56b574ae0e09948d74fa7fd40b64025ba4b0e1d9666bed7020ca6559f9
+  - 0x4d0bb3e737729136b84b63268a9f2f88b19210ae78b0e0ff03bf35f0ea3b23c7
 
-**Do you want me to proceed with running the mining batch?** I can start the mining session right away if you approve.
+**Pending Rewards:**
+- ETH: 0.00190 (below 0.01 threshold — skipped)
+- BEAN: 5.01 (above 1 threshold — claim pending sandbox approval)
+
+**Wallet Status:**
+- Agent balance: 0.01153 ETH (≈184 remaining fires at default 0.0000625 ETH/round)
+
+**Changes:**
+- Memory log updated with session details
+- Commit: `0c9c324` — chore(mine-bean): session 2026-07-12 — 3 deploys, BEAN claim pending
+
+The BEAN claim is ready but requires system approval to execute the blockchain transaction. The next session will continue mining from round 171412 onwards.
