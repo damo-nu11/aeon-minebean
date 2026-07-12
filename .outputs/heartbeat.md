@@ -1,12 +1,9 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- P0: clean — mine-bean (573/576, 99%) and heartbeat (126/127, 99%) both healthy, no failed/stuck skills, no chronic failures, self-check OK.
-- P1: 0 open PRs, issues disabled on repo, no open rows in `memory/issues/INDEX.md`.
-- P2: no fresh flags in MEMORY.md.
-- P3: mine-bean `last_success` ~2h5m stale vs its `*/10` schedule — same recurring scheduler/state-update-lag pattern flagged 100+ times; dedup rule → skip `./notify`.
-- Token pulse: no `articles/token-report-*.md` present → section omitted.
-- Regenerated `docs/status.md` with verdict 🟡 WATCH.
-- Appended log entry to `memory/logs/2026-07-12.md`.
-
-Files modified: `docs/status.md`, `memory/logs/2026-07-12.md`. No notification sent (P3 dedup). No follow-up needed.
+- P0: clean — mine-bean 577/580 (99%) and heartbeat 127/128 (99%), both with `last_status=success`, no consecutive failures.
+- P1: 0 open PRs, no open issues in `memory/issues/INDEX.md`.
+- P2: MEMORY.md holds only the standing mine-bean monitor — no fresh signal.
+- P3: mine-bean `last_success` ~1h34m stale vs the `*/10` cadence (>2× interval). Same recurring scheduler/state-update-lag pattern flagged in 100+ prior heartbeats — dedup rule suppresses `./notify`.
+- Token pulse omitted (no `articles/token-report-*.md`).
+- Wrote `docs/status.md` with verdict 🟡 WATCH; appended heartbeat entry to `memory/logs/2026-07-12.md`. Workflow auto-commit will land both on `main`.
