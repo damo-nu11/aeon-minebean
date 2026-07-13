@@ -1,0 +1,89 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "MineBean"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "status-text",
+        "sep1",
+        "stat-deploy",
+        "sep2",
+        "stack-pending",
+        "sep3",
+        "stat-balance"
+      ]
+    },
+    "status-text": {
+      "type": "Heading",
+      "props": {
+        "text": "✓ Session Complete",
+        "level": "h3"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stat-deploy": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploy",
+        "value": "1 on round 173263"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack-pending": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat-pending-eth",
+        "stat-pending-bean"
+      ]
+    },
+    "stat-pending-eth": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.000735"
+      }
+    },
+    "stat-pending-bean": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending BEAN",
+        "value": "38.844"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stat-balance": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance ETH",
+        "value": "0.012509"
+      }
+    }
+  }
+}
