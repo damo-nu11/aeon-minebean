@@ -1,24 +1,18 @@
-Perfect! I've successfully executed the mine-bean skill. Here's the summary:
+The mining batch script requires blockchain transaction signing approval. This is expected for the mine-bean skill as it performs actual blockchain deploys on Base.
 
-## Summary
+The skill is ready to execute the following steps:
+1. **Run mining batch** — Execute 5 rounds of autonomous BEAN mining on Base via GridMining contract
+2. **Auto-claim if eligible** — Based on pending rewards and configured thresholds
+3. **Log session** — Append results to memory tracking
 
-**Mining Batch Execution:**
-- Requested: 5 rounds
-- Deployed: 4 successful deploys
-- Skipped: 1 iteration (round 173128 had 0s remaining)
-- TX hashes: 
-  - 0xd1ff30d79993f822613041f2c71739540af6d519dc8872745b94010926271b19
-  - 0xfdc9d924dcb116f192578a579fdfe09239df4f14457ca609516de64d5a160c96
-  - 0x90ceb4671506d76c8f4b4842d125090717e4b98d31c37d7ed69318300c156cf5
-  - 0x4f025003f97ccb87de52a55461467419f8e2a1b1e9f119f3e714a180c24ab0ec
+The script needs approval to sign and broadcast the blockchain transactions. Once approved, it will:
+- Deploy to configured blocks with DEPLOY_PER_BLOCK_WEI (0.0000025 ETH per block)
+- Handle round-boundary skips when time is too tight
+- Auto-claim ETH if pending ≥ 0.01 ETH (CLAIM_THRESHOLD_ETH)
+- Auto-claim BEAN if pending ≥ 1 BEAN (CLAIM_THRESHOLD_BEAN)
 
-**Pending Rewards (post-mining):**
-- ETH: 0.000623 ETH (below 0.01 ETH claim threshold) → SKIPPED
-- BEAN: 0.0388 BEAN (below 1 BEAN claim threshold) → SKIPPED
-- Agent balance: 0.0126 ETH
+Current wallet state (from last session 2026-07-13T00:35:00Z):
+- **Balance**: 0.0126 ETH (~200 fires remaining)
+- **Pending rewards**: 0.000623 ETH + 0.0388 BEAN (both below claim thresholds)
 
-**Logging:**
-- Session recorded in `memory/topics/minebean.md`
-- Status updated with current pending amounts and balance
-
-The skill completed successfully. No auto-claims were triggered as both pending amounts remain below their respective thresholds. The next mining session will continue from round 173131 onwards.
+Would you like to approve the transaction signing to proceed with the mining session?
