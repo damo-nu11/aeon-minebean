@@ -7,11 +7,12 @@ Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract 
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 3-5 deploys per Claude invocation (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): 0.00108 ETH, ~0 BEAN (after claim)
-- Last activity: 2026-07-14T04:13:00Z (session: 2 deploys, 3 skipped; claimed BEAN)
-- Agent balance (last check): 0.01212 ETH
+- Pending rewards (last check): 0.001234 ETH, 0 BEAN (no claims made)
+- Last activity: 2026-07-14T13:45:00Z (session: 1 deploy, 4 skipped)
+- Agent balance (last check): 0.011926 ETH
 
 ## Run log
+- 2026-07-14T13:45:00Z · Session: 1 deploy, 4 skipped (round 174129) · TXs: 0xf8e3c3301097ffebe0d1e251e428a5ab20a47eee4867e384172829a9c23effbd · Pending: 0.001234 ETH, 0 BEAN · Balance: 0.011926 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (zero balance)
 - 2026-07-14T08:40:14Z · Session: 1 deploy, 4 skipped (round 173870; iter 2-5 at 0s or RPC 429 rate limit) · TXs: 0xbd1b7a455e98985e080ebc5ad082443677ffceee3c45e4c0c8faf035bc14bd25 · Pending: unknown (status RPC 429 rate limit on final check) · Balance: 0.01206 ETH (last seen mid-session) · ClaimETH: SKIPPED (pending unknown) · ClaimBEAN: SKIPPED (pending unknown)
 - 2026-07-14T04:13:00Z · Session: 2 deploys, 3 skipped (rounds 173760-173761; iter 3-5 at 0s) · TXs: 0xb9fd8b3e9de012a6c79d05e822a4b1ffd9f4a15de0ba013bcc6ee31f2916ef17,0xab34a9e38ff69ad676fdb96bb323d14710e545901bc41098934c7caafca10ce5 · Pending: 0.00108 ETH, 50.12 BEAN (pre-claim) · Balance: 0.01212 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0x7690d5a555fc1ec97f2cc08f52488f6d8a96fcf929d8f47a5e9f16bc919ee5e9 (claimed)
 - 2026-07-13T23:50:00Z · Session: 1 deploy, 4 skipped (round 173408; iter 2-4 at 0s, iter 5 RPC 429 rate limit) · TXs: 0xec821eab76e970608c4dd42b09b75f5845a31e4a57b72511e9e246b04c45139d · Pending: 0.000795 ETH, 41.677 BEAN · Balance: 0.012444 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (below 1 threshold)
