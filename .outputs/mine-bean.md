@@ -2,16 +2,18 @@
 
 Executed the mine-bean skill successfully:
 
-**Mining batch results:**
-- 1 deploy fired on round 174129
-- 4 rounds skipped (low time remaining or already deployed)
-- TX hash: `0xf8e3c3301097ffebe0d1e251e428a5ab20a47eee4867e384172829a9c23effbd`
-- Final pending ETH: 0.001234 (below 0.01 threshold)
-- Final pending BEAN: 0 (below 1 threshold)
-- Agent balance: 0.011926 ETH
+**Mining batch (5 rounds):**
+- Deployed 2 times across rounds 174207–174208
+- 3 iterations skipped (end-of-round at 0s remaining)
+- Gas spent: ~63 wei per deploy
 
-**Claim checks:**
-- ETH claim: SKIPPED (pending below 0.01 ETH threshold)
-- BEAN claim: SKIPPED (zero pending)
+**Auto-claim:**
+- BEAN: 2.577 BEAN claimed · TX: `0x1faf96d9e5d7d8ab21c81288c857fa94237f7a4259f5826b665145ebf176c96f`
+- ETH: Skipped (0.001355 ETH < 0.01 threshold)
 
-**Logged to memory** at 2026-07-14T13:45:00Z with full session details. No further action required; the next session will pick up the next batch of rounds.
+**Memory:**
+- Updated `memory/topics/minebean.md` with session metrics
+- Appended to `memory/logs/2026-07-14.md` 
+- Committed via git
+
+Agent balance: 0.011797 ETH (~189 fires remaining at 0.0000625 ETH/fire).
