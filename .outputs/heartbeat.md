@@ -2,11 +2,14 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-**Heartbeat 08:29 UTC** — Fleet green, no notify needed.
+Heartbeat completed cleanly.
 
-- **P0**: no failures. mine-bean 617/620 (100%), heartbeat 133/134 (99%). Self-check under 36h threshold.
-- **P1**: 0 open PRs, no urgent issues, INDEX.md clean.
-- **P2**: no fresh MEMORY.md signals.
-- **P3**: mine-bean `last_success` ~2h30m old vs `*/10` schedule (recurring state-update-lag pattern, 100+ prior dedups — no notify).
-- **Status page**: wrote `docs/status.md` with 🟡 WATCH verdict (auto-committed by workflow).
-- **Log**: appended entry to `memory/logs/2026-07-15.md`.
+- **P0:** clean. `mine-bean` 620/623 successes (100%), 0 consecutive failures; `heartbeat` 134/135 (99%). Self-check OK (last heartbeat success ~5h32m ago).
+- **P1:** 0 open PRs; issues disabled on repo; no open rows in `memory/issues/INDEX.md`.
+- **P2:** no fresh flags in `MEMORY.md`.
+- **P3:** `mine-bean` `last_success` ~2h04m old vs `*/10` schedule — same recurring state-update-lag pattern seen 100+ times; dedup skips `./notify`.
+- **Token pulse:** no `articles/token-report-*.md` present — section omitted.
+- **Status page:** regenerated `docs/status.md` with verdict 🟡 WATCH.
+- **Logged:** `memory/logs/2026-07-15.md`.
+
+Files modified: `docs/status.md`, `memory/logs/2026-07-15.md`.
