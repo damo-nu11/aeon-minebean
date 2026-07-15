@@ -1,0 +1,145 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_status",
+        "sep1",
+        "heading_deploys",
+        "stack_deploys",
+        "sep2",
+        "heading_claims",
+        "stat_claimed_bean",
+        "sep3",
+        "heading_pending",
+        "stack_pending"
+      ]
+    },
+    "text_status": {
+      "type": "Text",
+      "props": {
+        "text": "Session complete",
+        "variant": "lead"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_deploys": {
+      "type": "Heading",
+      "props": {
+        "text": "Deploys",
+        "level": "h3"
+      }
+    },
+    "stack_deploys": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat_deploys",
+        "stat_skipped",
+        "text_rounds"
+      ]
+    },
+    "stat_deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "3"
+      }
+    },
+    "stat_skipped": {
+      "type": "Stat",
+      "props": {
+        "label": "Skipped",
+        "value": "2"
+      }
+    },
+    "text_rounds": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds 174665-174667",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_claims": {
+      "type": "Heading",
+      "props": {
+        "text": "Claimed",
+        "level": "h3"
+      }
+    },
+    "stat_claimed_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "3.055"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_pending": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending",
+        "level": "h3"
+      }
+    },
+    "stack_pending": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat_pending_eth",
+        "stat_pending_bean"
+      ]
+    },
+    "stat_pending_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.00152"
+      }
+    },
+    "stat_pending_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "0"
+      }
+    }
+  }
+}
