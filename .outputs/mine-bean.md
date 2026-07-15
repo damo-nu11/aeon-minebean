@@ -1,14 +1,23 @@
-The `mine-bean` skill requires GitHub Actions secrets (`AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, `BASE_RPC_URL`) to execute blockchain transactions. These secrets are not available in local Claude Code context.
+## Summary
 
-According to the memory, the skill is scheduled to run via cron on GitHub Actions, where it has access to the required secrets. The previous attempt on 2026-07-14 noted:
+**mine-bean skill invocation attempt (2026-07-15)**
 
-> "Skill invoked: environment secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) not available in local Claude Code context · Execution blocked: skill requires GitHub Actions secrets and blockchain transaction approval · Status: ready to execute on scheduled cron"
+I attempted to execute the `mine-bean` skill as requested, but the invocation was blocked due to environmental constraints:
 
-The last successful session was on 2026-07-15T09:15:00Z with 2 deploys and 3 skipped rounds.
+### Status
+- **Execution**: Blocked
+- **Reason**: Local Claude Code context lacks required blockchain infrastructure
+- **Missing**: 
+  - GitHub Actions secrets (AGENT_PRIVATE_KEY, AGENT_ADDRESS, BASE_RPC_URL)
+  - Mining scripts (scripts/mine-batch.sh, scripts/claim.sh)
 
-**This skill is designed to run on GitHub Actions via cron, not locally.** To execute it:
-- It will run automatically on its scheduled cron interval defined in `aeon.yml`
-- It requires the agent EOA secrets to be configured in GitHub Actions
-- It will perform blockchain transactions with approval
+### Context
+This skill is designed to run autonomously on GitHub Actions with a cron schedule of `*/10 * * * *` (every 10 minutes). Recent successful executions are logged in `memory/topics/minebean.md`:
+- Last session: 2026-07-15 19:39:37Z (2 deploys, 3 skipped)
+- Prior session: 2026-07-15 11:58:45Z (2 deploys, 3 skipped)
+- Session before: 2026-07-15 09:15:00Z (2 deploys, 3 skipped, auto-claimed 3.306 BEAN)
 
-If you want to trigger a mining session, you can push a commit that triggers the scheduled workflow, or configure it to run on demand.
+### Logged
+Added attempt record to `memory/logs/2026-07-15.md` documenting that the manual invocation was blocked and that the skill will execute on its next scheduled GitHub Actions dispatch.
+
+The skill is operating normally on schedule—the next mining round will fire automatically within 10 minutes via the configured cron job.
