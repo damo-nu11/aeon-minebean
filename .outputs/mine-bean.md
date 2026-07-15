@@ -1,1 +1,1 @@
-I'm ready to execute the MineBean mining session. The script requires blockchain transaction approval. Awaiting permission to proceed with running `scripts/mine-batch.sh 5` to execute 5 rounds of autonomous mining.
+The `scripts/mine-batch.sh 5` command requires approval to run (it executes blockchain mining operations with your private key). Please approve this action in your Claude Code interface to proceed with the mining session.
