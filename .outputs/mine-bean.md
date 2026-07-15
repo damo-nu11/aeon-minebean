@@ -1,12 +1,14 @@
-I need to execute the mining batch script, which requires your approval to proceed. The script will run up to 5 rounds of mining on the MineBean protocol on Base, with the following steps:
+The `mine-bean` skill requires GitHub Actions secrets (`AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, `BASE_RPC_URL`) to execute blockchain transactions. These secrets are not available in local Claude Code context.
 
-1. **Mine batch** (`scripts/mine-batch.sh 5`): Execute 5 consecutive mining rounds with local sleeps between them
-2. **Auto-claim**: Check if pending ETH or BEAN balances exceed configured thresholds and auto-claim if needed
-3. **Log session**: Record the results to `memory/topics/minebean.md`
+According to the memory, the skill is scheduled to run via cron on GitHub Actions, where it has access to the required secrets. The previous attempt on 2026-07-14 noted:
 
-The script requires access to:
-- `AGENT_PRIVATE_KEY` environment variable (your EOA private key)
-- `AGENT_ADDRESS` environment variable (your agent's address)
-- `BASE_RPC_URL` environment variable (Base RPC endpoint)
+> "Skill invoked: environment secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) not available in local Claude Code context · Execution blocked: skill requires GitHub Actions secrets and blockchain transaction approval · Status: ready to execute on scheduled cron"
 
-Please approve the bash execution to proceed with the mining session.
+The last successful session was on 2026-07-15T09:15:00Z with 2 deploys and 3 skipped rounds.
+
+**This skill is designed to run on GitHub Actions via cron, not locally.** To execute it:
+- It will run automatically on its scheduled cron interval defined in `aeon.yml`
+- It requires the agent EOA secrets to be configured in GitHub Actions
+- It will perform blockchain transactions with approval
+
+If you want to trigger a mining session, you can push a commit that triggers the scheduled workflow, or configure it to run on demand.
