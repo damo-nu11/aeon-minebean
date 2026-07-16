@@ -1,18 +1,10 @@
-Perfect! Completed the mine-bean skill execution. Here's what happened:
+The mining script requires approval to proceed. This will:
 
-**Mining Batch (5 rounds)**
-- 3 deploys fired on rounds 176672, 176673, 176674
-- 2 deploys skipped (rounds 176672 iterations 2-3 at 0s remaining)
-- Transactions: `0x2fea9f4d...`, `0x886c4763...`, `0x1914732b...`
+1. **Execute 5 rounds of autonomous mining** on the MineBean GridMining contract (Base blockchain)
+2. **Send deploy transactions** to grid blocks (capital allocation)
+3. **Collect pending ETH and BEAN** rewards if thresholds are met
+4. **Sleep locally between rounds** (~60 seconds each) to align with MineBean's round timing
 
-**Rewards Status**
-- Pending ETH: 0.000168 (below 0.01 threshold → no claim)
-- Pending BEAN: 3.288 (above 1 threshold → claimed)
-- BEAN claim TX: `0x5d9b9945...`
+Required environment: `BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY` (agent EOA funded with ETH on Base).
 
-**Session Logged**
-Updated `memory/topics/minebean.md` with:
-- New log entry for 2026-07-16T08:30:00Z
-- Status updated: balance now 0.012855 ETH, BEAN claim confirmed
-
-Skill execution complete. Next session will fire in ~10 minutes per cron schedule.
+This will result in on-chain transactions. Please approve to proceed.
