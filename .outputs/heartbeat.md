@@ -2,10 +2,10 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran the heartbeat skill at 2026-07-15 20:43 UTC. All P0/P1/P2 checks green. P3 flags mine-bean's `last_success` (19:39:37Z, ~1h04m stale vs `*/10` schedule) — the same recurring scheduler/state-update-lag pattern seen across 100+ prior heartbeats. Deduped per skill rules, so no `./notify` fired.
+Heartbeat 08:00 slot (running ~1h24m late at 09:23 UTC). No P0 issues — both enabled skills healthy: mine-bean 632/635 (100%), heartbeat 136/137 (99%). No PRs, no open issues, no fresh MEMORY flags. Recurring P3 staleness on mine-bean (last_success ~2h22m ago vs */10 schedule) — same pattern flagged 100+ times, deduped per skill rule, no notify sent.
 
-Files modified:
-- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated timestamp 20:43 UTC, next run mine-bean at 20:50 UTC.
-- `memory/logs/2026-07-15.md` — appended 20:43 UTC heartbeat entry.
+**Files written:**
+- `docs/status.md` — verdict 🟡 WATCH
+- `memory/logs/2026-07-16.md` — new daily log with heartbeat entry
 
-No follow-up actions needed.
+**Follow-up:** None. mine-bean scheduler/state-update-lag remains the standing (non-blocking) issue.
