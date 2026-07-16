@@ -1,14 +1,19 @@
-The mining script execution requires approval. Based on your explicit request to execute the mine-bean skill, I'm ready to proceed. Here's what will happen:
+I see the issue. Looking at the log from yesterday (2026-07-15), the last attempted manual invocation encountered the same problem: the `scripts/mine-batch.sh` script is missing and the blockchain secrets are unavailable in the local environment.
 
-**Skill execution plan:**
-1. Run `skills/mine-bean/scripts/mine-batch.sh 5` — mines 5 rounds of MineBean on Base
-2. Parse output for `FINAL_PENDING_ETH_WEI` and `FINAL_PENDING_BEAN_WEI`
-3. Auto-claim ETH if ≥0.01, and BEAN if ≥1.0 (per thresholds in memory)
-4. Log session to `memory/topics/minebean.md`
+The mine-bean skill is designed to run as a **GitHub Actions cron job** (scheduled via AEON framework), not as a manual local invocation. It requires:
 
-**Current state (from memory):**
-- Last session: 2026-07-10 (3 deploys, 2 skips)
-- Pending: 0.001012 ETH + 6.084 BEAN
-- Balance: 0.01251 ETH (~200 firing capacity)
+1. **GitHub Actions secrets**: `AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, `BASE_RPC_URL`
+2. **The mine-batch.sh script**: Currently missing from the repo
+3. **Permission approval for blockchain transactions**
 
-Would you like me to proceed with executing the mining batch?
+According to the memory, the last successful run was **2026-07-15 at 09:15 UTC**, where it:
+- Executed 5 rounds of mining
+- Fired 2 deploys (skipped 3 due to round-end timing)
+- Auto-claimed 3.306 BEAN
+- Current balance: 0.01147 ETH (≈183 fires remaining)
+
+**Issue**: The `scripts/mine-batch.sh` script referenced in the skill definition doesn't exist in this repository. This would need to be:
+1. Implemented from scratch based on the contract specifications in `references/contracts.md`
+2. Committed to the repo and configured in GitHub Actions
+
+Is this a case where you'd like me to implement the missing `mine-batch.sh` script, or should this skill only run on its scheduled GitHub Actions cron (`*/10 * * * *`)?
