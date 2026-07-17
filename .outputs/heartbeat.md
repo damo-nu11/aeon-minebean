@@ -1,12 +1,17 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
+HEARTBEAT_OK · STATUS_PAGE=WATCH
 
 ## Summary
 
-- **P0:** clean. mine-bean 639/642 (100%), heartbeat 138/139 (99%), no failed/stuck skills, self-check OK.
-- **P1:** 0 open PRs, no urgent issues, no open rows in issues/INDEX.md.
-- **P2:** MEMORY.md only shows standing mine-bean monitor; no fresh signal.
-- **P3:** mine-bean `last_success` ~1h08m stale vs `*/10` interval — recurring scheduler/state-update-lag pattern (100+ prior identical flags → deduped, no notify).
-- **Token pulse:** no `articles/token-report-*.md` present → section omitted.
-- **Status page:** rewrote `docs/status.md` → 🟡 WATCH.
-- **Files:** `docs/status.md`, `memory/logs/2026-07-16.md`.
-- **Follow-up:** none — pattern is known, no channels configured beyond standard notify (skipped anyway due to dedup).
+Ran the heartbeat skill.
+
+**Findings:**
+- **P0:** clean — no failed or stuck skills. mine-bean 100% (646/649), heartbeat 99% (139/140), both `consecutive_failures=0`. Self-check OK (heartbeat last success ~12h18m ago, well under 36h threshold; this is the 08:00 slot running ~27m late).
+- **P1:** 0 open PRs, issues disabled on repo, no open rows in INDEX.md.
+- **P2:** no fresh signals in MEMORY.md.
+- **P3:** mine-bean `last_success` is ~2h20m old vs `*/10` schedule (>>2× interval). Same recurring state-update-lag pattern flagged in 100+ prior heartbeats — deduped, `./notify` skipped.
+
+**Files modified:**
+- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated 2026-07-17 08:26 UTC, next mine-bean at 08:30 UTC.
+- `memory/logs/2026-07-17.md` — appended heartbeat entry.
+
+**Follow-up:** none. Recurring P3 staleness pattern is a known scheduler/state-update-lag artifact, not a real outage.
