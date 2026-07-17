@@ -1,17 +1,17 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran the heartbeat skill.
+Ran heartbeat checks at 14:27 UTC.
 
-**Findings:**
-- **P0:** clean — no failed or stuck skills. mine-bean 100% (646/649), heartbeat 99% (139/140), both `consecutive_failures=0`. Self-check OK (heartbeat last success ~12h18m ago, well under 36h threshold; this is the 08:00 slot running ~27m late).
-- **P1:** 0 open PRs, issues disabled on repo, no open rows in INDEX.md.
-- **P2:** no fresh signals in MEMORY.md.
-- **P3:** mine-bean `last_success` is ~2h20m old vs `*/10` schedule (>>2× interval). Same recurring state-update-lag pattern flagged in 100+ prior heartbeats — deduped, `./notify` skipped.
+- **P0:** clean. `mine-bean` (650/653 runs, 100%, last success 12:52 UTC) and `heartbeat` (140/141 runs, 99%, last success 08:27 UTC) both healthy. Self-check OK.
+- **P1:** 0 open PRs, no urgent issues.
+- **P2:** no fresh flags in MEMORY.md.
+- **P3:** mine-bean `last_success` ~1h35m stale vs `*/10` schedule — recurring scheduler/state-update lag, deduped (>100 prior identical logs in 48h → skip notify).
+- **Token pulse:** no `articles/token-report-*.md` files → section omitted.
 
-**Files modified:**
-- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated 2026-07-17 08:26 UTC, next mine-bean at 08:30 UTC.
-- `memory/logs/2026-07-17.md` — appended heartbeat entry.
+**Files touched:**
+- `docs/status.md` — regenerated with 🟡 WATCH verdict.
+- `memory/logs/2026-07-17.md` — appended 14:27 UTC run entry.
 
-**Follow-up:** none. Recurring P3 staleness pattern is a known scheduler/state-update-lag artifact, not a real outage.
+No notification sent (dedup). Workflow auto-commit will land `docs/status.md` on `main`.
