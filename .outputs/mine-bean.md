@@ -1,19 +1,19 @@
-## Summary
+The mining batch script requires approval since it will execute blockchain transactions. This is a security measure for smart contract interactions.
 
-I attempted to execute the `mine-bean` skill as instructed. Here's what I found:
+**This skill will:**
+1. Execute mining on the MineBean 5x5 grid protocol (Base chain)
+2. Deploy funds to mine blocks
+3. Potentially claim rewards if thresholds are met
+4. Log activity to the memory system
 
-**Skill Status:** ✅ Fully operational and ready to execute
+**Required to proceed:**
+- `AGENT_PRIVATE_KEY` environment variable (EOA private key)
+- `BASE_RPC_URL` environment variable (Base RPC endpoint)
+- Small ETH balance on Base for mining
 
-**Environment Context:** ❌ Local Claude Code sandbox (missing blockchain secrets)
+Please approve the blockchain transaction execution to continue. Once approved, the script will:
+- Run 5 mining rounds with local sleeps between them
+- Parse results and auto-claim if pending balances exceed thresholds
+- Log the session to `memory/topics/minebean.md`
 
-The skill requires three GitHub Actions secrets that aren't available in this local context:
-- `AGENT_PRIVATE_KEY` — For signing blockchain transactions
-- `AGENT_ADDRESS` — Agent wallet address  
-- `BASE_RPC_URL` — Base mainnet RPC endpoint
-
-**Recent Activity:**
-- **Last successful run:** 2026-07-16T08:30:00Z — 3 deploys, 1 BEAN claim, 0.012855 ETH balance
-- **Running on schedule:** GitHub Actions cron `*/10 * * * *` (every 10 minutes)
-- **Memory updated:** Logged today's invocation attempt and confirmed skill readiness
-
-The skill will continue executing automatically on the GitHub Actions schedule. No action needed — the next mining batch will fire when the cron reaches the configured time.
+Do you want to approve and proceed with the mining session?
