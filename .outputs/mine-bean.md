@@ -1,19 +1,14 @@
-The mining batch script requires approval since it will execute blockchain transactions. This is a security measure for smart contract interactions.
+The mining skill requires approval to proceed. This skill will:
 
-**This skill will:**
-1. Execute mining on the MineBean 5x5 grid protocol (Base chain)
-2. Deploy funds to mine blocks
-3. Potentially claim rewards if thresholds are met
-4. Log activity to the memory system
+1. Execute 5 rounds of autonomous mining on Base blockchain
+2. Loop through rounds, deploying capital to the MineBean protocol
+3. Sleep between rounds locally (saving on Claude token costs)
+4. Auto-claim $ETH and $BEAN rewards if thresholds are met
+5. Log results to memory
 
-**Required to proceed:**
-- `AGENT_PRIVATE_KEY` environment variable (EOA private key)
-- `BASE_RPC_URL` environment variable (Base RPC endpoint)
-- Small ETH balance on Base for mining
+**The script needs these environment variables to be set:**
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
+- `AGENT_ADDRESS` — Agent EOA address
+- `AGENT_PRIVATE_KEY` — Agent private key (required secret)
 
-Please approve the blockchain transaction execution to continue. Once approved, the script will:
-- Run 5 mining rounds with local sleeps between them
-- Parse results and auto-claim if pending balances exceed thresholds
-- Log the session to `memory/topics/minebean.md`
-
-Do you want to approve and proceed with the mining session?
+Would you like me to proceed with executing the mining batch? This will send blockchain transactions to deploy capital and attempt to claim rewards.
