@@ -12,6 +12,7 @@ Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract 
 - Agent balance: 0.012855 ETH
 
 ## Run log
+- 2026-07-17T00:00:00Z (later invocation) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) · Status: skill ready; scheduled cron will execute when environment secrets available
 - 2026-07-17T00:00:00Z · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) · Status: skill ready; scheduled cron will execute when environment secrets available
 - 2026-07-16T20:07:00Z · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) · Status: skill operational and code verified; scheduled cron will execute when environment secrets available
 - 2026-07-16T18:59:40Z · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) · Status: skill ready; scheduled cron will execute when environment secrets available
