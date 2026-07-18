@@ -1,17 +1,14 @@
-The mining batch script is ready to execute. This command will:
+I've read the mine-bean skill definition. It's an autonomous mining script that:
 
-1. **Mine for 5 rounds** on the MineBean protocol (Base network)
-2. **Check each round** for deployment readiness (time remaining, balance checks, already-deployed status)
-3. **Deploy** to selected grid blocks if conditions are met
-4. **Sleep between rounds** (the protocol uses 60-second rounds)
-5. **Output summary metrics** including deploys fired, pending rewards, and transaction hashes
+1. **Runs a mining batch** for N consecutive rounds (default 5) on the MineBean protocol on Base
+2. **Auto-claims rewards** if pending balances exceed thresholds
+3. **Logs the session** to memory for tracking
 
-This requires approval to proceed since it will execute blockchain transactions. The script will take approximately 5-10 minutes to complete (5 rounds × ~60 seconds per round, plus deployment time).
+The script requires:
+- `AGENT_PRIVATE_KEY` — EOA private key with ETH balance on Base
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
+- `AGENT_ADDRESS` — The agent's public address
 
-Once you approve, the system will:
-- Parse the output for deployment results and pending balances
-- Auto-claim ETH if pending balance ≥ 0.01 ETH (if threshold enabled)
-- Auto-claim BEAN if pending balance ≥ 1 BEAN (if threshold enabled)
-- Log the session to memory
+**To proceed, I need approval to execute `scripts/mine-batch.sh 5`**, which will perform the actual mining operations. This is a well-defined, safety-reviewed operation with built-in protections (deploy caps, balance checks, contract-enforced safeguards).
 
-Would you like me to proceed with the mining batch execution?
+Do you approve executing the mining batch script?
