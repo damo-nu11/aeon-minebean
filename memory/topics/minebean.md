@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance 0.01168 ETH on Base
+- Wallet: configured, balance 0.01123 ETH on Base
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 3-5 deploys per Claude invocation (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): 0.00112 ETH, 6.12 BEAN (just claimed BEAN)
-- Last activity: 2026-07-18T16:40:00Z (session: 3 deploys, 2 skipped, BEAN claim successful)
-- Agent balance: 0.01168 ETH
+- Pending rewards (last check): 1.5069 ETH, 9.5141 BEAN (ETH claimed, BEAN claim failed)
+- Last activity: 2026-07-18T17:15:00Z (session: 4 deploys, 1 skipped, ETH claim successful, BEAN claim failed)
+- Agent balance: 0.01123 ETH
 
 ## Run log
+- 2026-07-18T17:15:00Z · Session: 4 deploys, 1 skipped (rounds 179425-179428) · TXs: 0xb6ed5140abed9003cda28c7fb5e2390fc61472e65d6913a2c20a5e403fa538c8,0x1af0600c1c7f259143a618b52ce34aa6761ce3d1a1c1b51434940c2672ad306d,0xdfeb25b9a1a560c6a9a9954391de3871b012bc660041331fe5bc37d904ffe2e5,0x33b9610d3542ac28d4b715dd113ab0f1770b37c38136fb26d4c39bb36668af6c · Pending (pre-claim): 1.5069 ETH, 9.5141 BEAN · Balance: 0.01123 ETH · ClaimETH: 0x681c7d81c096861d91961c63d31837f4e3f4d535adedee74e57b9ca2977bc267 (claimed) · ClaimBEAN: FAILED (replacement transaction underpriced)
 - 2026-07-18T16:40:00Z · Session: 3 deploys, 2 skipped (rounds 179248-179250) · TXs: 0xca2853240732c912e132ac0efafd942c88882fd3ac75cabe417515f6d86e3139,0xf5c0c1fa3d39c99724a85a6a91ce69643a67e059a0d3cb584b6faca366aa045f,0x68c0012e0f5b6ca866b74a67567f6639983a0aa5719815d5be0bb9bb84e6110d · Pending (pre-claim): 0.00112 ETH, 6.122 BEAN · Balance: 0.01168 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0x6d8512d5de9eb3352db10f1b74236a52e6710656f4d89a43d0c05fb02ec7fab1 (claimed)
 - 2026-07-18T00:00:00Z · Session: 3 deploys, 2 skipped (rounds 178424-178426) · TXs: 0x47665cfbb018d239edf71d31c6997cd863fe696e735fdf562c3e5b8894b4e14b,0x34863c6f13a5f6ef60a377e38e78f54581aa581d3ce3586ecb912836feed2ff1,0x3141d050e5c072716da79f2896c33de1c1f42fda358e607fbcae1aab4210973d · Pending (pre-claim): 0.000954 ETH, 19.336 BEAN · Balance: 0.01194 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0xae176d6ae2985e5e38dce4e249e311ad45d78f0bc745fc093a395cdf1beae82d (claimed)
 - 2026-07-17T00:00:00Z (later invocation) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) · Status: skill ready; scheduled cron will execute when environment secrets available
