@@ -1,0 +1,153 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stack_deploys",
+        "sep1",
+        "stack_bean",
+        "sep2",
+        "alert_pending",
+        "stat_balance",
+        "sep3",
+        "text_rounds_label",
+        "stack_rounds"
+      ]
+    },
+    "stack_deploys": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_deploys",
+        "stat_skipped"
+      ]
+    },
+    "stat_deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "3"
+      }
+    },
+    "stat_skipped": {
+      "type": "Stat",
+      "props": {
+        "label": "Skipped",
+        "value": "2"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack_bean": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat_bean",
+        "text_address"
+      ]
+    },
+    "stat_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN Claimed",
+        "value": "19.226"
+      }
+    },
+    "text_address": {
+      "type": "Text",
+      "props": {
+        "text": "0x21ee93c8...",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "alert_pending": {
+      "type": "Alert",
+      "props": {
+        "title": "ETH Pending",
+        "message": "0.000335 (below threshold)",
+        "type": "warning"
+      }
+    },
+    "stat_balance": {
+      "type": "Stat",
+      "props": {
+        "label": "Balance",
+        "value": "0.012405 ETH"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text_rounds_label": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds",
+        "variant": "lead"
+      }
+    },
+    "stack_rounds": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_r1",
+        "badge_r2",
+        "badge_r3"
+      ]
+    },
+    "badge_r1": {
+      "type": "Badge",
+      "props": {
+        "text": "179622"
+      }
+    },
+    "badge_r2": {
+      "type": "Badge",
+      "props": {
+        "text": "179624"
+      }
+    },
+    "badge_r3": {
+      "type": "Badge",
+      "props": {
+        "text": "179625"
+      }
+    }
+  }
+}
