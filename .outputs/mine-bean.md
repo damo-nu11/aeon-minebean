@@ -1,14 +1,13 @@
-The mining batch script requires approval to execute blockchain transactions. This is expected for an autonomous mining agent. Let me confirm what needs approval:
+The script requires approval to execute because it needs to access private keys and blockchain endpoints from the environment. This is the mining operation that will:
 
-**What the script does:**
-1. Runs `skills/mine-bean/scripts/mine-batch.sh 5` — mines $BEAN on Base for 5 rounds
-2. Sends blockchain transactions to deploy to grid blocks
-3. Auto-claims rewards if thresholds are met
-4. Logs the session to memory
+1. Execute 5 rounds of mining on Base chain
+2. Auto-claim ETH/BEAN if thresholds are met
+3. Log the session results
 
-The system is waiting for your approval to proceed with the blockchain transactions. This is a security gate — once you approve, the script will execute and complete the mining session.
+**What will happen:**
+- The script will execute the mining batch via the configured agent wallet
+- It will output key metrics (deploys, transactions, pending rewards)
+- I'll then parse the output and auto-claim if thresholds are met
+- Finally, I'll log the session to `memory/topics/minebean.md`
 
-**Would you like me to proceed with executing the mining batch?** This will:
-- Deploy to the GridMining contract on Base (0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0)
-- Spend approximately 0.0000625 ETH per round (from your agent EOA)
-- Potentially claim pending ETH/BEAN if thresholds are crossed
+Do you want me to proceed with executing the mining operation?
