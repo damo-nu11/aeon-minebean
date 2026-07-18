@@ -1,14 +1,12 @@
-I've read the mine-bean skill definition. It's an autonomous mining script that:
+I need to run the mining batch script. This will execute blockchain transactions on Base network. Can you approve running the mine-batch script with the necessary environment variables configured?
 
-1. **Runs a mining batch** for N consecutive rounds (default 5) on the MineBean protocol on Base
-2. **Auto-claims rewards** if pending balances exceed thresholds
-3. **Logs the session** to memory for tracking
+The skill needs:
+- `BASE_RPC_URL` — Base RPC endpoint
+- `AGENT_ADDRESS` — Agent's public address
+- `AGENT_PRIVATE_KEY` — Agent's private key (for signing transactions)
+- Optional: `ROUNDS_PER_SESSION` (default: 5), `CLAIM_THRESHOLD_ETH`, `CLAIM_THRESHOLD_BEAN`, etc.
 
-The script requires:
-- `AGENT_PRIVATE_KEY` — EOA private key with ETH balance on Base
-- `BASE_RPC_URL` — Base mainnet RPC endpoint
-- `AGENT_ADDRESS` — The agent's public address
-
-**To proceed, I need approval to execute `scripts/mine-batch.sh 5`**, which will perform the actual mining operations. This is a well-defined, safety-reviewed operation with built-in protections (deploy caps, balance checks, contract-enforced safeguards).
-
-Do you approve executing the mining batch script?
+Once approved, the script will:
+1. Execute 5 mining rounds in a loop
+2. Parse results and auto-claim rewards if thresholds are met
+3. Log the session to memory
