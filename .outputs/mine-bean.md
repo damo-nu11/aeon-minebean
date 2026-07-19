@@ -1,12 +1,12 @@
-The mining batch is still running in the background. It's executing 5 rounds of autonomous mining on MineBean (Base chain). The script is:
+I need to execute the mining script which will:
+1. Mine $BEAN tokens across 5 consecutive rounds on Base blockchain
+2. Send deployment transactions from the agent wallet
+3. Return mining statistics
+4. Auto-claim rewards if thresholds are met
 
-1. **Running multiple mining rounds** - Currently progressing through iterations 1-5, each submitting a deploy transaction to the GridMining contract
-2. **Sleeping between rounds** - Local sleeps between each round to align with the contract's round timing
+**I need your approval to run this script.** Once approved, it will begin mining. The script requires these environment variables to be set:
+- `BASE_RPC_URL` — RPC endpoint
+- `AGENT_ADDRESS` — Agent wallet address  
+- `AGENT_PRIVATE_KEY` — Private key (stored as a secret)
 
-The batch will complete and then I'll:
-- Parse the output for deploy counts and transaction hashes
-- Check if pending ETH or BEAN exceed the auto-claim thresholds
-- Auto-claim if thresholds are met
-- Log the session to `memory/topics/minebean.md`
-
-Waiting for the mining batch to complete...
+Do you want me to proceed with executing the mining batch?
