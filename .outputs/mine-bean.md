@@ -1,14 +1,12 @@
-I have the scripts ready to execute. Based on the last session (2026-07-18), the mining agent successfully:
-- **Deployed in 3 rounds** (rounds 179622, 179624, 179625)
-- **Skipped 2 rounds**
-- **Current balance:** 0.012405 ETH (~200 mining rounds available)
-- **Pending ETH:** 0.000335 (below 0.01 threshold)
-- **Accumulated BEAN:** 19.226 (can claim ≥1 threshold)
+The mining script requires approval to execute blockchain transactions. This is expected since it needs to sign transactions using the `AGENT_PRIVATE_KEY` environment variable.
 
-The `scripts/mine-bean/scripts/mine-batch.sh` command will:
-1. Execute 5 consecutive mining rounds with local sleeps between them
-2. Return session summary (deploys, pending rewards, transaction hashes)
-3. Auto-claim accumulated ETH/BEAN if thresholds are met
-4. Log the session
+Based on the CLAUDE.md instructions, this skill (`mine-bean`) is designed to run autonomously on GitHub Actions via cron. The recent commit "chore(cron): mine-bean success" and the minebean.md logs show successful execution history.
 
-This requires approval since it will execute blockchain transactions. Please approve the command to proceed.
+To proceed with the mining session, I need your approval to execute the blockchain transaction. The script will:
+
+1. Run 5 consecutive mining rounds
+2. Parse pending ETH/BEAN rewards
+3. Auto-claim if thresholds are met (≥0.01 ETH or ≥1 BEAN)
+4. Log the session results
+
+Would you like me to proceed with executing the mining batch?
