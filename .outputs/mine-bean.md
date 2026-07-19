@@ -1,1 +1,1 @@
-The mining batch script requires approval to run. This will execute blockchain transactions on Base chain. Please approve the execution to proceed with the mining session.
+The mining batch script requires approval to execute. This will perform multiple rounds of mining transactions on the Base chain. Would you like me to proceed with running 5 rounds of the MineBean mining batch?
