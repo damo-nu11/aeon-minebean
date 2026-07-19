@@ -1,14 +1,9 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-
-Ran heartbeat checks at 2026-07-19 14:13 UTC:
-
-- **P0 (failed/stuck skills):** None. `mine-bean` (last_success 12:41:15Z, 684/687 runs, 100%) and `heartbeat` (last_success 09:18:13Z, 146/147 runs, 99%) both healthy. Self-check under 36h threshold.
-- **P1 (PRs/issues):** 0 open PRs; issues disabled; INDEX.md has no open rows.
-- **P2 (memory flags):** No fresh signal.
-- **P3 (stale skills):** `mine-bean` last_success ~1h32m old vs */10 schedule (>>2× interval). Same recurring scheduler/state-update-lag pattern flagged 100+ times in last 48h — deduped, no notify.
-- **Status page:** wrote `docs/status.md` with verdict 🟡 WATCH.
-- **Log:** appended heartbeat entry to `memory/logs/2026-07-19.md`.
-
-**Files modified:** `docs/status.md`, `memory/logs/2026-07-19.md`. No notification sent (deduped).
+- **P0:** clean. mine-bean 690/693 (100%), heartbeat 147/148 (99%), both `last_status=success`, no consecutive failures.
+- **P1:** 0 open PRs, no urgent issues, no open rows in `memory/issues/INDEX.md`.
+- **P2:** MEMORY.md flags only the standing mine-bean monitor — no fresh signal.
+- **P3:** mine-bean `last_success` 19:48 UTC is ~46m old (>>2× `*/10` interval). Same recurring scheduler/state-update-lag pattern as 100+ prior heartbeats — deduped, no notify.
+- **Token pulse:** no `articles/token-report-*.md` present — section omitted.
+- **Files:** rewrote `docs/status.md` (🟡 WATCH, updated 20:34 UTC), appended entry to `memory/logs/2026-07-19.md`.
