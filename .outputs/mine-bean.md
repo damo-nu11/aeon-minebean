@@ -1,8 +1,14 @@
-This command requires approval. The skill needs to execute the mining batch script to autonomously mine $BEAN on the Base network. This will:
+This command requires approval since it involves blockchain transactions (signing and sending transactions to MineBean on Base). Once approved, the script will:
 
-1. Run 5 rounds of mining via `scripts/mine-batch.sh`
-2. Check if pending rewards meet auto-claim thresholds
-3. Auto-claim rewards if thresholds are met
-4. Log the session results
+1. **Execute 5 mining rounds** - loops through 5 consecutive mining rounds, sleeping between them
+2. **Check round state** - verifies current round ID, time remaining, and deployment status
+3. **Deploy to blocks** - sends deploy transactions if conditions are met
+4. **Return metrics** - outputs DEPLOYS_FIRED, TX_HASHES, FINAL_PENDING_ETH_WEI, FINAL_PENDING_BEAN_WEI
 
-This requires the `AGENT_PRIVATE_KEY`, `BASE_RPC_URL`, and other environment variables to be configured. Please approve to proceed with the mining session.
+After the mining batch completes, I'll:
+- Parse the output for pending amounts and thresholds
+- Auto-claim ETH and/or BEAN if they exceed their thresholds
+- Log the session to `memory/topics/minebean.md`
+- Send a notification with the results
+
+**Please approve the blockchain transaction execution** to proceed with the mining session.
