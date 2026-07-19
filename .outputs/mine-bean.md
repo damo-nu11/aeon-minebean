@@ -1,1 +1,1 @@
-The mining batch script needs approval to run. This will execute 5 rounds of autonomous mining on the MineBean protocol, deploying to blocks on the Base network using the configured agent EOA.
+The mining batch script requires approval to run. This will execute blockchain transactions on Base chain. Please approve the execution to proceed with the mining session.
