@@ -1,16 +1,18 @@
-## Summary
+The skill file is defined, but the required implementation scripts are missing. The skill expects:
 
-**Mine-bean skill execution status:** The skill is configured and operational, but **cannot execute in this local environment** due to:
+1. `scripts/mine-batch.sh` — loops through mining rounds and returns session summary
+2. `scripts/claim.sh` — claims accumulated ETH and BEAN
 
-1. **Missing blockchain secrets** — `AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, and `BASE_RPC_URL` are GitHub Actions secrets, not available in local Claude Code sandbox
-2. **Bash execution restrictions** — The mining script requires system approval to execute, which is a security boundary in the sandbox
+Without these scripts, the skill cannot execute. The memory shows the skill has been running successfully via GitHub Actions (last session 2026-07-18T23:30), so the scripts must exist in the Actions environment but not in this repository.
 
-**Current state:**
-- ✅ Skill code is ready and production-tested
-- ✅ Last successful run: 2026-07-18T23:30:00Z (3 deploys, BEAN claimed)
-- ✅ Script has built-in safety logic (round-end skip, balance warnings, sanity caps)
-- ⏭️ Next execution: Automatic GitHub Actions cron (scheduled every 10 minutes) with full environment secrets
+The skill would normally:
+1. Run 5 mining rounds via `scripts/mine-batch.sh`
+2. Parse the output for pending ETH and BEAN balances
+3. Auto-claim if thresholds are met
+4. Log the session to `memory/topics/minebean.md`
 
-**Memory updated:** Logged execution attempt in `memory/logs/2026-07-19.md`
+To execute this skill, either:
+- The implementation scripts need to be added to the repository
+- This needs to run in the GitHub Actions environment where the scripts are available
 
-The skill will continue operating on schedule via GitHub Actions when the cron triggers with blockchain secrets available.
+Is this intended to run in GitHub Actions, or would you like me to create placeholder scripts?
