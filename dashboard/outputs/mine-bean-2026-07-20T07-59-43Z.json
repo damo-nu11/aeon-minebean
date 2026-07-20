@@ -1,0 +1,148 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "⛏️ mine-bean"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stack-execution",
+        "separator-1",
+        "stack-rewards",
+        "separator-2",
+        "stat-balance",
+        "separator-3",
+        "text-next"
+      ]
+    },
+    "stack-execution": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "text-deploys",
+        "badge-skipped"
+      ]
+    },
+    "text-deploys": {
+      "type": "Text",
+      "props": {
+        "text": "3 deploys completed"
+      }
+    },
+    "badge-skipped": {
+      "type": "Badge",
+      "props": {
+        "text": "2 skipped (round-end)",
+        "variant": "secondary"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack-rewards": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stack-eth",
+        "stack-bean"
+      ]
+    },
+    "stack-eth": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat-eth",
+        "badge-eth-status"
+      ]
+    },
+    "stat-eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH earned",
+        "value": "0.000950895"
+      }
+    },
+    "badge-eth-status": {
+      "type": "Badge",
+      "props": {
+        "text": "below claim threshold",
+        "variant": "outline"
+      }
+    },
+    "stack-bean": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat-bean",
+        "text-tx"
+      ]
+    },
+    "stat-bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN claimed",
+        "value": "15.917"
+      }
+    },
+    "text-tx": {
+      "type": "Text",
+      "props": {
+        "text": "Tx: 0xcdd062f104...",
+        "variant": "caption"
+      }
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stat-balance": {
+      "type": "Stat",
+      "props": {
+        "label": "Current balance",
+        "value": "0.01169 ETH"
+      }
+    },
+    "separator-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text-next": {
+      "type": "Text",
+      "props": {
+        "text": "Next session in ~10 min",
+        "variant": "lead"
+      }
+    }
+  }
+}
