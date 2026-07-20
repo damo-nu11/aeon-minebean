@@ -1,19 +1,8 @@
-This command needs your approval before proceeding. Here's what `skills/mine-bean/scripts/mine-batch.sh 5` will do:
+The mining script requires blockchain transaction signing, which needs your explicit approval. This script will:
 
-**Mining Session Details:**
-- Execute 5 consecutive mining rounds on MineBean (Base network)
-- For each round: check state → validate deployment conditions → send deploy transaction if eligible
-- Sleep between rounds to wait for next round (MineBean rounds are ~60 seconds)
-- Return summary: number of deploys, transaction hashes, pending rewards
+1. Run 5 mining rounds on the MineBean GridMining contract (Base chain)
+2. Sign transactions using your agent's private key
+3. Deploy mining transactions to 25 grid blocks with 0.0000025 ETH each
+4. Automatically claim rewards if thresholds are met (0.01 ETH or 1 BEAN)
 
-**Required Environment Variables** (should be set as secrets):
-- `AGENT_PRIVATE_KEY` — EOA private key
-- `AGENT_ADDRESS` — Agent's public address  
-- `BASE_RPC_URL` — RPC endpoint for Base
-
-**Safety Notes:**
-- The script will skip rounds if already deployed or too close to round end
-- Failed deploys don't stop the session; it continues to the next round
-- After mining, I'll auto-claim rewards if thresholds are met (≥0.01 ETH or ≥1 BEAN)
-
-Would you like me to proceed with running the mining batch?
+Your environment has the necessary secrets configured (AGENT_PRIVATE_KEY, BASE_RPC_URL, AGENT_ADDRESS). Do you want to proceed with the mining batch?
