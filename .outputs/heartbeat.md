@@ -2,13 +2,14 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran the heartbeat skill at 2026-07-20 20:14 UTC (20:00 slot, ~14m late).
+Ran the heartbeat skill's priority checks:
+- **P0:** All clean — mine-bean (708/711, 100%) and heartbeat (150/151, 99%) both success, no stuck/chronic failures. Self-check OK (last heartbeat success 13h28m ago).
+- **P1:** No open PRs, no urgent issues.
+- **P2:** No fresh signals in MEMORY.md.
+- **P3:** mine-bean `last_success` is ~2h23m old vs its `*/10` schedule — same recurring scheduler/state-update-lag pattern flagged 100+ times in the last 48h. Deduped, no notification sent.
 
-- **P0:** clean. mine-bean 701/704 (100%, 0 consecutive failures), heartbeat 149/150 (99%, 0 consecutive failures). Self-check OK.
-- **P1:** no open PRs, issues disabled on repo, no open rows in `memory/issues/INDEX.md`.
-- **P2:** no fresh signal in MEMORY.md.
-- **P3:** mine-bean `last_success` ~1h27m old vs `*/10` schedule — recurring state-update-lag pattern already logged 100+ times in prior heartbeats. Deduped, no notify sent.
-- **Status page:** overwrote `docs/status.md` with verdict 🟡 **WATCH**, next scheduled run `mine-bean at 20:20 UTC`. No token-report files present, so the Token pulse section is omitted.
-- **Log:** appended entry to `memory/logs/2026-07-20.md`.
+**Files written:**
+- `docs/status.md` — verdict 🟡 WATCH, next run mine-bean at 09:50 UTC.
+- `memory/logs/2026-07-21.md` — new day log with heartbeat findings.
 
-**Files modified:** `docs/status.md`, `memory/logs/2026-07-20.md`. No follow-up actions.
+**Follow-up:** none. The workflow's auto-commit step will land these on `main`.
