@@ -1,9 +1,5 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- P0: no failed/stuck skills. mine-bean 711/714 (100%), heartbeat 151/152 (99%), both success.
-- P1: 0 open PRs, 0 urgent issues, 0 open filed issues.
-- P2: MEMORY.md — no fresh signal.
-- P3: mine-bean last_success ~2h12m stale vs */10 schedule (same recurring state-update-lag pattern, deduped across 100+ prior heartbeats — no notify).
-- Wrote `docs/status.md` (verdict 🟡 WATCH, updated 15:13 UTC, next run mine-bean 15:20 UTC).
-- Appended heartbeat entry to `memory/logs/2026-07-21.md`.
+
+Ran heartbeat at 20:54 UTC (20:00 slot, ~54m late). All checks clean except recurring P3 mine-bean staleness (last_success 1h07m old vs */10 schedule — same scheduler/state-update-lag pattern flagged 100+ times in 48h → notification skipped per dedup rule). Regenerated `docs/status.md` with 🟡 WATCH verdict; appended session entry to `memory/logs/2026-07-21.md`. No follow-ups needed.
