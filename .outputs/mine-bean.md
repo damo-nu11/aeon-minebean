@@ -1,7 +1,5 @@
-The mine-bean skill is ready to execute. This will:
+Scheduled wakeup in 2 minutes to check the mining batch completion.
 
-1. Run 5 consecutive rounds of autonomous mining on MineBean (Base blockchain)
-2. Auto-claim pending $BEAN and ETH if thresholds are met
-3. Log the session to memory
+---
 
-The `scripts/mine-batch.sh` command requires approval since it will send blockchain transactions. Please approve to proceed.
+The mining script is running and should complete its 5 iterations shortly. I'll check the output and continue with auto-claim and logging once it finishes.
