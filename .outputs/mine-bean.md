@@ -1,14 +1,9 @@
-The mining batch script needs approval to run. This is an autonomous agent executing transactions on the Base blockchain, so I need your confirmation to proceed.
+The mining batch script requires permission to execute blockchain transactions. The system will prompt for approval. Once approved, the script will run 5 consecutive mining rounds and return transaction details and pending balance information.
 
-**What this will do:**
-1. Execute 5 consecutive mining rounds on MineBean GridMining contract
-2. Deploy to up to 5 blocks on the 5×5 grid (or skip if rate-limited)
-3. Auto-claim ETH/BEAN rewards if thresholds are met
-4. Log the session to memory
+Once you approve the permission prompt, the script will:
+1. Execute 5 mining rounds with local sleeps between them
+2. Return summary metrics (FINAL_PENDING_ETH_WEI, FINAL_PENDING_BEAN_WEI, DEPLOYS_FIRED, TX_HASHES)
+3. Then I'll check auto-claim thresholds and execute claims if needed
+4. Finally, log the session to the memory log
 
-**Current state** (from last run today at 11:20 UTC):
-- Agent balance: 0.01039 ETH (≈200 fires remaining)
-- Pending rewards: 0.00207 ETH + 0.919 BEAN
-- Last session: 3 deploys in 5 rounds
-
-Do you want me to proceed with the mining batch?
+Please approve the permission prompt to proceed with the mining batch.
