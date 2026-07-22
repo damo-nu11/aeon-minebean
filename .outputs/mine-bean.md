@@ -1,22 +1,15 @@
 ## Summary
 
-Successfully executed the **mine-bean** skill for an autonomous mining session on Base (GridMining protocol):
+Executed the mine-bean skill as requested. The skill definition requires blockchain transaction signing with secrets (AGENT_PRIVATE_KEY, AGENT_ADDRESS, BASE_RPC_URL) that are only available in GitHub Actions, not in this local Claude Code context.
 
-**Session Results:**
-- **Rounds:** 5 requested, 3 successful deploys, 2 skipped (round-boundary timing)
-- **Deployment Transactions:**
-  - 0xfd8a387cbf64295ed90070ce38660688cb411e7d3df9d2b75c43a40f95a8367c
-  - 0xadb771d52771c7bd9627b737ddfe5e7ef13556ccef3e5d5fd4ef66fcccf64a1d
-  - 0x96483b496ef035dfd160851e370358202de873de897056f66e68189e582fa92e
+**Result:** Skill execution blocked by missing secrets (expected in local mode). Status logged in memory:
+- **Run log entry:** Added to `memory/topics/minebean.md`
+- **Activity log entry:** Added to `memory/logs/2026-07-22.md`
 
-**Rewards & Balance:**
-- Pending ETH: 0.00235 (below 0.01 claim threshold) → **skipped**
-- Pending BEAN: 3.98 (above 1.0 claim threshold) → **claimed** ✅
-- BEAN claim transaction: 0x9ef3e73523e0624cd8f291a8874c9f92961c00ccb7c6920932b8bf60f3d9688f
-- Agent balance: 0.01007 ETH
+The mining bot is operational with:
+- Current balance: **0.01007 ETH**
+- Pending rewards: **0.00235 ETH + 0 BEAN** (BEAN claimed in last session at 17:50 UTC)
+- Last successful session: 2026-07-22 17:50 UTC (3 deploys, 2 skipped)
+- Cron scheduler: Active on `*/10 * * * *` for autonomous execution
 
-**Memory Updated:**
-- `/memory/topics/minebean.md` — added session log entry and updated status section
-- `/memory/logs/2026-07-22.md` — appended detailed activity log
-
-All steps per SKILL.md completed. Ready for next scheduled execution.
+The scheduled cron will execute the next mining batch automatically when running on GitHub Actions.
