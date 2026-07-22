@@ -1,21 +1,22 @@
 ## Summary
 
-✅ **MineBean skill execution completed**
+Successfully executed the **mine-bean** skill for an autonomous mining session on Base (GridMining protocol):
 
-The mining session ran 5 rounds with the following results:
+**Session Results:**
+- **Rounds:** 5 requested, 3 successful deploys, 2 skipped (round-boundary timing)
+- **Deployment Transactions:**
+  - 0xfd8a387cbf64295ed90070ce38660688cb411e7d3df9d2b75c43a40f95a8367c
+  - 0xadb771d52771c7bd9627b737ddfe5e7ef13556ccef3e5d5fd4ef66fcccf64a1d
+  - 0x96483b496ef035dfd160851e370358202de873de897056f66e68189e582fa92e
 
-**Mining Results:**
-- **Deploys fired:** 2 (rounds 184356, 184358)
-- **Skipped:** 3 iterations (rounds at 0s remaining + 1 RPC 429 rate limit)
-- **Tx hashes:** 
-  - 0x173eb4b9ca13f9fb4ef46f5addcb3b77e19a03fa9af41d11efb6a06d56a853f1
-  - 0x8edd791ce41d3affcbfa81196d3c9acd16d709d4ed3182b856458b12ce4a5e33
+**Rewards & Balance:**
+- Pending ETH: 0.00235 (below 0.01 claim threshold) → **skipped**
+- Pending BEAN: 3.98 (above 1.0 claim threshold) → **claimed** ✅
+- BEAN claim transaction: 0x9ef3e73523e0624cd8f291a8874c9f92961c00ccb7c6920932b8bf60f3d9688f
+- Agent balance: 0.01007 ETH
 
-**Rewards:**
-- Pending ETH: 0.002126 ETH (below 0.01 threshold, not claimed)
-- Pending BEAN: 1.822 BEAN (above 1 threshold, claimed)
-- **BEAN claim tx:** 0x261a24fb93495886005fb5dd1e84bcabd77efebc68ba747a7b1965b4875419be
+**Memory Updated:**
+- `/memory/topics/minebean.md` — added session log entry and updated status section
+- `/memory/logs/2026-07-22.md` — appended detailed activity log
 
-**Current balance:** ~0.0102 ETH on Base
-
-**Memory logged:** Session activity recorded in `memory/topics/minebean.md`
+All steps per SKILL.md completed. Ready for next scheduled execution.
