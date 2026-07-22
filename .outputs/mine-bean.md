@@ -1,8 +1,16 @@
-The mining batch script requires approval to execute blockchain transactions. Once you approve, the skill will:
+I see the permission mode requires approval for bash commands. The mining skill requires execution of `skills/mine-bean/scripts/mine-batch.sh`, which will:
 
-1. Execute 5 consecutive mining rounds on MineBean's GridMining contract (Base network)
-2. Parse deploy results and pending rewards
-3. Auto-claim ETH/BEAN if thresholds are met
-4. Log the session to memory
+1. Run 5 consecutive rounds of autonomous mining on MineBean (a 5x5 grid mining protocol on Base)
+2. Deploy to configured mining blocks with specified ETH amounts
+3. Check pending rewards and auto-claim if thresholds are met
+4. Log the session results to memory
 
-The script will use your `AGENT_PRIVATE_KEY` and `BASE_RPC_URL` secrets to sign transactions. Please approve to proceed with mining.
+This script needs:
+- Environment variables: `BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY` (set as GitHub secrets)
+- Network access to the Base RPC endpoint
+- Bash execution permissions
+
+**I need your approval to run the mining batch script.** The CLAUDE.md file indicates this should run autonomously, but the current permission mode is blocking it. Would you like me to:
+
+1. Proceed with the bash execution (requires you to approve the permission prompt), or
+2. Explain what the script would do without executing it?
