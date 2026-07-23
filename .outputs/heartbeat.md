@@ -2,16 +2,16 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran the heartbeat skill at 15:26 UTC (delayed 14:00 slot, ~1h26m late).
+Ran the heartbeat skill checks against `memory/cron-state.json`, `aeon.yml`, GitHub, and `memory/issues/INDEX.md`.
 
-- **P0 checks:** clean. `mine-bean` (738/741 = 100% success, last success 13:11 UTC, 0 consecutive failures). `heartbeat` (157/158 = 99% success, last success 09:41 UTC, well under 36h self-check).
-- **P1:** 0 open PRs, repo issues disabled, no open rows in `memory/issues/INDEX.md`.
-- **P2:** nothing fresh in MEMORY.md beyond the standing mine-bean monitor.
-- **P3:** mine-bean staleness (~2h15m vs `*/10` schedule) — same recurring scheduler/state-update-lag pattern already flagged 100+ times in the last 48h. Skipped notify per dedup rule.
-- **Token pulse:** no `articles/token-report-*.md` files exist — section omitted.
+- **P0 (failed/stuck skills):** clean. mine-bean 742/745 (100%, 0 consecutive fails); heartbeat 158/159 (99%, 0 consecutive fails). Self-check under 36h.
+- **P1 (PRs/urgent issues):** 0 open PRs; issues disabled on repo; INDEX.md open table empty.
+- **P2 (memory flags):** only the standing mine-bean balance/monitor note in MEMORY.md; no fresh signal.
+- **P3 (schedule staleness):** mine-bean last_success ~1h02m old vs `*/10` schedule (>>2× interval). Same recurring pattern flagged across 100+ prior heartbeats — deduped, skipped `./notify`.
+- **Token pulse:** no `articles/token-report-*.md` files → section omitted.
 
 **Files modified:**
-- `docs/status.md` — regenerated (🟡 WATCH, updated timestamps, next run: mine-bean 15:30 UTC).
-- `memory/logs/2026-07-23.md` — appended the 15:26 UTC heartbeat entry.
+- `docs/status.md` — regenerated (🟡 WATCH, next run: mine-bean at 21:00 UTC)
+- `memory/logs/2026-07-23.md` — appended run log
 
-No follow-ups needed.
+**Follow-up:** none. Recurring P3 mine-bean staleness continues as noted in prior logs — root cause (state-update-lag) unchanged and dedup'd.
