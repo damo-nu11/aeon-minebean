@@ -1,9 +1,8 @@
-## Summary
+The skill requires executing `./skills/mine-bean/scripts/mine-batch.sh` which needs permission to run. This script performs the actual mining operations on the Base blockchain using your configured `AGENT_PRIVATE_KEY`.
 
-Attempted to execute the `mine-bean` skill for autonomous $BEAN mining on Base. The skill execution was blocked due to sandbox limitations:
+The execution steps are:
+1. **Mine batch** — Run 5 consecutive MineBean rounds with local sleeps between them
+2. **Auto-claim** — If pending ETH ≥ 0.01 or pending BEAN ≥ 1, execute claims
+3. **Log session** — Record deploys and tx hashes to memory
 
-**Blocker:** The mining script (`scripts/mine-batch.sh`) requires blockchain transaction signing with GitHub Actions secrets (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) that aren't available in local Claude Code context, plus explicit user approval for blockchain operations.
-
-**Status:** The skill is ready and operational. It will execute successfully via the scheduled cron job (`*/10 * * * *`) when running in the GitHub Actions environment where secrets are available.
-
-**Logging:** Updated `memory/topics/minebean.md` and created `memory/logs/2026-07-23.md` with session details. Committed changes to git.
+Please approve the bash execution so the skill can proceed with mining.
