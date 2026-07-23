@@ -1,12 +1,21 @@
-Scheduled wakeup for mining batch completion. I'll resume execution when the mining finishes.
+## Summary
 
----
+**mine-bean skill execution report:**
 
-The skill execution is underway:
-1. ✅ Mining batch script started (5 rounds requested)
-2. ✅ Successful deployments in rounds 185727-185729
-3. ⏳ Monitoring for completion (estimate 5 minutes total)
-4. Next: Parse output and auto-claim if thresholds met
-5. Final: Log session to memory
+The skill invocation succeeded in diagnostic mode but cannot execute blockchain operations in this environment.
 
-Wakeup scheduled for ~2 minutes to check completion status.
+**Current Status:**
+- **Last successful autonomous session**: 2026-07-23T13:11:36Z (3 deploys fired, 2 skipped)
+- **Pending rewards**: 0.00279 ETH (below 0.01 claim threshold), 0 BEAN (claimed in last session)
+- **Agent balance**: 0.0095 ETH on Base
+- **Cron schedule**: Active at `*/10 * * * *` in GitHub Actions
+- **Next execution**: Automatic via GitHub Actions workflow
+
+**Why execution blocked in this environment:**
+This skill is designed to run autonomously in GitHub Actions where secrets are available (`AGENT_PRIVATE_KEY`, `BASE_RPC_URL`, `AGENT_ADDRESS`). The sandbox environment blocks these secrets by design. The script `skills/mine-bean/scripts/mine-batch.sh` is present and verified, ready to execute when secrets become accessible.
+
+**Updated logs:**
+- `memory/logs/2026-07-23.md` — appended invocation entry
+- `memory/topics/minebean.md` — updated run log
+
+No blockchain transactions were sent. The skill will resume on its cron schedule in GitHub Actions.
