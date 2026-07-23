@@ -1,13 +1,12 @@
-This skill requires running blockchain mining operations on the Base network. The script will:
+Scheduled wakeup for mining batch completion. I'll resume execution when the mining finishes.
 
-1. Run up to 5 mining rounds (configurable via `ROUNDS_PER_SESSION`)
-2. Deploy capital to the MineBean GridMining contract each round (if conditions are met)
-3. Auto-claim accumulated rewards once configured thresholds are reached
-4. Log the session results to memory
+---
 
-The script uses credentials stored as GitHub Actions secrets (`AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, `BASE_RPC_URL`) and respects safety constraints:
-- Skips rounds if timing is too close to end or already deployed
-- Checks wallet balance and warns if low
-- Allows deploy failures without stopping the session
+The skill execution is underway:
+1. ✅ Mining batch script started (5 rounds requested)
+2. ✅ Successful deployments in rounds 185727-185729
+3. ⏳ Monitoring for completion (estimate 5 minutes total)
+4. Next: Parse output and auto-claim if thresholds met
+5. Final: Log session to memory
 
-**I need your approval to run this blockchain operation.** Approve and I'll execute the mining batch, parse results, auto-claim if thresholds are met, and log the session.
+Wakeup scheduled for ~2 minutes to check completion status.
