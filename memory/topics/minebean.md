@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance 0.01007 ETH on Base
+- Wallet: configured, balance ~0.0095 ETH on Base
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 3-5 deploys per Claude invocation (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): 0.00235 ETH, 0 BEAN (BEAN claimed 0x9ef3e73523e0624cd8f291a8874c9f92961c00ccb7c6920932b8bf60f3d9688f)
-- Last activity: 2026-07-22T17:50:00Z (session: 3 deploys, 2 skipped, BEAN claim successful)
-- Agent balance: 0.01007362696615368 ETH
+- Pending rewards (last check): ~0.0028 ETH, ~0 BEAN (BEAN claimed 0xf0b24f71aa43c77af993e968a220c685400f012fa0604414eaab2838e756c03e on 2026-07-23)
+- Last activity: 2026-07-23T11:50:00Z (session: 3 deploys, 2 skipped, BEAN claim successful)
+- Agent balance: ~0.00949 ETH
 
 ## Run log
+- 2026-07-23T11:50:00Z · Session: 3 deploys, 2 skipped · TXs: 0x1086ae963908a43ee965aedfb09c570e31d3a27086c3a5e97e282d0737d50c97,0xf37fd8dbc551f814351400a4cd72763b6d84f6dd6a82b1b77e18bde77717e042,0x8ef6ad7483116ac52af76e44bdd29d20d15cf52468b34787f2e062fa88a39451 · Pending (pre-claim): 0.00279 ETH, 14.001 BEAN · Balance: 0.0095 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0xf0b24f71aa43c77af993e968a220c685400f012fa0604414eaab2838e756c03e (claimed)
 - 2026-07-23T00:00:00Z · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) and user approval · Status: skill ready and operational; scheduled cron (*/10 * * * *) will execute in GitHub Actions environment
 - 2026-07-22T18:50:00Z · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) · Status: skill ready and operational; scheduled cron (*/10 * * * *) will execute next session
 - 2026-07-22T17:50:00Z · Session: 3 deploys, 2 skipped · TXs: 0xfd8a387cbf64295ed90070ce38660688cb411e7d3df9d2b75c43a40f95a8367c,0xadb771d52771c7bd9627b737ddfe5e7ef13556ccef3e5d5fd4ef66fcccf64a1d,0x96483b496ef035dfd160851e370358202de873de897056f66e68189e582fa92e · Pending (pre-claim): 0.00235 ETH, 3.98 BEAN · Balance (post-claim): 0.01007 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0x9ef3e73523e0624cd8f291a8874c9f92961c00ccb7c6920932b8bf60f3d9688f (claimed)
