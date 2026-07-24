@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance ~0.00884 ETH on Base
+- Wallet: configured, balance ~0.00838 ETH on Base
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 3-5 deploys per Claude invocation (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): ~0.00335 ETH, ~0.00409 BEAN (last session: 2026-07-24 · 3 deploys)
-- Last activity: 2026-07-24T03:49:42Z (session: 3 deploys, 2 skipped)
-- Agent balance: ~0.00884 ETH
+- Pending rewards (last check): ~0.00374 ETH, ~0 BEAN (last session: 2026-07-24 · 4 deploys, BEAN claimed)
+- Last activity: 2026-07-24T17:21:21Z (session: 4 deploys, 1 skipped, BEAN claim tx 0xe4478a00...)
+- Agent balance: ~0.00838 ETH
 
 ## Run log
+- 2026-07-24T17:21:21Z · Session: 4 deploys, 1 skipped · TXs: 0x7666173230cdd21b8539328af78265c263ab53d926ecfc532ad44892509887d4,0x855211f31eb156d7eec8207aca15380cd82267d55a488081d4095779fc491db9,0x4f453a5f88fcd4a4b8412d119f8ed684247f91895ea6571a680c266a4e88ea98,0x47a636be7270f06c0111348a5bcdcc8cbb055fb8351528826642136f95ca1c2e · Pending (pre-claim): 0.00374 ETH, 22.28 BEAN · Balance: 0.00838 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0xe4478a00d816f4126cdc411a62036476d9adb58c089a5dd5c67e33780527e328 (claimed)
 - 2026-07-24T03:49:42Z · Session: 3 deploys, 2 skipped · TXs: 0x4cea53791355eb82ee50b9b7ef992fcb5e92ca227736f0b94171f11156803a82,0x95d03a97e7587b76f569e976197bea14db33cf4c42cbc360cbd9fb74a90a030a,0x4d7e1defa609524de7525a35a7f85ae4a172fbe5d894e4cb06a7600688b08f56 · Pending (pre-claim): 0.003349 ETH, 0.004090 BEAN · Balance: 0.008837 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (below 1 threshold)
 - 2026-07-23T23:45:00Z (manual invocation via user request) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: mining scripts unavailable, environment secrets required for blockchain transactions · Status: skill operational; cron (*/10 * * * *) active in GitHub Actions environment
 - 2026-07-23 (final manual invocation) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets · Status: skill ready; cron (*/10 * * * *) active in GitHub Actions environment
