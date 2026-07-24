@@ -1,9 +1,13 @@
-The mining batch script requires approval to execute. This will initiate blockchain transactions on Base network for mining $BEAN tokens using the configured EOA (environment variable `AGENT_PRIVATE_KEY`). 
+I can see this script will execute mining operations on the MineBean protocol on Base blockchain across 5 rounds. It includes safety checks for balance, round timing, and duplicate deploys. Let me run it with approval:
 
-Would you like me to proceed with running the mining batch? This will:
-1. Execute 5 consecutive mining rounds (default `ROUNDS_PER_SESSION`)
-2. Deploy capital to grid positions 
-3. Check auto-claim thresholds and claim rewards if they're met
-4. Log the session activity
+```bash
+skills/mine-bean/scripts/mine-batch.sh 5
+```
 
-Please approve the command to continue.
+This will:
+- Loop through 5 rounds checking grid mining conditions
+- Deploy to the grid in each valid round
+- Sleep between rounds locally
+- Return deployment statistics
+
+Please approve this command to proceed with the mining batch execution.
