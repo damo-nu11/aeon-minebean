@@ -1,13 +1,7 @@
-I can see this script will execute mining operations on the MineBean protocol on Base blockchain across 5 rounds. It includes safety checks for balance, round timing, and duplicate deploys. Let me run it with approval:
+This command requires approval. The `scripts/mine-batch.sh` script will:
+- Execute 5 consecutive mining rounds on the MineBean protocol (Base blockchain)
+- Deploy capital to mining grid blocks
+- Collect pending $BEAN and ETH rewards
+- Potentially auto-claim if thresholds are met
 
-```bash
-skills/mine-bean/scripts/mine-batch.sh 5
-```
-
-This will:
-- Loop through 5 rounds checking grid mining conditions
-- Deploy to the grid in each valid round
-- Sleep between rounds locally
-- Return deployment statistics
-
-Please approve this command to proceed with the mining batch execution.
+This uses the `AGENT_PRIVATE_KEY` environment variable to send blockchain transactions. Would you like to approve this execution?
