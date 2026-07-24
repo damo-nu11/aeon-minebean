@@ -1,8 +1,9 @@
-The mining batch script requires approval to execute. This script will:
-- Run 5 consecutive rounds of MineBean mining on Base
-- Sleep locally between rounds (no Claude cache reloads)
-- Return transaction details and pending balances
-- Potentially trigger auto-claims if thresholds are met
-- Log results to memory
+The mining batch script requires approval to execute. This will initiate blockchain transactions on Base network for mining $BEAN tokens using the configured EOA (environment variable `AGENT_PRIVATE_KEY`). 
 
-Do you want me to proceed with executing the mining batch?
+Would you like me to proceed with running the mining batch? This will:
+1. Execute 5 consecutive mining rounds (default `ROUNDS_PER_SESSION`)
+2. Deploy capital to grid positions 
+3. Check auto-claim thresholds and claim rewards if they're met
+4. Log the session activity
+
+Please approve the command to continue.
