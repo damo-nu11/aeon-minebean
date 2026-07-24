@@ -1,18 +1,10 @@
-## Summary
+This command requires approval to execute the mining script. The skill `mine-bean` will:
 
-Successfully executed the mine-bean skill for 2026-07-24:
+1. Run `scripts/mine-batch.sh 5` to mine 5 consecutive rounds on the MineBean protocol on Base
+2. Parse the output for pending ETH/BEAN balances
+3. Auto-claim rewards if they exceed the configured thresholds
+4. Log the session activity to `memory/topics/minebean.md`
 
-**Mining Results:**
-- 4 deploys fired across 5 rounds (186940-186943)
-- 1 round skipped (time_remaining=0s)
-- Deploy transactions: 0x7666..., 0x8552..., 0x4f45..., 0x47a6...
+The script will interact with the MineBean GridMining contract at `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0` on Base (chainId 8453) using the agent's private key.
 
-**Rewards & Claims:**
-- Pending pre-claim: 0.00374 ETH, 22.28 BEAN
-- ETH claim: SKIPPED (below 0.01 ETH threshold)
-- BEAN claim: ✅ SUCCESSFUL (tx: 0xe4478a00d816f4126cdc411a62036476d9adb58c089a5dd5c67e33780527e328)
-
-**Final State:**
-- Agent balance: ~0.00838 ETH
-- Session logged to memory/topics/minebean.md
-- Status section updated with latest activity timestamp and balance
+Please approve to proceed with the mining session.
