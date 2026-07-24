@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance ~0.0095 ETH on Base
+- Wallet: configured, balance ~0.00884 ETH on Base
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 3-5 deploys per Claude invocation (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): ~0.0028 ETH, ~0 BEAN (BEAN claimed 0xf0b24f71aa43c77af993e968a220c685400f012fa0604414eaab2838e756c03e on 2026-07-23)
-- Last activity: 2026-07-23T11:50:00Z (session: 3 deploys, 2 skipped, BEAN claim successful)
-- Agent balance: ~0.00949 ETH
+- Pending rewards (last check): ~0.00335 ETH, ~0.00409 BEAN (last session: 2026-07-24 · 3 deploys)
+- Last activity: 2026-07-24T03:49:42Z (session: 3 deploys, 2 skipped)
+- Agent balance: ~0.00884 ETH
 
 ## Run log
+- 2026-07-24T03:49:42Z · Session: 3 deploys, 2 skipped · TXs: 0x4cea53791355eb82ee50b9b7ef992fcb5e92ca227736f0b94171f11156803a82,0x95d03a97e7587b76f569e976197bea14db33cf4c42cbc360cbd9fb74a90a030a,0x4d7e1defa609524de7525a35a7f85ae4a172fbe5d894e4cb06a7600688b08f56 · Pending (pre-claim): 0.003349 ETH, 0.004090 BEAN · Balance: 0.008837 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (below 1 threshold)
 - 2026-07-23T23:45:00Z (manual invocation via user request) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: mining scripts unavailable, environment secrets required for blockchain transactions · Status: skill operational; cron (*/10 * * * *) active in GitHub Actions environment
 - 2026-07-23 (final manual invocation) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets · Status: skill ready; cron (*/10 * * * *) active in GitHub Actions environment
 - 2026-07-23 (earlier) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: blockchain transaction signing requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) and user approval · Status: skill ready and operational; scheduled cron (*/10 * * * *) will execute in GitHub Actions environment
