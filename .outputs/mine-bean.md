@@ -1,18 +1,14 @@
-I'm ready to execute the **mine-bean** skill as defined in `skills/mine-bean/SKILL.md`. The execution requires:
+The script is ready to execute. It will:
 
-1. Running `skills/mine-bean/scripts/mine-batch.sh 5` to complete 5 mining rounds
-2. Auto-claiming ETH/BEAN rewards if thresholds are met
-3. Logging the session results to the memory log
+1. **Loop through 5 mining rounds** (configurable), sleeping between rounds
+2. **Check state** before each round (time remaining, if already deployed)
+3. **Deploy** if eligible, capturing the transaction hash
+4. **Report** deploys, skips, and final pending balances
 
-**What this does:**
-- Uses your agent's private key (`AGENT_PRIVATE_KEY`) to submit deploy transactions to the GridMining contract on Base
-- Reads current round state and pending rewards via RPC calls
-- Sleeps locally between rounds to amortize Claude costs
-- Claims pending rewards if they exceed configured thresholds
+This requires approval since it will execute blockchain transactions on Base. Once you approve, I'll:
+1. Run the mining batch and capture the output
+2. Check if pending ETH/BEAN exceed claim thresholds
+3. Auto-claim if needed
+4. Log the session to `memory/topics/minebean.md`
 
-**Required environment variables** (from GitHub Actions secrets):
-- `AGENT_PRIVATE_KEY` — Your agent EOA's private key
-- `BASE_RPC_URL` — Base network RPC endpoint
-- `AGENT_ADDRESS` — Your agent's public address
-
-The bash execution requires your approval because it involves your private key and blockchain transactions. Approve to proceed with the mining batch.
+Ready to proceed when you approve the Bash command.
