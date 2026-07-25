@@ -1,0 +1,109 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "main-stack"
+      ]
+    },
+    "main-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-session",
+        "text-deploy-info",
+        "sep1",
+        "heading-pending",
+        "pending-grid",
+        "sep2",
+        "heading-balance",
+        "stat-balance",
+        "sep3",
+        "alert-claims"
+      ]
+    },
+    "heading-session": {
+      "type": "Heading",
+      "props": {
+        "text": "Session Complete",
+        "level": "h3"
+      }
+    },
+    "text-deploy-info": {
+      "type": "Text",
+      "props": {
+        "text": "3 deploys, 2 skipped (rounds 188170-188172)"
+      }
+    },
+    "sep1": {
+      "type": "Separator"
+    },
+    "heading-pending": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending",
+        "level": "h3"
+      }
+    },
+    "pending-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-pending-eth",
+        "stat-pending-bean"
+      ]
+    },
+    "stat-pending-eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.00429885"
+      }
+    },
+    "stat-pending-bean": {
+      "type": "Stat",
+      "props": {
+        "label": "BEAN",
+        "value": "20.36"
+      }
+    },
+    "sep2": {
+      "type": "Separator"
+    },
+    "heading-balance": {
+      "type": "Heading",
+      "props": {
+        "text": "Current Balance",
+        "level": "h3"
+      }
+    },
+    "stat-balance": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "0.00779239"
+      }
+    },
+    "sep3": {
+      "type": "Separator"
+    },
+    "alert-claims": {
+      "type": "Alert",
+      "props": {
+        "message": "No claims (below thresholds)",
+        "type": "info"
+      }
+    }
+  }
+}
