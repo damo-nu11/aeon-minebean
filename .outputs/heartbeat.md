@@ -1,9 +1,9 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- **P0 checks**: all clean. mine-bean healthy (762/765 runs, 100% rate, 0 consec failures); heartbeat healthy (162/163, 99%, 0 consec); self-check OK.
-- **P1 checks**: 0 open PRs, 0 open issues.
-- **P2 checks**: no fresh MEMORY.md flags (only the standing mine-bean balance monitor note).
-- **P3 flag**: mine-bean `last_success` is ~2h08m old vs `*/10` schedule — recurring state-update-lag pattern seen across 100+ prior heartbeats. Dedup'd, no notify.
-- **Files**: regenerated `docs/status.md` with verdict 🟡 WATCH; appended `memory/logs/2026-07-25.md`.
-- **No follow-up needed.**
+- P0 clean: mine-bean (766/769, success_rate=1.00, 0 consecutive failures) and heartbeat (163/164, 99%, 0 consecutive failures). Self-check fine (~5h33m since last success).
+- P1 clean: 0 open PRs, no urgent issues, INDEX.md has no open rows.
+- P2 clean: no fresh follow-ups flagged in MEMORY.md.
+- P3: mine-bean `last_success` ~1h36m old vs */10 cadence — recurring state-update-lag pattern, dedup'd against 100+ prior heartbeat logs within 48h; no notify sent.
+- Token pulse: no `articles/token-report-*.md` present — section omitted.
+- Files: overwrote `docs/status.md` (🟡 WATCH); appended 14:41 UTC entry to `memory/logs/2026-07-25.md`.
