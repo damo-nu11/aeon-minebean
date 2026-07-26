@@ -1,9 +1,8 @@
-I'm ready to execute the mine-bean skill, which will:
+The mining batch script requires access to the agent's private key and will execute blockchain transactions on Base. This requires your approval to proceed. The script will:
 
-1. **Run the mining batch** — Execute `skills/mine-bean/scripts/mine-batch.sh 5` to mine through 5 consecutive rounds on the MineBean GridMining contract (Base blockchain)
-2. **Auto-claim if thresholds met** — Parse the output and claim pending ETH or BEAN if they exceed the configured thresholds
-3. **Log the session** — Append the results to `memory/topics/minebean.md`
+1. Run 5 mining rounds, checking for valid deployment windows in each round
+2. Skip rounds that are too close to ending or already deployed
+3. Deploy to the MineBean contract when conditions are met
+4. Return transaction hashes and final balances
 
-This will execute blockchain transactions using the configured agent EOA and will cost a small amount of ETH (typically ~0.0000625 ETH for 5 rounds × 25 blocks).
-
-**Do you want to approve this execution?** Reply with "yes" or "approve" to proceed, or "no" to skip.
+Please approve execution of the mining script to continue.
