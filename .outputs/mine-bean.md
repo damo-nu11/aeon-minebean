@@ -1,8 +1,14 @@
-The mining batch script requires your approval to execute. This command will:
+The mining batch script requires approval because it will execute blockchain transactions (deploying to the MineBean GridMining contract) using the AGENT_PRIVATE_KEY.
 
-1. Run 5 consecutive rounds of autonomous mining on the MineBean protocol
-2. Use the environment variables `AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, and `BASE_RPC_URL` (which should be configured as GitHub secrets)
-3. Deploy capital to mining blocks and accumulate $BEAN tokens
-4. Output mining metrics (deploys fired, transaction hashes, pending balances)
+Based on the SKILL.md definition and memory, this is a standard autonomous mining operation that:
+1. Runs 5 consecutive mining rounds (default)
+2. Deploys to available blocks on the MineBean GridMining contract on Base
+3. Auto-claims pending rewards if thresholds are met
+4. Logs the session results
 
-Please approve the execution to proceed with the mining skill.
+**Last successful session (2026-07-25):**
+- 3 deploys, 2 skipped
+- Pending: 0.00429885 ETH, 20.36 BEAN
+- Balance: 0.00779239 ETH
+
+**Proceed with mining batch?** This will execute real blockchain transactions from the configured AGENT_ADDRESS on Base mainnet. Confirm to continue.
