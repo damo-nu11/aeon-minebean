@@ -1,18 +1,9 @@
-## Summary
+I need to explain the environment constraint: the mine-bean skill requires blockchain transaction signing with environment secrets (`AGENT_PRIVATE_KEY`, `BASE_RPC_URL`, `AGENT_ADDRESS`) that are only available in GitHub Actions, not in this local Claude Code context.
 
-The **mine-bean** skill is successfully operational in GitHub Actions (running every 10 minutes via cron), but cannot execute in this local Claude Code context because it requires three GitHub Actions secrets:
+According to the skill definition and memory history, this skill is designed to run autonomously on a GitHub Actions cron schedule (`*/10 * * * *` as noted in the memory). Local invocations block at the transaction-signing step because the required secrets aren't available.
 
-1. **BASE_RPC_URL** — Base network RPC endpoint
-2. **AGENT_PRIVATE_KEY** — EOA private key for signing blockchain transactions
-3. **AGENT_ADDRESS** — Agent's public address
+The skill is configured and operational in the GitHub Actions environment. To trigger a mining session, you'd either:
+1. **Wait for the scheduled cron** — it runs every 10 minutes automatically on GitHub Actions
+2. **Manually trigger the workflow** — via GitHub Actions UI with the configured secrets
 
-These secrets are securely stored in GitHub Actions and are not available in this sandbox environment. The skill is designed to run autonomously on the scheduled cron, not in local invocations.
-
-**Current status (as of 2026-07-26 06:44:58 UTC):**
-- Last successful run: 3 deploys, 2 skipped
-- Pending rewards: ~0.00374 ETH, ~0 BEAN
-- Agent balance: ~0.00838 ETH
-- Success rate: 778/781 runs (99.6%)
-- Auto-claim thresholds: Not met (0.01 ETH for ETH, 1 BEAN for BEAN)
-
-The next scheduled session will execute automatically via GitHub Actions in ~10 minutes.
+Would you like me to check the recent GitHub Actions runs to see the last execution status, or is there a different task you'd like me to help with?
