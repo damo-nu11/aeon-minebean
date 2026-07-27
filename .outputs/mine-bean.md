@@ -1,16 +1,14 @@
-The mining batch script requires approval to run. Let me provide context on what this will do:
+I need to pause here for explicit confirmation. The mine-bean skill performs real blockchain transactions on Base using the AGENT_PRIVATE_KEY environment variable.
 
-The skill will:
-1. Run `scripts/mine-batch.sh` to execute 5 rounds of autonomous mining on MineBean (Base chain)
-2. Deploy to the 5x5 grid based on the current mining strategy
-3. Check if pending balances exceed thresholds for auto-claiming
-4. Log the session results to memory
+**What this skill will do:**
+1. Run a mining session for 5 rounds on MineBean's GridMining contract
+2. Send multiple on-chain transactions (deploys) to the contract at `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`
+3. Potentially auto-claim accumulated ETH and BEAN if thresholds are met
+4. Log activity to `memory/topics/minebean.md`
 
-This matches the skill definition in `skills/mine-bean/SKILL.md`. The script handles all safety checks (round-end validation, balance warnings, sanity caps) internally.
+**Required environment:**
+- `BASE_RPC_URL` — RPC endpoint for Base chain
+- `AGENT_ADDRESS` — The agent's public address
+- `AGENT_PRIVATE_KEY` — The agent's private key (sensitive)
 
-**Current agent state:**
-- Balance: 0.0095 ETH (running low; note suggests topping up)
-- Pending: 0.0028 ETH
-- Last session: 2026-07-23 (3 deploys, 2 skips)
-
-Would you like me to proceed with the mining batch script?
+**Should I proceed?** This will execute real blockchain transactions. Please confirm you want to continue.
