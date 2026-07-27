@@ -1,11 +1,13 @@
-The mining script requires approval to execute since it will send blockchain transactions. This is the expected security check. The script will:
+I need approval to run the mining script. This will execute blockchain transactions on Base using your configured EOA. Please approve the following command:
 
-1. Run 5 consecutive mining rounds on the MineBean protocol on Base
-2. Check current state and conditions for each round
-3. Deploy to available blocks if conditions permit
-4. Sleep between rounds locally (avoiding repeated Claude invocations)
-5. Output transaction hashes and final balances
-6. Auto-claim rewards if thresholds are met
-7. Log the session to memory
+```bash
+scripts/mine-batch.sh 5
+```
 
-The command is ready to execute with your approval. Please approve the bash command execution so the mining batch can proceed.
+This will:
+- Run 5 consecutive mining rounds
+- Deploy capital to MineBean's GridMining contract
+- Auto-claim rewards if thresholds are met
+- Log results to memory
+
+Once you approve, the script will execute and I'll handle the results according to the skill specification.
