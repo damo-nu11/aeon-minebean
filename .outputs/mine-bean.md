@@ -1,8 +1,9 @@
-The mining script requires approval to execute blockchain transactions. This is a safety check. Once approved, the script will:
+The skill requires permission to execute the mining batch script. The system is asking for approval of the bash command `scripts/mine-batch.sh 5`. 
 
-1. Run 5 rounds of autonomous mining on the MineBean grid mining protocol (Base network)
-2. Deploy to up to 25 blocks across the grid
-3. Track pending ETH and BEAN earnings
-4. Auto-claim rewards if thresholds are met
+This command will:
+1. Run up to 5 consecutive mining rounds on MineBean (a 5x5 grid mining protocol on Base)
+2. Execute deploys to blocks as configured
+3. Auto-claim pending rewards if thresholds are met
+4. Log the session activity
 
-The operation requires the `AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, and `BASE_RPC_URL` environment variables to be configured. Please approve this operation to proceed with the mining session.
+Once you approve the command execution, I'll proceed with running the mining batch, parsing the results, auto-claiming if needed, and logging the session to memory.
