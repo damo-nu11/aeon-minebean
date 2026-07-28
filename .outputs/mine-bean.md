@@ -1,9 +1,16 @@
-The mining batch script requires your approval. This will execute 5 rounds of autonomous mining on the Base blockchain using the configured agent EOA.
+The mining batch script requires approval to execute because it involves:
+- Private key access (`AGENT_PRIVATE_KEY`)
+- Blockchain RPC calls and transaction signing
+- Real financial transactions on Base network
 
-Once you approve, the script will:
-1. Run 5 mining rounds with local sleeps between each
-2. Return transaction hashes and pending balances
-3. Auto-claim rewards if thresholds are met
-4. Log the session to memory
+To proceed with autonomous mining, I need your approval. The script will:
+1. Loop through 5 rounds of MineBean mining
+2. Check the contract state and account balance each round
+3. Deploy mining transactions where eligible
+4. Return summary data for claiming pending rewards
 
-Please approve the command to proceed.
+**Would you like to approve this execution?** You can either:
+- Approve this single run, or
+- Grant permanent approval via `/config` to allow `mine-bean` skill execution going forward
+
+Once approved, I'll execute the mining batch and then log the results to memory.
