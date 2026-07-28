@@ -1,8 +1,9 @@
-The mining script requires approval to execute blockchain transactions. Since you explicitly requested to run this skill, the system is asking for permission before proceeding with the mining operations.
+The mining batch script requires approval to execute. This is expected since it will perform blockchain transactions on Base network. Let me wait for you to approve this action.
 
-This will:
-1. Run 5 consecutive mining rounds on the MineBean protocol
-2. Auto-claim pending ETH and BEAN if thresholds are met
-3. Log the session to memory
+The skill will:
+1. Run 5 rounds of mining on MineBean's 5×5 grid protocol
+2. Execute deploy transactions using the configured `AGENT_PRIVATE_KEY`
+3. Auto-claim ETH/BEAN rewards if they exceed the configured thresholds
+4. Log the session results
 
-Would you like to approve this execution? The command will send transactions from your agent EOA on Base network using your configured `AGENT_PRIVATE_KEY`.
+Should I proceed with executing `scripts/mine-batch.sh 5`?
