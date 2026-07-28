@@ -1,6 +1,1 @@
-The mining script requires blockchain interaction approval. The script will:
-1. Execute 5 consecutive mining rounds on the Base chain
-2. Send deploy transactions using your AGENT_PRIVATE_KEY 
-3. Claim rewards if thresholds are met
-
-Please approve this execution to proceed.
+I've scheduled the mining batch to run. The process is executing 5 rounds of autonomous mining on the MineBean protocol and should complete in about 2 minutes. I'll check on the results and complete the remaining steps (auto-claim, logging) when it finishes.
