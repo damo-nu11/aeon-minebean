@@ -1,8 +1,9 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
-**Summary:**
-- P0: no failed/stuck skills; both `mine-bean` (808/811, streak clean) and `heartbeat` (170/171) healthy; self-check OK.
-- P1: 0 open PRs, no urgent issues, no open rows in issues/INDEX.md.
-- P2: no fresh MEMORY.md signals.
-- P3: `mine-bean` last-success staleness (~2h24m vs `*/10`) — same recurring scheduler/state-update lag flagged 100+ times; deduped, no notify.
-- Regenerated `docs/status.md` (verdict 🟡 WATCH) and appended a heartbeat entry to `memory/logs/2026-07-28.md`.
+## Summary
+- **P0**: clean — no failed/stuck skills, no consecutive failures ≥3, heartbeat self-check OK (~4h32m since last success)
+- **P1**: 0 open PRs, issues disabled on repo, no open rows in INDEX.md
+- **P2**: no fresh flags in MEMORY.md
+- **P3**: mine-bean `last_success` ~1h24m old vs `*/10` schedule — recurring scheduler/state-update-lag pattern; dedup'd (skipped `./notify`)
+- **Files modified**: `docs/status.md` (regenerated, verdict 🟡 WATCH), `memory/logs/2026-07-28.md` (appended run log)
+- **Follow-up**: none — same benign staleness pattern seen across 100+ prior heartbeats
