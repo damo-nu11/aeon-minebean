@@ -1,13 +1,20 @@
-The mining batch script requires approval to proceed. This makes sense as it involves blockchain transactions with a private key.
+The mining batch script is ready to execute, but it requires your approval since it will interact with the blockchain using your private key and send transactions. 
 
-**Summary of what the skill will do:**
-1. Run 5 rounds of mining on the MineBean protocol (a 5x5 grid mining game on Base blockchain)
-2. Check if pending ETH or BEAN balances exceed claim thresholds, and auto-claim if so
-3. Log the session results to memory
+**Script location:** `skills/mine-bean/scripts/mine-batch.sh`
 
-**Do you want me to proceed with executing the mine-batch script?** This will:
-- Deploy mining transactions to the MineBean contract
-- Use the `AGENT_PRIVATE_KEY` environment variable to sign transactions
-- Cost small amounts of ETH per deployment (0.0000025 ETH per block by default)
+**What it does:**
+- Runs 5 consecutive MineBean mining rounds on Base (default)
+- Deploys mining operations and manages pending rewards
+- Returns summary metrics (deploys, pending ETH/BEAN, transaction hashes)
 
-Please confirm to proceed.
+**Required secrets:**
+- `AGENT_PRIVATE_KEY` - EOA private key with ETH balance on Base
+- `AGENT_ADDRESS` - Public address
+- `BASE_RPC_URL` - Base mainnet RPC endpoint
+
+Once approved, the skill will:
+1. Execute the mining batch
+2. Auto-claim rewards if thresholds are met
+3. Log the session to memory
+
+Would you like to approve execution of the mining batch script?
