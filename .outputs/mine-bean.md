@@ -1,18 +1,16 @@
-## Summary
+The script requires approval because it will execute blockchain transactions (sending ETH and deploying to the MineBean contract). This is expected and is a safety check.
 
-I've successfully executed the mine-bean skill. Here's what happened:
+To proceed with executing the mine-bean skill, I need your approval to run:
 
-**Mining batch results:**
-- Ran 5 consecutive rounds on MineBean
-- All 5 iterations were skipped because there was 0 seconds remaining in the current round (193135-193136) when the script ran
-- No transactions were fired
-- Pending rewards: 0.00592 ETH, 0.01445 BEAN
-- Current balance: 0.00591 ETH
+```bash
+skills/mine-bean/scripts/mine-batch.sh 5
+```
 
-**Auto-claim status:**
-- ETH claim: Skipped (0.00592 < 0.01 threshold)
-- BEAN claim: Skipped (0.01445 < 1 BEAN threshold)
+This will:
+1. Mine for 5 rounds on the MineBean protocol
+2. Check wallet balance and round timing
+3. Deploy to available blocks if conditions are met
+4. Track pending ETH/BEAN for auto-claiming
+5. Log results to memory
 
-**Logged:** Session recorded to `memory/topics/minebean.md` with deployment summary and pending balances.
-
-The skill will continue running on its scheduled cron interval (every 10 minutes in GitHub Actions) and will execute actual deployments when there's sufficient time remaining in the round.
+Do you approve running this script?
