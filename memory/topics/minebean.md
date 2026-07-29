@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance ~0.00591 ETH on Base
+- Wallet: configured, balance ~0.00552 ETH on Base
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 5 deploys per session (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): ~0.00592 ETH, ~0.01441 BEAN (last session: 2026-07-29 · 2 deploys, no claims triggered)
-- Last activity: 2026-07-29T07:26:55Z (session: 2 deploys, 3 skipped)
-- Agent balance: ~0.00591 ETH (⚠️ Getting low; top-up recommended before next deploy cycle)
+- Pending rewards (last check): ~0.00626 ETH, ~28.35 BEAN (last session: 2026-07-29 · 3 deploys, no claims triggered)
+- Last activity: 2026-07-29T22:15:00Z (session: 3 deploys, 2 skipped)
+- Agent balance: ~0.00552 ETH (⚠️ Getting low; top-up recommended before next deploy cycle)
 
 ## Run log
+- 2026-07-29T22:15:00Z · Session: 3 deploys, 2 skipped (rounds 193538-193540) · TXs: 0x07196fa6810d1cabd0a438af2581d09549ce6e1b0f273f56b7bd88fd941604f7,0x8fa3c67f2defb125bf41981cc63996314a3f16050aed62143c55aaf7e09cc19f,0xd4a7f466a5b69ca3e4b208e5a327264bebe5c5aeb955be5bedf2728bd2be1e92 · Pending: 0.00626 ETH, 28.35 BEAN · Balance: 0.00552 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (below 1 threshold)
 - 2026-07-29T20:01:00Z · Skill invoked in local Claude Code context (GitHub Actions environment) · Execution blocked: required mining scripts (scripts/mine-batch.sh, scripts/claim.sh) not found in repository · Status: skill ready; cron (*/10 * * * *) configured in aeon.yml; scripts must be restored or implemented before next scheduled execution
 - 2026-07-29T07:26:55Z · Session: 2 deploys, 3 skipped (rounds 192759-192760) · TXs: 0x502a5384b5f33c4220948e32dd49b2921e696d02064e3b039f48cc6873aec844,0x09717f30dffcef30f9f4922ee563013b8ce9140cf3f89e9699225908dbac91ed · Pending: 0.00592 ETH, 0.01441 BEAN · Balance: 0.00591 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (below 1 threshold)
 - 2026-07-28 (second manual invocation via user request) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: mining scripts (mine-batch.sh, claim.sh) not present in repo; blockchain secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) required · Status: skill operational and deployed in GitHub Actions environment; local execution not supported (scripts/references not in repo)
