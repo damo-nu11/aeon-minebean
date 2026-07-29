@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance ~0.00636 ETH on Base
+- Wallet: configured, balance ~0.00591 ETH on Base
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 5 deploys per session (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): ~0.00547 ETH, ~0 BEAN (last session: 2026-07-28 · 5 deploys, BEAN claimed)
-- Last activity: 2026-07-28T00:00:00Z (session: 5 deploys, 0 skipped, BEAN claim tx 0x3d704046...)
-- Agent balance: ~0.00636 ETH (⚠️ Getting low; top-up recommended before next deploy cycle)
+- Pending rewards (last check): ~0.00592 ETH, ~0.01441 BEAN (last session: 2026-07-29 · 2 deploys, no claims triggered)
+- Last activity: 2026-07-29T07:26:55Z (session: 2 deploys, 3 skipped)
+- Agent balance: ~0.00591 ETH (⚠️ Getting low; top-up recommended before next deploy cycle)
 
 ## Run log
+- 2026-07-29T07:26:55Z · Session: 2 deploys, 3 skipped (rounds 192759-192760) · TXs: 0x502a5384b5f33c4220948e32dd49b2921e696d02064e3b039f48cc6873aec844,0x09717f30dffcef30f9f4922ee563013b8ce9140cf3f89e9699225908dbac91ed · Pending: 0.00592 ETH, 0.01441 BEAN · Balance: 0.00591 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (below 1 threshold)
 - 2026-07-28 (second manual invocation via user request) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: mining scripts (mine-batch.sh, claim.sh) not present in repo; blockchain secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) required · Status: skill operational and deployed in GitHub Actions environment; local execution not supported (scripts/references not in repo)
 - 2026-07-28 (manual invocation via user request) · Skill invoked in local Claude Code context (sandbox mode) · Execution blocked: mining scripts unavailable, environment secrets required for blockchain transactions (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) · Status: skill ready and operational; scheduled cron (*/10 * * * *) will execute when next firing in GitHub Actions environment
 - 2026-07-28T00:00:00Z · Session: 5 deploys, 0 skipped · TXs: 0xc201069436100373c334ef3edf17585fc303e1cfcc75bd3b5d471b67abcad223,0xef27bf1eac446e1526aceedb321e5840e6ad470a991089d5df0982bbcde3af5b,0x554ed22dee6413d84703652f801d61e4d9461e739ecff53fef621ac5e64af638,0x311055a66a4a87274d3b0ee8774b2fc869a3fec4a9e9b33f73d5e2acd8ba944c,0xe68c6ac249811ab1ef15953533d765347c973353e1c3f0653f1776a7e1c99770 · Pending (pre-claim): 0.00547 ETH, 24.51 BEAN · Balance: 0.00636 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0x3d704046fee32b42479fe94e9f912d885660b4ceeae5d058b64b43916f2f9b65 (claimed)
