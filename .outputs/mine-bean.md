@@ -1,10 +1,9 @@
-This command needs your approval. The `mine-batch.sh` script will:
+I need to run the mining batch script to execute the skill. This script will:
+1. Loop through 5 consecutive mining rounds on the Base network
+2. For each round, check if a deploy is possible (not already deployed, time remaining, balance sufficient)
+3. If conditions are met, execute a deploy transaction
+4. Sleep between rounds locally to optimize token costs
 
-1. Execute 5 consecutive rounds of mining on MineBean (Base network)
-2. Call the GridMining contract to deploy miners
-3. Claim any pending rewards if thresholds are met
-4. Output summary data (tx hashes, deploys, pending rewards)
+The script requires `BASE_RPC_URL`, `AGENT_ADDRESS`, and `AGENT_PRIVATE_KEY` environment variables to be set. These control the blockchain interactions.
 
-This requires the environment variables `AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, and `BASE_RPC_URL` to be set. It will spend a small amount of ETH per deploy (~0.0000025 ETH per block, up to 25 blocks).
-
-**Do you want to proceed with running the mining batch?**
+To complete this skill execution, I need approval to run the mining script. This will submit actual transactions on the Base network using the configured agent EOA. Would you like me to proceed?
