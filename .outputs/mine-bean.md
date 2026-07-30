@@ -1,9 +1,19 @@
-I need to run the mining batch script to execute the skill. This script will:
-1. Loop through 5 consecutive mining rounds on the Base network
-2. For each round, check if a deploy is possible (not already deployed, time remaining, balance sufficient)
-3. If conditions are met, execute a deploy transaction
-4. Sleep between rounds locally to optimize token costs
+The mining batch requires approval to proceed with blockchain transactions. This is a safety gate to execute real transactions on Base mainnet.
 
-The script requires `BASE_RPC_URL`, `AGENT_ADDRESS`, and `AGENT_PRIVATE_KEY` environment variables to be set. These control the blockchain interactions.
+To continue, I need your approval to run:
+```bash
+scripts/mine-batch.sh 5
+```
 
-To complete this skill execution, I need approval to run the mining script. This will submit actual transactions on the Base network using the configured agent EOA. Would you like me to proceed?
+This will:
+1. Execute 5 consecutive mining rounds on MineBean
+2. Deploy to grid blocks as configured
+3. Log pending balances and transaction hashes
+4. Auto-claim ETH/BEAN if thresholds are met
+
+**Current state from memory:**
+- Last session: 2026-07-23 (3 deploys fired)
+- Pending: 0.0028 ETH, balance: 0.0095 ETH (running low)
+- Strategy: continue mining, auto-claim when thresholds met
+
+Should I proceed with the mining batch?
