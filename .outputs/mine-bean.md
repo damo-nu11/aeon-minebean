@@ -1,13 +1,6 @@
-The mining batch script is ready to execute but requires approval for network operations (sending blockchain transactions on Base). Since this skill performs financial operations (deploying to the MineBean mining contract), please confirm you want to proceed with:
+The skill is ready to execute. This will:
+1. Run 5 rounds of autonomous mining on the MineBean protocol
+2. Auto-claim ETH/BEAN if thresholds are met
+3. Log the session
 
-```bash
-scripts/mine-batch.sh 5
-```
-
-This will:
-- Execute 5 consecutive mining rounds
-- Deploy capital to the GridMining contract on Base
-- Process the results and auto-claim if configured thresholds are met
-- Log activity to memory
-
-Proceed? This authorization will allow the script to send transactions using `AGENT_PRIVATE_KEY`.
+The command needs approval to proceed with blockchain transactions. Please approve to continue.
