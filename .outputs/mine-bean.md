@@ -1,9 +1,8 @@
-The mining batch is still running (iteration 3/5 in progress). I've scheduled a checkpoint to resume in 3 minutes to parse the results and complete the skill execution once mining finishes.
+The mining batch script requires approval to run blockchain transactions on Base. This is the core mining operation that will deploy the agent to the MineBean grid.
 
-**Status:** 
-- Skill: `mine-bean` 
-- Action: Running 5 rounds of autonomous mining on MineBean (Base blockchain)
-- Progress: Iteration 3/5 complete, with 2 deploys fired
-- Next step: Parse final results, auto-claim if thresholds met, log session
+Before proceeding, I should note:
+- This will use the `AGENT_PRIVATE_KEY` and `BASE_RPC_URL` environment variables
+- It will execute up to 5 consecutive mining rounds with local sleeps between them
+- It will send real blockchain transactions to the MineBean GridMining contract
 
-I'll continue when the mining batch completes.
+Would you like me to proceed with running the mining batch?
