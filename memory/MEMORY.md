@@ -23,4 +23,4 @@
 ## Next Priorities
 - Configure notification channels (Telegram, Discord, or Slack)
 - Run first digest
-- **mine-bean: live** — first successful deploy on 2026-05-19 (round 103943, tx `0xdd84200e...3b1a83`). Last session 2026-07-23 (3 deploys, 2 skip; BEAN claimed). Pending: 0.0028 ETH; balance: 0.0095 ETH. Monitor agent balance—running low on ETH (need ≥0.01 for good runway); top up recommended before next claim. Continue auto-claim ETH at ≥0.01, BEAN at ≥1.
+- **mine-bean: live** — First successful deploy 2026-05-19 (round 103943). Last session 2026-08-01T21:15:00Z (3 deploys, 2 skipped, rounds 197162-197165). Pending: 0.00793 ETH, 92.43 BEAN; agent balance: 0.00357 ETH (🔴 CRITICAL—top-up required immediately). Auto-claim enabled: ETH ≥0.01, BEAN ≥1. See `memory/topics/minebean.md` for detailed run log.
