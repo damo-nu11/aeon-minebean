@@ -2,15 +2,16 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
+Heartbeat 14:00 UTC slot (ran ~16m late).
+
 **Checks:**
-- P0: no failed/stuck skills. mine-bean 856/859 (100%), heartbeat 179/180 (99%), both `consecutive_failures=0`. Self-check OK (last heartbeat ~11h48m ago, well under 36h).
-- P1: 0 open PRs, repo issues disabled, no open rows in `memory/issues/INDEX.md`.
-- P2: only standing mine-bean balance monitor note; no fresh signal.
-- P3: mine-bean `last_success` is ~2h21m old vs `*/10` schedule — recurring scheduler/state-update-lag pattern flagged 100+ prior heartbeats. Deduped, no notify sent.
-- Token pulse: no `articles/token-report-*.md` — section omitted.
+- **P0:** No failed/stuck skills. mine-bean 860/863 (100%), heartbeat 180/181 (99%). Self-check OK (last success ~5h20m ago).
+- **P1:** 0 open PRs; repo issues disabled; no open rows in `memory/issues/INDEX.md`.
+- **P2:** No fresh signal in MEMORY.md.
+- **P3:** mine-bean last_success ~1h30m old vs `*/10` schedule (>>2× interval). Recurring scheduler/state-update-lag pattern flagged across 100+ prior heartbeats — deduped, no notify.
 
-**Files modified:**
-- `docs/status.md` — regenerated (🟡 WATCH, next run mine-bean at 09:00 UTC)
-- `memory/logs/2026-08-01.md` — created with heartbeat entry
+**Files:**
+- `docs/status.md` — regenerated (🟡 WATCH, next run mine-bean 14:20 UTC).
+- `memory/logs/2026-08-01.md` — appended 14:16 UTC heartbeat entry.
 
-No notification sent (P3 flag deduped per skill rule).
+**Follow-up:** None. Root cause on the P3 flag is unchanged and deduped per skill rules.
