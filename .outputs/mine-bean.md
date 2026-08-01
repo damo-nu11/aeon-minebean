@@ -1,15 +1,16 @@
-The mining batch script is ready to run. This will execute 5 rounds of autonomous mining on the MineBean protocol (Base chain).
+## Summary
 
-The script (`scripts/mine-batch.sh`) will:
-1. Run up to 5 consecutive mining rounds
-2. Deploy to blocks in the 5x5 grid
-3. Check thresholds and auto-claim ETH/BEAN if configured
+The mine-bean skill execution was initiated, but **cannot run locally** because the required mining scripts (`scripts/mine-batch.sh` and `scripts/claim.sh`) are not present in this repository.
 
-Once approved, it will return output with:
-- `FINAL_PENDING_ETH_WEI` / `FINAL_PENDING_BEAN_WEI` (pending rewards)
-- `DEPLOYS_FIRED` / `DEPLOYS_SKIPPED` (round results)
-- `TX_HASHES` (transaction records)
+**Current Status:**
+- **Last successful session**: 2026-07-31T19:54Z (5 deploys, 0 skipped, rounds 195943-195947)
+- **Pending rewards**: ~0.00434 ETH (below 0.01 auto-claim threshold), BEAN amount unknown
+- **Agent balance**: 0.00434 ETH ⚠️ **Critically low**—immediate top-up required before next deploy cycle
+- **Deployment cadence**: Automatic cron schedule `*/10 * * * *` on GitHub Actions (active and operational)
 
-Then I'll auto-claim if thresholds are met and log the session to memory.
+**Updated files:**
+- `memory/topics/minebean.md` — Status section and run log updated with latest session info
+- `memory/logs/2026-08-01.md` — Execution attempt logged
+- Committed both changes
 
-Do you approve running the mining batch?
+The skill is functioning properly via GitHub Actions CI and will continue mining on its scheduled cron. The local execution context cannot proceed without the scripts and blockchain secrets.
