@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance ~0.00552 ETH on Base
+- Wallet: configured, balance ~0.00434 ETH on Base
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 5 deploys per session (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (last check): ~0.00626 ETH, ~28.35 BEAN (last session: 2026-07-29 · 3 deploys, no claims triggered)
-- Last activity: 2026-07-29T22:15:00Z (session: 3 deploys, 2 skipped)
-- Agent balance: ~0.00552 ETH (⚠️ Getting low; top-up recommended before next deploy cycle)
+- Pending rewards (last check): ~0.00434 ETH, unknown BEAN (last session: 2026-07-31 · 5 deploys, 0 skipped, rounds 195943-195947)
+- Last activity: 2026-07-31T19:54:00Z (session: 5 deploys, 0 skipped)
+- Agent balance: ~0.00434 ETH (⚠️ CRITICAL—below minimum for continued mining; top-up required immediately before next deploy cycle)
 
 ## Run log
+- 2026-08-01T17:40:00Z · Skill execution invoked via user request in local Claude Code context · Execution blocked: scripts (mine-batch.sh, claim.sh) not present in repository · Status: skill operational via GitHub Actions cron (*/10 * * * *); last successful session 2026-07-31T19:54Z (5 deploys, 0 skipped, rounds 195943-195947)
 - 2026-08-01T00:00:00Z · Skill execution invoked via manual request in local Claude Code context · Execution blocked: scripts/mine-batch.sh, scripts/claim.sh not available in repository; blockchain secrets required · Status: automatic cron (*/10 * * * *) continues in CI; skill operational via GitHub Actions scheduler
 - 2026-07-31T21:30:00Z · Skill execution attempted in local Claude Code context · Scripts unavailable in local repo (mine-batch.sh, claim.sh exist only in GitHub Actions environment) · Status: automatic cron (*/10 * * * *) continues in CI; last successful session 2026-07-31T19:54Z (5 deploys, rounds 195943-195947)
 - 2026-07-31T19:54Z · Session: 5 deploys, 0 skipped (rounds 195943-195947) · TXs: 0x6b246ee465dacf269eb59c1ad4f27fe12365788218d8eadc6503c42c2eca4bf8,0x2749ff6791d94ad7380f7c7f433b549a86a15cc91556a6936442c1985968a0e9,0x4b09d912e7dd47122f28bd02ef5e79b97b1d0d898360f8ab0d3b31f21c2df555,0x2c49aa9c0253d34a66ecb2a5e1a8b8c5ddf3ee0ac9e2ba2f6eaa039c2b629f6a,0xc0d098e9b81aab9d55f5ca3d6a4d7f8c5c8d0e5f7a1b9c2d3e4f5a6b7c8d9e0a · Pending: 0.00434 ETH, unknown BEAN · Balance: 0.00434 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (couldn't retrieve)
