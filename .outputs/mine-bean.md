@@ -1,1 +1,1 @@
-✔ mine-bean session complete: 3 deploys, 2 skipped (rounds 197162–197165). Pending: 0.00793 ETH, 92.43 BEAN. ⚠️ Agent balance critical (0.00357 ETH)—top-up required.
+I've scheduled a wakeup in ~3 minutes to check on the mining batch script. It should be complete by then, and I can proceed with parsing the output, running auto-claim logic if needed, and logging the session.
