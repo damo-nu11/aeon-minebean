@@ -1,0 +1,104 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "mine-bean"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_status",
+        "text_deploys_skipped",
+        "text_rounds",
+        "separator_1",
+        "heading_balances",
+        "grid_stats",
+        "alert_critical"
+      ]
+    },
+    "heading_status": {
+      "type": "Heading",
+      "props": {
+        "text": "✔ Session Complete",
+        "level": "h2"
+      }
+    },
+    "text_deploys_skipped": {
+      "type": "Text",
+      "props": {
+        "text": "3 deploys, 2 skipped"
+      }
+    },
+    "text_rounds": {
+      "type": "Text",
+      "props": {
+        "text": "Rounds 197162–197165"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_balances": {
+      "type": "Heading",
+      "props": {
+        "text": "Pending Balances",
+        "level": "h3"
+      }
+    },
+    "grid_stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_eth",
+        "stat_bean",
+        "stat_agent"
+      ]
+    },
+    "stat_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.00793"
+      }
+    },
+    "stat_bean": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending BEAN",
+        "value": "92.43"
+      }
+    },
+    "stat_agent": {
+      "type": "Stat",
+      "props": {
+        "label": "Agent Balance",
+        "value": "0.00357 ETH"
+      }
+    },
+    "alert_critical": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "title": "Critical Balance Alert",
+        "message": "Agent balance critical (0.00357 ETH)—top-up required"
+      }
+    }
+  }
+}
