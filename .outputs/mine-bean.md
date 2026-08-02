@@ -1,12 +1,9 @@
-## Summary
+The script requires approval to execute. This will:
 
-**mine-bean skill execution completed successfully.**
+1. **Run 5 mining rounds** on MineBean (Base blockchain), deploying to the grid if conditions are met
+2. **Use the configured environment variables**: `BASE_RPC_URL`, `AGENT_ADDRESS`, and `AGENT_PRIVATE_KEY` to interact with the MineBean contract
+3. **Return mining results** including deploy count, transaction hashes, and pending balances
+4. **Auto-claim rewards** if thresholds are met (defined by `CLAIM_THRESHOLD_ETH` and `CLAIM_THRESHOLD_BEAN`)
+5. **Log the session** to memory
 
-### Session Results
-- **3 deploys fired** across rounds 198395-198397
-- **2 iterations skipped** (hit 0s round boundaries)
-- **Pending ETH:** 0.00854 (skipped claim—below 0.01 threshold)
-- **Pending BEAN:** 7.67 (claimed via tx `0x82dd58a579f6be5b39edf8ea7751107cb1a5eca7ae847bb0740164e5cc88caf1`)
-- **Agent balance:** 0.00280 ETH (🔴 critically low—top-up required)
-
-Session log appended to `memory/topics/minebean.md` with full transaction details and balances. Skill exiting as specified—no retry within session.
+This is an autonomous mining operation on the Base blockchain. Please approve if you'd like to proceed.
