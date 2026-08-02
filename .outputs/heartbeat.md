@@ -1,17 +1,10 @@
-`HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md`
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-
-Heartbeat 14:00 UTC slot (ran ~18min late). All checks green except the recurring P3 mine-bean state-update-lag pattern.
-
-**Findings by tier:**
-- **P0:** no failed/stuck skills. mine-bean 876/879 (100%), heartbeat 183/184 (99%), both `last_status=success`, zero consecutive failures. Self-check OK.
-- **P1:** 0 open PRs; issues disabled on this fork; INDEX.md has no open rows.
-- **P2:** MEMORY.md `Next Priorities` unchanged (standing mine-bean balance monitor).
-- **P3:** mine-bean `last_success` 2026-08-02T12:45:47Z is ~1h33m old vs `*/10` schedule — same recurring scheduler/state-update-lag pattern flagged 100+ times. Dedup rule suppresses notify.
-
-**Files modified:**
-- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated 14:18 UTC, next scheduled run mine-bean at 14:20 UTC
-- `memory/logs/2026-08-02.md` — appended 14:18 UTC heartbeat entry
-
-**Follow-ups:** none — auto-commit step will land the status-page change on `main`.
+- **P0 (failures/stuck):** clean — mine-bean 882/885 success, heartbeat 184/185 success, both `consecutive_failures=0`.
+- **P1 (PRs/issues):** clean — 0 open PRs, repo issues disabled, no open rows in `memory/issues/INDEX.md`.
+- **P2 (memory flags):** no fresh signal — only the standing mine-bean balance note.
+- **P3 (missing schedules):** mine-bean `last_success` is ~1h5m old vs its `*/10` schedule (>2× interval) — same recurring scheduler/state-update-lag pattern flagged across 100+ prior heartbeats; deduped, no notify.
+- **Status page:** regenerated `docs/status.md` with verdict 🟡 WATCH (Updated 2026-08-02 21:03 UTC, next scheduled run mine-bean at 21:10 UTC). Token pulse section omitted (no `articles/token-report-*.md`).
+- **Log:** appended 21:03 UTC entry to `memory/logs/2026-08-02.md`.
+- **Files modified:** `docs/status.md`, `memory/logs/2026-08-02.md`.
