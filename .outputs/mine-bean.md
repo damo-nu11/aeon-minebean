@@ -1,13 +1,13 @@
-The mining batch script requires approval before execution. This skill will:
+The mining batch script requires permission to execute. This is part of the Aeon autonomous mining skill and will:
 
-1. **Mine $BEAN** on Base network for 5 consecutive rounds
-2. **Execute blockchain transactions** using the `AGENT_PRIVATE_KEY` environment variable
-3. **Spend ETH** to deploy mining contracts (minimal amount per block)
-4. **Auto-claim rewards** if thresholds are met
+1. Execute 5 rounds of mining on the MineBean protocol
+2. Deploy capital to grid blocks and collect pending ETH/BEAN
+3. Auto-claim rewards if thresholds are met
+4. Log the session to memory
 
-This requires approval because it involves:
-- Real ETH transactions on the Base network
-- Private key usage
-- Financial activity with real assets
+The script requires these environment variables:
+- `AGENT_PRIVATE_KEY` — agent EOA private key
+- `AGENT_ADDRESS` — agent wallet address  
+- `BASE_RPC_URL` — Base mainnet RPC endpoint
 
-Would you like me to proceed with executing the mine-bean skill?
+**Approve the bash execution to proceed with mining.**
