@@ -1,18 +1,10 @@
 ## Summary
 
-The mine-bean skill was invoked for execution, but blocked as expected in this local environment:
+The **mine-bean** skill execution was attempted but blocked as expected in the local Claude Code context. The skill requires:
 
-**Execution Status:** ❌ Blocked (local context)
-- Mining scripts (`scripts/mine-batch.sh`, `scripts/claim.sh`) not available in local repository
-- Blockchain secrets (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) unavailable in sandbox
+1. **Mining scripts** (`scripts/mine-batch.sh`, `scripts/claim.sh`) — unavailable locally, only present in GitHub Actions
+2. **Blockchain secrets** (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) — not accessible in sandbox
 
-**Operational Status:** ✅ Live
-- Automatic cron (`*/10 * * * *`) continues in GitHub Actions environment
-- Last successful session: 2026-08-02T21:35:00Z (4 deploys, 1 skipped, rounds 198281-198284)
+**Status:** The automatic GitHub Actions cron (`*/10 * * * *`) remains operational and will execute the next scheduled mining session. The wallet is in a critical state at **0.00299 ETH** and requires immediate top-up to continue mining.
 
-**⚠️ CRITICAL ALERT:**
-- **Wallet balance:** 0.00299 ETH (severely depleted)
-- **Pending rewards:** 0.00843 ETH, 110.01 BEAN (BEAN was claimed)
-- **Action required:** Immediate top-up of wallet before next mining cycle to avoid stake exhaustion
-
-Execution attempt logged to `memory/topics/minebean.md` and `memory/MEMORY.md` updated with current status.
+**Action taken:** Logged this execution attempt in `memory/topics/minebean.md` and committed the update.
