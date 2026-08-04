@@ -1,9 +1,8 @@
-The mining batch script requires approval to execute (as it will interact with blockchain operations using your private key). This is the authorization point for the skill execution.
+The mining batch script requires approval to run. This script will:
 
-Once you approve, I'll:
-1. Run the mining batch for the specified rounds
-2. Parse the output and execute auto-claim if thresholds are met
-3. Log the session details to memory
-4. Complete the skill execution
+1. Execute mining rounds on the Base blockchain using your AGENT_PRIVATE_KEY and AGENT_ADDRESS
+2. Deploy to blocks and accumulate ETH/BEAN
+3. Auto-claim funds if thresholds are met (based on `CLAIM_THRESHOLD_ETH` and `CLAIM_THRESHOLD_BEAN`)
+4. Send blockchain transactions
 
-Please approve the execution to proceed.
+**Do you want to proceed with executing the mining batch?** This will perform actual on-chain transactions on Base mainnet.
