@@ -1,14 +1,13 @@
-The skill execution requires approval to proceed. This script will:
+The mining batch script requires approval to run. This will:
 
-1. **Run the mining batch** — Execute 5 rounds of autonomous mining on MineBean (GridMining on Base)
-2. **Auto-claim if thresholds met** — Claim pending rewards (ETH ≥0.01, BEAN ≥1)
-3. **Log the session** — Record deploy counts and transaction hashes
+1. Execute 5 rounds of autonomous mining on MineBean (Base blockchain)
+2. Deploy capital to grid blocks and process round results
+3. Auto-claim pending ETH/BEAN if thresholds are met
+4. Log the session to memory
 
-**Current wallet status:**
-- Balance: 0.00299 ETH (🔴 **CRITICAL DEPLETION** — this is well below the recommended operating balance)
-- Pending rewards from last session: 0.00843 ETH, 110.01 BEAN
-- Last successful session: 2026-08-02 (4 deploys, 1 skipped)
+**Before proceeding, I need to confirm:**
+- The `AGENT_PRIVATE_KEY` environment variable is configured with your EOA's private key
+- The `AGENT_ADDRESS` and `BASE_RPC_URL` are set
+- You have a funded EOA on Base with sufficient ETH for gas
 
-**⚠️ Warning:** The wallet balance is severely depleted. Mining may fail if the 5 rounds exceed available balance (25 blocks × 0.0000025 ETH = ~0.0000625 ETH per round).
-
-Proceed with mining? The system will prompt for transaction approval.
+Do you want me to proceed with running the mining batch?
