@@ -1,8 +1,17 @@
-The mining batch script requires approval to run. This script will:
+## Summary
 
-1. Execute mining rounds on the Base blockchain using your AGENT_PRIVATE_KEY and AGENT_ADDRESS
-2. Deploy to blocks and accumulate ETH/BEAN
-3. Auto-claim funds if thresholds are met (based on `CLAIM_THRESHOLD_ETH` and `CLAIM_THRESHOLD_BEAN`)
-4. Send blockchain transactions
+**Skill: mine-bean**  
+**Status:** Execution blocked (local context)
 
-**Do you want to proceed with executing the mining batch?** This will perform actual on-chain transactions on Base mainnet.
+The mine-bean skill is designed to run in the GitHub Actions environment where:
+- Mining scripts (`scripts/mine-batch.sh`, `scripts/claim.sh`) are deployed
+- Blockchain secrets (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) are available
+
+**Current environment:** Local Claude Code sandbox (scripts and secrets unavailable)
+
+**What I did:**
+- Checked for mining scripts → not found (expected in local context)
+- Logged this execution attempt to `memory/topics/minebean.md`
+- Noted critical wallet status: **0.00299 ETH** (severely depleted)
+
+**Action needed:** The automatic cron (`*/10 * * * *`) will handle the next mining round in GitHub Actions. Before that executes, the wallet **must be topped up** to avoid stake exhaustion during deploys (default: 0.0000625 ETH per 5-round session).
