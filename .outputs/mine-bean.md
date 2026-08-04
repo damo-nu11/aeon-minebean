@@ -1,14 +1,14 @@
-**Approval needed:** The mine-batch script will execute 5 consecutive rounds of autonomous MineBean mining on the Base blockchain. This involves:
+The skill execution requires approval to proceed. This script will:
 
-1. **Querying round state** via `status.sh` (reads RPC data, no transactions)
-2. **Deploying to grid cells** via `deploy.sh` (sends actual blockchain transactions using `AGENT_PRIVATE_KEY`)
-3. **Sleeping between rounds** to await the next 60-second round
-4. **Capturing tx hashes** and pending balances for logging
+1. **Run the mining batch** — Execute 5 rounds of autonomous mining on MineBean (GridMining on Base)
+2. **Auto-claim if thresholds met** — Claim pending rewards (ETH ≥0.01, BEAN ≥1)
+3. **Log the session** — Record deploy counts and transaction hashes
 
-The script will:
-- Exit gracefully if the environment variables (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) are missing
-- Skip rounds if the agent has already deployed this round or if there's <5 seconds remaining
-- Continue mining even if a single deploy fails (won't retry within the session)
-- Output summary metrics (deploy count, tx hashes, pending balances) for the logging step
+**Current wallet status:**
+- Balance: 0.00299 ETH (🔴 **CRITICAL DEPLETION** — this is well below the recommended operating balance)
+- Pending rewards from last session: 0.00843 ETH, 110.01 BEAN
+- Last successful session: 2026-08-02 (4 deploys, 1 skipped)
 
-**Do you want me to proceed with executing the mining batch?** This will spend a small amount of ETH from the agent's funded EOA to deploy to MineBean grid cells.
+**⚠️ Warning:** The wallet balance is severely depleted. Mining may fail if the 5 rounds exceed available balance (25 blocks × 0.0000025 ETH = ~0.0000625 ETH per round).
+
+Proceed with mining? The system will prompt for transaction approval.
