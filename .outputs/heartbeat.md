@@ -1,11 +1,19 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
+HEARTBEAT_OK · STATUS_PAGE=WATCH
 
 ## Summary
 
-- **P0**: Clean. mine-bean (893/896 successes, last success 2026-08-03T19:58:09Z ~1h5m ago) and heartbeat (185/186, last success ~24h ago, under 36h threshold).
-- **P1**: 0 open PRs, no urgent issues, INDEX.md has no open rows.
-- **P2**: Standing mine-bean balance flag from MEMORY.md — no fresh signal.
-- **P3**: mine-bean last_success is ~1h5m old vs `*/10` cron (>2× interval) — recurring scheduler/state-update-lag pattern flagged in 100+ prior runs; dedup rule → skip `./notify`.
-- **Token pulse**: no `articles/token-report-*.md` present — section omitted.
-- **Files touched**: `docs/status.md` (verdict 🟡 WATCH, updated timestamps to 2026-08-03 21:03 UTC), `memory/logs/2026-08-03.md` (appended 21:03 heartbeat entry).
-- **Follow-up**: none; wallet top-up remains the standing operator action (ETH balance ~0.00299 as of last mine-bean session log).
+Executed the heartbeat skill against current fleet state.
+
+**Findings:**
+- **P0 (failed/stuck):** clean — mine-bean success_rate=1.0 (901/904), heartbeat success_rate=0.99 (186/187), no stuck dispatches, no consecutive failures. Self-check OK (heartbeat last_success ~17h ago, under 36h).
+- **P1 (PRs/issues):** 0 open PRs; repo has issues disabled; no open rows in `memory/issues/INDEX.md`.
+- **P2 (memory flags):** standing mine-bean wallet balance monitor — no fresh signal.
+- **P3 (missing scheduled):** mine-bean last_success 2026-08-04T12:10:31Z (~2h30m old vs `*/10` schedule; >2× interval). Same recurring scheduler/state-update-lag pattern already flagged 100+ times.
+- **Token pulse:** no `articles/token-report-*.md` present — section omitted.
+- **Dedup:** P3 staleness flag already logged 100+ times within 48h → skipped `./notify`.
+
+**Files written:**
+- `docs/status.md` — verdict 🟡 WATCH, updated 2026-08-04 14:40 UTC
+- `memory/logs/2026-08-04.md` — new day log with heartbeat entry
+
+**Follow-ups:** none new; the recurring mine-bean state-lag pattern is a known scheduler quirk, not an operational issue.
