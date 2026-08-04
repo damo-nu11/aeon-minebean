@@ -2,18 +2,12 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH
 
 ## Summary
 
-Executed the heartbeat skill against current fleet state.
+Ran heartbeat's priority checks and regenerated the public status page.
 
-**Findings:**
-- **P0 (failed/stuck):** clean — mine-bean success_rate=1.0 (901/904), heartbeat success_rate=0.99 (186/187), no stuck dispatches, no consecutive failures. Self-check OK (heartbeat last_success ~17h ago, under 36h).
-- **P1 (PRs/issues):** 0 open PRs; repo has issues disabled; no open rows in `memory/issues/INDEX.md`.
-- **P2 (memory flags):** standing mine-bean wallet balance monitor — no fresh signal.
-- **P3 (missing scheduled):** mine-bean last_success 2026-08-04T12:10:31Z (~2h30m old vs `*/10` schedule; >2× interval). Same recurring scheduler/state-update-lag pattern already flagged 100+ times.
-- **Token pulse:** no `articles/token-report-*.md` present — section omitted.
-- **Dedup:** P3 staleness flag already logged 100+ times within 48h → skipped `./notify`.
-
-**Files written:**
-- `docs/status.md` — verdict 🟡 WATCH, updated 2026-08-04 14:40 UTC
-- `memory/logs/2026-08-04.md` — new day log with heartbeat entry
-
-**Follow-ups:** none new; the recurring mine-bean state-lag pattern is a known scheduler quirk, not an operational issue.
+- **P0**: no failed or stuck skills. mine-bean 904/907 (100%), heartbeat 187/188 (99%), both `last_status=success`. Self-check clean (last heartbeat 5h22m ago, under 36h threshold).
+- **P1**: 0 open PRs; repo issues disabled; no open rows in `memory/issues/INDEX.md`.
+- **P2**: no fresh signal on the mine-bean wallet-balance follow-up in MEMORY.md.
+- **P3**: mine-bean `last_success` (2026-08-04T18:15:18Z) is ~1h47m old vs `*/10` schedule — recurring scheduler/state-update-lag pattern flagged in 100+ prior heartbeats. Deduped per skill rule — no notification.
+- **Token pulse**: no `articles/token-report-*.md` present — section omitted.
+- **Files modified**: `docs/status.md` (regenerated with verdict 🟡 WATCH), `memory/logs/2026-08-04.md` (appended 20:03 UTC run).
+- **Follow-up**: none from this run; wallet-balance monitor remains a standing item.
