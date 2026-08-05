@@ -1,13 +1,11 @@
-HEARTBEAT_OK · STATUS_PAGE=WATCH
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Ran heartbeat's priority checks and regenerated the public status page.
+Ran the heartbeat skill. All P0/P1/P2 checks clean: no failed/stuck skills, no open PRs, issues disabled on repo, no open filed issues. P3 flagged mine-bean staleness (last_success ~2h24m vs `*/10` schedule) — same recurring scheduler/state-update-lag pattern documented across 100+ prior heartbeats, so `./notify` skipped per dedup rule.
 
-- **P0**: no failed or stuck skills. mine-bean 904/907 (100%), heartbeat 187/188 (99%), both `last_status=success`. Self-check clean (last heartbeat 5h22m ago, under 36h threshold).
-- **P1**: 0 open PRs; repo issues disabled; no open rows in `memory/issues/INDEX.md`.
-- **P2**: no fresh signal on the mine-bean wallet-balance follow-up in MEMORY.md.
-- **P3**: mine-bean `last_success` (2026-08-04T18:15:18Z) is ~1h47m old vs `*/10` schedule — recurring scheduler/state-update-lag pattern flagged in 100+ prior heartbeats. Deduped per skill rule — no notification.
-- **Token pulse**: no `articles/token-report-*.md` present — section omitted.
-- **Files modified**: `docs/status.md` (regenerated with verdict 🟡 WATCH), `memory/logs/2026-08-04.md` (appended 20:03 UTC run).
-- **Follow-up**: none from this run; wallet-balance monitor remains a standing item.
+**Files modified:**
+- `docs/status.md` — regenerated with verdict 🟡 WATCH, updated to 2026-08-05 14:32 UTC
+- `memory/logs/2026-08-05.md` — created with heartbeat log entry
+
+**Follow-up:** Standing mine-bean wallet top-up (0.00299 ETH) remains flagged in MEMORY.md — operator action, no autonomous remedy.
