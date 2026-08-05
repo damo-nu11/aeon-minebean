@@ -1,13 +1,21 @@
-The mining batch script is ready to execute but requires approval. This will run 5 consecutive rounds of MineBean mining on Base, deploying to the grid and collecting rewards. The script will:
+The mining script requires approval to run. This makes sense as it will perform blockchain operations on Base. 
 
-1. Execute the mining rounds
-2. Return metrics on deploys, transactions, and pending rewards
-3. Allow auto-claiming if reward thresholds are met
+The skill execution requires:
+1. **Environment variables** to be set:
+   - `BASE_RPC_URL` — Base mainnet RPC endpoint
+   - `AGENT_ADDRESS` — Public address of the agent EOA
+   - `AGENT_PRIVATE_KEY` — Private key of the agent (stored as a GitHub Actions secret)
 
-The command needs your approval to proceed:
+2. **Script execution** in order:
+   - Run `skills/mine-bean/scripts/mine-batch.sh 5` to mine for 5 rounds
+   - Parse output for `FINAL_PENDING_ETH_WEI`, `FINAL_PENDING_BEAN_WEI`, etc.
+   - Auto-claim if thresholds are met via `claim.sh`
+   - Log results to `memory/topics/minebean.md`
 
-```bash
-scripts/mine-batch.sh 5
-```
+**Would you like me to proceed with running the mining script?** This will:
+- Execute mining transactions on the Base blockchain
+- Deploy $BEAN mining positions across blocks
+- Use the configured agent wallet's ETH balance
+- Track the session in memory
 
-Once approved, I'll parse the output, handle any auto-claims, and log the session to memory.
+The script includes safety checks for low balance, round timing, and duplicate deployments.
