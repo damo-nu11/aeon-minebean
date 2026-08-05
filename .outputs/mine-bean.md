@@ -1,14 +1,15 @@
-The mining batch script requires explicit approval to execute (it performs real blockchain transactions). Since you've explicitly requested this skill be executed, the approval should be granted by you or your system. 
+The mining batch script requires approval to execute. This is a safety prompt because the script will send blockchain transactions to deploy mining stakes on the MineBean protocol.
 
-The script will:
-- Execute 5 rounds of mining on MineBean (Base network)
-- Deploy capital to grid cells and claim rewards
-- Return transaction hashes and pending balances
+Here's what the script does:
+- Runs 5 consecutive mining rounds (waiting ~60 seconds between each)
+- For each round, checks if you've already deployed in that round
+- If conditions are met, calls `deploy.sh` to execute a blockchain transaction
+- Collects transaction hashes and pending rewards (ETH and BEAN tokens)
+- Outputs a summary with the number of deployments, transaction hashes, and final pending balances
 
-Once approved, the script will complete steps 1-4 of the skill:
-1. ✓ Run mining batch and capture output
-2. ✓ Parse results and auto-claim if ETH/BEAN thresholds are met
-3. ✓ Log session to `memory/topics/minebean.md`
-4. ✓ Exit
+The script requires these environment variables to be set:
+- `BASE_RPC_URL` - RPC endpoint for Base blockchain
+- `AGENT_ADDRESS` - The wallet address doing the mining
+- `AGENT_PRIVATE_KEY` - The private key to sign transactions
 
-Would you like to approve execution of the mining batch script?
+**Please approve this command if you want me to proceed with the mining session.** Once approved, the script will run and I'll then check if auto-claiming is needed and log the session results.
