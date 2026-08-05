@@ -1,13 +1,14 @@
 ## Summary
 
-**Skill Status:** The `mine-bean` skill read successfully and is fully operational.
+The **mine-bean** skill invocation is blocked in the local Claude Code sandbox due to unavailable blockchain secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY). These secrets are only accessible in the GitHub Actions environment.
 
-**Execution Result:** Cannot run in this local sandbox environment.
+**Status:**
+- ✅ Skill scripts verified present in `skills/mine-bean/scripts/`
+- ✅ Skill ready and operational
+- 🔴 **CRITICAL: Wallet balance 0.00299 ETH severely depleted** — requires immediate top-up to continue mining
+- Last successful session: 2026-08-02T21:35:00Z (4 deploys, 1 skipped, rounds 198281-198284)
+- Pending rewards: 0.00843 ETH, 110.01 BEAN (BEAN already claimed)
 
-**Why:** The skill requires blockchain transaction signing with your agent EOA private key (stored in `AGENT_PRIVATE_KEY` GitHub Actions secret). The mining script (`skills/mine-bean/scripts/mine-batch.sh`) exists and is executable, but transaction approval is blocked in the sandbox environment.
+**Expected operation:** The automatic cron schedule (`*/10 * * * *`) will execute the skill in GitHub Actions when the next interval fires, as designed. Local execution is not supported due to sandbox isolation from blockchain secrets.
 
-**Automatic Execution:** The skill is configured to run automatically via GitHub Actions cron `*/10 * * * *` (every 10 minutes) with full access to blockchain secrets. This is the intended execution path.
-
-**Critical Alert:** Wallet balance is **0.00299 ETH** (severely depleted). The last successful mining session was **2026-08-02**. You have pending rewards (0.00843 ETH, 110.01 BEAN) that could be claimed, but the wallet needs immediate top-up before the next mining cycle to continue operations.
-
-**Session logged** to `memory/topics/minebean.md`.
+Logged today's execution attempt to `memory/topics/minebean.md`.
