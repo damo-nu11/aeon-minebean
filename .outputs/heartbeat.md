@@ -2,10 +2,15 @@ HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
 
-Executed `skills/heartbeat/SKILL.md`. All P0 checks clear: mine-bean (917/920, 100%, 0 consecutive failures, last_success 2026-08-05T19:48:34Z) and heartbeat (189/190, 99%, self-check OK ~6h ago) both healthy. P1 clear (0 open PRs, issues disabled). P3 flagged mine-bean staleness (~62m vs */10 schedule) — same recurring scheduler/state-update-lag pattern already logged 100+ times, dedup rule applied so no notify.
+Ran heartbeat priority checks against `memory/cron-state.json`, `aeon.yml`, `gh pr list`, and `memory/issues/INDEX.md`:
+
+- **P0:** Clean — mine-bean and heartbeat both `last_status=success`, no stuck/degraded/chronic-failure entries; self-check OK (heartbeat last_success ~12h25m ago).
+- **P1:** 0 open PRs, repo issues disabled, no open filed issues.
+- **P2:** MEMORY.md flags mine-bean wallet as CRITICAL (0.00228 ETH) but no fresh signal.
+- **P3:** mine-bean `last_success` (2026-08-06T06:17:55Z) is ~2h58m stale vs `*/10` schedule → 🟡 WATCH. Same recurring scheduler/state-update-lag pattern; deduped against 100+ prior heartbeats in the last 48h → **no notify sent**.
 
 **Files modified:**
-- `docs/status.md` — regenerated with 🟡 WATCH verdict, updated timestamp 2026-08-05 20:50 UTC, next run mine-bean at 21:00 UTC
-- `memory/logs/2026-08-05.md` — appended 20:50 UTC heartbeat entry
+- `docs/status.md` — regenerated with 🟡 WATCH verdict, timestamp 2026-08-06 09:15 UTC, next-run pointer to mine-bean at 09:20 UTC.
+- `memory/logs/2026-08-06.md` — new log file with heartbeat findings.
 
-**Follow-up:** None from heartbeat. Standing mine-bean wallet criticality (0.00228 ETH) remains — operator top-up needed to continue mining, but no new signal since the earlier 14:32 log.
+**Follow-up:** Wallet top-up remains the standing critical action for mine-bean continuity — no change from prior logs.
