@@ -1,0 +1,124 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "MineBean mining session"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text-complete",
+        "grid-deploys",
+        "separator-1",
+        "grid-pending",
+        "separator-2",
+        "stat-wallet",
+        "alert-critical"
+      ]
+    },
+    "text-complete": {
+      "type": "Text",
+      "props": {
+        "text": "Mining session complete",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "grid-deploys": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-deploys",
+        "stat-skipped"
+      ]
+    },
+    "stat-deploys": {
+      "type": "Stat",
+      "props": {
+        "label": "Deploys",
+        "value": "3"
+      },
+      "children": []
+    },
+    "stat-skipped": {
+      "type": "Stat",
+      "props": {
+        "label": "Skipped",
+        "value": "2"
+      },
+      "children": []
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "grid-pending": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-pending-eth",
+        "stat-pending-bean"
+      ]
+    },
+    "stat-pending-eth": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending ETH",
+        "value": "0.00916"
+      },
+      "children": []
+    },
+    "stat-pending-bean": {
+      "type": "Stat",
+      "props": {
+        "label": "Pending BEAN (claimed)",
+        "value": "19.33"
+      },
+      "children": []
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stat-wallet": {
+      "type": "Stat",
+      "props": {
+        "label": "Wallet balance ETH",
+        "value": "0.00209"
+      },
+      "children": []
+    },
+    "alert-critical": {
+      "type": "Alert",
+      "props": {
+        "title": "CRITICAL",
+        "message": "Immediate top-up required to continue mining",
+        "type": "error"
+      },
+      "children": []
+    }
+  }
+}
