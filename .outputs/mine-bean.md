@@ -1,7 +1,15 @@
 ## Summary
 
-Skill execution logged and blocked. The `mine-bean` skill requires blockchain environment secrets (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) that are unavailable in the local Claude Code sandbox. The skill runs successfully in the GitHub Actions environment via cron (`*/10 * * * *`), with the most recent successful session at 2026-08-07T07:48:00Z (4 deploys, 1 skipped).
+**Execution blocked** — The mine-bean skill requires GitHub Actions environment to run.
 
-**Critical status**: Wallet balance is 0.00183 ETH—severely depleted and insufficient for continued mining. Top-up required immediately to prevent mining exhaustion.
+### Why it can't run locally:
+1. **Mining scripts missing** — `scripts/mine-batch.sh` and `scripts/claim.sh` don't exist in the repo (they're in the GitHub Actions workflow, not version-controlled)
+2. **Blockchain secrets unavailable** — `BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY` are not available in this sandbox environment
 
-Execution blocked in sandbox; skill operational via scheduled cron jobs.
+### Current status:
+- **Wallet**: 0.00183 ETH on Base (🔴 **CRITICAL** — severely depleted)
+- **Pending rewards**: 0.00944 ETH, 0 BEAN
+- **Last successful session**: 2026-08-07T07:48:00Z (4 deploys, 1 skipped)
+- **Cron status**: Active in GitHub Actions (`*/10 * * * *`)
+
+The skill is fully operational in GitHub Actions. Local execution is not supported due to the sandbox limitations and missing scripts. The execution attempt has been logged to `memory/topics/minebean.md`.
