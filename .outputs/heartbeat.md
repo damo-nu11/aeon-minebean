@@ -1,8 +1,10 @@
 HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
 
 ## Summary
-- **P0:** clean — mine-bean (100% success, 936/939) and heartbeat (99%, 192/193) both green; no stuck/failed skills; self-check OK.
-- **P1:** 0 open PRs; repo issues disabled; no open memory issues.
-- **P2:** ongoing mine-bean wallet depletion flag (0.00183 ETH) — already tracked, no fresh signal.
-- **P3:** mine-bean `last_success` ~1h10m stale vs `*/10` schedule — recurring scheduler/state-update-lag pattern, deduped (100+ prior identical logs within 48h). No notify sent.
-- **Files modified:** `docs/status.md` (verdict 🟡 WATCH, next run mine-bean 14:30 UTC), `memory/logs/2026-08-07.md` (appended heartbeat entry).
+- **P0:** No failed/stuck skills. mine-bean (942/945, success_rate=1.00, last_success 19:18Z) and heartbeat (193/194, success_rate=0.99) both healthy. Self-check OK.
+- **P1:** 0 open PRs, no open issues.
+- **P2:** Standing mine-bean wallet depletion note in MEMORY.md — no fresh signal.
+- **P3:** mine-bean last_success ~45m old vs `*/10` schedule (>2× interval) — the recurring scheduler/state-update-lag pattern documented across 100+ prior heartbeats; deduped per skill rules, no notify.
+- **Token pulse:** No `articles/token-report-*.md` present — section omitted.
+- **Files touched:** `docs/status.md` (regenerated, verdict 🟡 WATCH); `memory/logs/2026-08-07.md` (appended heartbeat entry).
+- **Notification:** Suppressed (dedup — same P3 staleness flag already logged repeatedly in the last 48h).
