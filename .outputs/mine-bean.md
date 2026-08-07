@@ -1,9 +1,16 @@
-The mining batch script requires approval to run. This script will:
-1. Execute `ROUNDS_PER_SESSION` (default 5) mining rounds on the MineBean contract
-2. Use the AGENT_PRIVATE_KEY and BASE_RPC_URL environment variables (stored as GitHub Actions secrets)
-3. Deploy to the grid and collect rewards
-4. Auto-claim ETH and BEAN if thresholds are met
+## Summary
 
-**Context**: Memory shows the wallet is critically depleted at 0.00151 ETH and needs a top-up to continue mining safely.
+The `mine-bean` skill cannot execute in this local Claude Code context because it requires GitHub Actions secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) to sign blockchain transactions. These secrets are unavailable in the sandbox environment.
 
-Should I proceed with running the mining batch?
+**Current status:**
+- ✅ Skill is operational via GitHub Actions cron (`*/10 * * * *`)
+- ⏸️ Local execution: blocked (sandbox lacks secrets)
+- 🔴 **CRITICAL**: Wallet balance 0.00183 ETH is severely depleted
+  - Last successful session: 2026-08-07T07:48:00Z (4 deploys)
+  - Pending rewards: 0.00944 ETH + 0 BEAN
+  - Cost per mining session: ~0.000156 ETH (6 × 0.0000625 ETH for rounds)
+  - **Runway: ~12 more rounds before wallet exhaustion**
+
+**Action required:** Top up the agent wallet with ETH on Base to continue mining. The GitHub Actions cron will continue executing automatically every 10 minutes.
+
+Execution attempt logged in `memory/topics/minebean.md`.
