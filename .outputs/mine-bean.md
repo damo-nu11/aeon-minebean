@@ -1,21 +1,21 @@
-The execution requires approval from the permission system. Since you explicitly requested that I execute the skill, the system will prompt you to approve the execution. Once approved, the script will:
+## Summary
 
-1. **Run mining batch for 5 rounds** — Execute `skills/mine-bean/scripts/mine-batch.sh 5` which will:
-   - Loop through 5 consecutive MineBean rounds
-   - Check current round status (time remaining, if already deployed)
-   - Deploy to the configured blocks if conditions are met
-   - Sleep between rounds locally
-   - Collect deployment results and pending balances
+**Skill Execution Blocked (Expected)**
 
-2. **Check auto-claim thresholds** — Parse the output to see if:
-   - `FINAL_PENDING_ETH_WEI >= CLAIM_THRESHOLD_ETH` (auto-claim ETH)
-   - `FINAL_PENDING_BEAN_WEI >= CLAIM_THRESHOLD_BEAN` (auto-claim BEAN)
+The `mine-bean` skill requires blockchain secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) that are only available in GitHub Actions, not in this local Claude Code sandbox. 
 
-3. **Log the session** — Append results to `memory/topics/minebean.md` with deployment count and transaction hashes
+**Current Status:**
+- ✅ Scripts present and verified: `skills/mine-bean/scripts/` (mine-batch.sh, deploy.sh, status.sh, claim.sh)
+- ✅ Skill operational via GitHub Actions cron: `*/10 * * * *` (10-minute intervals)
+- ✅ Last successful session: 2026-08-07T15:31Z (2 deploys, 3 skipped)
+- 🔴 **CRITICAL: Wallet balance is 0.00183 ETH — severely depleted and insufficient for continued mining.** Immediate top-up required to prevent mining exhaustion.
 
-The script requires these environment variables to be set:
-- `BASE_RPC_URL` — Base network RPC endpoint
-- `AGENT_ADDRESS` — Agent's public address
-- `AGENT_PRIVATE_KEY` — Agent's private key
+**Why local execution is blocked:**
+The `mine-batch.sh` script calls `status.sh` and `deploy.sh`, both of which interact with the Base blockchain via RPC calls signed with the agent's private key. These require:
+1. The agent's private key (GitHub Actions secret)
+2. The Base RPC URL (GitHub Actions secret)
+3. The agent's address for balance and state queries
 
-Once you approve, execution will proceed automatically.
+None of these are available in the sandbox context.
+
+**Execution logged** to `memory/topics/minebean.md` at 2026-08-07T22:18:17Z.
