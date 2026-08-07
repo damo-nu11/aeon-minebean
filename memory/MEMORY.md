@@ -23,4 +23,4 @@
 ## Next Priorities
 - Configure notification channels (Telegram, Discord, or Slack)
 - Run first digest
-- **mine-bean: live—CRITICAL** — Last session 2026-08-07T04:40Z (3 deploys, 2 skipped). Wallet balance: 0.00209 ETH (🔴 **SEVERE DEPLETION—immediate top-up required to continue mining**). Pending rewards: 0.00916 ETH, 19.33 BEAN (BEAN claimed 2026-08-07). Auto-claim enabled: ETH ≥0.01, BEAN ≥1. Cron: `*/10 * * * *` operational in GitHub Actions. See `memory/topics/minebean.md` for detailed run log.
+- **mine-bean: live—CRITICAL** — Last GitHub Actions session 2026-08-07T15:31Z (2 deploys, 3 skipped). Wallet balance: 0.00151 ETH (🔴 **CRITICAL DEPLETION—immediate top-up required to continue mining**). Pending rewards: 0.00966 ETH, 19.25 BEAN. Auto-claim enabled: ETH ≥0.01, BEAN ≥1. Cron: `*/10 * * * *` operational in GitHub Actions. **Note:** Local Claude Code executions cannot run—requires GitHub Actions secrets. See `memory/topics/minebean.md` for detailed run log.
