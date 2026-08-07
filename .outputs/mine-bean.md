@@ -1,18 +1,18 @@
 ## Summary
 
-**mine-bean skill cannot execute in this local Claude Code context.** The skill is designed to run autonomously via GitHub Actions cron (`*/10 * * * *`) and requires blockchain transaction signing.
+The `mine-bean` skill was invoked, but execution is blocked in this local Claude Code sandbox environment. The skill requires:
 
-**Status:**
-- **Last GitHub Actions session:** 2026-08-07T15:31:00Z (2 deploys, 3 skipped, rounds 204697-204698)
-- **Wallet balance:** 0.00151 ETH (🔴 **CRITICAL—severe depletion**)
-- **Pending rewards:** 0.00966 ETH, 19.25 BEAN
-- **Auto-claim thresholds:** ETH ≥0.01, BEAN ≥1 (both currently below)
-- **Cron:** `*/10 * * * *` operational in GitHub Actions
+1. **Blockchain secrets** (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) — not available in sandbox
+2. **Mining scripts** (found: scripts/mine-batch.sh, claim.sh) — exist but cannot run without secrets
 
-**Why it's blocked here:**
-Required secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) are configured in GitHub Actions but unavailable in the local sandbox.
+**Current Status:**
+- Wallet balance: **0.00151 ETH** (🔴 critically depleted)
+- Pending rewards: 0.00966 ETH, 19.25 BEAN
+- Last successful session: 2026-08-07T15:31:00Z (2 deploys, 3 skipped)
+- Auto-claim thresholds: ETH ≥0.01 (not met), BEAN ≥1 (not met)
+- Cron: `*/10 * * * *` operational in GitHub Actions
 
-**Action required:**  
-The wallet needs an immediate top-up of ETH on Base to continue mining. At 0.00151 ETH, there's only enough for ~24 more deploys at the current 0.0000025 ETH/block rate before exhaustion.
+**Next Step:**
+The skill runs automatically every 10 minutes via GitHub Actions cron. To continue mining, the wallet requires an immediate ETH top-up—current balance can sustain only ~24 more deploy cycles before depletion.
 
-Memory updated with execution log.
+Execution attempt logged to `memory/topics/minebean.md`.
