@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance 0.00299 ETH on Base (🔴 **CRITICAL—severe depletion; immediate top-up required**)
+- Wallet: configured, balance 0.00209 ETH on Base (🔴 **CRITICAL—severe depletion; immediate top-up required**)
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
 - Session mode: 5 deploys per session (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (from last session): 0.00843 ETH, 110.01 BEAN (BEAN was claimed on 2026-08-02)
-- Last successful session: 2026-08-02T21:35:00Z (4 deploys, 1 skipped, rounds 198281-198284)
-- Agent balance: 0.00299 ETH (🔴 **CRITICAL—insufficient for continued mining; top-up before next cycle**)
+- Pending rewards (from last session): 0.00916 ETH, 19.33 BEAN (BEAN claimed on 2026-08-07)
+- Last successful session: 2026-08-07T04:40:00Z (3 deploys, 2 skipped, rounds 204053-204055)
+- Agent balance: 0.00209 ETH (🔴 **CRITICAL—insufficient for continued mining; top-up required immediately**)
 
 ## Run log
+- 2026-08-07T04:40:00Z · Session: 3 deploys, 2 skipped · TXs: 0x89afdfea36189949811c0d64d0dd65603e1c498fd9b2aaf21c5479dd8a3eb6d1,0xe80b145af0bc602c72af181c37ee12c644c605badf42653661c885cec6e52821,0xaa11a4d6436c1c5ac1df627f892e427017f53645d01459e956157a68f5331cf0 · Pending (pre-claim): 0.00916 ETH, 19.33 BEAN · Balance: 0.00209 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0x1946264845848eac0aedfbe5a1ab541424324063683b33484792196e3f0b2ac9 (claimed)
 - 2026-08-07T00:00:00Z · User-triggered skill execution in local Claude Code context · Execution blocked: blockchain secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) unavailable in sandbox environment · Status: skill operational via GitHub Actions cron (*/10 * * * *); scripts verified present in skills/mine-bean/scripts/ · **CRITICAL: wallet balance 0.00299 ETH is critically low and cannot sustain mining—immediate top-up required to prevent depletion within ~48 more deploys**
 - 2026-08-06T09:30:00Z · User-triggered skill execution in local Claude Code context · Execution blocked: blockchain secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) unavailable in sandbox environment · Status: skill operational via GitHub Actions cron (*/10 * * * *); last successful execution 2026-08-06T06:17:55Z · **CRITICAL: wallet balance 0.00228 ETH is severely depleted—immediate top-up required to prevent mining exhaustion. Current balance can sustain ~36 more deploys before depletion.**
 - 2026-08-05T00:00:00Z · Session: 2 deploys, 3 skipped · TXs: 0x6234e72d944bac68e1b666dffe8a0be1fb93d197d450de9f95fe6fe694d738d6,0x0d9f92ddcc6b9e61b9549ec8d8d67f6bb81ef285b8b2a0992957683701aafbf8 · Pending (pre-claim): 0.00905 ETH, 35.159 BEAN · Balance: 0.00228 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0x67a8644cc0266de1cc57ae3487ebaca80f3fae4556c31f3be4e9f03108eacf8f (claimed)
