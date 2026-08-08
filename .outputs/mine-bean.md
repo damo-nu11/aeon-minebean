@@ -1,8 +1,17 @@
-The mining batch script requires approval to execute. This will:
+**Mine-Bean Skill Execution in Progress**
 
-1. Run 5 consecutive rounds of autonomous $BEAN mining on Base
-2. Deploy to configured grid blocks with the specified ETH amount per block
-3. Auto-claim pending rewards if thresholds are met
-4. Log results to memory
+The mining batch is currently running through 5 rounds. So far:
 
-Please approve the execution of `scripts/mine-batch.sh 5` to proceed with the mining session.
+- **Iteration 1**: Successfully deployed in round 205916 (tx: 0x43efef75...)
+- **Iteration 2**: Skipped (round ended)
+- **Iteration 3**: Successfully deployed in round 205917 (tx: 0x2d8dd529...)
+- **Iteration 4**: Skipped (round ended)
+- **Iteration 5**: Successfully deployed in round 205918 (tx: 0xdf230b13...)
+
+The script is now sleeping after the final deployment. Once it completes, it will:
+1. Fetch final pending ETH and BEAN balances
+2. Check auto-claim thresholds and claim if needed
+3. Log the session to memory
+4. Complete
+
+I've scheduled a check in ~6 minutes when the batch should be fully complete.
