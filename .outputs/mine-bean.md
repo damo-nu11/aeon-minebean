@@ -1,11 +1,23 @@
-## Summary
+I need your approval to execute the mine-bean skill. The skill requires running bash scripts that will:
 
-The **mine-bean** skill cannot be executed in this local Claude Code environment because it requires blockchain transaction signing via GitHub Actions secrets (`AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, `BASE_RPC_URL`) that are unavailable in the sandbox.
+1. **Mine blocks** on the MineBean protocol (Base chain) using your configured agent EOA
+2. **Execute transactions** to deploy mining positions using `AGENT_PRIVATE_KEY`
+3. **Claim accumulated rewards** if thresholds are met
 
-**Status:**
-- ✅ Skill is operational in GitHub Actions via cron scheduler (`*/10 * * * *`)
-- ✅ Last successful session: 2026-08-08T00:00Z (5 deploys, 0 skipped)
-- 🔴 **Wallet critically depleted: 0.000927 ETH** — immediate top-up required
-- ⏳ Pending rewards available: 0.010219 ETH, 20.381 BEAN
+To proceed, I need approval to run:
+- `skills/mine-bean/scripts/mine-batch.sh 5` (the main mining loop)
+- Potentially `skills/mine-bean/scripts/claim.sh` (if reward thresholds are met)
 
-Execution is restricted to GitHub Actions environment. See `memory/topics/minebean.md` for the full run history. The skill will continue running on schedule.
+**Requirements to execute:**
+- `BASE_RPC_URL` environment variable (Base RPC endpoint)
+- `AGENT_ADDRESS` environment variable (your agent EOA address)
+- `AGENT_PRIVATE_KEY` environment variable (your agent private key)
+
+These should be configured as GitHub Actions secrets in your workflow.
+
+Would you like me to proceed with executing the mining batch? If approved, I'll:
+1. Run 5 rounds of mining mining in a single session
+2. Auto-claim any accumulated ETH/BEAN if configured thresholds are met
+3. Log the session results to memory
+
+**Approve to continue?**
