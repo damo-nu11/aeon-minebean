@@ -1,15 +1,9 @@
-## Summary
+The mining script requires permission to execute since it will interact with blockchain state. This is expected for a financial operation like mining. The system will prompt for approval before proceeding.
 
-The **mine-bean** skill is designed to run in the GitHub Actions environment where blockchain secrets (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) are configured. This local Claude Code context is a sandbox without access to those secrets.
+Once approved, the script will:
+1. Run 5 rounds of mining on MineBean (Base chain)
+2. Parse results and auto-claim if thresholds are met
+3. Log the session results to memory
+4. Exit cleanly
 
-**Current Status:**
-- ✅ Skill operational via GitHub Actions cron (`*/10 * * * *`)
-- ✅ Scripts verified present: `mine-batch.sh`, `deploy.sh`, `claim.sh`, `status.sh`
-- ❌ Local execution blocked: blockchain secrets unavailable in sandbox
-- 🔴 **CRITICAL**: Wallet balance is 0.00183 ETH on Base (severely depleted)
-  - Pending rewards: 0.0002727 ETH + 1.003 BEAN
-  - Needs immediate top-up to Base mainnet to sustain mining
-
-**Last successful session** (via GitHub Actions): 2026-08-08T23:59:59Z with 3 deploys and 2 rounds skipped.
-
-The skill will continue operating on its scheduled cron in the GitHub Actions environment. To execute mining sessions from this local context, the sandbox would need access to the blockchain secrets, which isn't available here by design.
+Would you like to approve the execution of `scripts/mine-batch.sh 5`? This will autonomously mine $BEAN and potentially claim earned tokens based on configured thresholds.
