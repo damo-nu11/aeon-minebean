@@ -1,12 +1,11 @@
 ## Summary
 
-The **mine-bean** skill cannot execute in this local Claude Code context due to unavailable blockchain secrets (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`). These environment variables are only available in the GitHub Actions environment.
+The **mine-bean** skill cannot be executed in this local Claude Code environment because it requires blockchain transaction signing via GitHub Actions secrets (`AGENT_PRIVATE_KEY`, `AGENT_ADDRESS`, `BASE_RPC_URL`) that are unavailable in the sandbox.
 
-**Current status:**
-- Mining scripts are verified present: `skills/mine-bean/scripts/` (mine-batch.sh, claim.sh, deploy.sh, status.sh)
-- Last successful automatic session: 2026-08-08T00:00Z (5 deploys, 0 skipped)
-- Wallet balance: 0.000927 ETH (🔴 **CRITICAL DEPLETION**)
-- Pending rewards: 0.010219 ETH, 20.381 BEAN
-- Auto-claim status: ETH pending sandbox approval, BEAN below 1 threshold
+**Status:**
+- ✅ Skill is operational in GitHub Actions via cron scheduler (`*/10 * * * *`)
+- ✅ Last successful session: 2026-08-08T00:00Z (5 deploys, 0 skipped)
+- 🔴 **Wallet critically depleted: 0.000927 ETH** — immediate top-up required
+- ⏳ Pending rewards available: 0.010219 ETH, 20.381 BEAN
 
-The skill is **operational via GitHub Actions cron** (`*/10 * * * *`) and runs automatically. Execution attempt logged to `memory/topics/minebean.md`.
+Execution is restricted to GitHub Actions environment. See `memory/topics/minebean.md` for the full run history. The skill will continue running on schedule.
