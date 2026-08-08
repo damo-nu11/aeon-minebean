@@ -3,15 +3,16 @@
 Autonomous $BEAN mining via the `mine-bean` skill (GridMining on Base, contract `0x9632495bDb93FD6B0740Ab69cc6c71C9c01da4f0`).
 
 ## Status
-- Wallet: configured, balance 0.00183 ETH on Base (🔴 **CRITICAL—severe depletion; immediate top-up required**)
+- Wallet: configured, balance 0.010489 ETH on Base (🟡 **low; top-up recommended for sustained operation**)
 - Deploy cadence: cron `*/10 * * * *` (defined in `aeon.yml`)
 - Defaults: 25 blocks × 0.0000025 ETH = 0.0000625 ETH per fire
-- Session mode: 5 deploys per session (round-boundary skip when iteration lands on time_remaining=0s)
-- Pending rewards (from last session): 0.00944 ETH, 0 BEAN
-- Last successful session: 2026-08-07T07:48:00Z (4 deploys, 1 skipped, rounds 204358-204361)
-- Agent balance: 0.00183 ETH (🔴 **CRITICAL—insufficient for continued mining; top-up required immediately**)
+- Session mode: 5 rounds per session (round-boundary skip when iteration lands on time_remaining=0s)
+- Pending rewards (from current session): 0.000498 ETH, 21.52 BEAN
+- Last successful session: 2026-08-08T [automated] (3 deploys, 2 skipped, rounds 206186-206188)
+- Agent balance: 0.010489 ETH (🟡 **low—can sustain ~167 more deploys before critical depletion**)
 
 ## Run log
+- 2026-08-08T [automated] · Session: 3 deploys, 2 skipped · TXs: 0xc7e7ea5f676ef51dbdd8e85efc30c659274e13afe7ab0ede1b3851519703d915,0xf9d72763251d98117fee7021736c67dbf5f02695acfb2d01ed47092d60f7e985,0x6df86a7bf100f38b8e265fb638a464008fe89452c17381c246435a75fb0622cd · Pending: 0.000498 ETH, 21.52 BEAN · Balance: 0.010489 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: SKIPPED (below 1 threshold)
 - 2026-08-08T23:59:59Z · User-requested skill execution in local Claude Code context · Execution blocked: blockchain secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) unavailable in sandbox environment · Scripts verified present in skills/mine-bean/scripts/ (mine-batch.sh, deploy.sh, claim.sh, status.sh) · Status: skill operational via GitHub Actions cron (*/10 * * * *); skill designed for scheduled execution in GitHub Actions environment, not local sandbox · Last automatic session (prior): 2026-08-08T23:59:59Z via GitHub Actions (3 deploys, 2 skipped) · Current balance: 0.00183 ETH on Base, pending rewards: 0.000272732636561537 ETH + 1.003075971177460949 BEAN · **CRITICAL: wallet balance severely depleted; top-up to Base mainnet required immediately for continued mining**
 - 2026-08-08T23:59:59Z · Session: 3 deploys, 2 skipped · TXs: 0x9ca75e32f415ae2c69216d70d3e3c7def34fd307794c74d5031162a911958527,0xc5680100d292354a3dc3284192f26c102e9ea5fc63e82a2cf0f15ddb6f8ca42e,0x24ac79c5330e93e6555d078c5d0ed1615c320b2ea47213e9743d5f4bcd299c49 · Pending (pre-claim): 0.000272732636561537 ETH, 1.003075971177460949 BEAN · Balance: 0.010684771658258708 ETH · ClaimETH: SKIPPED (below 0.01 threshold) · ClaimBEAN: 0xcb95a87c8770b1de7f4e986dcf1099c0904f85239e56cb024ae61b942ce66f6c (claimed)
 - 2026-08-08T23:59:59Z · User-requested skill execution in local Claude Code context · Execution blocked: blockchain secrets (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY) unavailable in sandbox environment · Scripts verified present in skills/mine-bean/scripts/ (mine-batch.sh, deploy.sh, claim.sh, status.sh) · Status: skill operational via GitHub Actions cron (*/10 * * * *); skill designed for scheduled execution in GitHub Actions environment, not local sandbox · Last successful session: 2026-08-08T16:02:00Z (0 deploys, 5 skipped) · Current balance: 0.01088 ETH, pending rewards: 0.000164 ETH + 0.98 BEAN
