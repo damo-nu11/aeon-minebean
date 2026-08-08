@@ -974,3 +974,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-08,mine-bean,claude-haiku-4-5-20251001,622,7310,856290,44796
 2026-08-08,mine-bean,claude-haiku-4-5-20251001,89,1909,313548,33480
 2026-08-08,mine-bean,claude-haiku-4-5-20251001,121,3984,657484,35709
+2026-08-08,mine-bean,claude-haiku-4-5-20251001,41,893,135922,10907
