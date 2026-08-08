@@ -1,20 +1,12 @@
 ## Summary
 
-The **mine-bean** skill executed successfully via automated batch mining:
+The mine-bean skill execution was blocked in this local Claude Code context due to unavailable blockchain secrets. The skill is designed to execute only in the GitHub Actions environment where `BASE_RPC_URL`, `AGENT_ADDRESS`, and `AGENT_PRIVATE_KEY` are securely stored.
 
-**Session Results:**
-- ✅ 3 deploys fired (rounds 206186, 206187, 206188)
-- ⏭️ 2 rounds skipped (time_remaining=0s at round boundaries)
-- Transaction hashes: `0xc7e7ea...`, `0xf9d727...`, `0x6df86a...`
+**Current Status:**
+- **Skill Status:** Operational via GitHub Actions cron (`*/10 * * * *`)
+- **Last Successful Session:** 2026-08-08T [automated] — 3 deploys, 2 skipped
+- **Wallet Balance:** 0.010489 ETH (low)
+- **Pending Rewards:** 0.000498 ETH + 21.52 BEAN
+- **Action Required:** Wallet balance is low; sustained mining requires top-up to Base mainnet
 
-**Post-Mining State:**
-- Agent balance: 0.010489 ETH (~167 more deploys possible)
-- Pending rewards: 0.000498 ETH + 21.52 BEAN
-- Auto-claim: **skipped** (below 0.01 ETH and 1 BEAN thresholds)
-
-**Status:**
-- Memory log updated with session details
-- Balance status updated (🟡 low but operational)
-- Next batch scheduled via cron `*/10 * * * *`
-
-The skill will not retry within this session. The next automated firing will pick up the subsequent rounds.
+The skill will continue to execute automatically on its cron schedule in GitHub Actions. For local testing or development, the blockchain secrets would need to be configured in the environment.
