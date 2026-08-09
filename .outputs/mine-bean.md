@@ -1,20 +1,12 @@
-The skill requires approval to execute because it involves blockchain operations using private keys stored as GitHub Actions secrets.
+## Summary
 
-Here's what the **mine-bean** skill does:
+**mine-bean skill execution blocked.** The skill requires blockchain environment variables (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) that are only configured as GitHub Actions repository secrets, not available in this local Claude Code sandbox.
 
-1. **Run a mining batch** (`scripts/mine-batch.sh 5`): Executes 5 consecutive rounds of autonomous mining on the MineBean 5x5 grid mining protocol on Base, with local sleeps between rounds.
+The skill is designed to run autonomously on GitHub Actions every 10 minutes (cron `*/10 * * * *`). The scripts are present and operational in `skills/mine-bean/scripts/`, but they require:
+- Base RPC endpoint
+- Agent wallet address and private key  
+- Signature authority to execute on-chain transactions
 
-2. **Auto-claim rewards**: If accumulated rewards meet the thresholds:
-   - Claim ETH if pending balance ≥ 0.01 ETH
-   - Claim BEAN if pending balance ≥ 1 BEAN
+**Current status:** The mining operation continues automatically via GitHub Actions. Last successful session: 2026-08-08T21:55:19Z (2 deploys, 3 skipped). Wallet balance: 0.010489 ETH (🟡 low). Pending rewards: 0.000498 ETH + 21.52 BEAN.
 
-3. **Log the session**: Record the deployment count, skipped rounds, and transaction hashes to `memory/topics/minebean.md`
-
-**Current wallet status** (from memory):
-- Balance: 0.000927 ETH (🔴 **CRITICAL DEPLETION** — requires top-up to continue)
-- Pending rewards: 0.010219 ETH, 20.381 BEAN
-- Last session: 2026-08-08 (5 deploys, 0 skipped)
-
-**To proceed**, I need approval to execute the mining batch script. This command requires access to `AGENT_PRIVATE_KEY` and other blockchain secrets configured in GitHub Actions.
-
-Would you like me to execute this skill? If approved, it will attempt to deploy to the grid and claim pending rewards if thresholds are met.
+Execution logs have been updated in `memory/logs/2026-08-09.md` and `memory/topics/minebean.md`.
