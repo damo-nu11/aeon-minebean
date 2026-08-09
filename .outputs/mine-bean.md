@@ -1,25 +1,8 @@
-**Status Report: `mine-bean` Skill**
+## Summary
 
-The `mine-bean` skill is **not executable in this local environment**. This is designed exclusively for GitHub Actions execution where blockchain secrets are available.
+**mine-bean skill execution blocked.** This skill is designed exclusively for GitHub Actions environments with blockchain secrets and dedicated mining scripts. Local invocations cannot proceed due to:
 
-## Current Status
+1. Missing blockchain credentials (BASE_RPC_URL, AGENT_ADDRESS, AGENT_PRIVATE_KEY)
+2. Mining scripts not present in local repository (exist only in GitHub Actions workflow)
 
-- **Execution Environment**: GitHub Actions cron (`*/10 * * * *`) — automated
-- **Last Successful Session**: 2026-08-08T21:55:19Z
-  - 2 deploys, 3 skipped
-  - Pending rewards: 0.000498 ETH, 21.52 BEAN  
-  - Agent balance: 0.010489 ETH (🟡 low)
-
-- **Why Local Execution Fails**: Blockchain secrets (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) are GitHub Actions–only and unavailable in this sandbox.
-
-- **Scripts Present**: ✓ All verified operational
-  - `skills/mine-bean/scripts/mine-batch.sh`
-  - `skills/mine-bean/scripts/deploy.sh`
-  - `skills/mine-bean/scripts/claim.sh`
-  - `skills/mine-bean/scripts/status.sh`
-
-## Action Required
-
-The wallet balance is low (0.010489 ETH). To sustain continued mining at ~5 deploys per session × 0.0000625 ETH each, **top-up Base mainnet** with additional ETH to the configured agent address.
-
-The skill continues running automatically on its cron schedule via GitHub Actions. No manual intervention needed unless wallet balance becomes critical.
+The skill operates autonomously on GitHub Actions cron (`*/10 * * * *`) and will continue executing automatically. Last successful session: 2026-08-08 (2 deploys, 3 skipped). Current balance is low (0.0105 ETH) but sustainable for ~167 more deploys.
