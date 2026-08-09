@@ -1,11 +1,17 @@
+HEARTBEAT_OK · STATUS_PAGE=WATCH — wrote docs/status.md
+
 ## Summary
 
-Heartbeat run at 20:12 UTC. Fleet healthy — no P0/P1 issues; standing P2 (wallet depletion 0.000927 ETH) and P3 (mine-bean state lag: ~26m since last success vs 20m 2× threshold for `*/10`) both dedup against 100+ prior heartbeats.
+Ran the heartbeat skill for 2026-08-09 08:21 UTC.
+
+**Findings (all pre-known, deduped against 48h logs → no notify):**
+- **P0:** Clean. mine-bean (987/990, 100%) and heartbeat (197/198, 99%) both `success`, 0 consecutive_failures. Self-check OK.
+- **P1:** 0 open PRs; issues disabled; 0 open rows in INDEX.md.
+- **P2:** Standing mine-bean wallet depletion flag (0.000927 ETH per 08-08 log) — unchanged.
+- **P3:** mine-bean last_success ~46m old vs `*/10` schedule (>2× interval) — same recurring scheduler/state-update-lag pattern.
 
 **Files modified:**
-- `docs/status.md` — regenerated with verdict 🟡 WATCH, timestamp 20:11 UTC, next run mine-bean at 20:20 UTC
-- `memory/logs/2026-08-08.md` — appended 20:12 UTC heartbeat entry
+- `docs/status.md` — regenerated with verdict 🟡 WATCH
+- `memory/logs/2026-08-09.md` — appended 08:21 UTC heartbeat entry
 
-**Notification:** skipped per dedup rule (identical flags in recent logs).
-
-`HEARTBEAT_OK · STATUS_PAGE=WATCH`
+**Follow-up:** none new; wallet top-up remains the standing operator ask.
