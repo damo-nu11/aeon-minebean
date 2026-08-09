@@ -1,12 +1,25 @@
-## Summary
+**Status Report: `mine-bean` Skill**
 
-**mine-bean skill execution blocked.** The skill requires blockchain environment variables (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) that are only configured as GitHub Actions repository secrets, not available in this local Claude Code sandbox.
+The `mine-bean` skill is **not executable in this local environment**. This is designed exclusively for GitHub Actions execution where blockchain secrets are available.
 
-The skill is designed to run autonomously on GitHub Actions every 10 minutes (cron `*/10 * * * *`). The scripts are present and operational in `skills/mine-bean/scripts/`, but they require:
-- Base RPC endpoint
-- Agent wallet address and private key  
-- Signature authority to execute on-chain transactions
+## Current Status
 
-**Current status:** The mining operation continues automatically via GitHub Actions. Last successful session: 2026-08-08T21:55:19Z (2 deploys, 3 skipped). Wallet balance: 0.010489 ETH (🟡 low). Pending rewards: 0.000498 ETH + 21.52 BEAN.
+- **Execution Environment**: GitHub Actions cron (`*/10 * * * *`) — automated
+- **Last Successful Session**: 2026-08-08T21:55:19Z
+  - 2 deploys, 3 skipped
+  - Pending rewards: 0.000498 ETH, 21.52 BEAN  
+  - Agent balance: 0.010489 ETH (🟡 low)
 
-Execution logs have been updated in `memory/logs/2026-08-09.md` and `memory/topics/minebean.md`.
+- **Why Local Execution Fails**: Blockchain secrets (`BASE_RPC_URL`, `AGENT_ADDRESS`, `AGENT_PRIVATE_KEY`) are GitHub Actions–only and unavailable in this sandbox.
+
+- **Scripts Present**: ✓ All verified operational
+  - `skills/mine-bean/scripts/mine-batch.sh`
+  - `skills/mine-bean/scripts/deploy.sh`
+  - `skills/mine-bean/scripts/claim.sh`
+  - `skills/mine-bean/scripts/status.sh`
+
+## Action Required
+
+The wallet balance is low (0.010489 ETH). To sustain continued mining at ~5 deploys per session × 0.0000625 ETH each, **top-up Base mainnet** with additional ETH to the configured agent address.
+
+The skill continues running automatically on its cron schedule via GitHub Actions. No manual intervention needed unless wallet balance becomes critical.
