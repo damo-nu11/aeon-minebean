@@ -1,14 +1,14 @@
 {
   "mine-bean": {
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-08-09T10:38:09Z",
-    "total_runs": 1113,
+    "total_runs": 1114,
     "total_successes": 991,
-    "total_failures": 122,
-    "consecutive_failures": 119,
+    "total_failures": 123,
+    "consecutive_failures": 120,
     "success_rate": 0.89,
     "last_dispatch": "2026-08-14T11:40:05Z",
-    "last_failed": "2026-08-14T10:55:30Z",
+    "last_failed": "2026-08-14T11:43:25Z",
     "last_quality_score": 3,
     "last_error": "service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\""
   },
