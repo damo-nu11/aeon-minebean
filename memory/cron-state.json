@@ -1,16 +1,16 @@
 {
   "mine-bean": {
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-08-09T10:38:09Z",
-    "total_runs": 1234,
+    "total_runs": 1235,
     "total_successes": 991,
-    "total_failures": 243,
-    "consecutive_failures": 240,
+    "total_failures": 244,
+    "consecutive_failures": 241,
     "success_rate": 0.8,
     "last_dispatch": "2026-08-18T04:44:23Z",
-    "last_failed": "2026-08-18T03:59:34Z",
+    "last_failed": "2026-08-18T04:47:42Z",
     "last_quality_score": 3,
-    "last_error": "\":\\\"**Wait and retry.** Back off for at least 120 seconds. If the error persists, the origin is offline or blocking Cloudflare — the website operator must restart the origin or whitelist Cloudflare "
+    "last_error": "service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\""
   },
   "heartbeat": {
     "last_dispatch": "2026-08-18T04:44:23Z",
