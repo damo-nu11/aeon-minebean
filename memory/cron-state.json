@@ -1,20 +1,20 @@
 {
   "mine-bean": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-08-09T10:38:09Z",
     "total_runs": 1476,
     "total_successes": 991,
     "total_failures": 485,
     "consecutive_failures": 482,
     "success_rate": 0.67,
-    "last_dispatch": "2026-08-25T05:59:54Z",
+    "last_dispatch": "2026-08-25T07:02:06Z",
     "last_failed": "2026-08-25T06:03:12Z",
     "last_quality_score": 3,
     "last_error": "stats\":{\"spawned\":0,\"requested\":{\"background\":0,\"foreground\":0,\"unset\":0},\"started_in_background\":0,\"max_depth\":0,\"spawned_by_subagents\":0,\"completed\":0,\"failed\":0,\"killed\":{\"parent\":0,\"user\":0,\"syste"
   },
   "heartbeat": {
-    "last_dispatch": "2026-08-25T05:59:54Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-08-25T07:02:06Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-09T08:21:41Z",
     "total_runs": 635,
     "total_successes": 198,
