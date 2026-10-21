@@ -14,14 +14,14 @@
   },
   "heartbeat": {
     "last_dispatch": "2026-10-21T21:35:43Z",
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-08-09T08:21:41Z",
-    "total_runs": 1030,
+    "total_runs": 1031,
     "total_successes": 198,
-    "total_failures": 832,
-    "consecutive_failures": 831,
+    "total_failures": 833,
+    "consecutive_failures": 832,
     "success_rate": 0.19,
-    "last_failed": "2026-10-21T18:04:30Z",
+    "last_failed": "2026-10-21T21:36:08Z",
     "last_error": "started_in_background\":0,\"max_depth\":0,\"spawned_by_subagents\":0,\"completed\":0,\"failed\":0,\"killed\":{\"parent\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type"
   }
 }
